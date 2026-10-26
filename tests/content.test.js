@@ -130,8 +130,21 @@ test("schema", function () {
             if (a.type === "quiz" && it.options && it.options.indexOf(it.answer) < 0) bad(iw + " answer is not in options");
             if (a.type === "reading" && !(Number.isInteger(it.answer) && it.options && it.answer >= 0 && it.answer < it.options.length)) bad(iw + " answer index is not in options");
           });
+          if (a.type === "speak") {
+            if (!filled(a.questions)) bad(where + " needs a non-empty questions array");
+            list(a.questions).forEach(function (q, qi) { if (!q || !q.q || !q.model) bad(where + " question #" + (qi + 1) + " needs non-empty q and model"); });
+          }
+          if (a.type === "roleplay") {
+            if (!a.scenario) bad(where + " needs a scenario");
+            ["cardA", "cardB"].forEach(function (c) {
+              const card = a[c];
+              if (!card || !card.role) bad(where + " " + c + " needs a role");
+              if (!card || !filled(card.rows) || !card.rows.every(function (r) { return Array.isArray(r) && r.length === 2 && typeof r[0] === "string" && typeof r[1] === "string"; })) bad(where + " " + c + ".rows must be a non-empty array of [string,string] pairs");
+            });
+            if (!filled(a.model) || !a.model.every(function (l) { return l && (l.speaker === "A" || l.speaker === "B") && l.text; })) bad(where + " model must be a non-empty array of {speaker: A|B, text}");
+          }
           prompts(a).forEach(function (p) {
-            const key = String(p).trim().toLowerCase(), prev = seen[ui] && seen[ui].get(key);
+            const key = Core.normalizeAnswer(p), prev = seen[ui] && seen[ui].get(key);
             if (prev) bad(where + " duplicates prompt '" + String(p).slice(0, 40) + "' (first in " + prev + ")");
             else if (seen[ui]) seen[ui].set(key, f + " " + s[0] + " #" + (ai + 1));
           });

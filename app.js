@@ -406,6 +406,7 @@ function renderExercises(exercises) {
   const cards = exercises.map(function (exercise, index) {
     const questionCount = Core.countQuestions(exercise);
     const custom = (window.ExerciseTypes || {})[exercise.type];
+    const unscored = Boolean(custom && custom.unscored);
     let body = "";
 
     if (custom && custom.render) {
@@ -464,11 +465,11 @@ function renderExercises(exercises) {
     return '<details class="exercise-card" data-exercise-index="' + index + '" data-exercise-type="' + exercise.type + '"' + (index === 0 ? ' open' : '') + '>' +
       '<summary><span class="exercise-card-index">0' + (index + 1) + '</span>' +
         '<span class="exercise-card-title">' + escapeHtml(exercise.title) + '</span>' +
-        '<span class="exercise-question-count">' + questionCount + (questionCount === 1 ? ' question' : ' questions') + '</span>' +
+        '<span class="exercise-question-count">' + (unscored ? '0/' + custom.practiceTotal(exercise) + ' practised' : questionCount + (questionCount === 1 ? ' question' : ' questions')) + '</span>' +
       '</summary>' +
       '<div class="exercise-content">' + body +
-        '<div class="exercise-actions"><button class="exercise-check" type="button">Check answer</button>' +
-          '<p class="exercise-feedback" role="status" aria-live="polite"></p></div>' +
+        (unscored ? '' : '<div class="exercise-actions"><button class="exercise-check" type="button">Check answer</button>' +
+          '<p class="exercise-feedback" role="status" aria-live="polite"></p></div>') +
       '</div>' +
     '</details>';
   }).join("");
