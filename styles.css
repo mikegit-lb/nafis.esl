@@ -881,3 +881,28 @@ a { color: inherit; }
 .section-tab:hover { color: var(--blue-deep); }
 .section-tab[aria-selected="true"] { border-bottom-color: var(--orange); background: var(--orange-pale); color: var(--ink); }
 .section-tab:focus-visible { outline: 3px solid #74b6ff; outline-offset: -3px; }
+
+/* Overview, vocabulary and speaking views */
+.topic-chips, .word-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+.word-chips { margin-top: 0; }
+.topic-chips .quiz-chip { padding: 6px 12px; font-size: 14px; }
+.overview-grid, .vocab-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); margin-left: 0; margin-right: 0; }
+.view-list { margin: 0; padding-left: 20px; line-height: 1.55; }
+.view-list li + li { margin-top: 4px; }
+.sounds-line { margin: 16px 0 0; color: var(--ink-soft); line-height: 1.5; }
+.sounds-line strong { color: var(--ink); }
+.vocab-list { margin: 0; }
+.vocab-item + .vocab-item { margin-top: 11px; padding-top: 10px; border-top: 1px solid #e7edf5; }
+.vocab-item dt { color: var(--blue-deep); font-weight: 800; }
+.vocab-item dd { margin: 2px 0 0; overflow-wrap: anywhere; }
+.vocab-example { color: var(--ink-soft); font-style: italic; font-size: 14px; }
+.sound-group + .sound-group { margin-top: 12px; }
+.sound-label { margin: 0 0 6px; color: #64768c; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.read-aloud { margin: 14px 0 0; padding-left: 22px; line-height: 1.5; }
+.read-aloud li { margin-bottom: 8px; padding-left: 4px; overflow-wrap: anywhere; }
+.read-aloud li span { margin-right: 8px; }
+.listen-btn { min-height: 34px; padding: 4px 11px; border: 1px solid #c3d3e5; border-radius: 6px; background: white; color: var(--blue-deep); font: inherit; font-size: 13px; font-weight: 650; cursor: pointer; }
+.listen-btn:hover, .listen-chip:hover { border-color: var(--blue); background: #f1f7ff; }
+.listen-chip { min-height: 34px; font-family: inherit; cursor: pointer; }
+.listen-btn:focus-visible, .listen-chip:focus-visible { outline: 3px solid #74b6ff; outline-offset: 2px; }
+.sound-group + .sound-label { margin-top: 16px; }

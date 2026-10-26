@@ -402,7 +402,10 @@ function renderLesson() {
   });
 }
 
-function renderExercises(exercises) {
+// options (section views only): heading overrides the legacy title; countText overrides the "N QUESTIONS" badge.
+function renderExercises(exercises, options) {
+  options = options || {};
+  if (!exercises.length) return "";
   const cards = exercises.map(function (exercise, index) {
     const questionCount = Core.countQuestions(exercise);
     const custom = (window.ExerciseTypes || {})[exercise.type];
@@ -476,9 +479,14 @@ function renderExercises(exercises) {
 
   const total = exercises.reduce(function (sum, exercise) { return sum + Core.countQuestions(exercise); }, 0);
 
+  // No scored questions (unscored speaking cards only): count the tasks instead of showing "0 QUESTIONS".
+  const countText = options.countText || (total > 0
+    ? total + (total === 1 ? ' QUESTION' : ' QUESTIONS')
+    : exercises.length + (exercises.length === 1 ? ' TASK' : ' TASKS'));
+
   return '<section class="practice" aria-labelledby="practice-title">' +
-    '<div class="practice-header"><h3 id="practice-title">B1 reading & grammar challenge</h3>' +
-      '<span class="practice-count">' + total + (total === 1 ? ' QUESTION' : ' QUESTIONS') + '</span></div>' +
+    '<div class="practice-header"><h3 id="practice-title">' + escapeHtml(options.heading || "B1 reading & grammar challenge") + '</h3>' +
+      '<span class="practice-count">' + escapeHtml(countText) + '</span></div>' +
     '<div class="exercise-list">' + cards + '</div>' +
   '</section>';
 }
@@ -593,8 +601,11 @@ function selectUnit(index) {
 }
 
 function selectSection(id) {
-  activeSection = id;
-  renderLesson();
+  // Re-rendering the active section would wipe the learner's answered state; just move focus.
+  if (id !== activeSection) {
+    activeSection = id;
+    renderLesson();
+  }
   const tab = lesson.querySelector('[role="tab"][data-section="' + id + '"]');
   if (tab) tab.focus();
 }
