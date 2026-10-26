@@ -1,7 +1,7 @@
 window.unitContent = window.unitContent || [];
 window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
   lesson: {
-    summary: "Use the simple present for habits and routines: things you do again and again, such as daily and study routines. It also states facts, timetables, and likes and dislikes. Frequency adverbs and time expressions say how often or when, and sequencers (first, then, after that, finally) put the steps of a routine in order.",
+    summary: "Use the simple present for habits and routines: things you do again and again, such as daily and study routines. It also describes facts, timetables, and likes and dislikes. Frequency adverbs and time expressions say how often or when, and sequencers (first, then, after that, finally) put the steps of a routine in order.",
     examples: [
       "I wake up at seven on weekdays.",
       "She studies after school.",
@@ -10,7 +10,9 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       "We have a quiz twice a week.",
       "After I get dressed, I have breakfast.",
       "How often do you play basketball? Three times a week.",
-      "Ali loves playing chess, but he hates getting up early."
+      "Ali loves playing chess, but he hates getting up early.",
+      "The shop opens at nine.",
+      "Water boils at 100 degrees."
     ],
     patterns: [
       {

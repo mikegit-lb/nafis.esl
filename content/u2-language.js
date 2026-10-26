@@ -159,9 +159,9 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           },
           {
             prompt: "Which phrase does NOT go with the verb join?",
-            options: ["a drama club", "a study group", "a pen", "a school trip"],
+            options: ["a club", "a pen", "a group", "a team"],
             answer: "a pen",
-            why: "You join a club, a group or a trip, which are things with people in them, but not a pen."
+            why: "You join a club, a group or a team, but you do not join a pen."
           },
           {
             prompt: "Which phrase does NOT go with the phrasal verb hand in?",
@@ -211,7 +211,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           {
             prompt: "Ozan's little sister is asleep, so he walks past her room ___.",
             answer: "quietly",
-            why: "Not to wake someone who is sleeping, you move quietly."
+            why: "To avoid waking someone who is asleep, you move quietly."
           },
           {
             prompt: "Ozan says \"please\" and \"thank you\" to the canteen staff. He speaks ___.",
@@ -219,7 +219,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "Saying please and thank you is polite behaviour, so he speaks politely."
           },
           {
-            prompt: "He runs every Monday, Wednesday and Friday, so he trains ___.",
+            prompt: "Ozan runs every Monday, Wednesday and Friday, so he trains ___.",
             answer: "regularly",
             why: "Doing something at the same times each week is doing it regularly."
           },
@@ -234,7 +234,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "A good result makes you feel pleased, so he walks home happily."
           },
           {
-            prompt: "He slept very little last night, so he played ___ in the match.",
+            prompt: "Ozan slept very little last night, so he played ___ in the match.",
             answer: "badly",
             why: "Without enough sleep a player usually plays badly."
           },
@@ -351,20 +351,20 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       },
       {
         type: "match",
-        title: "Which idiom meaning fits the situation?",
+        title: "Which idiom fits the situation?",
         source: "Unit 2 · Social language",
         pairs: [
-          { left: "Nehir's bus leaves at 6.10, so she is at the bus stop while the sky is still dark.", answer: "very early in the day" },
-          { left: "After six hours of revising, Orhan shuts his notebook for the night.", answer: "stopping because you have done enough" },
-          { left: "The exam is in two days, so Pelin sits down with her textbooks and a pen.", answer: "starting to study hard" },
-          { left: "Kaan can recite the whole poem with his eyes closed.", answer: "remembering it word for word" },
-          { left: "Dad says the video game can wait until the garden is tidy.", answer: "doing duties first and having fun after" },
-          { left: "Ece is the first person in the building, and the caretaker is still unlocking the doors.", answer: "very early in the day" },
-          { left: "The shop assistant locks the till and switches off the lights at the end of a long shift.", answer: "stopping because you have done enough" },
-          { left: "Hasan repeats the spelling list until he can write every word without checking.", answer: "remembering it word for word" }
+          { left: "Nehir's bus leaves at 6.10, so she is at the bus stop while the sky is still dark.", answer: "Bright and early! (very early in the day)" },
+          { left: "After six hours of revising, Orhan shuts his notebook for the night.", answer: "I call it a day! (I stop working for today)" },
+          { left: "The exam is in two days, so Pelin sits down with her textbooks and a pen.", answer: "Hit the books! (start studying hard)" },
+          { left: "Kaan can recite the whole poem with his eyes closed.", answer: "I learn by heart! (I memorise it)" },
+          { left: "Dad says the video game can wait until the garden is tidy.", answer: "Work hard, play later! (do duties first, then have fun)" },
+          { left: "Ece arrives at school so early that the caretaker is still unlocking the doors.", answer: "Bright and early! (very early in the day)" },
+          { left: "The shop assistant locks the till and switches off the lights at the end of a long shift.", answer: "I call it a day! (I stop working for today)" },
+          { left: "Hasan repeats the spelling list until he can write every word without checking.", answer: "I learn by heart! (I memorise it)" }
         ],
-        choices: ["very early in the day", "stopping because you have done enough", "starting to study hard", "remembering it word for word", "doing duties first and having fun after"],
-        why: "The five idioms in the unit's social language list each have one meaning: very early, stopping for the day, studying hard, knowing something by heart, and duties before fun."
+        choices: ["Bright and early! (very early in the day)", "I call it a day! (I stop working for today)", "Hit the books! (start studying hard)", "I learn by heart! (I memorise it)", "Work hard, play later! (do duties first, then have fun)"],
+        why: "Each idiom from the unit's social language list fits one kind of situation: very early, stopping work, studying hard, knowing something by heart, and duties before fun."
       },
       {
         type: "quiz",
@@ -373,7 +373,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         instruction: "Choose the answer that fits the time of day.",
         items: [
           {
-            prompt: "Mert has eaten breakfast, and his bag is by the door. It is quarter to eight. What does he do next?",
+            prompt: "Mert is dressed, and his bag is by the door. It is quarter to eight. What does he do next?",
             options: ["He watches TV.", "He does the dishes.", "He leaves home.", "He has dinner."],
             answer: "He leaves home.",
             why: "A student who is dressed and ready at quarter to eight leaves home for school."
@@ -397,7 +397,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "Brushing your teeth is a normal thing to do before bed."
           },
           {
-            prompt: "At 6.30 the alarm rings in Kerem's bedroom. What is the first thing he does?",
+            prompt: "At 6.30 a.m. the alarm rings in Kerem's bedroom. What is the first thing he does?",
             options: ["He takes the bus.", "He does his homework.", "He goes to bed.", "He wakes up."],
             answer: "He wakes up.",
             why: "When the alarm rings in the morning, the first thing to do is wake up."
@@ -547,7 +547,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           {
             prompt: "Type the opposite of arrive at school.",
             answer: "leave school",
-            accepted: ["leave", "go home", "leave the school", "get out of school"],
+            accepted: ["leave", "go home", "leave the school", "get out of school", "return home", "go back home", "come home", "get home", "depart"],
             why: "You arrive at school in the morning and leave school at the end of the day."
           },
           {
@@ -563,10 +563,10 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "Weekdays are Monday to Friday, and the weekend is Saturday and Sunday."
           },
           {
-            prompt: "Type the opposite of quietly.",
-            answer: "loudly",
-            accepted: ["noisily", "loud", "noisy"],
-            why: "Quietly means making very little noise, and loudly means making a lot of noise."
+            prompt: "Type the opposite of switch on.",
+            answer: "switch off",
+            accepted: ["turn off", "put off", "switch it off", "turn it off"],
+            why: "You switch on a light or a screen to use it and switch it off when you finish."
           },
           {
             prompt: "Type the opposite of rarely.",
