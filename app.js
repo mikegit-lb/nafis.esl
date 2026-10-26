@@ -435,10 +435,6 @@ function renderExercises(exercises) {
   '</section>';
 }
 
-function normalizeAnswer(value) {
-  return String(value).trim().toLowerCase().replace(/[.!?]+$/g, "").replace(/\s+/g, " ");
-}
-
 function updateBuildTray(card, exercise) {
   let sequence = [];
   try { sequence = JSON.parse(card.dataset.buildSequence || "[]"); } catch (error) { sequence = []; }
@@ -499,8 +495,7 @@ function checkExercise(card) {
   } else if (exercise.type === "complete" || exercise.type === "fix" || exercise.type === "transform") {
     const input = card.querySelector(".exercise-input");
     if (!input.value.trim()) { feedback.textContent = "Write your answer first."; input.focus(); return; }
-    const accepted = [exercise.answer].concat(exercise.accepted || []).map(normalizeAnswer);
-    const correct = accepted.indexOf(normalizeAnswer(input.value)) !== -1;
+    const correct = Core.gradeItem(exercise, input.value);
     input.disabled = true;
     setExerciseFeedback(card, correct, correct ? exercise.why : "One correct answer is: “" + exercise.answer + "” " + exercise.why);
   } else if (exercise.type === "build" || exercise.type === "sequence") {
@@ -509,7 +504,7 @@ function checkExercise(card) {
     if (sequence.length !== exercise.tokens.length) { feedback.textContent = "Use every word to build the sentence."; return; }
     const built = sequence.map(function (tokenIndex) { return exercise.tokens[tokenIndex]; }).join(" ");
     const target = exercise.answer.join(" ");
-    const correct = normalizeAnswer(built) === normalizeAnswer(target);
+    const correct = Core.normalizeAnswer(built) === Core.normalizeAnswer(target);
     card.querySelectorAll(".build-token, .chosen-word, .exercise-reset").forEach(function (button) { button.disabled = true; });
     setExerciseFeedback(card, correct, correct ? exercise.why : "The correct sentence is: “" + target + "” " + exercise.why);
   } else if (exercise.type === "match") {
