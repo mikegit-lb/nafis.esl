@@ -113,8 +113,8 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "My friends from Chile is very friendly.", answer: "My friends from Chile are very friendly.", why: "The subject my friends is plural, so use are." }
         ]
       },
-      { type: "build", title: "Build a can question", prompt: "Build a question about languages with can.", instruction: "Tap the words in the correct order to ask if your friend speaks Polish.", tokens: ["speak", "your", "Polish?", "Can", "friend"], answer: ["Can", "your", "friend", "speak", "Polish?"], why: "A can question starts with Can, then the subject your friend, then the base verb speak." },
-      { type: "build", title: "Build a question about where students are from", prompt: "Build a question about nationality with be.", instruction: "Tap the words in the correct order to ask where the students come from.", tokens: ["are", "Where", "from?", "the", "students"], answer: ["Where", "are", "the", "students", "from?"], why: "A wh- question puts the question word first, then are, then the subject." },
+      { type: "build", title: "Build a can question", instruction: "Tap the words in the correct order to ask if your friend speaks Polish.", tokens: ["speak", "your", "Polish?", "Can", "friend"], answer: ["Can", "your", "friend", "speak", "Polish?"], why: "A can question starts with Can, then the subject your friend, then the base verb speak." },
+      { type: "build", title: "Build a question about where students are from", instruction: "Tap the words in the correct order to ask where the students come from.", tokens: ["are", "Where", "from?", "the", "students"], answer: ["Where", "are", "the", "students", "from?"], why: "A wh- question puts the question word first, then are, then the subject." },
       {
         type: "match", title: "Which meaning of can?",
         pairs: [

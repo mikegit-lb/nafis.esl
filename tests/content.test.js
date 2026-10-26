@@ -40,7 +40,7 @@ function scoredItems(a) {
 function prompts(a) {
   if (a.type === "speak") return list(a.questions).map(function (q) { return q && q.q; });
   if (a.type === "roleplay") return [a.scenario];
-  return scoredItems(a).map(function (i) { return i.prompt; });
+  return scoredItems(a).map(function (i) { return i.prompt != null ? i.prompt : (i.instruction || i.title); });
 }
 function walkStrings(v, where, bad) {
   if (typeof v === "string") { if (/[<>]/.test(v)) bad(where + " contains < or >: " + v.slice(0, 40)); }

@@ -122,14 +122,14 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       },
       {
         type: "build", title: "Build a question: leaving home",
-        prompt: "Ask what time Ceren leaves home.", instruction: "Ask what time Ceren leaves home. Tap the words in the correct order.",
+        instruction: "Ask what time Ceren leaves home. Tap the words in the correct order.",
         tokens: ["leave", "Ceren", "What", "home?", "does", "time"],
         answer: ["What", "time", "does", "Ceren", "leave", "home?"],
         why: "A wh-question follows the order wh-words + does + subject + base verb."
       },
       {
         type: "build", title: "Build a question: taking notes",
-        prompt: "Ask a classmate how often they take notes.", instruction: "Ask a classmate how often they take notes. Tap the words in the correct order.",
+        instruction: "Ask a classmate how often they take notes. Tap the words in the correct order.",
         tokens: ["notes?", "How", "you", "do", "take", "often"],
         answer: ["How", "often", "do", "you", "take", "notes?"],
         why: "Put do after How often and keep the base verb take."
