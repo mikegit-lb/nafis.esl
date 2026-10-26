@@ -86,6 +86,16 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             q: "What is the importance of the Silk Road?",
             model: "The Silk Road is important because it was a trading and cultural exchange route. Its history is still part of the food of Azerbaijan, so visitors can taste that history today.",
             frames: ["The Silk Road is important because ...", "Visitors can taste ..."]
+          },
+          {
+            q: "Would you like to visit Baku? Why, or why not?",
+            model: "Yes, I would. Baku has old UNESCO sites and modern skyscrapers, so I can see the past and the present in one city.",
+            frames: ["Yes, I would, because ...", "No, I would not, because ..."]
+          },
+          {
+            q: "Do you know any other Turkic state besides Türkiye? Which one?",
+            model: "Yes, I do. Azerbaijan is a Turkic state, and its capital is Baku. I think the people there can understand a little Turkish.",
+            frames: ["Yes, I do. ... is a Turkic state.", "Its capital is ..."]
           }
         ],
         checklist: ["is or are for a place", "can for what visitors do", "because for a reason"]
@@ -115,6 +125,16 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             q: "What do you do there?",
             model: "In Japan, I take photos of the temples and I try the local food. In Mexico, I can take a day trip to an ancient ruin.",
             frames: ["In ..., I take photos of ...", "I can go on a day trip to ..."]
+          },
+          {
+            q: "Would you like to be a travel vlogger? Why, or why not?",
+            model: "Yes, I would. I love travelling and taking photos, and I can show interesting places to many people.",
+            frames: ["Yes, I would, because ...", "No, I would not, because ..."]
+          },
+          {
+            q: "What would you show your followers in your first video?",
+            model: "I would show my city, Denizli. My followers can see the white terraces of Pamukkale and taste the local food.",
+            frames: ["I would show ...", "My followers can see ... and ..."]
           }
         ],
         checklist: ["a reason with because", "the name of a country", "can for a possibility"]
@@ -193,6 +213,11 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             q: "How can you protect your personal information while using the Internet?",
             model: "I can use strong passwords and I can keep my accounts private. I am careful, and I do not share my address with strangers.",
             frames: ["I can use ...", "I am careful, and I do not ..."]
+          },
+          {
+            q: "Do you think you spend too much time online? Why, or why not?",
+            model: "Yes, I think I do. I am online for about three hours every day, and I can use that time to read or play sport.",
+            frames: ["Yes, I think I do, because ...", "No, I do not, because ..."]
           }
         ],
         checklist: ["can for what people do", "is or are for a fact", "a reason or an example"]
@@ -222,6 +247,16 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             q: "Can you name three languages?",
             model: "Yes, I can. Turkish, English and German are three languages.",
             frames: ["Yes, I can. ... are languages.", "I can speak ... and ..."]
+          },
+          {
+            q: "Can you name two capital cities in Asia?",
+            model: "Yes, I can. Tokyo and Seoul are two capital cities in Asia.",
+            frames: ["Yes, I can. ... and ... are capital cities.", "No, I cannot, but I can name ..."]
+          },
+          {
+            q: "Can you name three countries that start with the letter S?",
+            model: "Yes, I can. Spain, Sweden and Switzerland start with S.",
+            frames: ["Yes, I can. ... start with S.", "I can name ... and ..."]
           }
         ],
         checklist: ["Yes, I can or No, I cannot", "a full sentence", "the correct nationality or language word"]
@@ -246,9 +281,514 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             q: "Your partner interviews you for the video: What can tourists do in Türkiye?",
             model: "Tourists can do many things in Türkiye. They can walk through old cities, go hiking in the mountains and swim in the sea. They can also try delicious food, so a trip here is never boring.",
             frames: ["Tourists can ... in Türkiye.", "They can also ...", "It is ... because ..."]
+          },
+          {
+            q: "Which place would you show first in your video about Türkiye, and why?",
+            model: "I would show Cappadocia first because it is very beautiful. Tourists can take a hot-air balloon trip there.",
+            frames: ["I would show ... first because ...", "Tourists can ... there."]
+          },
+          {
+            q: "What food can tourists try in your country?",
+            model: "Tourists can try kebab, baklava and Turkish tea. The food is delicious, and every city has its own special dishes.",
+            frames: ["Tourists can try ... and ...", "The food is ..."]
+          },
+          {
+            q: "How do you end your video? Say goodbye to your viewers.",
+            model: "Thank you for watching my video about Türkiye. I hope you can visit us one day. Goodbye!",
+            frames: ["Thank you for watching ...", "I hope you can ...", "Goodbye!"]
           }
         ],
         checklist: ["a warm greeting", "my name", "my nationality", "my language", "the capital city", "two tourist attractions", "two things tourists can do", "a confident goodbye"]
+      },
+      {
+        type: "speak",
+        title: "About you · Introducing yourself",
+        source: "Unit 1 · Speaking (personal practice), extends Listening/Watching d and Pronunciation e · pp.26–27",
+        instruction: "Answer each question aloud about yourself, in full sentences. Then compare your answer with the model answer and try again with a better sentence.",
+        questions: [
+          {
+            q: "What is your name? Can you spell it for me?",
+            model: "My name is Elif Demir. I can spell it: E-L-I-F, D-E-M-I-R.",
+            frames: ["My name is ...", "I can spell it: ..."]
+          },
+          {
+            q: "How old are you?",
+            model: "I am fifteen years old. My birthday is in March.",
+            frames: ["I am ... years old.", "My birthday is in ..."]
+          },
+          {
+            q: "Where are you from?",
+            model: "I am from Denizli, in Türkiye. It is a city in the west of the country.",
+            frames: ["I am from ..., in ...", "It is a ... in the ... of the country."]
+          },
+          {
+            q: "Are you a student? Which grade are you in?",
+            model: "Yes, I am a student. I am in Grade 9, and my classroom is on the second floor.",
+            frames: ["Yes, I am. I am in Grade ...", "My classroom is ..."]
+          },
+          {
+            q: "Do you have a nickname? Who calls you that?",
+            model: "Yes, I do. My friends call me Eli. It is short, and I like it.",
+            frames: ["Yes, I do. My ... call me ...", "No, I do not. My name is short."]
+          },
+          {
+            q: "Are you shy or outgoing when you meet new people?",
+            model: "I am a little shy at first, but I am friendly. I can talk a lot when I know the people better.",
+            frames: ["I am ... at first, but ...", "I can talk a lot when ..."]
+          },
+          {
+            q: "How do you greet a new classmate in English?",
+            model: "I say, Hello! My name is Elif. Nice to meet you! What is your name?",
+            frames: ["I say, Hello! My name is ...", "Nice to meet you! What is ...?"]
+          },
+          {
+            q: "Can you introduce your family in two sentences?",
+            model: "Yes, I can. There are four people in my family: my mother, my father, my brother and me. My brother is eleven years old.",
+            frames: ["There are ... people in my family.", "My ... is ... years old."]
+          }
+        ],
+        checklist: ["Did you use am, is or are correctly?", "Did you answer in a full sentence?", "Did you say your name clearly?"]
+      },
+      {
+        type: "speak",
+        title: "About you · Your country, nationality and languages",
+        source: "Unit 1 · Speaking (personal practice), extends Listening/Watching d and Gamification · pp.26, 29",
+        instruction: "Answer each question aloud about your own life. Use a full sentence, then compare with the model answer and notice the nationality and language words.",
+        questions: [
+          {
+            q: "Which country are you from?",
+            model: "I am from Türkiye. It is between Europe and Asia.",
+            frames: ["I am from ...", "It is in/between ..."]
+          },
+          {
+            q: "What is your nationality?",
+            model: "I am Turkish. My parents are Turkish, too.",
+            frames: ["I am ... (nationality).", "My parents are ..., too."]
+          },
+          {
+            q: "What is the capital of your country, and is it a big city?",
+            model: "The capital of Türkiye is Ankara. Yes, it is a big city, and many people live there.",
+            frames: ["The capital of ... is ...", "Yes, it is a big city. / No, it is a small city."]
+          },
+          {
+            q: "What languages can you speak?",
+            model: "I can speak Turkish and English. I can also say a few words in German.",
+            frames: ["I can speak ... and ...", "I can also say a few words in ..."]
+          },
+          {
+            q: "Can you speak a language that your parents cannot speak?",
+            model: "Yes, I can. I can speak English, but my parents can only say a few words.",
+            frames: ["Yes, I can. I can speak ..., but my parents ...", "No, I cannot. We can all speak ..."]
+          },
+          {
+            q: "Can you say thank you in three different languages?",
+            model: "Yes, I can. Thank you in English, teşekkür ederim in Turkish and danke in German.",
+            frames: ["Yes, I can. ... in English, ... in ... and ... in ...", "No, I cannot, but I can say it in ..."]
+          },
+          {
+            q: "Which language would you like to learn next, and why?",
+            model: "I would like to learn Japanese because I like anime. I think the writing is difficult, but it is interesting.",
+            frames: ["I would like to learn ... because ...", "I think it is ..."]
+          },
+          {
+            q: "Do you know people from other countries? Where are they from?",
+            model: "Yes, I do. I have a friend from Poland. She is Polish, and she can speak Polish and English.",
+            frames: ["Yes, I do. I have a friend from ...", "He/She is ..., and he/she can speak ..."]
+          }
+        ],
+        checklist: ["Did you use am, is or are correctly?", "Did you use can for languages?", "Did you use the nationality word (Turkish, not Türkiye)?"]
+      },
+      {
+        type: "speak",
+        title: "About you · Your school and classmates",
+        source: "Unit 1 · Speaking (personal practice), extends Listening/Watching d · p.26",
+        instruction: "Answer each question aloud about your own school. Then compare your answer with the model answer and add one more detail.",
+        questions: [
+          {
+            q: "What is the name of your school, and where is it?",
+            model: "My school is Atatürk High School, and it is in the centre of the city. It is next to a big park.",
+            frames: ["My school is ..., and it is in ...", "It is next to ..."]
+          },
+          {
+            q: "How many students are there in your class?",
+            model: "There are about thirty students in my class. Fifteen are girls, and fifteen are boys.",
+            frames: ["There are about ... students in my class.", "... are girls, and ... are boys."]
+          },
+          {
+            q: "Is your school big or small?",
+            model: "It is quite big. There are about a thousand students, and there is a large garden.",
+            frames: ["It is quite ...", "There are ... and there is ..."]
+          },
+          {
+            q: "Are there any exchange students in your school?",
+            model: "No, there are not, but I would like to meet a student from abroad. We can practise our English together.",
+            frames: ["Yes, there are. They are from ...", "No, there are not, but I would like to ..."]
+          },
+          {
+            q: "What is your favourite place in your school, and why?",
+            model: "My favourite place is the library. It is quiet, and I can read books there.",
+            frames: ["My favourite place is ...", "It is ..., and I can ... there."]
+          },
+          {
+            q: "Can you help a new student find a classroom? What do you say?",
+            model: "Yes, I can. I say, Hello! Can I help you? Which classroom are you looking for? I can show you the way.",
+            frames: ["I say, Hello! Can I help you?", "Which ... are you looking for?", "I can show you the way."]
+          },
+          {
+            q: "What can students do in your school after the lessons?",
+            model: "Students can join clubs, play basketball in the garden or study in the library.",
+            frames: ["Students can ...", "They can also ..."]
+          },
+          {
+            q: "Who are your classmates? Tell me about two of them.",
+            model: "My classmates are friendly. Ahmet is funny, and he can play the guitar. Zeynep is clever, and she is good at maths.",
+            frames: ["... is funny/clever/kind, and he/she can ...", "... is good at ..."]
+          }
+        ],
+        checklist: ["Did you use there is or there are?", "Did you use can for what students do?", "Did you use am, is or are correctly?"]
+      },
+      {
+        type: "speak",
+        title: "About you · Your town and its attractions",
+        source: "Unit 1 · Speaking (personal practice), extends Reading follow-up g–h and Vocabulary · pp.29, 33",
+        instruction: "Answer each question aloud about the place where you live. Then compare with the model answer and add a detail that only you know.",
+        questions: [
+          {
+            q: "Which town or city do you live in?",
+            model: "I live in Denizli. It is a city in the west of Türkiye.",
+            frames: ["I live in ...", "It is a city/town in ..."]
+          },
+          {
+            q: "Is your town big or small, and is it near the sea or the mountains?",
+            model: "My city is medium-sized. It is not near the sea, but there are mountains and hot springs nearby.",
+            frames: ["My town is big/small/medium-sized.", "It is near/not near ..."]
+          },
+          {
+            q: "What is the most famous place in your town?",
+            model: "The most famous place in my city is Pamukkale, with its white terraces. Many tourists visit it every year.",
+            frames: ["The most famous place is ...", "Many tourists ..."]
+          },
+          {
+            q: "Are there any museums, parks or old buildings near your home?",
+            model: "Yes, there are. There is a small museum, a big park and an old mosque in the city centre.",
+            frames: ["Yes, there are. There is ... and ...", "No, there are not, but there is ..."]
+          },
+          {
+            q: "What can tourists do in your city?",
+            model: "Tourists can visit the old sites and walk in the city centre. They can also swim in the warm pools and try the local food.",
+            frames: ["Tourists can visit ... and ...", "They can also ..."]
+          },
+          {
+            q: "Can tourists get around easily where you live? How?",
+            model: "Yes, they can. They can take buses or taxis, and the city centre is good for walking.",
+            frames: ["Yes, they can. They can take ...", "No, it is difficult because ..."]
+          },
+          {
+            q: "Which place would you show to a visitor first, and why?",
+            model: "I would show the old city centre first because it is beautiful. A visitor can see the history and drink tea in a cafe.",
+            frames: ["I would show ... first because ...", "A visitor can ..."]
+          },
+          {
+            q: "Do you like living in your city? Give two reasons.",
+            model: "Yes, I do. First, the people are friendly. Second, the weather is nice, and I can spend time outside.",
+            frames: ["Yes, I do. First, ... Second, ...", "Not really, because ..."]
+          }
+        ],
+        checklist: ["Did you use there is or there are?", "Did you use can for what tourists do?", "Did you give a reason with because?"]
+      },
+      {
+        type: "speak",
+        title: "About you · What tourists can do",
+        source: "Unit 1 · Speaking (personal practice), extends Language Awareness c–d · p.30",
+        instruction: "Imagine you are a local guide for your own country. Answer each question aloud, then compare with the model answer and listen for can and can't.",
+        questions: [
+          {
+            q: "What can tourists do in your country in winter?",
+            model: "Tourists can ski in the mountains and visit warm cities by the sea. They can also drink hot tea in a cafe.",
+            frames: ["Tourists can ... in winter.", "They can also ..."]
+          },
+          {
+            q: "What can tourists buy as a souvenir from your area?",
+            model: "Tourists can buy ceramics, spices or sweets. Small gifts like these are easy to take home.",
+            frames: ["Tourists can buy ...", "... are easy to take home."]
+          },
+          {
+            q: "Can tourists swim, ski or hike near your home?",
+            model: "Yes, they can hike in the hills and swim in the warm pools. They cannot ski very close to my city, but they can drive to the mountains.",
+            frames: ["Yes, they can ... and ...", "They cannot ..., but they can ..."]
+          },
+          {
+            q: "Where can tourists go for a day trip from your town?",
+            model: "Tourists can go to an ancient city or to a small village by car. It takes about one hour, and they can have lunch there.",
+            frames: ["Tourists can go to ...", "It takes about ..."]
+          },
+          {
+            q: "Which tourist attraction in Türkiye do you like best, and why?",
+            model: "I like Hagia Sophia best. It is very old, and visitors can see Byzantine and Ottoman art in one building.",
+            frames: ["I like ... best.", "It is ..., and visitors can ..."]
+          },
+          {
+            q: "What advice do you give to tourists who visit your town?",
+            model: "I tell them to wear comfortable shoes, drink water and try the local food. I also say they can ask local people for help.",
+            frames: ["I tell them to ...", "They can ask ..."]
+          },
+          {
+            q: "Can you recommend a good place for a picnic near your home?",
+            model: "Yes, I can. There is a quiet park by the river. Tourists can sit under the trees and enjoy the view.",
+            frames: ["Yes, I can. There is ...", "Tourists can sit ... and ..."]
+          },
+          {
+            q: "What can't tourists do in museums or historical places you know?",
+            model: "They cannot touch the old objects, and they cannot take photos with a flash. Signs often show these rules.",
+            frames: ["They cannot touch ...", "They cannot ..., but they can ..."]
+          }
+        ],
+        checklist: ["Did you use can or cannot for what is possible?", "Did you use a verb after can (can visit, not can visits)?", "Did you add one detail or example?"]
+      },
+      {
+        type: "speak",
+        title: "About you · Trips you have taken or want to take",
+        source: "Unit 1 · Speaking (personal practice), extends Vocabulary h, j (Nora's trips) · p.29",
+        instruction: "Answer each question aloud about your own trips and travel dreams. Then compare with the model answer and try to give a reason in each answer.",
+        questions: [
+          {
+            q: "Do you like travelling? Why, or why not?",
+            model: "Yes, I do. I like travelling because I can see new places and meet new people.",
+            frames: ["Yes, I do, because ...", "Not really, because ..."]
+          },
+          {
+            q: "Which city or country did you visit on your last trip?",
+            model: "Last summer I visited Istanbul with my family. It is a huge city, and we took a boat trip on the Bosphorus.",
+            frames: ["Last ... I visited ... with ...", "We took ..."]
+          },
+          {
+            q: "Who do you usually travel with?",
+            model: "I usually travel with my family. Sometimes I travel with my school friends, and we have a lot of fun.",
+            frames: ["I usually travel with ...", "Sometimes I travel with ..."]
+          },
+          {
+            q: "Which place in Türkiye would you like to visit, and why?",
+            model: "I would like to visit Trabzon because I love green mountains. I can also see Sumela Monastery there.",
+            frames: ["I would like to visit ... because ...", "I can also see ... there."]
+          },
+          {
+            q: "Would you prefer a sea holiday or a mountain holiday?",
+            model: "I would prefer a sea holiday. I can swim and relax on the beach, and the weather is warm.",
+            frames: ["I would prefer a ... holiday.", "I can ... and ..."]
+          },
+          {
+            q: "What do you take in your bag on a day trip?",
+            model: "I take water, a sandwich, a camera and my phone. I also take a hat when it is sunny.",
+            frames: ["I take ..., ... and ...", "I also take ... when ..."]
+          },
+          {
+            q: "Do you take photos when you travel? What do you do with them?",
+            model: "Yes, I do. I take a lot of photos, and I can share the best ones with my friends and family.",
+            frames: ["Yes, I do. I take ...", "I can share/keep them ..."]
+          },
+          {
+            q: "Where would you go on the first day of a three-day city trip?",
+            model: "I would go to the old city centre first. I can walk around, take photos and find a good place for lunch.",
+            frames: ["I would go to ... first.", "I can walk ..., take ... and find ..."]
+          }
+        ],
+        checklist: ["Did you give a reason with because?", "Did you name a real place?", "Did you use can for what you can see or do?"]
+      },
+      {
+        type: "speak",
+        title: "About you · Things you can and can't do",
+        source: "Unit 1 · Speaking (personal practice), extends Language Awareness c–d (can) · p.30",
+        instruction: "Answer each question aloud about yourself. Start with Yes, I can or No, I can't, then add a full sentence. Compare with the model answer.",
+        questions: [
+          {
+            q: "Can you swim?",
+            model: "Yes, I can. I can swim quite well, but I cannot dive yet.",
+            frames: ["Yes, I can. I can swim ...", "No, I cannot, but I can ..."]
+          },
+          {
+            q: "Can you cook? What can you make?",
+            model: "Yes, I can. I can make pasta and omelettes, but I cannot bake a cake yet.",
+            frames: ["Yes, I can. I can make ...", "No, I cannot, but I can make ..."]
+          },
+          {
+            q: "Can you play any musical instrument?",
+            model: "No, I cannot, but I would like to learn the guitar. My cousin can play it very well.",
+            frames: ["Yes, I can play the ...", "No, I cannot, but I would like to learn ..."]
+          },
+          {
+            q: "Can you ride a bike? Where do you ride it?",
+            model: "Yes, I can. I ride my bike in the park near my house on weekends.",
+            frames: ["Yes, I can. I ride my bike ...", "No, I cannot, but I can ..."]
+          },
+          {
+            q: "What can you do really well?",
+            model: "I can draw really well. I can also solve maths problems quickly.",
+            frames: ["I can ... really well.", "I can also ..."]
+          },
+          {
+            q: "What can't you do yet, but you want to learn?",
+            model: "I cannot ski yet, but I want to learn. I can try it in winter in the mountains.",
+            frames: ["I cannot ... yet, but I want to learn.", "I can try it ..."]
+          },
+          {
+            q: "Can you use a computer to make a video or a presentation?",
+            model: "Yes, I can. I can make a simple video with my phone, and I can use slides for my school projects.",
+            frames: ["Yes, I can. I can make ...", "No, I cannot, but my friend can ..."]
+          },
+          {
+            q: "Which sport can you play with your friends?",
+            model: "I can play football and basketball with my friends. We play in the school garden after the lessons.",
+            frames: ["I can play ... and ...", "We play ... in/at ..."]
+          }
+        ],
+        checklist: ["Did you use can or cannot with a base verb?", "Did you answer yes or no first?", "Did you add one detail?"]
+      },
+      {
+        type: "speak",
+        title: "About you · Your online life",
+        source: "Unit 1 · Speaking (personal practice), extends Roots and Routes d–e · p.34",
+        instruction: "Answer each question aloud about your own use of the Internet. Compare with the model answer and give a reason or example in each answer.",
+        questions: [
+          {
+            q: "How often do you use the Internet?",
+            model: "I use the Internet every day, usually in the evening, for about two hours.",
+            frames: ["I use the Internet every day/week.", "I usually use it for ..."]
+          },
+          {
+            q: "What is your favourite website or app, and why?",
+            model: "My favourite app is a video app because I can watch funny videos and learn new things.",
+            frames: ["My favourite app is ... because ...", "I can ... with it."]
+          },
+          {
+            q: "Can you live without your phone for a whole day? Why, or why not?",
+            model: "No, I think I cannot. I use my phone to talk to my friends and to check homework.",
+            frames: ["Yes, I can, because ...", "No, I cannot, because I use my phone to ..."]
+          },
+          {
+            q: "Do you use the Internet for your homework? How does it help you?",
+            model: "Yes, I do. I can find information quickly, and I can watch videos to understand difficult topics.",
+            frames: ["Yes, I do. I can find ...", "It helps me because ..."]
+          },
+          {
+            q: "Do you talk to your friends online? What do you talk about?",
+            model: "Yes, I do. We talk about school, music and our plans for the weekend.",
+            frames: ["Yes, I do. We talk about ...", "No, I prefer to ..."]
+          },
+          {
+            q: "Is your password strong? What makes a password strong?",
+            model: "I think my password is strong. It has letters, numbers and a symbol, and it is long.",
+            frames: ["I think my password is ...", "A strong password has ..."]
+          },
+          {
+            q: "What can you do if a stranger sends you a strange message?",
+            model: "I can ignore it and block the person. I can also tell my parents or my teacher.",
+            frames: ["I can ignore ... and ...", "I can also tell ..."]
+          },
+          {
+            q: "Do you think the Internet is more useful or more dangerous? Why?",
+            model: "I think it is more useful, but it can be dangerous. It is important to be careful with personal information.",
+            frames: ["I think it is more ..., but ...", "It is important to ..."]
+          }
+        ],
+        checklist: ["Did you use can for what you do online?", "Did you use is or are for opinions?", "Did you give a reason or an example?"]
+      },
+      {
+        type: "speak",
+        title: "About you · Meeting an exchange student",
+        source: "Unit 1 · Speaking (personal practice), extends Listening/Watching d and Consolidation · pp.26, 35",
+        instruction: "Imagine an exchange student joins your class tomorrow. Answer each question aloud, then compare with the model answer and practise the polite phrases.",
+        questions: [
+          {
+            q: "What do you say when you meet an exchange student for the first time?",
+            model: "I say, Hello! I am Elif. Nice to meet you, and welcome to our school!",
+            frames: ["I say, Hello! I am ...", "Nice to meet you, and welcome to ..."]
+          },
+          {
+            q: "What questions do you ask a new student from another country?",
+            model: "I ask, What is your name? Where are you from? What languages can you speak?",
+            frames: ["I ask, What is ...?", "Where are you ...? What can you ...?"]
+          },
+          {
+            q: "How can you help a new student on the first day?",
+            model: "I can show the student the classrooms, the library and the canteen. I can also sit with the student at lunch.",
+            frames: ["I can show ... the ...", "I can also ..."]
+          },
+          {
+            q: "What can you show your exchange partner in your town?",
+            model: "I can show my partner the old city centre and the best cafe. We can also take a bus to a beautiful park.",
+            frames: ["I can show my partner ...", "We can also ..."]
+          },
+          {
+            q: "What do you want to know about your partner's country?",
+            model: "I want to know the capital city, the weather and the food. I also want to know what tourists can do there.",
+            frames: ["I want to know ...", "I also want to know what ..."]
+          },
+          {
+            q: "Can you teach your exchange partner three Turkish words? Which words?",
+            model: "Yes, I can. I can teach merhaba, teşekkürler and lütfen. They mean hello, thank you and please.",
+            frames: ["Yes, I can. I can teach ...", "They mean ..."]
+          },
+          {
+            q: "Are you excited or nervous when you meet new people? Why?",
+            model: "I am excited because I like to learn about other cultures. I am a little nervous, too, but I smile and ask questions.",
+            frames: ["I am excited/nervous because ...", "I am ..., too, but ..."]
+          },
+          {
+            q: "Would you like to be an exchange student? Which country would you choose?",
+            model: "Yes, I would. I would choose Norway because I love nature, and I would like to see the fjords.",
+            frames: ["Yes, I would. I would choose ... because ...", "No, I would not, because ..."]
+          }
+        ],
+        checklist: ["Did you use polite words (Hello, Nice to meet you, Welcome)?", "Did you use can for what you can do to help?", "Did you ask questions with am, is, are or can?"]
+      },
+      {
+        type: "speak",
+        title: "About you · Your favourite country and why",
+        source: "Unit 1 · Speaking (personal practice), extends Reading follow-up g–h and Consolidation · pp.33, 35",
+        instruction: "Choose one country that you like, apart from Türkiye. Answer each question aloud about it. The model answers talk about Japan, so use your own country and your own reasons.",
+        questions: [
+          {
+            q: "What is your favourite country, apart from Türkiye?",
+            model: "My favourite country is Japan. It is an island country in East Asia.",
+            frames: ["My favourite country is ...", "It is a country in ..."]
+          },
+          {
+            q: "Why do you like it? Give two reasons.",
+            model: "First, the culture is very interesting. Second, the cities are modern, and the nature is beautiful.",
+            frames: ["First, ... Second, ...", "I like it because ..."]
+          },
+          {
+            q: "Do you know someone from that country?",
+            model: "No, I do not, but I follow a Japanese vlogger online. She shows her city and her food.",
+            frames: ["Yes, I do. My friend ... is from ...", "No, I do not, but I ..."]
+          },
+          {
+            q: "Can you tell me the capital of that country and one famous place?",
+            model: "Yes, I can. The capital of Japan is Tokyo, and Mount Fuji is a famous place near it.",
+            frames: ["The capital of ... is ...", "... is a famous place."]
+          },
+          {
+            q: "Can you say hello in that country's language?",
+            model: "Yes, I can. In Japan, people say konnichiwa.",
+            frames: ["Yes, I can. People say ...", "No, I cannot, but I can say ..."]
+          },
+          {
+            q: "What can you do there that you cannot do at home?",
+            model: "I can see cherry blossoms in spring, visit old temples and ride a fast train.",
+            frames: ["I can ... there.", "I cannot ... at home."]
+          },
+          {
+            q: "When would you like to go, and who would you take with you?",
+            model: "I would like to go next spring, and I would take my best friend. We can take a lot of photos together.",
+            frames: ["I would like to go in/next ...", "I would take ... with me."]
+          },
+          {
+            q: "Would you like to live in that country one day? Why, or why not?",
+            model: "I would like to live there for a year, but not forever. I miss my family and my food when I am far away.",
+            frames: ["I would like to live there for ...", "I would not, because ..."]
+          }
+        ],
+        checklist: ["Did you name your country and its capital?", "Did you give two reasons?", "Did you use can for what you can do there?"]
       },
       {
         type: "roleplay",
@@ -355,6 +895,76 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { speaker: "B", text: "Thank you! I would like to visit Türkiye next summer." }
         ],
         checklist: ["a greeting", "my country", "my languages", "the capital city", "two things tourists can do"]
+      },
+      {
+        type: "roleplay",
+        title: "Role-play: Welcoming a new exchange student",
+        source: "Unit 1 · Speaking (personal practice), extends Listening/Watching d · p.26",
+        scenario: "It is the first morning of a new exchange student at your school. A student helper meets the new student at the school entrance, asks about the student's name, country and languages, and offers to help.",
+        cardA: {
+          role: "Student helper at the school entrance",
+          rows: [
+            ["Your name", "Deniz"],
+            ["Your job", "Welcome the new student and offer help"],
+            ["Ask about", "Name, country, languages"],
+            ["Offer", "Show the way to the classroom and the library"]
+          ]
+        },
+        cardB: {
+          role: "New exchange student from Norway",
+          rows: [
+            ["Your name", "Ingrid"],
+            ["Country / nationality", "Norway / Norwegian"],
+            ["Languages", "Norwegian and English"],
+            ["Need", "Find the Grade 9 classroom"]
+          ]
+        },
+        model: [
+          { speaker: "A", text: "Good morning! Welcome to our school. I am Deniz. What is your name?" },
+          { speaker: "B", text: "Hello, Deniz! My name is Ingrid. I am the new exchange student." },
+          { speaker: "A", text: "Nice to meet you, Ingrid! Where are you from?" },
+          { speaker: "B", text: "I am from Norway. I am Norwegian, and I can speak Norwegian and English." },
+          { speaker: "A", text: "Great, your English is very good! Can I help you? Which classroom are you looking for?" },
+          { speaker: "B", text: "I am looking for the Grade 9 classroom. Is it far from here?" },
+          { speaker: "A", text: "No, it is not far. It is on the second floor, and I can show you the way. We can see the library on the way, too." },
+          { speaker: "B", text: "Thank you very much, Deniz. You are very kind!" }
+        ],
+        checklist: ["a polite greeting", "What is your name? / Where are you from?", "I am ... (nationality)", "I can speak ... (languages)", "Can I help you?"]
+      },
+      {
+        type: "roleplay",
+        title: "Role-play: A tourist asks a local",
+        source: "Unit 1 · Speaking (personal practice), extends Language Awareness c–d · p.30",
+        scenario: "A tourist is standing near a bus stop in Istanbul and asks a local student what visitors can do in the city. The local student answers, gives two ideas and says what is not allowed.",
+        cardA: {
+          role: "Tourist from Hungary",
+          rows: [
+            ["Your name", "Odett"],
+            ["Your question", "What can tourists do in this city?"],
+            ["Your interest", "Old buildings and boat trips"],
+            ["Ask also", "Can I take photos inside?"]
+          ]
+        },
+        cardB: {
+          role: "Local student in Istanbul",
+          rows: [
+            ["Your city", "Istanbul, Türkiye"],
+            ["Idea 1", "Visit Hagia Sophia"],
+            ["Idea 2", "Take a boat trip on the Bosphorus"],
+            ["Rule", "No flash photos inside old buildings"]
+          ]
+        },
+        model: [
+          { speaker: "A", text: "Excuse me, I am a tourist from Hungary. My name is Odett. Can you help me, please?" },
+          { speaker: "B", text: "Of course! Welcome to Istanbul. What would you like to know?" },
+          { speaker: "A", text: "What can tourists do in this city? I like old buildings and boat trips." },
+          { speaker: "B", text: "You can visit Hagia Sophia. It is a very old and beautiful building." },
+          { speaker: "A", text: "That sounds great! Can I take photos inside?" },
+          { speaker: "B", text: "Yes, you can take photos, but you cannot use a flash. You can also take a boat trip on the Bosphorus." },
+          { speaker: "A", text: "Wonderful! Is the boat trip long?" },
+          { speaker: "B", text: "No, it is not. It is about two hours. Enjoy your day, Odett!" }
+        ],
+        checklist: ["Excuse me and a polite question", "What can tourists do ...?", "You can ... / You cannot ...", "two ideas for tourists", "thanks and goodbye"]
       }
     ]
   }
