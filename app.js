@@ -470,7 +470,7 @@ function renderExercises(exercises, options) {
             '<span class="match-example">' + escapeHtml(pair.left) + '</span>' +
             '<select class="match-select" aria-label="Match for ' + escapeHtml(pair.left) + '">' +
               '<option value="">Choose a match</option>' +
-              exercise.choices.map(function (choice) {
+              Core.shuffle(exercise.choices, activeUnit + "-" + activeSection + "-" + index).map(function (choice) {
                 return '<option value="' + escapeHtml(choice) + '">' + escapeHtml(choice) + '</option>';
               }).join("") +
             '</select>' +
