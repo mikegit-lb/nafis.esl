@@ -147,7 +147,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "Where are the Chileans usually from?",
-            model: "Many Chileans are from families with European and indigenous roots, mostly Mapuche. Because of this, the culture of Chile is diverse.",
+            model: "Many Chileans are from families with European and indigenous roots, for example Mapuche. Because of this, the culture of Chile is diverse.",
             frames: ["Many Chileans are from ...", "The culture is diverse because ..."]
           },
           {
@@ -296,7 +296,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             ["Country / nationality", "Poland / Polish"],
             ["Languages", "Polish and English"],
             ["Capital", "Warsaw"],
-            ["Tourists can", "Walk through the Old Town and visit Wilanow Palace"]
+            ["Tourists can", "Walk through the Old Town and visit Wilanów Palace"]
           ]
         },
         cardB: {
@@ -313,7 +313,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { speaker: "B", text: "Hi, Alina! I am Min-su. I am from South Korea. What is your nationality, and which languages can you speak?" },
           { speaker: "A", text: "I am Polish, and I can speak Polish and English. And you?" },
           { speaker: "B", text: "I am Korean, and I can speak Korean and English. What is the capital of Poland, and what can tourists do there?" },
-          { speaker: "A", text: "The capital is Warsaw. Tourists can walk through the Old Town and visit Wilanow Palace. What about South Korea?" },
+          { speaker: "A", text: "The capital is Warsaw. Tourists can walk through the Old Town and visit Wilanów Palace. What about South Korea?" },
           { speaker: "B", text: "The capital of South Korea is Seoul. Tourists can visit Gyeongbokgung Palace and go up Namsan Tower." },
           { speaker: "A", text: "Great! I would like to visit Seoul one day." }
         ],
