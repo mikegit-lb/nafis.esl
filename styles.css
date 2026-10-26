@@ -400,6 +400,40 @@ a { color: inherit; }
 
 .panel-body { padding: 11px 17px 16px; }
 
+.mistakes-panel { margin: 20px 3px 0; }
+
+.mistake-list { margin: 0; list-style: none; display: grid; gap: 12px; }
+
+.mistake-item { min-width: 0; overflow-wrap: anywhere; }
+
+.mistake-item p { margin: 0; font-size: 15px; line-height: 1.45; }
+
+.mistake-item del { color: var(--ink-soft); text-decoration: line-through; }
+
+.mistake-item ins {
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: var(--blue-pale);
+  color: var(--blue-deep);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mistake-wrong::before, .mistake-right::before { font-weight: 800; margin-right: 6px; }
+.mistake-wrong::before { content: "\2717"; color: var(--orange); }
+.mistake-right::before { content: "\2713"; color: var(--blue); }
+
+.mistake-why { margin-top: 3px; color: var(--ink-soft); font-size: 13px; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .pattern-block + .pattern-block {
   margin-top: 12px;
   padding-top: 11px;
@@ -812,6 +846,7 @@ a { color: inherit; }
   .example-list { display: grid; gap: 9px; margin-top: 16px; }
   .example-list li { font-size: 15px; }
   .lesson-grid { grid-template-columns: 1fr; gap: 13px; margin: 14px 0 0; }
+  .mistakes-panel { margin: 13px 0 0; }
   .panel-heading { padding: 9px 15px; font-size: 20px; }
   .panel-body { padding: 12px 14px 15px; }
   .practice { margin: 14px 0 0; padding: 14px; }
