@@ -8,7 +8,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       "Where are you from? I am from Warsaw.",
       "Are Alina and Odett friends? Yes, they are.",
       "Ingrid can speak Norwegian, but she can't speak Turkish yet.",
-      "What languages can you speak?",
+      "Which languages can your cousin speak?",
       "Can I open the window, please?",
       "You can't take photos in this museum.",
       "Summer can be very hot in Budapest."
@@ -37,7 +37,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       {
         label: "Can · opportunity",
         formula: "Tourists / You / Visitors + can + base verb",
-        note: "A place gives you the chance to do something: Tourists can visit the Maiden Tower."
+        note: "A place gives you the chance to do something: Tourists can climb the Galata Tower."
       },
       {
         label: "Can · questions and short answers",
@@ -52,7 +52,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       {
         label: "Wh- questions with can",
         formula: "Question word + can + subject + base verb?",
-        note: "What languages can you speak? Where can tourists go? Why can't Ingrid speak Turkish? There is no do and no -s: say What can he do, not What does he can do."
+        note: "Which languages can you speak? Where can tourists go? Why can't Ingrid speak Turkish? There is no do and no -s: say What can he do, not What does he can do."
       },
       {
         label: "Short answers",
@@ -95,7 +95,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       { speaker: "B", text: "Nice to meet you, Mehmet. I am Alina." },
       { speaker: "A", text: "What is your nationality, Alina?" },
       { speaker: "B", text: "I am Polish. I am from Warsaw. And you?" },
-      { speaker: "A", text: "I am Turkish. I am from Ankara. What languages can you speak?" },
+      { speaker: "A", text: "I am Turkish. I am from Ankara. Which languages can you speak?" },
       { speaker: "B", text: "I can speak Polish, English and a little Turkish. Can you speak Polish?" },
       { speaker: "A", text: "No, I can't, but I can say Cześć! What can tourists do in Warsaw?" },
       { speaker: "B", text: "They can walk around the Old Town and visit many museums." },
@@ -105,7 +105,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       { speaker: "B", text: "Yes, I am. My name is Ingrid. I come from Norway." },
       { speaker: "A", text: "Welcome, Ingrid! I am Ms Arslan, your English teacher. Where are you from in Norway?" },
       { speaker: "B", text: "I am from Oslo, but I live in Ankara now. My parents work here." },
-      { speaker: "A", text: "What languages can you speak?" },
+      { speaker: "A", text: "Which languages do you speak, Ingrid?" },
       { speaker: "B", text: "I can speak Norwegian and English. I can't speak Turkish yet." },
       { speaker: "A", text: "Don't worry, your classmates can help you. Can you open the window, please? It is hot." },
       { speaker: "B", text: "Of course. Can I ask a question too? Is the library open after school?" },
@@ -148,11 +148,11 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         type: "quiz", title: "Quiz B · Can: forms and meanings", source: "Unit 1 · Language Awareness · p.31 Let's Discover",
         instruction: "Choose the correct answer.",
         items: [
-          { prompt: "Tourists ___ visit the Walled City of Baku.", options: ["cans", "can to", "are can", "can"], answer: "can", why: "Can does not change and is followed directly by the base verb." },
+          { prompt: "Tourists ___ visit the Basilica Cistern.", options: ["cans", "can to", "are can", "can"], answer: "can", why: "Can does not change and is followed directly by the base verb." },
           { prompt: "Ingrid can ___ Norwegian and English.", options: ["speaks", "to speak", "speak", "speaking"], answer: "speak", why: "After can, use the base form of the verb." },
           { prompt: "___ Ivan speak Bulgarian and Turkish?", options: ["Does can", "Can", "Is can", "Can to"], answer: "Can", why: "In a question, can comes before the subject and no other helping verb is needed." },
           { prompt: "Which sentence is correct?", options: ["Odett cans play the piano.", "Odett can plays the piano.", "Odett can play the piano.", "Odett can to play the piano."], answer: "Odett can play the piano.", why: "Can has no -s and is followed by the base verb play." },
-          { prompt: "In “You can watch the sunset from the Maiden Tower,” can shows ___.", options: ["ability", "possibility", "obligation", "opportunity"], answer: "opportunity", why: "The place gives visitors the chance to watch the sunset, which is opportunity." },
+          { prompt: "In “You can see the whole valley from the castle wall,” can shows ___.", options: ["ability", "possibility", "obligation", "opportunity"], answer: "opportunity", why: "The place gives visitors the chance to see the valley, which is opportunity." },
           { prompt: "In “The museum shop can be crowded in summer,” can shows ___.", options: ["possibility", "ability", "opportunity", "obligation"], answer: "possibility", why: "The shop is sometimes crowded, so can describes what may happen." },
           { prompt: "In “Mehmet can solve difficult maths problems in his head,” can shows ___.", options: ["opportunity", "possibility", "obligation", "ability"], answer: "ability", why: "Mehmet knows how to do this, which is ability." },
           { prompt: "Ingrid ___ speak Turkish yet, so she uses simple gestures.", options: ["doesn't can", "can't", "isn't can", "can't to"], answer: "can't", why: "To make can negative, use can't + base verb." },
@@ -161,19 +161,19 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         ]
       },
       {
-        type: "quiz", title: "Quiz C · Complete a story about Norway", source: "Unit 1 · Language Awareness · p.31 exercise i",
-        instruction: "Complete each sentence with the correct form of to be, or can / can't + the verb in brackets.",
+        type: "quiz", title: "Quiz C · Complete a story about Italy", source: "Unit 1 · Language Awareness · p.31 exercise i",
+        instruction: "Fill each gap with am, is or are (the verb to be), or with can / can't and the verb in brackets.",
         items: [
-          { prompt: "My name is Odett. I ___ (to be) from Hungary, but I study in Oslo.", answer: "am", why: "Use am with the subject I." },
-          { prompt: "In summer, you ___ (visit) beautiful fjords by boat.", answer: "can visit", why: "Can + base verb shows an opportunity that the place gives you." },
-          { prompt: "You ___ (eat) fresh fish in small restaurants near the harbour.", answer: "can eat", why: "Can + base verb shows what visitors have the chance to do." },
-          { prompt: "But you ___ (not take) photos inside some old churches, so look for signs.", answer: "can't take", why: "Can't + base verb shows something is not allowed here." },
-          { prompt: "Oslo ___ (to be) the capital of Norway, so many tourists visit it.", answer: "is", why: "Oslo is a singular subject, so use is." },
-          { prompt: "My classmates ___ (to be) friendly, so I am never alone.", answer: "are", why: "My classmates is a plural subject, so use are." },
-          { prompt: "___ your exchange partner from the same city as you?", answer: "Is", why: "Use is with the singular subject your exchange partner." },
-          { prompt: "Ingrid is from Norway, so she ___ (to be) Norwegian.", answer: "is", why: "Ingrid is a singular she-subject, so use is." },
-          { prompt: "Children under six ___ (not enter) the museum cinema without an adult, so ask at the desk.", answer: "can't enter", why: "Can't + base verb states a rule about what is not allowed." },
-          { prompt: "We ___ (to be) tired after the long hike, but we feel happy.", answer: "are", why: "Use are with we." }
+          { prompt: "My name is Elif. I ___ (to be) from Denizli, but this year I live in Florence.", answer: "am", why: "Use am with the subject I." },
+          { prompt: "In spring, you ___ (walk) across the old bridges and take photos of the river.", answer: "can walk", why: "Can + base verb shows an opportunity that the place gives you." },
+          { prompt: "You ___ (taste) fresh pasta and ice cream in small family cafés.", answer: "can taste", why: "Can + base verb shows what visitors have the chance to do." },
+          { prompt: "But you ___ (not enter) some churches in shorts, so look for signs at the door.", answer: "can't enter", why: "Can't + base verb shows something is not allowed there." },
+          { prompt: "Florence ___ (to be) a famous art city, so many tourists visit it.", answer: "is", why: "Florence is a singular subject, so use is." },
+          { prompt: "My new classmates ___ (to be) kind, so I am never lonely.", answer: "are", why: "My new classmates is a plural subject, so use are." },
+          { prompt: "___ your host sister from Florence too?", answer: "Is", why: "Use is with the singular subject your host sister." },
+          { prompt: "Giulia is my host sister, so she ___ (to be) Italian.", answer: "is", why: "Giulia is a singular she-subject, so use is." },
+          { prompt: "Visitors ___ (not park) cars in the old centre, so take a bus or walk.", answer: "can't park", why: "Can't + base verb states a rule about what is not allowed." },
+          { prompt: "My friends and I ___ (to be) tired after the long walk, but we feel happy.", answer: "are", why: "My friends and I means more than one person, so use are." }
         ]
       },
       {
@@ -197,7 +197,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         instruction: "Each sentence has one grammar mistake. Write the correct sentence.",
         items: [
           { prompt: "Ivan can speaks Bulgarian and Turkish.", answer: "Ivan can speak Bulgarian and Turkish.", why: "After can, use the base verb speak, without -s." },
-          { prompt: "Min-su can to visit the Palace of the Shirvanshahs.", answer: "Min-su can visit the Palace of the Shirvanshahs.", why: "Do not put to between can and the base verb." },
+          { prompt: "Min-su can to climb the Galata Tower.", answer: "Min-su can climb the Galata Tower.", why: "Do not put to between can and the base verb." },
           { prompt: "Are you can speak Polish?", answer: "Can you speak Polish?", why: "Do not use are with can; start the question with Can." },
           { prompt: "My friends from Chile is very friendly.", answer: "My friends from Chile are very friendly.", why: "The subject my friends is plural, so use are." },
           { prompt: "Both of our student guides can speaks Turkish and English.", answer: "Both of our student guides can speak Turkish and English.", why: "After can, use the base verb speak." },
@@ -227,7 +227,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         instruction: "Choose the question word that fits the answer.",
         items: [
           { prompt: "___ can tourists go in Oslo? — They can go to the Viking Ship Museum.", options: ["Who", "Where", "What", "Why"], answer: "Where", why: "The answer is a place, and go needs Where." },
-          { prompt: "___ languages can you speak, Ivan? — I can speak Bulgarian and English.", options: ["Where", "Who", "What", "When"], answer: "What", why: "What languages asks which languages a person speaks." },
+          { prompt: "___ languages can Odett speak? — She can speak Hungarian and English.", options: ["Where", "Who", "What", "When"], answer: "What", why: "What languages asks which languages a person speaks." },
           { prompt: "___ can help me with my English homework? — Alina can help you.", options: ["What", "How", "Where", "Who"], answer: "Who", why: "The answer is a person, so ask with Who." },
           { prompt: "___ can I buy a ticket for the museum? — You can buy it at the desk by the door.", options: ["Where", "Why", "What", "Who"], answer: "Where", why: "The answer is a place, so ask with Where." },
           { prompt: "___ can you do in the evening in Warsaw? — You can walk along the river.", options: ["Where", "Who", "When", "What"], answer: "What", why: "The verb do needs What; the answer says an activity." },
@@ -349,7 +349,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       },
       { type: "build", title: "Build a can question", instruction: "Tap the words in the correct order to ask if your friend speaks Polish.", tokens: ["speak", "your", "Polish?", "Can", "friend"], answer: ["Can", "your", "friend", "speak", "Polish?"], why: "A can question starts with Can, then the subject your friend, then the base verb speak." },
       { type: "build", title: "Build a question about where students are from", instruction: "Tap the words in the correct order to ask where the students come from.", tokens: ["are", "Where", "from?", "the", "students"], answer: ["Where", "are", "the", "students", "from?"], why: "A wh- question puts the question word first, then are, then the subject." },
-      { type: "build", title: "Build a question about languages", instruction: "Tap the words in the correct order to ask which languages your partner speaks.", tokens: ["can", "What", "you", "speak?", "languages"], answer: ["What", "languages", "can", "you", "speak?"], why: "A wh- question with can goes: question word, can, subject, base verb." },
+      { type: "build", title: "Build a question about languages", instruction: "Tap the words in the correct order to ask which languages your cousin speaks.", tokens: ["can", "Which", "your", "speak?", "languages", "cousin"], answer: ["Which", "languages", "can", "your", "cousin", "speak?"], why: "A wh- question with can goes: question word, can, subject, base verb." },
       { type: "build", title: "Build a question about your teacher", instruction: "Tap the words in the correct order to ask who the English teacher is.", tokens: ["Who", "teacher?", "is", "your", "English"], answer: ["Who", "is", "your", "English", "teacher?"], why: "Put the question word Who first, then is, then the subject your English teacher." },
       { type: "build", title: "Build a question about tourists", instruction: "Tap the words in the correct order to ask what visitors can do in Ankara.", tokens: ["in", "Ankara?", "What", "can", "tourists", "do"], answer: ["What", "can", "tourists", "do", "in", "Ankara?"], why: "The order is What, can, the subject tourists, the base verb do, and then the place." },
       { type: "build", title: "Build a rule with can't", instruction: "Tap the words in the correct order to say that photos are not allowed in the museum.", tokens: ["take", "can't", "You", "photos", "here."], answer: ["You", "can't", "take", "photos", "here."], why: "A rule with can't goes: subject, can't, base verb, then the rest." },
@@ -376,7 +376,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { left: "Is Oslo the capital of Norway?", answer: "Yes, it is." },
           { left: "Can Ingrid speak Turkish well?", answer: "No, she can't." },
           { left: "Is Min-su Korean?", answer: "Yes, he is." },
-          { left: "Can tourists visit the Maiden Tower?", answer: "Yes, they can." },
+          { left: "Can tourists climb the Galata Tower?", answer: "Yes, they can." },
           { left: "Ingrid, are you from Oslo?", answer: "Yes, I am." }
         ],
         choices: ["Yes, it is.", "Yes, he is.", "Yes, they can.", "No, she can't.", "No, they aren't.", "Yes, I am.", "No, he isn't."],

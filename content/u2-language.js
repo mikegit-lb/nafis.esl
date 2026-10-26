@@ -80,7 +80,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { term: "rarely", meaning: "almost never, about 10 percent of the time (seldom has the same meaning)", example: "Deniz rarely watches TV on school nights." },
           { term: "never", meaning: "at no time, 0 percent", example: "I never miss the school bus." },
           { term: "every day", meaning: "on each day of the week", example: "I check my messages every day." },
-          { term: "at weekends", meaning: "on Saturday and Sunday", example: "At weekends, I go swimming." },
+          { term: "at weekends", meaning: "on Saturday and Sunday", example: "At weekends, we cook lunch together." },
           { term: "on weekdays", meaning: "from Monday to Friday", example: "I get up early on weekdays." },
           { term: "in the mornings", meaning: "during the early part of each day", example: "She drinks tea in the mornings." },
           { term: "twice a week", meaning: "two times in seven days", example: "We have PE twice a week." },
@@ -146,34 +146,34 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         instruction: "Choose the phrase that does NOT go with the verb.",
         items: [
           {
-            prompt: "Which phrase does NOT go with the verb plan?",
-            options: ["a loud noise", "a weekend trip", "your study time", "a class party"],
-            answer: "a loud noise",
-            why: "You can plan a trip, your time or a party, but you do not plan a noise."
+            prompt: "Which phrase does NOT go with the verb revise?",
+            options: ["for a maths test", "an umbrella", "your notes", "the earlier lessons"],
+            answer: "an umbrella",
+            why: "You can revise for a test, your notes or earlier lessons, but you do not revise an umbrella."
           },
           {
-            prompt: "Which phrase does NOT go with the verb relax?",
-            options: ["on the sofa", "your homework", "your muscles", "after dinner"],
-            answer: "your homework",
-            why: "You can relax on the sofa, after dinner or your muscles, but you do your homework, not relax it."
+            prompt: "Which phrase does NOT go with the verb set?",
+            options: ["an alarm", "a goal", "the table", "a cold"],
+            answer: "a cold",
+            why: "You can set an alarm, a goal or the table, but you have or catch a cold."
           },
           {
-            prompt: "Which phrase does NOT go with the verb participate?",
-            options: ["in a school building", "in a school club", "in a class discussion", "in a team game"],
-            answer: "in a school building",
-            why: "You participate in activities or events, not in a building."
+            prompt: "Which phrase does NOT go with the verb join?",
+            options: ["a drama club", "a study group", "a pen", "a school trip"],
+            answer: "a pen",
+            why: "You join a club, a group or a trip, which are things with people in them, but not a pen."
           },
           {
-            prompt: "Which phrase does NOT go with the verb make?",
-            options: ["your bed", "a mistake", "a shower", "a plan"],
-            answer: "a shower",
-            why: "We make a bed, a mistake or a plan, but we have or take a shower."
+            prompt: "Which phrase does NOT go with the phrasal verb hand in?",
+            options: ["a rainy day", "your essay", "the project", "the answer sheet"],
+            answer: "a rainy day",
+            why: "You hand in work for the teacher, such as an essay or a project, but you cannot hand in a rainy day."
           },
           {
-            prompt: "Which phrase does NOT go with the verb leave?",
-            options: ["a message", "the classroom", "home at seven", "a headache"],
-            answer: "a headache",
-            why: "You can leave a message, a room or home, but a headache is something you have."
+            prompt: "Which phrase does NOT go with the verb tidy?",
+            options: ["your desk", "the classroom", "the weather", "your bedroom"],
+            answer: "the weather",
+            why: "You can tidy a place, such as a desk or a room, but you cannot tidy the weather."
           },
           {
             prompt: "Which phrase does NOT go with the verb take?",
@@ -203,50 +203,50 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       },
       {
         type: "quiz",
-        title: "Which word follows? · Sally's day",
+        title: "Which word follows? · Ozan's day",
         source: "Unit 2 · Vocabulary g · p.43",
         instruction: "Complete each sentence with one word from the word bank. Use each word once. Two words are extras.",
-        wordBank: ["early", "quickly", "neatly", "spontaneously", "late", "carefully", "slowly", "regularly", "loudly", "angrily"],
+        wordBank: ["quietly", "politely", "regularly", "loudly", "happily", "badly", "fast", "gently", "angrily", "sadly"],
         items: [
           {
-            prompt: "Sally gets out of bed at 6 a.m., before everyone else. She gets out of bed ___.",
-            answer: "early",
-            why: "Getting up at 6 a.m. before other people means getting up early."
+            prompt: "Ozan's little sister is asleep, so he walks past her room ___.",
+            answer: "quietly",
+            why: "Not to wake someone who is sleeping, you move quietly."
           },
           {
-            prompt: "Sally is in a hurry this morning, so she has a shower ___.",
-            answer: "quickly",
-            why: "A person in a hurry does things quickly."
+            prompt: "Ozan says \"please\" and \"thank you\" to the canteen staff. He speaks ___.",
+            answer: "politely",
+            why: "Saying please and thank you is polite behaviour, so he speaks politely."
           },
           {
-            prompt: "Sally writes her homework in clear, tidy handwriting. She writes ___.",
-            answer: "neatly",
-            why: "Neatly means in a clear, tidy way."
-          },
-          {
-            prompt: "In the evening, thoughts about the day repeat ___ in her mind without any effort.",
-            answer: "spontaneously",
-            why: "Spontaneously means that something happens naturally, without planning."
-          },
-          {
-            prompt: "There is no school tomorrow, so Sally goes to bed ___ tonight.",
-            answer: "late",
-            why: "When you do not need to get up early, you can go to bed late."
-          },
-          {
-            prompt: "Sally's glasses are new and she does not want to break them, so she cleans them ___.",
-            answer: "carefully",
-            why: "To do something carefully is to pay attention so that nothing goes wrong."
-          },
-          {
-            prompt: "The bus is stuck in heavy traffic, so it moves very ___.",
-            answer: "slowly",
-            why: "In heavy traffic a bus cannot go fast, so it moves slowly."
-          },
-          {
-            prompt: "Sally goes to the gym every Tuesday and Thursday, so she goes ___.",
+            prompt: "He runs every Monday, Wednesday and Friday, so he trains ___.",
             answer: "regularly",
             why: "Doing something at the same times each week is doing it regularly."
+          },
+          {
+            prompt: "The fans want the whole stadium to hear them, so they cheer ___.",
+            answer: "loudly",
+            why: "To be heard by a big crowd you shout loudly."
+          },
+          {
+            prompt: "Ozan gets a high mark in the test, so he walks home ___.",
+            answer: "happily",
+            why: "A good result makes you feel pleased, so he walks home happily."
+          },
+          {
+            prompt: "He slept very little last night, so he played ___ in the match.",
+            answer: "badly",
+            why: "Without enough sleep a player usually plays badly."
+          },
+          {
+            prompt: "The new train does not stop at small stations, so it travels very ___.",
+            answer: "fast",
+            why: "A train that does not stop at small stations goes fast."
+          },
+          {
+            prompt: "Ozan holds his baby cousin very ___ because she is so small.",
+            answer: "gently",
+            why: "You hold a small baby softly and gently, not roughly."
           }
         ]
       },
@@ -256,16 +256,16 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         source: "Unit 2 · Vocabulary d · p.43",
         pairs: [
           { left: "begin (same meaning)", answer: "start" },
-          { left: "go back home (same meaning)", answer: "return home" },
           { left: "always (opposite)", answer: "never" },
-          { left: "wake up (opposite)", answer: "fall asleep" },
           { left: "usually (same meaning)", answer: "generally" },
-          { left: "slowly (opposite)", answer: "quickly" },
           { left: "late (opposite)", answer: "early" },
           { left: "tidy (same meaning)", answer: "neat" },
-          { left: "rarely (same meaning)", answer: "seldom" }
+          { left: "rarely (same meaning)", answer: "seldom" },
+          { left: "noisy (opposite)", answer: "quiet" },
+          { left: "finish (same meaning)", answer: "complete" },
+          { left: "quickly (same meaning)", answer: "fast" }
         ],
-        choices: ["start", "return home", "never", "fall asleep", "generally", "quickly", "end", "twice a week", "early", "neat", "seldom", "at midnight"],
+        choices: ["start", "never", "generally", "early", "neat", "seldom", "quiet", "complete", "fast", "messy", "at midnight", "twice a week"],
         why: "Synonyms have almost the same meaning, and antonyms have opposite meanings."
       },
       {
@@ -273,16 +273,16 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         title: "Verbs, adverbs or time expressions?",
         source: "Unit 2 · Vocabulary h · p.43",
         pairs: [
-          { left: "comb", answer: "verb" },
-          { left: "carefully", answer: "adverb" },
-          { left: "in the mornings", answer: "time expression" },
-          { left: "clean", answer: "verb" },
-          { left: "occasionally", answer: "adverb" },
-          { left: "Sundays", answer: "time expression" },
+          { left: "brush", answer: "verb" },
+          { left: "quickly", answer: "adverb" },
+          { left: "on Fridays", answer: "time expression" },
           { left: "revise", answer: "verb" },
-          { left: "neatly", answer: "adverb" },
-          { left: "on weekdays", answer: "time expression" },
-          { left: "regularly", answer: "adverb" }
+          { left: "politely", answer: "adverb" },
+          { left: "twice a week", answer: "time expression" },
+          { left: "pack", answer: "verb" },
+          { left: "quietly", answer: "adverb" },
+          { left: "every evening", answer: "time expression" },
+          { left: "in the afternoons", answer: "time expression" }
         ],
         choices: ["verb", "adverb", "time expression"],
         why: "Verbs name actions, adverbs say how or how often, and time expressions say when."
@@ -351,20 +351,20 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       },
       {
         type: "match",
-        title: "Which phrase fits the situation?",
+        title: "Which idiom meaning fits the situation?",
         source: "Unit 2 · Social language",
         pairs: [
-          { left: "You get up at 5.30 a.m. to catch an early train.", answer: "Bright and early!" },
-          { left: "You have studied for three hours and you feel tired.", answer: "I call it a day!" },
-          { left: "Your test is tomorrow, so you open your books and start.", answer: "Hit the books!" },
-          { left: "You can say a whole poem without looking at the page.", answer: "I learn by heart!" },
-          { left: "Mum says you can play games, but only after the housework.", answer: "Work hard, play later!" },
-          { left: "Your friend arrives at school at 7 a.m., an hour before anyone else.", answer: "Bright and early!" },
-          { left: "You finish your work for the day and close your laptop.", answer: "I call it a day!" },
-          { left: "You say the new English words so many times that you remember them.", answer: "I learn by heart!" }
+          { left: "Nehir's bus leaves at 6.10, so she is at the bus stop while the sky is still dark.", answer: "very early in the day" },
+          { left: "After six hours of revising, Orhan shuts his notebook for the night.", answer: "stopping because you have done enough" },
+          { left: "The exam is in two days, so Pelin sits down with her textbooks and a pen.", answer: "starting to study hard" },
+          { left: "Kaan can recite the whole poem with his eyes closed.", answer: "remembering it word for word" },
+          { left: "Dad says the video game can wait until the garden is tidy.", answer: "doing duties first and having fun after" },
+          { left: "Ece is the first person in the building, and the caretaker is still unlocking the doors.", answer: "very early in the day" },
+          { left: "The shop assistant locks the till and switches off the lights at the end of a long shift.", answer: "stopping because you have done enough" },
+          { left: "Hasan repeats the spelling list until he can write every word without checking.", answer: "remembering it word for word" }
         ],
-        choices: ["Bright and early!", "I call it a day!", "Hit the books!", "I learn by heart!", "Work hard, play later!"],
-        why: "Each phrase from the unit fits one kind of situation: very early, stop working, study hard, remember completely, and duties before fun."
+        choices: ["very early in the day", "stopping because you have done enough", "starting to study hard", "remembering it word for word", "doing duties first and having fun after"],
+        why: "The five idioms in the unit's social language list each have one meaning: very early, stopping for the day, studying hard, knowing something by heart, and duties before fun."
       },
       {
         type: "quiz",
@@ -373,10 +373,10 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         instruction: "Choose the answer that fits the time of day.",
         items: [
           {
-            prompt: "Mert is dressed and his bag is ready. It is half past seven. What does he do next?",
+            prompt: "Mert has eaten breakfast, and his bag is by the door. It is quarter to eight. What does he do next?",
             options: ["He watches TV.", "He does the dishes.", "He leaves home.", "He has dinner."],
             answer: "He leaves home.",
-            why: "A student who is dressed and ready at half past seven leaves home for school."
+            why: "A student who is dressed and ready at quarter to eight leaves home for school."
           },
           {
             prompt: "Ela finishes her last lesson at 3.30 p.m. What does she do next?",
@@ -391,20 +391,20 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "In the afternoon, after a snack, students usually start their homework."
           },
           {
-            prompt: "It is ten o'clock at night and Defne is ready for bed. What does she do?",
+            prompt: "It is late at night and Defne is ready for bed. What does she do?",
             options: ["She starts the first lesson.", "She has lunch.", "She brushes her teeth.", "She leaves for school."],
             answer: "She brushes her teeth.",
             why: "Brushing your teeth is a normal thing to do before bed."
           },
           {
-            prompt: "The alarm rings at 6.30 and Kerem is still asleep. What does he do first?",
+            prompt: "At 6.30 the alarm rings in Kerem's bedroom. What is the first thing he does?",
             options: ["He takes the bus.", "He does his homework.", "He goes to bed.", "He wakes up."],
             answer: "He wakes up.",
             why: "When the alarm rings in the morning, the first thing to do is wake up."
           },
           {
             prompt: "Which activity usually comes last in a school day?",
-            options: ["go to bed", "take the bus to school", "have breakfast", "attend classes"],
+            options: ["go to bed", "catch the bus", "have breakfast", "attend classes"],
             answer: "go to bed",
             why: "Going to bed ends the day, after all the other activities."
           },
@@ -507,12 +507,12 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "You wash your face with water."
           },
           {
-            prompt: "At 7.30 she ___ home and walks to the bus stop.",
+            prompt: "At 7.45 she ___ home and walks to the bus stop.",
             answer: "leaves",
             why: "She goes out of her house, so she leaves home."
           },
           {
-            prompt: "She never misses school: she ___ every class from 8.30 to 3.30.",
+            prompt: "She never misses school: she ___ every class from 8.45 to 3.30.",
             answer: "attends",
             why: "To attend classes means to be present at lessons."
           },
@@ -527,7 +527,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "Revise for a test means to study again what you learned."
           },
           {
-            prompt: "At 10.30 p.m. she closes her book, and soon she ___.",
+            prompt: "At 10 p.m. she closes her book, and soon she ___.",
             answer: "falls asleep",
             why: "At the end of the day she begins to sleep, so she falls asleep."
           }
@@ -545,10 +545,10 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "Early and late are opposites about time."
           },
           {
-            prompt: "Type the opposite of leave home.",
-            answer: "return home",
-            accepted: ["go back home", "come home", "get home", "arrive home", "go home", "come back home", "get back home", "come back", "return"],
-            why: "You leave home in the morning and return home later."
+            prompt: "Type the opposite of arrive at school.",
+            answer: "leave school",
+            accepted: ["leave", "go home", "leave the school", "get out of school"],
+            why: "You arrive at school in the morning and leave school at the end of the day."
           },
           {
             prompt: "Type the opposite of start.",
@@ -563,10 +563,10 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "Weekdays are Monday to Friday, and the weekend is Saturday and Sunday."
           },
           {
-            prompt: "Type the opposite of carefully (hint: care + less + ly).",
-            answer: "carelessly",
-            accepted: ["careless", "not carefully"],
-            why: "Carefully means with attention, and carelessly means without attention."
+            prompt: "Type the opposite of quietly.",
+            answer: "loudly",
+            accepted: ["noisily", "loud", "noisy"],
+            why: "Quietly means making very little noise, and loudly means making a lot of noise."
           },
           {
             prompt: "Type the opposite of rarely.",
