@@ -280,6 +280,7 @@ const nav = document.getElementById("unit-nav");
 const lesson = document.getElementById("lesson");
 const themesToggle = document.getElementById("themes-toggle");
 let activeUnit = 0;
+let activeSection = "grammar";
 
 function escapeHtml(value) {
   return String(value)
@@ -325,18 +326,22 @@ function renderContext(lines) {
   }).join("");
 }
 
-function renderLesson() {
-  const unit = units[activeUnit];
+function unitContentFor(index) {
+  return window.unitContent && window.unitContent[index];
+}
+
+function currentActivities() {
+  const content = unitContentFor(activeUnit);
+  if (!Core.getSections(content).length) return window.unitExercises[activeUnit];
+  return ((content && content[activeSection]) || {})[activeSection === "speaking" ? "tasks" : "activities"] || [];
+}
+
+function renderGrammarBlock(unit) {
   const examples = unit.examples.map(function (example) {
     return '<li>' + escapeHtml(example) + '</li>';
   }).join("");
 
-  lesson.innerHTML =
-    '<header class="unit-heading">' +
-      '<span class="unit-index">' + unit.number + ' /</span>' +
-      '<h2>' + escapeHtml(unit.title) + '</h2>' +
-    '</header>' +
-    '<section class="focus-block" aria-labelledby="focus-title">' +
+  return '<section class="focus-block" aria-labelledby="focus-title">' +
       '<p class="focus-label">Grammar focus</p>' +
       '<h3 id="focus-title">' + escapeHtml(unit.focus) + '</h3>' +
       '<p class="focus-summary">' + escapeHtml(unit.summary) + '</p>' +
@@ -351,20 +356,61 @@ function renderLesson() {
         '<h3 class="panel-heading" id="context-title">In context</h3>' +
         '<div class="panel-body context-lines">' + renderContext(unit.context) + '</div>' +
       '</section>' +
-    '</div>' +
-    renderExercises(window.unitExercises[activeUnit]);
+    '</div>';
+}
 
+function renderSectionTabs(sections) {
+  return '<div class="section-tabs" role="tablist" aria-label="Unit sections">' + sections.map(function (section) {
+    const selected = section.id === activeSection;
+    return '<button class="section-tab" type="button" role="tab" id="tab-' + section.id + '" data-section="' + section.id + '"' +
+      ' aria-selected="' + selected + '" aria-controls="section-panel" tabindex="' + (selected ? "0" : "-1") + '">' +
+      escapeHtml(section.label) + '</button>';
+  }).join("") + '</div>';
+}
+
+function renderSectionBody(unit, content) {
+  const views = window.SectionViews || {};
+  if (activeSection === "overview" || activeSection === "vocabulary" || activeSection === "speaking") {
+    return views[activeSection] ? views[activeSection](unit, content) : "";
+  }
+  const grammar = activeSection === "grammar" ? renderGrammarBlock(Object.assign({}, unit, content.lesson)) : "";
+  return grammar + renderExercises(currentActivities());
+}
+
+function renderLesson() {
+  const unit = units[activeUnit];
+  const content = unitContentFor(activeUnit);
+  const sections = Core.getSections(content);
+  const heading =
+    '<header class="unit-heading">' +
+      '<span class="unit-index">' + unit.number + ' /</span>' +
+      '<h2>' + escapeHtml(unit.title) + '</h2>' +
+    '</header>';
+
+  if (sections.length) {
+    lesson.innerHTML = heading + renderSectionTabs(sections) +
+      '<div class="section-panel" id="section-panel" role="tabpanel" aria-labelledby="tab-' + activeSection + '">' +
+        renderSectionBody(unit, content) +
+      '</div>';
+  } else {
+    lesson.innerHTML = heading + renderGrammarBlock(unit) + renderExercises(currentActivities());
+  }
+
+  const activities = currentActivities();
   lesson.querySelectorAll(".exercise-card").forEach(function (card) {
-    if (card.dataset.exerciseType === "build") updateBuildTray(card, window.unitExercises[activeUnit][Number(card.dataset.exerciseIndex)]);
+    if (card.dataset.exerciseType === "build") updateBuildTray(card, activities[Number(card.dataset.exerciseIndex)]);
   });
 }
 
 function renderExercises(exercises) {
   const cards = exercises.map(function (exercise, index) {
-    const questionCount = exercise.type === "match" ? exercise.pairs.length : exercise.type === "reading" ? exercise.questions.length : 1;
+    const questionCount = Core.countQuestions(exercise);
+    const custom = (window.ExerciseTypes || {})[exercise.type];
     let body = "";
 
-    if (exercise.type === "reading") {
+    if (custom && custom.render) {
+      body = custom.render(exercise, activeUnit + "-" + index);
+    } else if (exercise.type === "reading") {
       body = '<article class="reading-passage" aria-label="B1 reading passage">' +
           '<h4>' + escapeHtml(exercise.passageTitle) + '</h4>' +
           '<p>' + escapeHtml(exercise.passage) + '</p>' +
@@ -427,10 +473,11 @@ function renderExercises(exercises) {
     '</details>';
   }).join("");
 
+  const total = exercises.reduce(function (sum, exercise) { return sum + Core.countQuestions(exercise); }, 0);
+
   return '<section class="practice" aria-labelledby="practice-title">' +
     '<div class="practice-header"><h3 id="practice-title">B1 reading & grammar challenge</h3>' +
-      '<span class="practice-count">7 QUESTIONS · 56 TOTAL</span></div>' +
-    '<p class="practice-instruction">Five activities per unit: extra-hard B1 reading plus realistic grammar choices, completion, rewriting, and editing.</p>' +
+      '<span class="practice-count">' + total + (total === 1 ? ' QUESTION' : ' QUESTIONS') + '</span></div>' +
     '<div class="exercise-list">' + cards + '</div>' +
   '</section>';
 }
@@ -456,8 +503,12 @@ function setExerciseFeedback(card, correct, message) {
 
 function checkExercise(card) {
   if (card.dataset.checked === "true") return;
-  const exercise = window.unitExercises[activeUnit][Number(card.dataset.exerciseIndex)];
+  const exercise = currentActivities()[Number(card.dataset.exerciseIndex)];
   const feedback = card.querySelector(".exercise-feedback");
+  const custom = (window.ExerciseTypes || {})[exercise.type];
+
+  // A registered type owns its whole check, including calling markChecked(card) once it accepts the answers.
+  if (custom && custom.check) { custom.check(card, exercise); return; }
 
   if (exercise.type === "choice") {
     const selected = card.dataset.selectedChoice;
@@ -473,7 +524,7 @@ function checkExercise(card) {
   } else if (exercise.type === "reading") {
     const questions = Array.from(card.querySelectorAll(".reading-question"));
     if (questions.some(function (question) { return question.dataset.selectedChoice === undefined; })) {
-      feedback.textContent = "Answer all three reading questions first.";
+      feedback.textContent = "Answer every reading question first.";
       return;
     }
     let score = 0;
@@ -523,6 +574,10 @@ function checkExercise(card) {
     setExerciseFeedback(card, correct, score + "/" + exercise.pairs.length + " matches. " + exercise.why);
   }
 
+  markChecked(card);
+}
+
+function markChecked(card) {
   card.dataset.checked = "true";
   card.querySelector(".exercise-check").disabled = true;
 }
@@ -530,14 +585,38 @@ function checkExercise(card) {
 function selectUnit(index) {
   if (!Number.isInteger(index) || index < 0 || index >= units.length) return;
   activeUnit = index;
+  activeSection = Core.resolveSection(Core.getSections(unitContentFor(index)), activeSection);
   renderNavigation();
   renderLesson();
   document.title = units[index].number + " · " + units[index].navTitle + " | English 9";
 }
 
+function selectSection(id) {
+  activeSection = id;
+  renderLesson();
+  const tab = lesson.querySelector('[role="tab"][data-section="' + id + '"]');
+  if (tab) tab.focus();
+}
+
+lesson.addEventListener("keydown", function (event) {
+  const tab = event.target.closest('[role="tab"]');
+  if (!tab || (event.key !== "ArrowLeft" && event.key !== "ArrowRight")) return;
+  const tabs = Array.from(lesson.querySelectorAll('[role="tab"]'));
+  const next = tabs[(tabs.indexOf(tab) + (event.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+  event.preventDefault();
+  selectSection(next.dataset.section);
+});
+
 lesson.addEventListener("click", function (event) {
+  const tab = event.target.closest('[role="tab"]');
+  if (tab) { selectSection(tab.dataset.section); return; }
+
   const card = event.target.closest(".exercise-card");
   if (!card) return;
+
+  const cardExercise = currentActivities()[Number(card.dataset.exerciseIndex)];
+  const custom = cardExercise && (window.ExerciseTypes || {})[cardExercise.type];
+  if (custom && custom.onClick && custom.onClick(event, card, cardExercise) === true) return;
 
   const readingOption = event.target.closest(".reading-option");
   if (readingOption && card.dataset.checked !== "true") {
@@ -567,7 +646,7 @@ lesson.addEventListener("click", function (event) {
   const token = event.target.closest(".build-token");
   const chosenWord = event.target.closest(".chosen-word");
   if ((token || chosenWord) && card.dataset.checked !== "true") {
-    const exercise = window.unitExercises[activeUnit][Number(card.dataset.exerciseIndex)];
+    const exercise = cardExercise;
     let sequence = [];
     try { sequence = JSON.parse(card.dataset.buildSequence || "[]"); } catch (error) { sequence = []; }
     const tokenIndex = Number((token || chosenWord).dataset.wordIndex);
@@ -580,7 +659,7 @@ lesson.addEventListener("click", function (event) {
 
   if (event.target.closest(".exercise-reset") && card.dataset.checked !== "true") {
     card.dataset.buildSequence = "[]";
-    updateBuildTray(card, window.unitExercises[activeUnit][Number(card.dataset.exerciseIndex)]);
+    updateBuildTray(card, cardExercise);
     return;
   }
 

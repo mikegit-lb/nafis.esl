@@ -18,7 +18,32 @@
     });
   }
 
-  const Core = { normalizeAnswer: normalizeAnswer, gradeItem: gradeItem };
+  const SECTIONS = [
+    { id: "overview", label: "Overview" }, { id: "vocabulary", label: "Vocabulary" }, { id: "speaking", label: "Speaking" },
+    { id: "grammar", label: "Grammar" }, { id: "reading", label: "Reading" }
+  ];
+
+  function getSections(content) {
+    if (!content || !SECTIONS.concat([{ id: "lesson" }]).some(function (s) { return content[s.id]; })) return [];
+    return SECTIONS.filter(function (s) { return s.id === "grammar" || content[s.id]; });
+  }
+
+  function resolveSection(sections, wanted) {
+    const ids = sections.map(function (s) { return s.id; });
+    return ids.indexOf(wanted) !== -1 ? wanted : ids[0] || "grammar";
+  }
+
+  function countQuestions(ex) {
+    if (ex.type === "quiz") return ex.items.length;
+    if (ex.type === "reading") return ex.questions.length;
+    if (ex.type === "match") return ex.pairs.length;
+    return ex.type === "speak" || ex.type === "roleplay" ? 0 : 1;
+  }
+
+  const Core = {
+    normalizeAnswer: normalizeAnswer, gradeItem: gradeItem,
+    getSections: getSections, resolveSection: resolveSection, countQuestions: countQuestions
+  };
   if (typeof window !== "undefined") window.Core = Core;
   if (typeof module !== "undefined" && module.exports) module.exports = Core;
 })();

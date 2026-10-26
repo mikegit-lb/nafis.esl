@@ -20,3 +20,28 @@ test("gradeItem rejects wrong or empty answers and honours accepted", () => {
   assert.equal(Core.gradeItem({ answer: "arrives" }, "arrive"), false);
   assert.equal(Core.gradeItem({ answer: "x", accepted: ["y"] }, " Y "), true);
 });
+
+test("getSections lists present sections in order and always includes grammar", () => {
+  assert.deepEqual(Core.getSections(undefined), []);
+  assert.deepEqual(Core.getSections({}), []);
+  assert.deepEqual(Core.getSections({ vocabulary: {} }).map(function (s) { return s.id; }), ["vocabulary", "grammar"]);
+  assert.deepEqual(Core.getSections({ lesson: {} }).map(function (s) { return s.id; }), ["grammar"]);
+  assert.deepEqual(Core.getSections({ reading: {}, overview: {} }).map(function (s) { return s.id + ":" + s.label; }),
+    ["overview:Overview", "grammar:Grammar", "reading:Reading"]);
+});
+
+test("resolveSection keeps a present section, else first, else grammar", () => {
+  const s = [{ id: "vocabulary" }, { id: "grammar" }];
+  assert.equal(Core.resolveSection(s, "grammar"), "grammar");
+  assert.equal(Core.resolveSection(s, "reading"), "vocabulary");
+  assert.equal(Core.resolveSection([], "reading"), "grammar");
+});
+
+test("countQuestions counts scored items per type", () => {
+  assert.equal(Core.countQuestions({ type: "quiz", items: [{}, {}, {}] }), 3);
+  assert.equal(Core.countQuestions({ type: "reading", questions: [{}, {}, {}] }), 3);
+  assert.equal(Core.countQuestions({ type: "match", pairs: [{}, {}] }), 2);
+  assert.equal(Core.countQuestions({ type: "speak", questions: [{}] }), 0);
+  assert.equal(Core.countQuestions({ type: "roleplay" }), 0);
+  assert.equal(Core.countQuestions({ type: "choice" }), 1);
+});

@@ -3,6 +3,7 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
+const Core = require("../core.js");
 
 const DIR = path.join(__dirname, "..", "content");
 const FILES = fs.readdirSync(DIR).filter(function (f) { return /\.js$/.test(f); }).sort();
@@ -15,12 +16,7 @@ function runFiles(files) {
 }
 function loadContent() { return runFiles(FILES); }
 
-// Task 3 switches this to Core.countQuestions.
-function countQuestions(a) {
-  return a.type === "quiz" ? a.items.length : a.type === "reading" ? a.questions.length
-    : a.type === "match" ? a.pairs.length : a.type === "speak" || a.type === "roleplay" ? 0 : 1;
-}
-const total = function (acts) { return acts.reduce(function (n, a) { return n + countQuestions(a); }, 0); };
+const total = function (acts) { return acts.reduce(function (n, a) { return n + Core.countQuestions(a); }, 0); };
 const list = function (v) { return Array.isArray(v) ? v : []; };
 const filled = function (v) { return Array.isArray(v) && v.length > 0; };
 const words = function (s) { return String(s).split(/\s+/).filter(Boolean).length; };

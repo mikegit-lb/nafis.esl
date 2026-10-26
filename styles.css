@@ -830,3 +830,27 @@ a { color: inherit; }
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Unit section tabs */
+.section-tabs {
+  display: flex;
+  gap: 4px;
+  margin: 0 0 18px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--line);
+  -webkit-overflow-scrolling: touch;
+}
+.section-tab {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--ink-soft);
+  font: 700 15px/1 var(--sans);
+  cursor: pointer;
+}
+.section-tab:hover { color: var(--blue-deep); }
+.section-tab[aria-selected="true"] { border-bottom-color: var(--orange); background: var(--orange-pale); color: var(--ink); }
+.section-tab:focus-visible { outline: 3px solid #74b6ff; outline-offset: -3px; }

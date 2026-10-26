@@ -1,0 +1,1 @@
+window.ExerciseTypes = window.ExerciseTypes || {};
