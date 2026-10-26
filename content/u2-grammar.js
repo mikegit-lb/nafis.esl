@@ -38,7 +38,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       {
         label: "Time expressions",
         formula: "at 7.30 · at weekends · on weekdays · on Fridays · in the morning · twice a week",
-        note: "Use at for clock times, on for days, in for parts of the day. Twice a week usually goes at the end."
+        note: "Use at for clock times, on for days, in for parts of the day. Twice a week usually goes at the end. Remember the fixed phrase at weekends."
       }
     ],
     context: [
@@ -63,11 +63,11 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         instruction: "Choose the correct word or phrase to complete each sentence.",
         items: [
           { prompt: "My brother ___ the bus to school every day.", options: ["take", "takes", "taking", "to take"], answer: "takes", why: "With he, she, it (my brother) the simple present verb ends in -s." },
-          { prompt: "Ceren ___ her homework at the library after class.", options: ["do", "does", "doing", "dos"], answer: "does", why: "Do becomes does with the singular subject Ceren." },
+          { prompt: "Ceren ___ her homework at the library after class.", options: ["does", "do", "doing", "dos"], answer: "does", why: "Do becomes does with the singular subject Ceren." },
           { prompt: "My mother ___ her teeth before breakfast.", options: ["brush", "brushs", "brushes", "brushing"], answer: "brushes", why: "Verbs ending in -sh add -es in the he / she / it form." },
-          { prompt: "My sister ___ English with her friends on Fridays.", options: ["studys", "studies", "studyes", "study"], answer: "studies", why: "Consonant + y changes to -ies: study becomes studies." },
-          { prompt: "___ your cousin live in Istanbul?", options: ["Do", "Does", "Is", "Are"], answer: "Does", why: "Use does with a singular subject (your cousin) to make a simple present question." },
-          { prompt: "___ you and your friends have lunch together at school?", options: ["Does", "Do", "Is", "Are"], answer: "Do", why: "Use do with plural subjects such as you and your friends." },
+          { prompt: "My sister ___ English with her friends on Fridays.", options: ["studys", "study", "studyes", "studies"], answer: "studies", why: "Consonant + y changes to -ies: study becomes studies." },
+          { prompt: "___ your cousin live in Istanbul?", options: ["Does", "Do", "Is", "Are"], answer: "Does", why: "Use does with a singular subject (your cousin) to make a simple present question." },
+          { prompt: "___ you and your friends have lunch together at school?", options: ["Is", "Are", "Does", "Do"], answer: "Do", why: "Use do with plural subjects such as you and your friends." },
           { prompt: "Lily ___ a film with her family on Sundays.", options: ["watchs", "watches", "watchies", "watching"], answer: "watches", why: "Verbs ending in -ch add -es with he, she, it." },
           { prompt: "Tom ___ to the park on Friday afternoons.", options: ["gos", "go", "goes", "going"], answer: "goes", why: "Go ends in -o, so the he / she / it form is goes." }
         ]
@@ -76,12 +76,12 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         type: "quiz", title: "Quiz B · Adverb position and time expressions", source: "Unit 2 · Language Awareness · pp.44-45",
         instruction: "Choose the correct word order or preposition.",
         items: [
-          { prompt: "Aylin ___ late for school.", options: ["is never", "never is", "never are", "does never be"], answer: "is never", why: "An adverb of frequency comes after the verb be." },
-          { prompt: "We ___ the bus when it rains.", options: ["always take", "take always", "are always take", "always takes"], answer: "always take", why: "An adverb of frequency goes before the main verb, and we takes the base form." },
-          { prompt: "They ___ breakfast together before school.", options: ["usually have", "have usually", "usually has", "are usually have"], answer: "usually have", why: "Put usually before the main verb have; they takes the base form." },
+          { prompt: "Aylin ___ late for school.", options: ["never is", "never are", "is never", "does never be"], answer: "is never", why: "An adverb of frequency comes after the verb be." },
+          { prompt: "We ___ the bus when it rains.", options: ["take always", "always take", "are always take", "always takes"], answer: "always take", why: "An adverb of frequency goes before the main verb, and we takes the base form." },
+          { prompt: "They ___ breakfast together before school.", options: ["have usually", "usually has", "are usually have", "usually have"], answer: "usually have", why: "Put usually before the main verb have; they takes the base form." },
           { prompt: "Our first lesson starts ___ eight o'clock.", options: ["at", "on", "in", "to"], answer: "at", why: "Use at with clock times." },
-          { prompt: "I do not go out with my friends ___ weekdays.", options: ["on", "at", "in", "to"], answer: "on", why: "Use on with days and groups of days such as weekdays." },
-          { prompt: "Hana goes to the climbing club twice ___.", options: ["a week", "the week", "weeks", "one week"], answer: "a week", why: "We say twice a week for how often something happens." }
+          { prompt: "I do not go out with my friends ___ weekdays.", options: ["at", "on", "in", "to"], answer: "on", why: "Use on with days and groups of days such as weekdays." },
+          { prompt: "Hana goes to the climbing club twice ___.", options: ["the week", "weeks", "a week", "one week"], answer: "a week", why: "We say twice a week for how often something happens." }
         ]
       },
       {
@@ -129,7 +129,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       },
       {
         type: "build", title: "Build a question: taking notes",
-        prompt: "Ask how often someone takes notes.", instruction: "Ask how often someone takes notes. Tap the words in the correct order.",
+        prompt: "Ask how often someone takes notes.", instruction: "Ask a classmate how often they take notes. Tap the words in the correct order.",
         tokens: ["notes?", "How", "you", "do", "take", "often"],
         answer: ["How", "often", "do", "you", "take", "notes?"],
         why: "Put do after How often and keep the base verb take."
