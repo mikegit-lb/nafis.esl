@@ -374,7 +374,7 @@ function renderSectionBody(unit, content) {
     return views[activeSection] ? views[activeSection](unit, content) : "";
   }
   const grammar = activeSection === "grammar" ? renderGrammarBlock(Object.assign({}, unit, content.lesson)) : "";
-  return grammar + renderExercises(currentActivities());
+  return grammar + renderExercises(currentActivities(), { heading: activeSection === "grammar" ? "Grammar practice" : "Reading practice" });
 }
 
 function renderLesson() {
@@ -415,7 +415,7 @@ function renderExercises(exercises, options) {
     if (custom && custom.render) {
       body = custom.render(exercise, activeUnit + "-" + index);
     } else if (exercise.type === "reading") {
-      body = '<article class="reading-passage" aria-label="B1 reading passage">' +
+      body = '<article class="reading-passage" aria-label="Reading passage">' +
           '<h4>' + escapeHtml(exercise.passageTitle) + '</h4>' +
           '<p>' + escapeHtml(exercise.passage) + '</p>' +
         '</article>' +

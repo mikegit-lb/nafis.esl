@@ -21,7 +21,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         type: "speak",
         title: "Meet the exchange students",
         source: "Unit 1 · Listening/Watching d · p.26",
-        instruction: "Ask and answer with a partner. Fact sheet: Mehmet is from Türkiye (Turkish, Ankara). Alina is from Poland (Polish, Warsaw). Odett is from Hungary (Hungarian, Budapest). Ivan is from Bulgaria (Bulgarian, Sofia). Ingrid is from Norway (Norwegian, Oslo). Min-su is from South Korea (Korean, Seoul). The story is not shown here, so where it is not on the fact sheet, give your own idea.",
+        instruction: "Ask and answer with a partner. Fact sheet: Mehmet is from Türkiye (Turkish, Ankara). Alina is from Poland (Polish, Warsaw). Odett is from Hungary (Hungarian, Budapest). Ivan is from Bulgaria (Bulgarian, Sofia). Ingrid is from Norway (Norwegian, Oslo). Min-su is from South Korea (Korean, Seoul). The video is not available here. If the answer is not on the fact sheet, give your own idea.",
         questions: [
           {
             q: "Who helps Mehmet at the school entrance?",
@@ -65,7 +65,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         type: "speak",
         title: "Azerbaijan and the Turkic states",
         source: "Unit 1 · Language Awareness c–d · p.30",
-        instruction: "The text A Warm Country is about Azerbaijan, a Turkic state between the Caucasus Mountains and the Caspian Sea. Its capital, Baku, has old UNESCO sites and modern skyscrapers, and its food reflects the Silk Road. Ask and answer in pairs, then say each answer in your own words.",
+        instruction: "The Reading 2 passage is about Azerbaijan, a Turkic state between the Caucasus Mountains and the Caspian Sea. Its capital, Baku, has old UNESCO sites and modern skyscrapers, and its food reflects the Silk Road. Ask and answer in pairs, then say each answer in your own words.",
         questions: [
           {
             q: "Where is the Republic of Azerbaijan?",
@@ -167,7 +167,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         type: "speak",
         title: "Online life and safety",
         source: "Unit 1 · Roots and Routes d–e · p.34",
-        instruction: "The text Getting Ready for a Safer Digital World explains that the Internet makes daily tasks easy, but sharing personal information online brings risks such as cyberattacks and data theft. Türkiye trains cybersecurity experts in vocational schools in technoparks. Talk in pairs, then share your ideas with the class.",
+        instruction: "The Reading 4 passage explains that the Internet makes daily tasks easy, but sharing personal information online brings risks such as cyberattacks and data theft. Türkiye trains cybersecurity experts in vocational schools in technoparks. Talk in pairs, then share your ideas with the class.",
         questions: [
           {
             q: "Why is the Internet important in modern life?",

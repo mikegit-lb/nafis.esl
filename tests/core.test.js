@@ -15,6 +15,12 @@ test("gradeItem treats contractions and full forms as equal", () => {
   assert.equal(Core.gradeItem({ answer: "She doesn't swim" }, "She doesn\u2019t swim"), true);
 });
 
+test("gradeItem ignores stray whitespace around end punctuation and inside can not", () => {
+  assert.equal(Core.gradeItem({ answer: "Can Ingrid speak three languages?" }, "Can Ingrid speak three languages ?"), true);
+  assert.equal(Core.gradeItem({ answer: "Tourists can't enter the old tower at night." }, "Tourists cannot enter the old tower at night ."), true);
+  assert.equal(Core.gradeItem({ answer: "Tourists can't enter the old tower at night." }, "Tourists can  not enter the old tower at night."), true);
+});
+
 test("gradeItem rejects wrong or empty answers and honours accepted", () => {
   assert.equal(Core.gradeItem({ answer: "arrives" }, ""), false);
   assert.equal(Core.gradeItem({ answer: "arrives" }, "arrive"), false);

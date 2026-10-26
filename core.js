@@ -1,14 +1,15 @@
 (function () {
   function normalizeAnswer(value) {
-    return String(value).trim().toLowerCase()
+    return String(value).toLowerCase()
+      .replace(/\s+/g, " ")
       .replace(/\u2019/g, "'")
-      .replace(/[.!?]+$/g, "")
+      .replace(/\s*[.!?]+$/, "")
+      .trim()
       .replace(/\bcan't\b/g, "cannot")
       .replace(/\bwon't\b/g, "will not")
       .replace(/n't\b/g, " not")
       .replace(/'m\b/g, " am")
-      .replace(/\bcan not\b/g, "cannot")
-      .replace(/\s+/g, " ");
+      .replace(/\bcan not\b/g, "cannot");
   }
 
   function gradeItem(item, value) {
