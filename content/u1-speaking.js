@@ -24,68 +24,68 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         instruction: "Ask and answer with a partner. Fact sheet: Mehmet is from Türkiye (Turkish, Ankara). Alina is from Poland (Polish, Warsaw). Odett is from Hungary (Hungarian, Budapest). Ivan is from Bulgaria (Bulgarian, Sofia). Ingrid is from Norway (Norwegian, Oslo). Min-su is from South Korea (Korean, Seoul). The video is not available here. If the answer is not on the fact sheet, give your own idea.",
         questions: [
           {
-            q: "Who helps Mehmet at the school entrance?",
-            model: "I think Alina helps Mehmet at the school entrance. She is a friendly student, and she can show him the way to his classroom.",
-            frames: ["I think ... helps Mehmet.", "She/He is friendly, and she/he can ..."]
+            q: "Who shows the new students around on the first day?",
+            model: "I think a student helper shows them around. Maybe it is Mehmet, because he is friendly and he can show them the classrooms.",
+            frames: ["I think ... shows them around.", "He/She is friendly, and he/she can ..."]
           },
           {
-            q: "Where can tourists go for a hike around a lake?",
-            model: "I think tourists can go for a hike around a lake in Norway. It is a beautiful country with many lakes and mountains.",
-            frames: ["I think tourists can go for a hike in ...", "It is a country with ..."]
+            q: "Which student comes from the country farthest from Türkiye, and what is its capital?",
+            model: "I think Min-su comes from the farthest country. He is from South Korea, and the capital of South Korea is Seoul.",
+            frames: ["I think ... comes from the farthest country.", "The capital of ... is ..."]
           },
           {
-            q: "Which country is famous for its thermal baths?",
-            model: "I think Hungary is famous for its thermal baths. Odett is Hungarian, and the capital city, Budapest, has many old baths.",
-            frames: ["I think ... is famous for its thermal baths.", "The capital city is ..."]
+            q: "Which students have a nationality word that ends in -ian?",
+            model: "Odett, Ivan and Ingrid do. Odett is Hungarian, Ivan is Bulgarian, and Ingrid is Norwegian.",
+            frames: ["... is Hungarian, ... is ...", "... and ... do, too."]
           },
           {
-            q: "What can tourists do in Ivan's country?",
-            model: "Ivan's country is Bulgaria. Tourists can visit the Ancient Serdica Complex in Sofia and stroll through Borisova Garden.",
-            frames: ["Ivan is from ... Tourists can ...", "They can visit ... and ..."]
+            q: "Which country on the fact sheet would you choose for a winter holiday, and why?",
+            model: "I would choose Norway because it is cold and snowy there. Tourists can ski, and they can walk in the white mountains.",
+            frames: ["I would choose ... because ...", "Tourists can ... there."]
           },
           {
-            q: "Who joins the group near the tennis court?",
-            model: "I think Min-su joins the group near the tennis court. He is from South Korea, and he can say hello in Korean.",
-            frames: ["I think ... joins the group.", "He/She is from ..., and he/she can ..."]
+            q: "Alina is from Warsaw, and Min-su is from Seoul. What can they ask each other about their capitals?",
+            model: "Alina can ask, Is Seoul a big city? Min-su can ask, What can tourists see in Warsaw? They can also ask about the food and the weather.",
+            frames: ["... can ask, Is ... a big city?", "They can also ask about ..."]
           },
           {
-            q: "Where are Plovdiv and Nessebar?",
-            model: "Plovdiv and Nessebar are in Bulgaria. They are old towns, and tourists can walk through their historical streets.",
-            frames: ["Plovdiv and Nessebar are in ...", "They are ... towns, and tourists can ..."]
+            q: "Which language can all six students use when they talk together, and why?",
+            model: "I think they use English because it is a common language for all of them. Mehmet can also teach them a few Turkish words.",
+            frames: ["I think they use ... because ...", "... can also teach them ..."]
           },
           {
-            q: "Where can tourists see rock art?",
-            model: "Tourists can see rock art in Norway. It is very old, and people can visit it on a day trip.",
-            frames: ["Tourists can see rock art in ...", "It is ..., and people can ..."]
+            q: "What small gift from Türkiye would you give to one of the students, and why?",
+            model: "I would give Ingrid a box of Turkish delight because it is a sweet and famous gift. She can share it with her family in Oslo.",
+            frames: ["I would give ... a ... because ...", "He/She can share it with ..."]
           }
         ],
-        checklist: ["a full sentence with am, is or are", "can for what tourists do", "the name of a country"]
+        checklist: ["a full sentence with am, is or are", "can for what students or tourists do", "the name of a country"]
       },
       {
         type: "speak",
         title: "Azerbaijan and the Turkic states",
         source: "Unit 1 · Language Awareness c–d · p.30",
-        instruction: "The Reading 2 passage is about Azerbaijan, a Turkic state between the Caucasus Mountains and the Caspian Sea. Its capital, Baku, has old UNESCO sites and modern skyscrapers, and its food reflects the Silk Road. Ask and answer in pairs, then say each answer in your own words.",
+        instruction: "Azerbaijan is a Turkic country on the western shore of the Caspian Sea. Its capital, Baku, has a walled old city and a famous stone tower, but also tall glass buildings. Its food shows the history of the Silk Road. Other Turkic states include Uzbekistan and Kazakhstan. Ask and answer in pairs, then say each answer in your own words.",
         questions: [
           {
-            q: "Where is the Republic of Azerbaijan?",
-            model: "The Republic of Azerbaijan is in the place where Western Asia meets Eastern Europe. It is between the Caucasus Mountains and the Caspian Sea.",
-            frames: ["It is in the place where ... meets ...", "It is between ... and ..."]
+            q: "What is the capital of Azerbaijan, and what old landmark can visitors see there?",
+            model: "The capital of Azerbaijan is Baku. Visitors can see the walled old city and the Maiden Tower, which are very old.",
+            frames: ["The capital of ... is ...", "Visitors can see ... and ..."]
           },
           {
-            q: "Why should people visit the Turkic states?",
-            model: "People should visit the Turkic states because they are rich in culture and history. Travellers can see unique places and have a memorable time.",
-            frames: ["People should visit them because ...", "Travellers can ..."]
+            q: "Which other Turkic states do you know, apart from Türkiye and Azerbaijan?",
+            model: "I know Uzbekistan and Kazakhstan. They are big countries in Central Asia, and the people there speak Turkic languages.",
+            frames: ["I know ... and ...", "They are countries in ..."]
           },
           {
-            q: "What are the characteristics of Baku?",
-            model: "Baku is the capital city of Azerbaijan. It is a modern business city with skyscrapers, and visitors can see UNESCO sites such as the Maiden Tower.",
-            frames: ["Baku is the capital of ...", "It is a ... city, and visitors can ..."]
+            q: "How is Baku both old and modern?",
+            model: "Baku has an old walled city with ancient buildings, and it also has tall glass skyscrapers. Visitors can walk through history in the morning and see the modern city in the evening.",
+            frames: ["Baku has ... and also ...", "Visitors can ... in the morning and ..."]
           },
           {
-            q: "What is the importance of the Silk Road?",
-            model: "The Silk Road is important because it was a trading and cultural exchange route. Its history is still part of the food of Azerbaijan, so visitors can taste that history today.",
-            frames: ["The Silk Road is important because ...", "Visitors can taste ..."]
+            q: "Why did traders travel along the Silk Road long ago?",
+            model: "Traders travelled along the Silk Road to sell silk, spices and other goods. They also shared ideas and foods, so many cultures became closer.",
+            frames: ["Traders travelled to ...", "They also shared ..."]
           },
           {
             q: "Would you like to visit Baku? Why, or why not?",
@@ -93,9 +93,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["Yes, I would, because ...", "No, I would not, because ..."]
           },
           {
-            q: "Do you know any other Turkic state besides Türkiye? Which one?",
-            model: "Yes, I do. Azerbaijan is a Turkic state, and its capital is Baku. I think the people there can understand a little Turkish.",
-            frames: ["Yes, I do. ... is a Turkic state.", "Its capital is ..."]
+            q: "What would feel familiar to a Turkish tourist in Azerbaijan?",
+            model: "Many things would feel familiar. The language is close to Turkish, and people drink tea and eat dishes that a Turkish visitor knows.",
+            frames: ["The language is ...", "People drink ... and eat ..."]
           }
         ],
         checklist: ["is or are for a place", "can for what visitors do", "because for a reason"]
@@ -104,27 +104,27 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         type: "speak",
         title: "Be a vlogger",
         source: "Unit 1 · Vocabulary h, j · p.29",
-        instruction: "Nora is a travel vlogger. Think about her trips, then talk about your own travels.",
+        instruction: "A travel vlogger films trips and shares the videos online. Think about what a vlogger needs, then talk about your own trip ideas.",
         questions: [
           {
-            q: "Why do you think Nora travels to so many different countries?",
-            model: "I think Nora travels to many countries because she is curious about other cultures. She can meet new people and share her trips with her followers.",
-            frames: ["I think she travels because ...", "She is curious about ..., and she can ..."]
+            q: "Why do some vloggers visit places that few tourists know?",
+            model: "I think they want to show something new. Their followers can see quiet villages and special food that are not in guidebooks.",
+            frames: ["I think they want to ...", "Their followers can see ..."]
           },
           {
-            q: "Why do you think Nora does not say her next travel destination?",
-            model: "I think Nora does not say her next destination because it is a surprise. Her followers are excited, and they can guess the country.",
-            frames: ["I think it is a surprise because ...", "Her followers can ..."]
+            q: "What does a vlogger need to pack for a month-long trip?",
+            model: "A vlogger needs a camera, a phone, a charger and a small tripod. It is also important to take a light bag, because the trip is long.",
+            frames: ["A vlogger needs ..., ... and ...", "It is important to ..."]
           },
           {
-            q: "Imagine you are a vlogger, which countries do you travel to?",
-            model: "As a vlogger, I travel to Japan, Italy and Mexico. They are very different, and I can learn about three cultures.",
-            frames: ["I travel to ..., ... and ...", "They are ..., and I can ..."]
+            q: "If you filmed a travel video this summer, which three places would you visit?",
+            model: "I would visit Cappadocia, Trabzon and Mardin. They are very different, and viewers can see rocks, green hills and old stone streets.",
+            frames: ["I would visit ..., ... and ...", "Viewers can see ..."]
           },
           {
-            q: "What do you do there?",
-            model: "In Japan, I take photos of the temples and I try the local food. In Mexico, I can take a day trip to an ancient ruin.",
-            frames: ["In ..., I take photos of ...", "I can go on a day trip to ..."]
+            q: "What would you film on the first morning of your trip?",
+            model: "I would film the street outside my hotel and the breakfast table. Viewers can see the local people, the bread and the tea.",
+            frames: ["I would film ...", "Viewers can see ..."]
           },
           {
             q: "Would you like to be a travel vlogger? Why, or why not?",
@@ -137,48 +137,48 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["I would call it ... because ...", "My followers can ..."]
           }
         ],
-        checklist: ["a reason with because", "the name of a country", "can for a possibility"]
+        checklist: ["a full sentence", "the name of a place", "can for a possibility"]
       },
       {
         type: "speak",
-        title: "Chile: climate and culture",
+        title: "Geography and weather: Italy",
         source: "Unit 1 · Reading follow-up g–h · p.33",
-        instruction: "Chile has lakes, rivers, forests and glaciers, and its capital is Santiago. Answer the questions in pairs.",
+        instruction: "Italy is a long country in southern Europe. The Alps are in the north, the Mediterranean Sea is around the rest, and there are volcanoes such as Etna and Vesuvius. Its capital is Rome. Use these facts in your answers, and answer in pairs.",
         questions: [
           {
-            q: "Why is there climatic contrast in Chile?",
-            model: "There is climatic contrast in Chile because the country is very long. It is hot and dry in the north, and it is cold and snowy in the south.",
-            frames: ["There is contrast because ...", "It is ... in the north and ... in the south."]
+            q: "Why is the weather in northern Italy different from the weather in the south?",
+            model: "The north is near the Alps, so winters are cold and snowy there. The south is closer to Africa and the warm sea, so summers are hot and dry.",
+            frames: ["The north is ..., so ...", "The south is ..., so ..."]
           },
           {
-            q: "How can climate affect its geography?",
-            model: "Climate can change the land. Dry weather can make a desert, and cold weather can make glaciers.",
-            frames: ["Climate can change ...", "... weather can make ..."]
+            q: "How do mountains and the sea change the way people live in Italy?",
+            model: "People in the mountains can ski and walk in the forests. People on the coast can fish, swim and work in hotels for tourists.",
+            frames: ["People in the mountains can ...", "People on the coast can ..."]
           },
           {
-            q: "What opportunities are there in its tourist attractions?",
-            model: "There are many opportunities for tourists. They can visit lakes and forests, go hiking, and take photos of the mountains.",
-            frames: ["There are opportunities for ...", "Tourists can ... and ..."]
+            q: "Why do so many tourists go to the Italian coast in summer?",
+            model: "They go there because the weather is warm and sunny. They can swim, eat fresh fish and visit old towns by the sea.",
+            frames: ["They go there because ...", "They can ... and ..."]
           },
           {
-            q: "Why can people ski and surf on the same day in Santiago?",
-            model: "People can ski and surf on the same day because the mountains and the ocean are close to the capital city.",
-            frames: ["People can ... because ...", "The ... and the ... are close."]
+            q: "What is special about volcanoes like Etna and Vesuvius?",
+            model: "Etna and Vesuvius are active volcanoes. Tourists can walk up and see the crater, and near Vesuvius they can visit the ruins of Pompeii.",
+            frames: ["... and ... are active volcanoes.", "Tourists can ... and visit ..."]
           },
           {
-            q: "Where are the Chileans usually from?",
-            model: "Many Chileans are from families with European and indigenous roots, for example Mapuche. Because of this, the culture of Chile is diverse.",
-            frames: ["Many Chileans are from ...", "The culture is diverse because ..."]
+            q: "Which part of Italy is the best place for a winter holiday?",
+            model: "The Alps in the north are the best place for a winter holiday. There is a lot of snow, so tourists can ski and snowboard.",
+            frames: ["... is the best place for a winter holiday.", "There is ..., so tourists can ..."]
           },
           {
-            q: "What do you like most about Chile? Give at least two reasons.",
-            model: "I like the mountains most. First, they are beautiful, and second, people can ski there in winter.",
-            frames: ["I like ... most.", "First, ... Second, ..."]
+            q: "Which part of Italy's nature sounds best to you, and why? Give two reasons.",
+            model: "The lakes in the north sound best to me. First, the water is calm and beautiful. Second, tourists can take a boat trip with a view of the mountains.",
+            frames: ["... sounds best to me.", "First, ... Second, ..."]
           },
           {
-            q: "What do you think is the most interesting thing about Chile?",
-            model: "I think the most interesting thing is that people can ski in the morning and surf in the afternoon. It is very unusual.",
-            frames: ["I think the most interesting thing is ...", "It is very ..."]
+            q: "Which fact about Italy's land surprises you most?",
+            model: "It surprises me that the same country has snowy mountains in the north and very hot beaches in the south. It is possible because Italy is so long.",
+            frames: ["It surprises me that ...", "It is possible because ..."]
           }
         ],
         checklist: ["there is or there are", "can for what is possible", "two reasons"]
@@ -187,32 +187,32 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         type: "speak",
         title: "Online life and safety",
         source: "Unit 1 · Roots and Routes d–e · p.34",
-        instruction: "The Reading 4 passage explains that the Internet makes daily tasks easy, but sharing personal information online brings risks such as cyberattacks and data theft. Türkiye trains cybersecurity experts in vocational schools in technoparks. Talk in pairs, then share your ideas with the class.",
+        instruction: "The Internet makes many daily jobs quick and easy, but careless sharing can cause problems. Talk in pairs about staying safe online, then tell the rest of the group what you decided.",
         questions: [
           {
-            q: "Why is the Internet important in modern life?",
-            model: "The Internet is important because people can do many tasks from home. They can pay bills, study, work and save time.",
-            frames: ["The Internet is important because ...", "People can ... from home."]
+            q: "What can happen if you use the same password for all your accounts?",
+            model: "If a hacker finds the password, the hacker can open all your accounts. He can read your messages and take your photos, so one password is not safe.",
+            frames: ["If a hacker finds ..., the hacker can ...", "One password is not safe because ..."]
           },
           {
-            q: "What are the risks for people when they share personal information online?",
-            model: "The risks are cyberattacks and data theft. Hackers can steal personal information and use it for harmful purposes.",
-            frames: ["The risks are ...", "Hackers can ..."]
+            q: "Which kinds of information should you never post on social media?",
+            model: "You should never post your home address, your ID number or your passwords. Strangers can use this information to find you or to steal your money.",
+            frames: ["You should never post ...", "Strangers can use ... to ..."]
           },
           {
-            q: "Why is it good for students to be in technoparks while studying?",
-            model: "It is good because students can learn from professionals. They get real experience, and they can find a job more easily.",
-            frames: ["It is good because ...", "Students can ... and they get ..."]
+            q: "Why is public Wi-Fi in a cafe less safe than the Wi-Fi at home?",
+            model: "Many strangers use public Wi-Fi, so a hacker can watch what you do. At home, only my family uses the network, so it is safer.",
+            frames: ["Many strangers use ..., so ...", "At home, only ..., so it is safer."]
           },
           {
-            q: "What tasks do you do online?",
-            model: "I do many tasks online. I can chat with friends, watch videos, do my homework and look for information.",
-            frames: ["I can ... online.", "I ..., ... and ..."]
+            q: "What do you mostly use your phone or computer for after school?",
+            model: "I mostly use my phone to chat with friends, watch videos and look for homework help. I use my computer for school projects.",
+            frames: ["I mostly use my phone to ...", "I use my computer for ..."]
           },
           {
-            q: "How can you protect your personal information while using the Internet?",
-            model: "I can use strong passwords and I can keep my accounts private. I am careful, and I do not share my address with strangers.",
-            frames: ["I can use ...", "I am careful, and I do not ..."]
+            q: "How can you check that a message from a bank or a shop is real?",
+            model: "I look at the sender's address, and I do not click the link. I can call the bank or ask my parents before I answer.",
+            frames: ["I look at ..., and I do not ...", "I can ... before I answer."]
           },
           {
             q: "Do you think you spend too much time online? Why, or why not?",
@@ -224,51 +224,51 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       },
       {
         type: "speak",
-        title: "Find someone who...",
+        title: "Class hunt: Who can...?",
         source: "Unit 1 · Gamification · p.29",
-        instruction: "Move around the class. Ask a classmate each question, answer it yourself with a full sentence, and say the names aloud.",
+        instruction: "Walk around the room. Ask a classmate each question, answer it yourself with a full sentence, and write down the names of the classmates who say yes.",
         questions: [
           {
-            q: "Can you name five countries in Europe?",
-            model: "Yes, I can. France, Spain, Italy, Poland and Hungary are five countries in Europe.",
-            frames: ["Yes, I can. ... are five countries.", "No, I cannot, but I can name ..."]
+            q: "Can you say hello in three different languages?",
+            model: "Yes, I can. I say hello in English, merhaba in Turkish and hola in Spanish.",
+            frames: ["Yes, I can. I say hello in ...", "No, I cannot, but I can say it in ..."]
           },
           {
-            q: "Can you tell four tourist attractions in Türkiye?",
-            model: "Yes, I can. Hagia Sophia, Ephesus, Anıtkabir and Cappadocia are four tourist attractions in Türkiye.",
-            frames: ["Yes, I can. ... are tourist attractions.", "One tourist attraction is ..."]
+            q: "Can you name three countries in Africa?",
+            model: "Yes, I can. Egypt, Kenya and Morocco are three countries in Africa.",
+            frames: ["Yes, I can. ... are three countries.", "No, I cannot, but I can name ..."]
           },
           {
-            q: "Can you name ten nationalities?",
-            model: "Yes, I can. They are Turkish, Polish, Hungarian, Bulgarian, Norwegian, Korean, Japanese, Mexican, Spanish and French.",
-            frames: ["Yes, I can. They are ...", "I am ..., and my friend is ..."]
+            q: "Can you name three Turkish dishes that tourists love?",
+            model: "Yes, I can. Kebab, mantı and baklava are three Turkish dishes that tourists love.",
+            frames: ["Yes, I can. ... are three dishes.", "One dish is ..."]
           },
           {
-            q: "Can you name three languages?",
-            model: "Yes, I can. Turkish, English and German are three languages.",
-            frames: ["Yes, I can. ... are languages.", "I can speak ... and ..."]
+            q: "Can you name three famous rivers in the world?",
+            model: "Yes, I can. The Nile, the Amazon and the Danube are three famous rivers.",
+            frames: ["Yes, I can. ... are three rivers.", "No, I cannot, but I can name ..."]
           },
           {
-            q: "Can you name two capital cities in Asia?",
-            model: "Yes, I can. Tokyo and Seoul are two capital cities in Asia.",
-            frames: ["Yes, I can. ... and ... are capital cities.", "No, I cannot, but I can name ..."]
+            q: "Can you name two island countries?",
+            model: "Yes, I can. Japan and Iceland are two island countries.",
+            frames: ["Yes, I can. ... and ... are island countries.", "No, I cannot, but I know ..."]
           },
           {
-            q: "Can you name three countries that start with the letter S?",
-            model: "Yes, I can. Spain, Sweden and Switzerland start with S.",
-            frames: ["Yes, I can. ... start with S.", "I can name ... and ..."]
+            q: "Can you say the nationality of a person from Brazil, Italy and Egypt?",
+            model: "Yes, I can. A person from Brazil is Brazilian, a person from Italy is Italian, and a person from Egypt is Egyptian.",
+            frames: ["Yes, I can. A person from ... is ...", "I can say ..., ... and ..."]
           }
         ],
         checklist: ["Yes, I can or No, I cannot", "a full sentence", "the correct nationality or language word"]
       },
       {
         type: "speak",
-        title: "Cultural Exchange Fair and the Türkiye video",
+        title: "Presenting your country: school fair and video",
         source: "Unit 1 · Consolidation e · p.35; E-Portfolio a · p.36",
-        instruction: "Speak for about one minute as if you are at the Cultural Exchange Fair or making a video about Türkiye. Use the checklist as a guide.",
+        instruction: "Speak for about one minute as if you are standing at an international school fair, or filming a short clip that presents Türkiye. Use the checklist as a guide.",
         questions: [
           {
-            q: "Introduce yourself and your country at the Cultural Exchange Fair.",
+            q: "Introduce yourself and your country at an international school fair.",
             model: "Hello, everyone! My name is Elif, and I am Turkish. I am from Türkiye, and I can speak Turkish and English. The capital of Türkiye is Ankara. Tourists can visit Hagia Sophia and Cappadocia. They can eat local food and take a boat trip on the Bosphorus. Thank you for listening, and goodbye!",
             frames: ["Hello, everyone! My name is ...", "I am ... and I can speak ...", "The capital of ... is ...", "Tourists can ... and ...", "Thank you for listening, and goodbye!"]
           },
@@ -278,9 +278,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["Good morning! My name is ...", "I am ... and I can speak ...", "The capital is ...", "Tourists can visit ... and ...", "Thank you, and goodbye!"]
           },
           {
-            q: "Your partner interviews you for the video: What can tourists do in Türkiye?",
-            model: "Tourists can do many things in Türkiye. They can walk through old cities, go hiking in the mountains and swim in the sea. They can also try delicious food, so a trip here is never boring.",
-            frames: ["Tourists can ... in Türkiye.", "They can also ...", "It is ... because ..."]
+            q: "Your partner interviews you for the clip: What would you recommend to a visitor to Türkiye?",
+            model: "I would recommend a walk through an old city and a day at the seaside. A visitor can also hike in the mountains and try delicious food, so a trip here is never boring.",
+            frames: ["I would recommend ...", "A visitor can also ...", "It is ... because ..."]
           },
           {
             q: "Which place would you show first in your video about Türkiye, and why?",
@@ -371,7 +371,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["The capital of ... is ...", "Yes, it is a big city. / No, it is a small city."]
           },
           {
-            q: "What languages can you speak?",
+            q: "Which languages can you speak?",
             model: "I can speak Turkish and English. I can also say a few words in German.",
             frames: ["I can speak ... and ...", "I can also say a few words in ..."]
           },
@@ -503,9 +503,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         instruction: "Imagine you are a local guide for your own country. Answer each question aloud, then compare with the model answer and listen for can and can't.",
         questions: [
           {
-            q: "What can tourists do in your city in summer?",
-            model: "Tourists can swim in the pools and visit old sites in the morning. In the evening they can walk outside because it is cooler.",
-            frames: ["Tourists can ... in summer.", "In the evening they can ..."]
+            q: "What can visitors enjoy in your city during the summer holidays?",
+            model: "Visitors can swim in the pools and visit old sites in the morning. In the evening they can walk outside because it is cooler.",
+            frames: ["Visitors can ... in summer.", "In the evening they can ..."]
           },
           {
             q: "What can tourists buy as a souvenir from your area?",
@@ -518,9 +518,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["Yes, they can ... and ...", "They cannot ..., but they can ..."]
           },
           {
-            q: "Where can tourists go for a day trip from your town?",
-            model: "Tourists can go to an ancient city or to a small village by car. It takes about one hour, and they can have lunch there.",
-            frames: ["Tourists can go to ...", "It takes about ..."]
+            q: "Which place near your town is good for a day out?",
+            model: "An ancient city and a small village in the hills are good for a day out. It takes about one hour by car, and visitors can have lunch there.",
+            frames: ["... is good for a day out.", "It takes about ..."]
           },
           {
             q: "Which tourist attraction in Türkiye do you like best, and why?",
@@ -792,36 +792,36 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       },
       {
         type: "roleplay",
-        title: "Role-play: Bulgaria meets Norway",
+        title: "Role-play: Spain meets Egypt",
         source: "Unit 1 · Pronunciation e · p.27",
         scenario: "Two students from different countries meet at the school's welcome day and ask about nationality, languages, capital cities and tourist activities.",
         cardA: {
-          role: "Anton or Antonia from Bulgaria",
+          role: "Carlos or Carla from Spain",
           rows: [
-            ["Country / nationality", "Bulgaria / Bulgarian"],
-            ["A tourist attraction", "The Ancient Serdica Complex"],
-            ["Languages", "Bulgarian, English and Italian"],
-            ["Activity", "Stroll through Borisova Garden"]
+            ["Country / nationality", "Spain / Spanish"],
+            ["A tourist attraction", "The Prado Museum in Madrid"],
+            ["Languages", "Spanish, English and French"],
+            ["Activity", "Row a boat on the lake in Retiro Park"]
           ]
         },
         cardB: {
-          role: "Karl or Karla from Norway",
+          role: "Yusuf or Yasmin from Egypt",
           rows: [
-            ["Country / nationality", "Norway / Norwegian"],
-            ["A tourist attraction", "Akershus Fortress"],
-            ["Languages", "Norwegian and English"],
-            ["Activity", "Take a fjord cruise"]
+            ["Country / nationality", "Egypt / Egyptian"],
+            ["A tourist attraction", "The Pyramids of Giza"],
+            ["Languages", "Arabic and English"],
+            ["Activity", "Sail along the Nile on a felucca"]
           ]
         },
         model: [
-          { speaker: "A", text: "Hi there! I am Anton, and I am from Bulgaria." },
-          { speaker: "B", text: "Nice to meet you, Anton! I am Karl, and I am from Norway. What is your nationality, and what languages can you speak?" },
-          { speaker: "A", text: "I am Bulgarian, and I can speak Bulgarian, English and Italian. What about you?" },
-          { speaker: "B", text: "I am Norwegian, and I can speak Norwegian and English. What is the capital of Bulgaria?" },
-          { speaker: "A", text: "It is Sofia. Tourists can explore the Ancient Serdica Complex and stroll through Borisova Garden. What about Norway?" },
-          { speaker: "B", text: "The capital of Norway is Oslo. Tourists can visit Akershus Fortress and take a fjord cruise." },
-          { speaker: "A", text: "That sounds great! Thank you, Karl." },
-          { speaker: "B", text: "You are welcome. See you at the fair, Anton!" }
+          { speaker: "A", text: "Hello! I am Carlos, and I am from Spain." },
+          { speaker: "B", text: "Hi, Carlos! I am Yusuf, and I am from Egypt. Which languages can you speak, and what nationality are you?" },
+          { speaker: "A", text: "I am Spanish, and I can speak Spanish, English and French. How about you?" },
+          { speaker: "B", text: "I am Egyptian, and I can speak Arabic and English. What is the capital of Spain?" },
+          { speaker: "A", text: "It is Madrid. Tourists can look at paintings in the Prado Museum and row a boat on the lake in Retiro Park. And Egypt?" },
+          { speaker: "B", text: "The capital of Egypt is Cairo. Tourists can see the Pyramids of Giza and sail along the Nile on a felucca." },
+          { speaker: "A", text: "Amazing! I would love to see the pyramids." },
+          { speaker: "B", text: "You are welcome to visit. See you at the fair, Carlos!" }
         ],
         checklist: ["a greeting", "I am ... nationality", "I can speak ... languages", "The capital of ... is ...", "Tourists can ..."]
       },
@@ -887,8 +887,8 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         model: [
           { speaker: "A", text: "Hello! I am Mehmet. I am from Türkiye." },
           { speaker: "B", text: "Hi, Mehmet! I am Odett, and I am from Hungary. What languages can you speak?" },
-          { speaker: "A", text: "I am Turkish, and I can speak Turkish and German. What is your nationality, and what languages can you speak?" },
-          { speaker: "B", text: "I am Hungarian, and I can speak Hungarian and English. What is the capital of Türkiye, and what can tourists do there?" },
+          { speaker: "A", text: "I am Turkish, and I can speak Turkish and German. And you, Odett? Are you Hungarian?" },
+          { speaker: "B", text: "Yes, I am Hungarian, and I can speak Hungarian and English. What is the capital of Türkiye, and what can tourists do there?" },
           { speaker: "A", text: "The capital is Ankara. Tourists can visit Hagia Sophia and take a boat trip on the Bosphorus. What about Hungary?" },
           { speaker: "B", text: "The capital of Hungary is Budapest. Tourists can relax in the thermal baths and walk beside the river Danube." },
           { speaker: "A", text: "That sounds wonderful!" },
@@ -942,7 +942,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           role: "Tourist from Hungary",
           rows: [
             ["Your name", "Odett"],
-            ["Your question", "What can tourists do in this city?"],
+            ["Your question", "What is worth seeing in this city?"],
             ["Your interest", "Old buildings and boat trips"],
             ["Ask also", "Can I take photos inside?"]
           ]
@@ -959,7 +959,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         model: [
           { speaker: "A", text: "Excuse me, I am a tourist from Hungary. My name is Odett. Can you help me, please?" },
           { speaker: "B", text: "Of course! Welcome to Istanbul. What would you like to know?" },
-          { speaker: "A", text: "What can tourists do in this city? I like old buildings and boat trips." },
+          { speaker: "A", text: "What is worth seeing in this city? I like old buildings and boat trips." },
           { speaker: "B", text: "You can visit Hagia Sophia. It is a very old and beautiful building." },
           { speaker: "A", text: "That sounds great! Can I take photos inside?" },
           { speaker: "B", text: "Yes, you can take photos, but you cannot use a flash. You can also take a boat trip on the Bosphorus." },
