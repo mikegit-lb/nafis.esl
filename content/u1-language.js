@@ -113,7 +113,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { term: "stroll", meaning: "walk slowly and happily, without hurry", example: "In the evening, you can stroll through the garden." },
           { term: "go on a fjord cruise", meaning: "travel by boat between high mountains and deep sea water", example: "Tourists can go on a fjord cruise in Norway." },
           { term: "bike around", meaning: "ride a bicycle in different parts of a place", example: "You can bike around the park and visit the lake." },
-          { term: "go hiking", meaning: "walk in hills or mountains for fun", example: "In the national park, you can go hiking for two hours." },
+          { term: "go hiking", meaning: "spend a day walking along paths in hills or forests", example: "Students can go hiking in the national park on Saturdays." },
           { term: "take a boat trip", meaning: "make a short journey on the water for fun", example: "You can take a boat trip on the river and see the old bridge." },
           { term: "visit a museum", meaning: "go to a museum to look at its collection", example: "On a rainy day, you can visit a museum." },
           { term: "taste local food", meaning: "try the traditional dishes of a place", example: "In Italy, you can taste local food in small family restaurants." },
@@ -129,7 +129,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { term: "I come from…", meaning: "another way to say where you are from", example: "I come from Türkiye, and I can speak Turkish." },
           { term: "Where are you from?", meaning: "asks about someone's country or town", example: "Where are you from? Are you from Greece?" },
           { term: "What's your nationality?", meaning: "asks which country a person belongs to", example: "What's your nationality? I am Egyptian." },
-          { term: "What languages can you speak?", meaning: "asks about all the languages a person can use", example: "What languages can you speak? I can speak Turkish and English." },
+          { term: "What languages can you speak?", meaning: "asks which languages a person can use", example: "What languages can you speak? I can speak Turkish and English." },
           { term: "I can speak…", meaning: "tells people which languages you can use", example: "I can speak Turkish, English and a little German." },
           { term: "What's the capital of…?", meaning: "asks for the main city of a country", example: "What's the capital of Brazil? It is Brasília." }
         ]
@@ -217,8 +217,8 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "Type the nationality of Greece.", answer: "Greek", why: "A person from Greece is Greek." },
           { prompt: "Type the nationality of Brazil.", answer: "Brazilian", why: "A person from Brazil is Brazilian." },
           { prompt: "Lucas is Brazilian, and most people in his country speak ___.", answer: "Portuguese", why: "Portuguese is the main language of Brazil." },
-          { prompt: "Omar is from Cairo, and the main language in his country is ___.", answer: "Arabic", why: "Arabic is the main language of Egypt." },
-          { prompt: "Camille can speak the language of France. She can speak ___.", answer: "French", why: "French is the language of France." },
+          { prompt: "Omar is from Cairo, and the main language in his country is ___.", answer: "Arabic", accepted: ["Egyptian Arabic"], why: "Arabic is the main language of Egypt." },
+          { prompt: "Camille is from Paris, so she can speak ___.", answer: "French", why: "French is the language of France." },
           { prompt: "Li Wei is from Beijing, so he can speak ___.", answer: "Chinese", accepted: ["Mandarin", "Mandarin Chinese"], why: "Chinese (Mandarin) is the main language of China." }
         ]
       },
@@ -227,7 +227,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         title: "Match the attraction to its description",
         source: "Unit 1 · Vocabulary a · p.28",
         pairs: [
-          { left: "You can swim and sunbathe here, next to the sea.", answer: "beach" },
+          { left: "You can swim and lie in the sun here, next to the sea.", answer: "beach" },
           { left: "Muslims pray in this building, which often has a dome and tall towers.", answer: "mosque" },
           { left: "It carries a road or a path over a river.", answer: "bridge" },
           { left: "You can look at old or interesting objects here and learn about them.", answer: "museum" },
@@ -250,9 +250,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "You want to see old objects and learn about the history of the city. What can you do?", options: ["go hiking", "take a boat trip", "visit a museum"], answer: "visit a museum", why: "A museum shows old objects and teaches visitors about history." },
           { prompt: "You are in a small family restaurant in Italy. What can you do there?", options: ["taste local food", "go hiking", "visit a museum"], answer: "taste local food", why: "A family restaurant is a good place to try traditional dishes." },
           { prompt: "You are at the bazaar and you want a small present for your family. What can you do?", options: ["take a boat trip", "buy souvenirs", "go hiking"], answer: "buy souvenirs", why: "People buy souvenirs, such as postcards and magnets, as presents." },
-          { prompt: "You are at an old castle and you want an expert to explain its history. What can you do?", options: ["take a guided tour", "taste local food", "buy souvenirs"], answer: "take a guided tour", why: "On a guided tour, a guide explains the history of a place." },
+          { prompt: "You are at an old castle and you want an expert to explain its history. What can you do?", options: ["take a guided tour", "taste local food", "buy souvenirs at the market"], answer: "take a guided tour", why: "On a guided tour, a guide explains the history of a place." },
           { prompt: "You are at the foot of the mountains and you want a long, difficult walk. What can you do?", options: ["stroll", "take photos", "go trekking"], answer: "go trekking", why: "Trekking is a long, difficult walk, often in the mountains." },
-          { prompt: "You are in Norway, between high mountains and deep sea water. What can you do?", options: ["bike around", "visit a museum", "go on a fjord cruise"], answer: "go on a fjord cruise", why: "A fjord cruise is a boat trip between high mountains and deep water." }
+          { prompt: "You are in Norway, between high mountains and deep sea water. What can you do?", options: ["bike around a big park", "visit a museum", "go on a fjord cruise"], answer: "go on a fjord cruise", why: "A fjord cruise is a boat trip between high mountains and deep water." }
         ]
       },
       {
@@ -265,11 +265,11 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "A: ___ are you from?   B: I come from Greece.", options: ["Who", "When", "Where", "What"], answer: "Where", why: "Where asks about a country or town." },
           { prompt: "I ___ from Brazil, and I can speak Portuguese.", options: ["come", "comes", "coming", "to come"], answer: "come", why: "After I, use the base form come: I come from Brazil." },
           { prompt: "A: What's your ___?   B: I'm Georgian.", options: ["capital", "nationality", "country", "tourist"], answer: "nationality", why: "Georgian is a nationality, so the question asks about nationality." },
-          { prompt: "Maria speaks Spanish and English. What languages ___ you speak?", options: ["are", "is", "can", "am"], answer: "can", why: "Can asks which languages you are able to speak." },
+          { prompt: "A: What languages ___ you speak?   B: Turkish and English.", options: ["are", "is", "can", "am"], answer: "can", why: "Can asks which languages you are able to speak." },
           { prompt: "A: What's the ___ of France?   B: It's Paris.", options: ["capital", "language", "nationality", "attraction"], answer: "capital", why: "Paris is the main city of France, so it is the capital." },
-          { prompt: "A: ___ you speak German?   B: No, I can't.", options: ["Are", "Is", "Do", "Can"], answer: "Can", why: "The short answer No, I can't matches a question that begins with Can." },
-          { prompt: "He's from Germany, so he's ___.", options: ["Germany", "German", "Germans", "Germanly"], answer: "German", why: "The nationality of a person from Germany is German." },
-          { prompt: "I'm Hungarian, so I ___ speak Hungarian and a little English.", options: ["can", "cans", "am", "is"], answer: "can", why: "Use can plus a base verb to talk about a language you are able to speak." }
+          { prompt: "A: ___ you speak German?   B: No, I can't.", options: ["Are", "Is", "Does", "Can"], answer: "Can", why: "The short answer No, I can't matches a question that begins with Can; Are, Is and Does do not fit after you." },
+          { prompt: "He's from Germany, so he's ___.", options: ["Germany", "German", "Germans", "Germanic"], answer: "German", why: "The nationality of a person from Germany is German." },
+          { prompt: "I'm Hungarian, so I ___ speak Hungarian and a little English.", options: ["can", "will", "am", "is"], answer: "can", why: "Use can plus a base verb to talk about a language you are able to speak." }
         ]
       },
       {
@@ -285,7 +285,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "Please take off your shoes before you enter the ___, which is a place of prayer.", answer: "mosque", why: "A mosque is a building where Muslims pray." },
           { prompt: "At the Sunday ___, you can buy fresh fruit, cheese and bread.", answer: "market", why: "A market is a place where people sell food and other things." },
           { prompt: "Hikers can see lakes and forests in the ___, but they must not leave rubbish there.", answer: "national park", why: "A national park is a large area of nature that people protect." },
-          { prompt: "Join a ___ with a local expert who can tell you stories about the old town.", answer: "guided tour", why: "A guided tour is a visit with a guide who explains the place." },
+          { prompt: "Join a ___ and a guide will walk with you through the old town and tell you stories about it.", answer: "guided tour", why: "A guided tour is a visit with a guide who explains the place." },
           { prompt: "Small ___ such as postcards and magnets are cheap presents for your friends.", answer: "souvenirs", why: "Souvenirs are small things that people buy to remember a trip." },
           { prompt: "A ___ on the river is a relaxing way to see the town from the water.", answer: "boat trip", why: "A boat trip is a short journey on the water for fun." }
         ]
