@@ -97,25 +97,25 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         items: [
           {
             prompt: "Which phrase does NOT go with the verb plan?",
-            options: ["a weekend trip", "your study time", "a class party", "a loud noise"],
+            options: ["a loud noise", "a weekend trip", "your study time", "a class party"],
             answer: "a loud noise",
             why: "You can plan a trip, your time or a party, but you do not plan a noise."
           },
           {
             prompt: "Which phrase does NOT go with the verb relax?",
-            options: ["on the sofa", "with a good book", "after dinner", "your homework"],
+            options: ["on the sofa", "your homework", "your muscles", "after dinner"],
             answer: "your homework",
             why: "You relax somewhere or with something, but you do your homework, not relax it."
           },
           {
             prompt: "Which phrase does NOT go with the verb participate?",
-            options: ["in a school club", "in a class discussion", "in a team game", "in a school bag"],
-            answer: "in a school bag",
-            why: "You participate in activities or events, not in an object like a bag."
+            options: ["in a school building", "in a school club", "in a class discussion", "in a team game"],
+            answer: "in a school building",
+            why: "You participate in activities or events, not in a building."
           },
           {
             prompt: "Which phrase does NOT go with the verb make?",
-            options: ["your bed", "a mistake", "a plan", "a shower"],
+            options: ["your bed", "a mistake", "a shower", "a plan"],
             answer: "a shower",
             why: "We make a bed, a mistake or a plan, but we have or take a shower."
           },
@@ -155,7 +155,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "Spontaneously means that something happens naturally, without planning."
           },
           {
-            prompt: "There is no school tomorrow, so I go to bed ___ tonight.",
+            prompt: "There is no school tomorrow, so Sally goes to bed ___ tonight.",
             answer: "late",
             why: "When you do not need to get up early, you can go to bed late."
           }
