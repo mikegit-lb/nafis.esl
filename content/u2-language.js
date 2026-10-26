@@ -105,7 +105,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             prompt: "Which phrase does NOT go with the verb relax?",
             options: ["on the sofa", "your homework", "your muscles", "after dinner"],
             answer: "your homework",
-            why: "You relax somewhere or with something, but you do your homework, not relax it."
+            why: "You can relax on the sofa, after dinner or your muscles, but you do your homework, not relax it."
           },
           {
             prompt: "Which phrase does NOT go with the verb participate?",
