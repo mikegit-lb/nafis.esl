@@ -132,9 +132,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["Yes, I would, because ...", "No, I would not, because ..."]
           },
           {
-            q: "What would you show your followers in your first video?",
-            model: "I would show my city, Denizli. My followers can see the white terraces of Pamukkale and taste the local food.",
-            frames: ["I would show ...", "My followers can see ... and ..."]
+            q: "What would you call your travel channel, and why?",
+            model: "I would call it Wandering with Elif because I like to walk and explore new places. My followers can come with me on every trip.",
+            frames: ["I would call it ... because ...", "My followers can ..."]
           }
         ],
         checklist: ["a reason with because", "the name of a country", "can for a possibility"]
@@ -216,7 +216,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "Do you think you spend too much time online? Why, or why not?",
-            model: "Yes, I think I do. I am online for about three hours every day, and I can use that time to read or play sport.",
+            model: "Yes, I think I do. I am online for about two hours every day, and I can use some of that time to read or play sport.",
             frames: ["Yes, I think I do, because ...", "No, I do not, because ..."]
           }
         ],
@@ -317,9 +317,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["I am ... years old.", "My birthday is in ..."]
           },
           {
-            q: "Where are you from?",
-            model: "I am from Denizli, in Türkiye. It is a city in the west of the country.",
-            frames: ["I am from ..., in ...", "It is a ... in the ... of the country."]
+            q: "Where were you born?",
+            model: "I was born in Denizli, in Türkiye. It is a city in the south-west of the country.",
+            frames: ["I was born in ..., in ...", "It is a ... in the ... of the country."]
           },
           {
             q: "Are you a student? Which grade are you in?",
@@ -333,7 +333,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "Are you shy or outgoing when you meet new people?",
-            model: "I am a little shy at first, but I am friendly. I can talk a lot when I know the people better.",
+            model: "I am a little shy at first, but I am friendly. I talk a lot when I know people better.",
             frames: ["I am ... at first, but ...", "I can talk a lot when ..."]
           },
           {
@@ -357,8 +357,8 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         questions: [
           {
             q: "Which country are you from?",
-            model: "I am from Türkiye. It is between Europe and Asia.",
-            frames: ["I am from ...", "It is in/between ..."]
+            model: "I am from Türkiye. It is in both Europe and Asia.",
+            frames: ["I am from ...", "It is in ..."]
           },
           {
             q: "What is your nationality?",
@@ -381,9 +381,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["Yes, I can. I can speak ..., but my parents ...", "No, I cannot. We can all speak ..."]
           },
           {
-            q: "Can you say thank you in three different languages?",
-            model: "Yes, I can. Thank you in English, teşekkür ederim in Turkish and danke in German.",
-            frames: ["Yes, I can. ... in English, ... in ... and ... in ...", "No, I cannot, but I can say it in ..."]
+            q: "Can you say thank you in two foreign languages?",
+            model: "Yes, I can. I say thank you in English and danke in German.",
+            frames: ["Yes, I can. I say thank you in ... and ... in ...", "No, I cannot, but I can say it in ..."]
           },
           {
             q: "Which language would you like to learn next, and why?",
@@ -455,7 +455,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         questions: [
           {
             q: "Which town or city do you live in?",
-            model: "I live in Denizli. It is a city in the west of Türkiye.",
+            model: "I live in Denizli. It is a city in the south-west of Türkiye.",
             frames: ["I live in ...", "It is a city/town in ..."]
           },
           {
@@ -474,9 +474,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["Yes, there are. There is ... and ...", "No, there are not, but there is ..."]
           },
           {
-            q: "What can tourists do in your city?",
-            model: "Tourists can visit the old sites and walk in the city centre. They can also swim in the warm pools and try the local food.",
-            frames: ["Tourists can visit ... and ...", "They can also ..."]
+            q: "What can a visitor do in the centre of your city?",
+            model: "A visitor can walk around the old streets, visit a museum and drink tea in a cafe.",
+            frames: ["A visitor can walk ... and visit ...", "A visitor can also ..."]
           },
           {
             q: "Can tourists get around easily where you live? How?",
@@ -484,9 +484,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["Yes, they can. They can take ...", "No, it is difficult because ..."]
           },
           {
-            q: "Which place would you show to a visitor first, and why?",
-            model: "I would show the old city centre first because it is beautiful. A visitor can see the history and drink tea in a cafe.",
-            frames: ["I would show ... first because ...", "A visitor can ..."]
+            q: "Where do you take your friends at the weekend?",
+            model: "I take my friends to the park and to a cafe in the city centre. We can walk, talk and drink tea there.",
+            frames: ["I take my friends to ...", "We can ... and ... there."]
           },
           {
             q: "Do you like living in your city? Give two reasons.",
@@ -503,13 +503,13 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         instruction: "Imagine you are a local guide for your own country. Answer each question aloud, then compare with the model answer and listen for can and can't.",
         questions: [
           {
-            q: "What can tourists do in your country in winter?",
-            model: "Tourists can ski in the mountains and visit warm cities by the sea. They can also drink hot tea in a cafe.",
-            frames: ["Tourists can ... in winter.", "They can also ..."]
+            q: "What can tourists do in your city in summer?",
+            model: "Tourists can swim in the pools and visit old sites in the morning. In the evening they can walk outside because it is cooler.",
+            frames: ["Tourists can ... in summer.", "In the evening they can ..."]
           },
           {
             q: "What can tourists buy as a souvenir from your area?",
-            model: "Tourists can buy ceramics, spices or sweets. Small gifts like these are easy to take home.",
+            model: "Tourists can buy towels, ceramics or sweets. Small gifts like these are easy to take home.",
             frames: ["Tourists can buy ...", "... are easy to take home."]
           },
           {
@@ -538,7 +538,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["Yes, I can. There is ...", "Tourists can sit ... and ..."]
           },
           {
-            q: "What can't tourists do in museums or historical places you know?",
+            q: "What can't tourists do in a museum or at a historical place?",
             model: "They cannot touch the old objects, and they cannot take photos with a flash. Signs often show these rules.",
             frames: ["They cannot touch ...", "They cannot ..., but they can ..."]
           }
@@ -568,7 +568,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "Which place in Türkiye would you like to visit, and why?",
-            model: "I would like to visit Trabzon because I love green mountains. I can also see Sumela Monastery there.",
+            model: "I would like to visit Antalya because I love the sea. I can swim, relax on the beach and see the old city.",
             frames: ["I would like to visit ... because ...", "I can also see ... there."]
           },
           {
@@ -598,7 +598,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         type: "speak",
         title: "About you · Things you can and can't do",
         source: "Unit 1 · Speaking (personal practice), extends Language Awareness c–d (can) · p.30",
-        instruction: "Answer each question aloud about yourself. Start with Yes, I can or No, I can't, then add a full sentence. Compare with the model answer.",
+        instruction: "Answer each question aloud about yourself. Start with Yes, I can or No, I cannot where it fits, then add a full sentence. Compare with the model answer.",
         questions: [
           {
             q: "Can you swim?",
@@ -632,7 +632,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "Can you use a computer to make a video or a presentation?",
-            model: "Yes, I can. I can make a simple video with my phone, and I can use slides for my school projects.",
+            model: "Yes, I can. I can use a computer to make a simple video, and I can use slides for my school projects.",
             frames: ["Yes, I can. I can make ...", "No, I cannot, but my friend can ..."]
           },
           {
@@ -661,7 +661,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "Can you live without your phone for a whole day? Why, or why not?",
-            model: "No, I think I cannot. I use my phone to talk to my friends and to check homework.",
+            model: "No, I think I cannot. I use my phone to talk to my friends and to check my homework.",
             frames: ["Yes, I can, because ...", "No, I cannot, because I use my phone to ..."]
           },
           {
@@ -699,9 +699,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         instruction: "Imagine an exchange student joins your class tomorrow. Answer each question aloud, then compare with the model answer and practise the polite phrases.",
         questions: [
           {
-            q: "What do you say when you meet an exchange student for the first time?",
-            model: "I say, Hello! I am Elif. Nice to meet you, and welcome to our school!",
-            frames: ["I say, Hello! I am ...", "Nice to meet you, and welcome to ..."]
+            q: "How do you make an exchange student feel welcome at your school?",
+            model: "I smile, say hello and offer to help. I can also ask the student to sit with my friends.",
+            frames: ["I smile and ...", "I can also ask the student to ..."]
           },
           {
             q: "What questions do you ask a new student from another country?",
@@ -709,14 +709,14 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["I ask, What is ...?", "Where are you ...? What can you ...?"]
           },
           {
-            q: "How can you help a new student on the first day?",
-            model: "I can show the student the classrooms, the library and the canteen. I can also sit with the student at lunch.",
-            frames: ["I can show ... the ...", "I can also ..."]
+            q: "What would you do if the exchange student is quiet and looks sad?",
+            model: "I would sit with the student and ask easy questions. I can also invite the student to join our group at lunch.",
+            frames: ["I would sit with ... and ...", "I can also invite ..."]
           },
           {
-            q: "What can you show your exchange partner in your town?",
-            model: "I can show my partner the old city centre and the best cafe. We can also take a bus to a beautiful park.",
-            frames: ["I can show my partner ...", "We can also ..."]
+            q: "What do you do with an exchange partner on a free afternoon?",
+            model: "We can walk around the city, have a snack and take photos. In the evening, we can watch a film.",
+            frames: ["We can ... and ...", "In the evening, we can ..."]
           },
           {
             q: "What do you want to know about your partner's country?",
@@ -729,13 +729,13 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["Yes, I can. I can teach ...", "They mean ..."]
           },
           {
-            q: "Are you excited or nervous when you meet new people? Why?",
-            model: "I am excited because I like to learn about other cultures. I am a little nervous, too, but I smile and ask questions.",
-            frames: ["I am excited/nervous because ...", "I am ..., too, but ..."]
+            q: "How do you feel on the first day at a new school?",
+            model: "I feel a little nervous, but I am also curious. I smile and ask questions, and soon I can make friends.",
+            frames: ["I feel ..., but I am also ...", "I smile and ..., and soon I can ..."]
           },
           {
             q: "Would you like to be an exchange student? Which country would you choose?",
-            model: "Yes, I would. I would choose Norway because I love nature, and I would like to see the fjords.",
+            model: "Yes, I would. I would choose Japan because I love its culture, and I would like to see Kyoto and Tokyo.",
             frames: ["Yes, I would. I would choose ... because ...", "No, I would not, because ..."]
           }
         ],
@@ -769,12 +769,12 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "Can you say hello in that country's language?",
-            model: "Yes, I can. In Japan, people say konnichiwa.",
+            model: "Yes, I can. I can say konnichiwa.",
             frames: ["Yes, I can. People say ...", "No, I cannot, but I can say ..."]
           },
           {
             q: "What can you do there that you cannot do at home?",
-            model: "I can see cherry blossoms in spring, visit old temples and ride a fast train.",
+            model: "I can see cherry blossoms in spring, visit old temples and ride a fast train there. I cannot do these things in my city.",
             frames: ["I can ... there.", "I cannot ... at home."]
           },
           {
@@ -783,9 +783,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["I would like to go in/next ...", "I would take ... with me."]
           },
           {
-            q: "Would you like to live in that country one day? Why, or why not?",
-            model: "I would like to live there for a year, but not forever. I miss my family and my food when I am far away.",
-            frames: ["I would like to live there for ...", "I would not, because ..."]
+            q: "How long can you imagine staying in that country: a week, a year or forever?",
+            model: "I can imagine staying for a year, but not forever. I would miss my family and my food when I am far away.",
+            frames: ["I can imagine staying for ...", "I would miss ..."]
           }
         ],
         checklist: ["Did you name your country and its capital?", "Did you give two reasons?", "Did you use can for what you can do there?"]
@@ -923,8 +923,10 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { speaker: "A", text: "Good morning! Welcome to our school. I am Deniz. What is your name?" },
           { speaker: "B", text: "Hello, Deniz! My name is Ingrid. I am the new exchange student." },
           { speaker: "A", text: "Nice to meet you, Ingrid! Where are you from?" },
-          { speaker: "B", text: "I am from Norway. I am Norwegian, and I can speak Norwegian and English." },
-          { speaker: "A", text: "Great, your English is very good! Can I help you? Which classroom are you looking for?" },
+          { speaker: "B", text: "I am from Norway. I am Norwegian." },
+          { speaker: "A", text: "Great, welcome! What languages can you speak?" },
+          { speaker: "B", text: "I can speak Norwegian and English." },
+          { speaker: "A", text: "Your English is very good! Can I help you? Which classroom are you looking for?" },
           { speaker: "B", text: "I am looking for the Grade 9 classroom. Is it far from here?" },
           { speaker: "A", text: "No, it is not far. It is on the second floor, and I can show you the way. We can see the library on the way, too." },
           { speaker: "B", text: "Thank you very much, Deniz. You are very kind!" }
@@ -962,7 +964,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { speaker: "A", text: "That sounds great! Can I take photos inside?" },
           { speaker: "B", text: "Yes, you can take photos, but you cannot use a flash. You can also take a boat trip on the Bosphorus." },
           { speaker: "A", text: "Wonderful! Is the boat trip long?" },
-          { speaker: "B", text: "No, it is not. It is about two hours. Enjoy your day, Odett!" }
+          { speaker: "B", text: "It is not very long. It is about one and a half hours." },
+          { speaker: "A", text: "Thank you very much for your help! Goodbye!" },
+          { speaker: "B", text: "You are welcome. Enjoy your day, Odett!" }
         ],
         checklist: ["Excuse me and a polite question", "What can tourists do ...?", "You can ... / You cannot ...", "two ideas for tourists", "thanks and goodbye"]
       }
