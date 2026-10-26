@@ -44,7 +44,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["I would choose ... because ...", "Tourists can ... there."]
           },
           {
-            q: "Alina is from Warsaw, and Min-su is from Seoul. What can they ask each other about their capitals?",
+            q: "Alina is from Poland, and Min-su is from South Korea. What can they ask each other about their capital cities?",
             model: "Alina can ask, Is Seoul a big city? Min-su can ask, What can tourists see in Warsaw? They can also ask about the food and the weather.",
             frames: ["... can ask, Is ... a big city?", "They can also ask about ..."]
           },
@@ -143,7 +143,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         type: "speak",
         title: "Geography and weather: Italy",
         source: "Unit 1 · Reading follow-up g–h · p.33",
-        instruction: "Italy is a long country in southern Europe. The Alps are in the north, the Mediterranean Sea is around the rest, and there are volcanoes such as Etna and Vesuvius. Its capital is Rome. Use these facts in your answers, and answer in pairs.",
+        instruction: "Italy is a long country in southern Europe that looks like a boot on the map. The Alps and some beautiful lakes are in the north, the Mediterranean Sea is on the other three sides, and there are volcanoes such as Etna and Vesuvius. Its capital is Rome, which has ancient ruins such as the Colosseum. Use these facts in your answers, and answer in pairs.",
         questions: [
           {
             q: "Why is the weather in northern Italy different from the weather in the south?",
@@ -156,9 +156,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["People in the mountains can ...", "People on the coast can ..."]
           },
           {
-            q: "Why do so many tourists go to the Italian coast in summer?",
-            model: "They go there because the weather is warm and sunny. They can swim, eat fresh fish and visit old towns by the sea.",
-            frames: ["They go there because ...", "They can ... and ..."]
+            q: "Why is Rome a good city for a first visit to Italy?",
+            model: "Rome is the capital, and it has ancient ruins such as the Colosseum. Tourists can walk to many sights in one day and eat Italian food on every street.",
+            frames: ["Rome is a good city because ...", "Tourists can ... and ..."]
           },
           {
             q: "What is special about volcanoes like Etna and Vesuvius?",
@@ -166,9 +166,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["... and ... are active volcanoes.", "Tourists can ... and visit ..."]
           },
           {
-            q: "Which part of Italy is the best place for a winter holiday?",
-            model: "The Alps in the north are the best place for a winter holiday. There is a lot of snow, so tourists can ski and snowboard.",
-            frames: ["... is the best place for a winter holiday.", "There is ..., so tourists can ..."]
+            q: "Which season is the best time to visit the cities of Italy, and why?",
+            model: "I think spring is the best time because it is warm but not too hot. In summer the cities are crowded, so tourists can walk around more comfortably in April or May.",
+            frames: ["I think ... is the best time because ...", "Tourists can ... more comfortably in ..."]
           },
           {
             q: "Which part of Italy's nature sounds best to you, and why? Give two reasons.",
@@ -176,9 +176,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["... sounds best to me.", "First, ... Second, ..."]
           },
           {
-            q: "Which fact about Italy's land surprises you most?",
-            model: "It surprises me that the same country has snowy mountains in the north and very hot beaches in the south. It is possible because Italy is so long.",
-            frames: ["It surprises me that ...", "It is possible because ..."]
+            q: "Why is the shape of Italy easy to recognise on a map?",
+            model: "Italy looks like a boot, and the sea is on three sides of it. Because of this, the coast is very long, so it is easy to find on a map.",
+            frames: ["Italy looks like ...", "Because of this, ..."]
           }
         ],
         checklist: ["there is or there are", "can for what is possible", "two reasons"]
@@ -191,7 +191,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         questions: [
           {
             q: "What can happen if you use the same password for all your accounts?",
-            model: "If a hacker finds the password, the hacker can open all your accounts. He can read your messages and take your photos, so one password is not safe.",
+            model: "If a hacker finds the password, the hacker can open all your accounts. They can read your messages and take your photos, so one password is not safe.",
             frames: ["If a hacker finds ..., the hacker can ...", "One password is not safe because ..."]
           },
           {
@@ -230,8 +230,8 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         questions: [
           {
             q: "Can you say hello in three different languages?",
-            model: "Yes, I can. I say hello in English, merhaba in Turkish and hola in Spanish.",
-            frames: ["Yes, I can. I say hello in ...", "No, I cannot, but I can say it in ..."]
+            model: "Yes, I can. I can say hello in English, merhaba in Turkish and hola in Spanish.",
+            frames: ["Yes, I can. I can say hello in ...", "No, I cannot, but I can say it in ..."]
           },
           {
             q: "Can you name three countries in Africa?",
@@ -254,12 +254,12 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["Yes, I can. ... and ... are island countries.", "No, I cannot, but I know ..."]
           },
           {
-            q: "Can you say the nationality of a person from Brazil, Italy and Egypt?",
-            model: "Yes, I can. A person from Brazil is Brazilian, a person from Italy is Italian, and a person from Egypt is Egyptian.",
-            frames: ["Yes, I can. A person from ... is ...", "I can say ..., ... and ..."]
+            q: "Can you say the nationality of people from Brazil, Italy and Egypt?",
+            model: "Yes, I can. People from Brazil are Brazilian, people from Italy are Italian, and people from Egypt are Egyptian.",
+            frames: ["Yes, I can. People from ... are ...", "I can say ..., ... and ..."]
           }
         ],
-        checklist: ["Yes, I can or No, I cannot", "a full sentence", "the correct nationality or language word"]
+        checklist: ["Yes, I can or No, I cannot", "a full sentence", "the correct names, with three examples where the question asks for them"]
       },
       {
         type: "speak",
@@ -280,7 +280,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           {
             q: "Your partner interviews you for the clip: What would you recommend to a visitor to Türkiye?",
             model: "I would recommend a walk through an old city and a day at the seaside. A visitor can also hike in the mountains and try delicious food, so a trip here is never boring.",
-            frames: ["I would recommend ...", "A visitor can also ...", "It is ... because ..."]
+            frames: ["I would recommend ...", "A visitor can also ...", "A trip here is never boring because ..."]
           },
           {
             q: "Which place would you show first in your video about Türkiye, and why?",
@@ -518,9 +518,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["Yes, they can ... and ...", "They cannot ..., but they can ..."]
           },
           {
-            q: "Which place near your town is good for a day out?",
-            model: "An ancient city and a small village in the hills are good for a day out. It takes about one hour by car, and visitors can have lunch there.",
-            frames: ["... is good for a day out.", "It takes about ..."]
+            q: "Which places near your town are good for a day out?",
+            model: "An ancient city and a small village in the hills are good for a day out. They take about one hour by car, and visitors can have lunch there.",
+            frames: ["... and ... are good for a day out.", "They take about ..."]
           },
           {
             q: "Which tourist attraction in Türkiye do you like best, and why?",
@@ -794,7 +794,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         type: "roleplay",
         title: "Role-play: Spain meets Egypt",
         source: "Unit 1 · Pronunciation e · p.27",
-        scenario: "Two students from different countries meet at the school's welcome day and ask about nationality, languages, capital cities and tourist activities.",
+        scenario: "Two students from different countries meet at a school fair and ask about nationality, languages, capital cities and tourist activities.",
         cardA: {
           role: "Carlos or Carla from Spain",
           rows: [
@@ -818,7 +818,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { speaker: "B", text: "Hi, Carlos! I am Yusuf, and I am from Egypt. Which languages can you speak, and what nationality are you?" },
           { speaker: "A", text: "I am Spanish, and I can speak Spanish, English and French. How about you?" },
           { speaker: "B", text: "I am Egyptian, and I can speak Arabic and English. What is the capital of Spain?" },
-          { speaker: "A", text: "It is Madrid. Tourists can look at paintings in the Prado Museum and row a boat on the lake in Retiro Park. And Egypt?" },
+          { speaker: "A", text: "It is Madrid. Tourists can visit the Prado Museum and row a boat on the lake in Retiro Park. And Egypt?" },
           { speaker: "B", text: "The capital of Egypt is Cairo. Tourists can see the Pyramids of Giza and sail along the Nile on a felucca." },
           { speaker: "A", text: "Amazing! I would love to see the pyramids." },
           { speaker: "B", text: "You are welcome to visit. See you at the fair, Carlos!" }
@@ -887,8 +887,8 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         model: [
           { speaker: "A", text: "Hello! I am Mehmet. I am from Türkiye." },
           { speaker: "B", text: "Hi, Mehmet! I am Odett, and I am from Hungary. What languages can you speak?" },
-          { speaker: "A", text: "I am Turkish, and I can speak Turkish and German. And you, Odett? Are you Hungarian?" },
-          { speaker: "B", text: "Yes, I am Hungarian, and I can speak Hungarian and English. What is the capital of Türkiye, and what can tourists do there?" },
+          { speaker: "A", text: "I am Turkish, and I can speak Turkish and German. And you, Odett? Is Hungarian your first language?" },
+          { speaker: "B", text: "Yes, it is, and I can speak English, too. What is the capital of Türkiye, and what can tourists do there?" },
           { speaker: "A", text: "The capital is Ankara. Tourists can visit Hagia Sophia and take a boat trip on the Bosphorus. What about Hungary?" },
           { speaker: "B", text: "The capital of Hungary is Budapest. Tourists can relax in the thermal baths and walk beside the river Danube." },
           { speaker: "A", text: "That sounds wonderful!" },
@@ -968,7 +968,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { speaker: "A", text: "Thank you very much for your help! Goodbye!" },
           { speaker: "B", text: "You are welcome. Enjoy your day, Odett!" }
         ],
-        checklist: ["Excuse me and a polite question", "What can tourists do ...?", "You can ... / You cannot ...", "two ideas for tourists", "thanks and goodbye"]
+        checklist: ["Excuse me and a polite question", "What is worth seeing ...?", "You can ... / You cannot ...", "two ideas for tourists", "thanks and goodbye"]
       }
     ]
   }
