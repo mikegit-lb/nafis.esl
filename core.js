@@ -2,9 +2,9 @@
   function normalizeAnswer(value) {
     return String(value).toLowerCase()
       .replace(/\s+/g, " ")
+      .trim()
       .replace(/\u2019/g, "'")
       .replace(/\s*[.!?]+$/, "")
-      .trim()
       .replace(/\bcan't\b/g, "cannot")
       .replace(/\bwon't\b/g, "will not")
       .replace(/n't\b/g, " not")
