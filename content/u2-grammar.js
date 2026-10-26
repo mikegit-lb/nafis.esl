@@ -38,7 +38,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       {
         label: "Time expressions",
         formula: "at 7.30 · at weekends · on weekdays · on Fridays · in the morning · twice a week",
-        note: "Use at for clock times, on for days, in for parts of the day. Twice a week usually goes at the end. Remember the fixed phrase at weekends."
+        note: "Use at for clock times, on for days, in for parts of the day. Twice a week usually goes at the end. Exception: we say at weekends (not on weekends)."
       }
     ],
     context: [
@@ -129,7 +129,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       },
       {
         type: "build", title: "Build a question: taking notes",
-        prompt: "Ask how often someone takes notes.", instruction: "Ask a classmate how often they take notes. Tap the words in the correct order.",
+        prompt: "Ask a classmate how often they take notes.", instruction: "Ask a classmate how often they take notes. Tap the words in the correct order.",
         tokens: ["notes?", "How", "you", "do", "take", "often"],
         answer: ["How", "often", "do", "you", "take", "notes?"],
         why: "Put do after How often and keep the base verb take."
