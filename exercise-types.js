@@ -3,7 +3,7 @@ window.ExerciseTypes = window.ExerciseTypes || {};
 window.ExerciseTypes.quiz = {
   render: function (ex, key) {
     const bank = ex.wordBank && ex.wordBank.length
-      ? '<div class="word-bank" role="group" aria-label="Word bank">' + ex.wordBank.map(function (word) {
+      ? '<div class="word-bank" role="group" aria-label="Word bank">' + Core.shuffle(ex.wordBank, "bank-" + key).map(function (word) {
           return '<span class="quiz-chip">' + escapeHtml(word) + '</span>';
         }).join("") + '</div>'
       : "";

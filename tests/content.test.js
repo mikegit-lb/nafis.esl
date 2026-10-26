@@ -46,6 +46,14 @@ function walkStrings(v, where, bad) {
   if (typeof v === "string") { if (/[<>]/.test(v)) bad(where + " contains < or >: " + v.slice(0, 40)); }
   else if (v && typeof v === "object") Object.keys(v).forEach(function (k) { walkStrings(v[k], where + "." + k, bad); });
 }
+// Every quiz needs >=8 items and every match >=6 pairs (activities of one section).
+function checkSizes(label, name, activities) {
+  activities.forEach(function (a, i) {
+    const where = label + " " + name + " #" + (i + 1) + " '" + a.title + "'";
+    if (a.type === "quiz") assert.ok(list(a.items).length >= 8, where + " quiz needs >=8 items, has " + list(a.items).length);
+    if (a.type === "match") assert.ok(list(a.pairs).length >= 6, where + " match needs >=6 pairs, has " + list(a.pairs).length);
+  });
+}
 function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
 
 [1, 2].forEach(function (n) {
@@ -67,7 +75,8 @@ function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
       });
     });
     const va = acts(u, "vocabulary");
-    assert.ok(total(va) >= 20, label + " vocabulary activities need >=20 scored questions, have " + total(va));
+    assert.ok(total(va) >= 40, label + " vocabulary activities need >=40 scored questions, have " + total(va));
+    checkSizes(label, "vocabulary", va);
     assert.ok(va.some(function (a) { return a.type === "match"; }), label + " vocabulary needs a match activity");
     assert.ok(va.some(function (a) { return a.type === "quiz" && filled(a.wordBank); }), label + " vocabulary needs a quiz with a wordBank");
   });
@@ -80,8 +89,14 @@ function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
     const speak = tasks.filter(function (a) { return a.type === "speak"; });
     const qs = speak.reduce(function (c, a) { return c + list(a.questions).length; }, 0);
     assert.ok(speak.length >= 4, label + " speaking needs >=4 speak cards, has " + speak.length);
-    assert.ok(qs >= 25, label + " speak cards need >=25 questions in total, have " + qs);
-    assert.ok(tasks.filter(function (a) { return a.type === "roleplay"; }).length >= 2, label + " speaking needs >=2 roleplay cards");
+    assert.ok(qs >= 70, label + " speak cards need >=70 questions in total, have " + qs);
+    const personal = speak.reduce(function (c, a) { return c + list(a.questions).filter(function (q) { return q && /\byou(r)?\b/i.test(q.q); }).length; }, 0);
+    assert.ok(personal >= 40, label + " speak cards need >=40 personal questions (containing you/your), have " + personal);
+    const rp = tasks.filter(function (a) { return a.type === "roleplay"; }).length;
+    assert.ok(rp >= 4, label + " speaking needs >=4 roleplay cards, has " + rp);
+    speak.forEach(function (a, i) {
+      assert.ok(list(a.questions).length >= 6, label + " speaking speak card #" + (i + 1) + " '" + a.title + "' needs >=6 questions, has " + list(a.questions).length);
+    });
     tasks.forEach(function (a) {
       assert.ok(a.source, label + " speaking card '" + a.title + "' is missing source");
       list(a.questions).forEach(function (q) {
@@ -92,9 +107,20 @@ function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
 
   test("unit " + n + " grammar", function () {
     const u = unitOf(n), l = u.lesson || {}, ga = acts(u, "grammar");
-    assert.ok(list(l.context).length >= 6, label + " lesson.context needs >=6 lines, has " + list(l.context).length);
-    assert.ok(list(l.patterns).length >= 2, label + " lesson.patterns needs >=2");
-    assert.ok(total(ga) >= 30, label + " grammar activities need >=30 scored questions, have " + total(ga));
+    assert.ok(list(l.context).length >= 10, label + " lesson.context needs >=10 lines, has " + list(l.context).length);
+    assert.ok(list(l.patterns).length >= 8, label + " lesson.patterns needs >=8, has " + list(l.patterns).length);
+    assert.ok(list(l.mistakes).length >= 8, label + " lesson.mistakes needs >=8 items, has " + list(l.mistakes).length);
+    assert.ok(total(ga) >= 70, label + " grammar activities need >=70 scored questions, have " + total(ga));
+    const count = function (t) { return ga.filter(function (a) { return a.type === t; }).length; };
+    assert.ok(count("quiz") >= 8, label + " grammar needs >=8 quiz cards, has " + count("quiz"));
+    assert.ok(count("build") >= 5, label + " grammar needs >=5 build cards, has " + count("build"));
+    checkSizes(label, "grammar", ga);
+    sections(u).forEach(function (s) {
+      list(s[1]).forEach(function (a, i) {
+        assert.ok(["choice", "complete", "transform", "fix"].indexOf(a.type) < 0,
+          label + " " + s[0] + " #" + (i + 1) + " '" + (a.title || a.prompt) + "' is a stand-alone " + a.type + " card; fold it into a quiz");
+      });
+    });
     const kinds = new Set(ga.map(function (a) { return a.type; }));
     assert.ok(kinds.size >= 5, label + " grammar activities need >=5 distinct types, have " + kinds.size);
   });
@@ -108,7 +134,11 @@ function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
       const max = /^B1 Reading/.test(a.title) ? Infinity : 260;
       assert.ok(w >= 120 && w <= max, label + " reading '" + a.title + "' passage has " + w + " words (need 120-" + max + ")");
     });
-    assert.ok(total(ra) >= 24, label + " reading needs >=24 scored questions, has " + total(ra));
+    assert.ok(total(ra) >= 30, label + " reading needs >=30 scored questions, has " + total(ra));
+    ra.forEach(function (a, i) {
+      assert.ok(list(a.questions).length >= 6, label + " reading #" + (i + 1) + " '" + a.title + "' needs >=6 questions, has " + list(a.questions).length);
+    });
+    checkSizes(label, "reading", acts(u, "reading"));
   });
 });
 
@@ -120,6 +150,14 @@ test("schema", function () {
       if (!u) return;
       const label = "Unit " + (ui + 1);
       walkStrings(u, label, bad);
+      if (u.lesson && u.lesson.mistakes !== undefined) {
+        if (!Array.isArray(u.lesson.mistakes)) bad(label + " lesson.mistakes must be an array");
+        else u.lesson.mistakes.forEach(function (m, mi) {
+          const mw = label + " lesson.mistakes #" + (mi + 1);
+          if (!m || !str(m.wrong) || !str(m.right) || !str(m.why)) bad(mw + " needs non-empty wrong, right and why strings");
+          else if (m.wrong === m.right) bad(mw + " wrong and right must differ: '" + m.wrong.slice(0, 40) + "'");
+        });
+      }
       sections(u).forEach(function (s) {
         list(s[1]).forEach(function (a, ai) {
           const where = label + " " + s[0] + " #" + (ai + 1) + " '" + a.title + "'";

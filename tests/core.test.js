@@ -51,3 +51,17 @@ test("countQuestions counts scored items per type", () => {
   assert.equal(Core.countQuestions({ type: "roleplay" }), 0);
   assert.equal(Core.countQuestions({ type: "choice" }), 1);
 });
+
+test("shuffle is deterministic, a permutation, non-mutating and seed-dependent", () => {
+  const ten = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
+  const copy = ten.slice();
+  const one = Core.shuffle(ten, "u1-vocabulary-0");
+  assert.deepEqual(Core.shuffle(ten, "u1-vocabulary-0"), one);
+  assert.deepEqual(ten, copy);
+  assert.deepEqual(one.slice().sort(), copy);
+  assert.notDeepEqual(one, Core.shuffle(ten, "u2-vocabulary-3"));
+  const nine = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  assert.notDeepEqual(Core.shuffle(nine, "u1-grammar-0"), nine);
+  assert.deepEqual(Core.shuffle([], "x"), []);
+  assert.deepEqual(Core.shuffle(["only"], "x"), ["only"]);
+});

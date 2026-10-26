@@ -356,7 +356,21 @@ function renderGrammarBlock(unit) {
         '<h3 class="panel-heading" id="context-title">In context</h3>' +
         '<div class="panel-body context-lines">' + renderContext(unit.context) + '</div>' +
       '</section>' +
-    '</div>';
+    '</div>' + renderMistakes(unit.mistakes);
+}
+
+function renderMistakes(items) {
+  if (!Array.isArray(items) || !items.length) return "";
+  return '<section class="lesson-panel mistakes-panel" aria-labelledby="mistakes-title">' +
+      '<h3 class="panel-heading" id="mistakes-title">Common mistakes</h3>' +
+      '<ul class="panel-body mistake-list" role="list">' + items.map(function (m) {
+        return '<li class="mistake-item">' +
+          '<p class="mistake-wrong"><span class="sr-only">Incorrect: </span><del>' + escapeHtml(m.wrong) + '</del></p>' +
+          '<p class="mistake-right"><span class="sr-only">Correct: </span><ins>' + escapeHtml(m.right) + '</ins></p>' +
+          '<p class="mistake-why">' + escapeHtml(m.why) + '</p>' +
+        '</li>';
+      }).join("") + '</ul>' +
+    '</section>';
 }
 
 function renderSectionTabs(sections) {
@@ -456,7 +470,7 @@ function renderExercises(exercises, options) {
             '<span class="match-example">' + escapeHtml(pair.left) + '</span>' +
             '<select class="match-select" aria-label="Match for ' + escapeHtml(pair.left) + '">' +
               '<option value="">Choose a match</option>' +
-              exercise.choices.map(function (choice) {
+              Core.shuffle(exercise.choices, activeUnit + "-" + activeSection + "-" + index).map(function (choice) {
                 return '<option value="' + escapeHtml(choice) + '">' + escapeHtml(choice) + '</option>';
               }).join("") +
             '</select>' +
