@@ -4,7 +4,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
     pronunciation: {
       sounds: [
         { label: "relax (the a sound /æ/)", words: ["back", "catch", "hand"] },
-        { label: "bed (the e sound /e/)", words: ["already", "anything", "never"] },
+        { label: "bed (the e sound /e/, also the a in anything)", words: ["already", "anything", "never"] },
         { label: "get (the hard g sound /g/)", words: ["give", "grocery", "August"] },
         { label: "generally (the soft g sound /dʒ/)", words: ["Germany", "Norwegian", "orange"] }
       ],
@@ -22,33 +22,42 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         source: "Unit 2 · Listening/Watching d · p.40",
         instruction: "Work in pairs. Use Jacob's planner to ask and answer. Friday planner (rows shown on p.40): wakes up and makes his bed; 7.10 get dressed; 7.20 have breakfast; 7.40 leave home; 8.30 attend class; 9.10 have a break; 3.00 p.m. leave school; 3.50 p.m. watch TV; 4.30 p.m. work on tasks; 6.30 p.m. go shopping; 9.00 p.m. read a book.",
         questions: [
-          { q: "What time does Jacob usually wake up?", model: "The planner does not show the exact time, but it is before 7.05 a.m., so he wakes up at about seven o'clock.", frames: ["He usually wakes up at ...", "He wakes up before ..."] },
+          { q: "What time does Jacob usually wake up?", model: "The planner does not show the time. It is before 7.05, so maybe he wakes up at about seven.", frames: ["He usually wakes up at ...", "He wakes up before ..."] },
           { q: "What does he do first when he wakes up?", model: "He makes his bed first. Then he gets dressed at 7.10.", frames: ["First, he ...", "He makes ..."] },
-          { q: "What does he do after he gets dressed?", model: "After he gets dressed, he has breakfast at 7.20 a.m.", frames: ["After he gets dressed, he ..."] },
-          { q: "How does he usually go to school?", model: "The planner does not say, but he leaves home at 7.40 and attends class at 8.30, so he probably takes the bus.", frames: ["He probably ...", "He leaves home at ..."] }
+          { q: "What does he do after he gets dressed?", model: "After he gets dressed, he has breakfast later, at 7.20.", frames: ["After he gets dressed, he ..."] },
+          { q: "How does he usually go to school?", model: "The planner does not say. He leaves home at 7.40 and attends class at 8.30, so maybe he takes the bus or the school bus.", frames: ["Maybe he ...", "He leaves home at ..."] }
         ],
         checklist: ["Use the simple present with he (wakes, gets, has).", "Give clock times with a.m. or p.m.", "Say when the planner does not give the information."]
       },
       {
         type: "speak",
         title: "Your daily routine",
-        source: "Unit 2 · Pronunciation g · p.41, Vocabulary · p.43",
+        source: "Unit 2 · Listening/Watching g · p.41, Vocabulary · p.43",
         instruction: "Work in pairs. Ask and answer about your own day. Use always, usually, sometimes, rarely or never in your answers.",
         questions: [
           { q: "What time do you wake up?", model: "I usually wake up at 6.45 a.m. on weekdays, but I sometimes wake up at nine at the weekend.", frames: ["I always wake up at ...", "I usually ...", "I sometimes ..."] },
           { q: "Do you make your bed every morning?", model: "Yes, I always make my bed before breakfast. My sister rarely makes hers.", frames: ["I always ...", "I rarely ...", "I never ..."] },
           { q: "What time do you get dressed on school days?", model: "I get dressed at about seven o'clock, just after I wash my face.", frames: ["I usually get dressed at ...", "I get dressed after ..."] },
-          { q: "How do you comb your hair in the morning?", model: "I usually comb my hair in front of the mirror in the bathroom. It takes about two minutes.", frames: ["I usually comb my hair ...", "I never ..."] },
+          { q: "Do you comb your hair before or after breakfast?", model: "I usually comb my hair after I get dressed, in front of the mirror.", frames: ["I usually comb my hair ...", "I never ..."] },
+          { q: "Do you wash your face before you go to bed or in the morning?", model: "I always wash my face in the morning, and I sometimes wash it again at night.", frames: ["I always wash my face ...", "I sometimes ..."] },
+          { q: "What do you have for breakfast?", model: "I usually have bread, cheese and tea for breakfast. I rarely have cereal.", frames: ["I usually have ... for breakfast.", "I rarely ...", "I never ..."] },
           { q: "What time do you leave home for school?", model: "I leave home at 7.30 a.m. from Monday to Friday.", frames: ["I always leave home at ...", "I leave home when ..."] },
           { q: "Do you take the bus to school?", model: "Sometimes I take the bus, but I usually walk because my school is near my house.", frames: ["I usually take ...", "I sometimes walk ...", "I never take ..."] },
           { q: "How many classes do you attend on Mondays?", model: "I attend seven classes on Mondays. Maths and English are in the morning.", frames: ["I attend ... classes.", "My first class is ..."] },
           { q: "Do you take notes in class?", model: "Yes, I usually take notes in science, but I rarely take notes in PE.", frames: ["I always take notes in ...", "I rarely ...", "I never ..."] },
           { q: "When do you have a break at school?", model: "We have a break at 9.10 a.m. and again at lunchtime, and I usually talk to my friends.", frames: ["We have a break at ...", "In the break, I usually ..."] },
           { q: "What time do you return home after school?", model: "I return home at about four o'clock, and I always have a snack first.", frames: ["I usually return home at ...", "After I return home, I ..."] },
-          { q: "How often do you go shopping?", model: "I go shopping with my mother twice a week, usually on Saturday morning.", frames: ["I go shopping ... a week.", "I rarely go shopping ...", "I never ..."] },
-          { q: "What do you do to relax in the evening?", model: "I usually listen to music or watch a film. I never study after ten o'clock.", frames: ["I usually relax by ...", "I sometimes ...", "I never ..."] }
+          { q: "How often do you go shopping?", model: "I go shopping with my mother once a week, usually on Saturday morning.", frames: ["I go shopping ... a week.", "I rarely go shopping ...", "I never ..."] },
+          { q: "What do you do to relax in the evening?", model: "I usually listen to music or play a game. I never study after ten o'clock.", frames: ["I usually relax by ...", "I sometimes ...", "I never ..."] },
+          { q: "Do you charge your phone at night?", model: "I charge my phone every night, but I never use it after eleven.", frames: ["I always charge my phone ...", "I never ..."] },
+          { q: "How do you participate in activities at school?", model: "I participate in the English club on Wednesdays, and I sometimes help in the school garden.", frames: ["I participate in ...", "I sometimes join ..."] },
+          { q: "What tasks do you usually work on in the afternoon?", model: "I usually work on my maths tasks and science projects in the afternoon.", frames: ["I usually work on ...", "I rarely ..."] },
+          { q: "What time do you leave school on Fridays?", model: "I leave school at 3.00 p.m. on Fridays, and I usually walk home with a friend.", frames: ["I leave school at ...", "I usually ... after I leave school."] },
+          { q: "Do you watch TV after dinner?", model: "I sometimes watch TV after dinner, but I never watch it on school nights after nine.", frames: ["I sometimes watch ...", "I never watch ..."] },
+          { q: "When do you read books?", model: "I usually read books before bed, and I often read on the bus at the weekend.", frames: ["I usually read ...", "I rarely read ..."] },
+          { q: "Do you plan the next day before you go to bed?", model: "Yes, I usually plan the next day in the evening. I write a short list in my notebook.", frames: ["I always plan ...", "I never plan ..."] }
         ],
-        checklist: ["Use one adverb of frequency in each answer.", "Say the clock time clearly.", "Ask your partner And you? after your answer."]
+        checklist: ["Use one adverb of frequency in each answer.", "Say the clock time clearly.", "Ask your partner \"And you?\" after your answer."]
       },
       {
         type: "speak",
@@ -67,7 +76,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { q: "Try: Make a question with \"What time\" and \"does\".", model: "What time does your English class start?", frames: ["What time does ... ?"] },
           { q: "Try: Make a sentence with a time expression such as \"on weekdays\".", model: "On weekdays I get up at half past six.", frames: ["On weekdays I ...", "I ... twice a week."] },
           { q: "Try: Say a sentence with \"we\" and a verb in the negative.", model: "We do not wear a uniform at my school.", frames: ["We do not ...", "We do not have ..."] },
-          { q: "Try: Make a sentence with \"rarely\" and a verb with -s.", model: "My grandfather rarely watches TV in the evening.", frames: ["My ... rarely ...s ..."] }
+          { q: "Try: Make a sentence with \"rarely\" and a verb with -s.", model: "My grandfather rarely watches TV in the evening.", frames: ["My ... rarely watches/goes ..."] }
         ],
         checklist: ["Answer with the simple present.", "Add -s or -es after he, she and it.", "Use do not or does not in negative sentences."]
       },
@@ -79,8 +88,8 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         questions: [
           { q: "Why does James's father not join the family for breakfast?", model: "His father is a doctor and leaves home early for work, so he skips the family breakfast.", frames: ["Because he ...", "He leaves home early because ..."] },
           { q: "How long does it take James to walk to school?", model: "It takes him ten minutes to walk to school.", frames: ["It takes him ...", "He walks for ..."] },
-          { q: "What is James's favourite subject?", model: "His favourite subject is maths.", frames: ["His favourite subject is ..."] },
-          { q: "When does James's family usually go out for fun activities?", model: "They usually go out on Saturdays, because the family plans an outing for that day.", frames: ["They go out on ...", "They plan ..."] },
+          { q: "What is James's favourite subject? Why?", model: "His favourite subject is maths, because he enjoys solving problems.", frames: ["His favourite subject is ...", "Because he enjoys ..."] },
+          { q: "When does James's family usually go out for fun activities?", model: "They usually go out on Saturdays, because James's father does not like staying at home, so he plans a fun family outing.", frames: ["They go out on ...", "His father plans ..."] },
           { q: "What does James do on Wednesday evenings and on Fridays?", model: "He has guitar lessons on Wednesday evenings, and he plays basketball with his friends on Fridays.", frames: ["On Wednesday evenings he ...", "On Fridays he ..."] },
           { q: "What time does James's family have dinner?", model: "The family has dinner at seven o'clock.", frames: ["They have dinner at ..."] },
           { q: "What time does James go to bed?", model: "He goes to bed at half past ten.", frames: ["He goes to bed at ..."] }
@@ -91,7 +100,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         type: "speak",
         title: "Akio and Lilja",
         source: "Unit 2 · Reading g–h · p.47 (about the Akio and Lilja text, p.46)",
-        instruction: "Work in pairs. Think of the answers, then ask and answer. Use what you know about Akio from Japan and Lilja from Finland.",
+        instruction: "Read the Akio and Lilja passage in the Reading section first. Then ask and answer, using facts from the passage.",
         questions: [
           { q: "How do Akio and Lilja's daily routines reflect their cultures?", model: "Akio wears a uniform, helps to clean his classroom and studies for exams, so his day shows discipline. Lilja wears casual clothes, goes outside and does creative things, so her day shows teamwork and creativity.", frames: ["Akio's day shows ... because ...", "Lilja's day shows ... because ..."] },
           { q: "Why do you think classroom cleaning is an important practice for students?", model: "I think it teaches students to respect shared places and to work together, so everyone looks after the school.", frames: ["I think it teaches ...", "It is important because ..."] },
@@ -150,7 +159,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       {
         type: "roleplay",
         title: "Classmates compare routines",
-        source: "Unit 2 · Pronunciation g · p.41 and Vocabulary · p.43",
+        source: "Unit 2 · Listening/Watching g · p.41 and Vocabulary · p.43",
         scenario: "Two classmates swap daily routines at the start of a new school term and notice the different clock times.",
         cardA: { role: "Student A", rows: [["Wake up", "6.45 a.m."], ["Leave home", "7.30 a.m."], ["Lunch", "12.15 p.m."], ["Homework", "5.00 p.m."]] },
         cardB: { role: "Student B", rows: [["Wake up", "7.15 a.m."], ["Leave home", "8.00 a.m."], ["Lunch", "1.00 p.m."], ["Homework", "7.30 p.m."]] },
@@ -183,7 +192,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { speaker: "A", text: "How often do you study in the evening?" },
           { speaker: "B", text: "I study four evenings a week. Thank you for the interview." }
         ],
-        checklist: ["The interviewer uses do and does in each question.", "The student answers in full sentences.", "Use a frequency expression such as four evenings a week."]
+        checklist: ["The interviewer uses do in each question.", "The student answers in full sentences.", "Use a frequency expression such as four evenings a week."]
       }
     ]
   }
