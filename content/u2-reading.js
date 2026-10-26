@@ -10,17 +10,77 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "What does the writer do while she eats breakfast?", options: ["She goes jogging in the park.","She runs errands in town.","She sets goals and plans her day.","She takes a long shower."], answer: 2, why: "At breakfast she sets goals, thinks about her time and plans the rest of the day." },
           { prompt: "What does the writer do after she gets home?", options: ["She studies for two hours before she does anything else.","She goes to a social event with her friends and classmates.","She goes jogging for an hour and then goes straight to bed.","She relaxes and does housework, then studies for two hours."], answer: 3, why: "Relaxing on the sofa and housework come first; the two hours of study come afterwards." },
           { prompt: "Why does the writer put on casual, comfortable clothes in the morning?", options: ["She has to run errands during the day.","Her professors ask students to dress casually.","She goes jogging after classes.","She dislikes formal clothes at university."], answer: 0, why: "She says she runs errands during the day, so comfortable clothes suit her." },
-          { prompt: "How long does the writer study at home in the evening?", options: ["Twenty minutes","One hour","Two hours","Three hours"], answer: 2, why: "After relaxing for an hour, she studies for two hours." }
+          { prompt: "How long does the writer study at home in the evening?", options: ["Twenty minutes","One hour","Two hours","Three hours"], answer: 2, why: "After relaxing for an hour, she studies for two hours." },
+          { prompt: "What does the writer mean by 'I would love a lie-in'?", options: ["She would like to wake up earlier than usual.","She would like to rest on the sofa all morning.","She would like to skip breakfast and relax.","She would like to stay in bed longer."], answer: 3, why: "A lie-in is extra time in bed, but she has to get up early." },
+          { prompt: "According to the writer, why is a balanced breakfast useful?", options: ["It saves her time before her first lecture of the day.","It gives her energy and helps her focus.","It means she does not need to eat lunch at university.","It helps her walk faster on the way to university."], answer: 1, why: "She says a balanced breakfast gives her energy and helps her concentrate." },
+          { prompt: "Why does the writer take part in social events and meetings after classes?", options: ["They help her build skills she will need in the future.","They are the only way for her to meet her professors.","They give her extra exercise because she cannot go to the gym.","They are required by the university before she can attend lectures."], answer: 0, why: "She says the events help her build the social and academic skills she will need later." }
         ]
       },
       {
-        type: "quiz", title: "Reading 1 · Complete the phrases", source: "Unit 2 · Vocabulary c · p.42", instruction: "Use a verb from the word bank to complete each sentence about the student's day.", wordBank: ["check","walk","highlight","participate","put on"],
+        type: "quiz", title: "Reading 1 · Complete the phrases", source: "Unit 2 · Vocabulary c · p.42", instruction: "Use a verb from the word bank to complete each sentence about the student's day.", wordBank: ["check","walk","highlight","participate","put on","attend","set","relax","study"],
         items: [
           { prompt: "Before I leave home, I ___ my messages and reply to them.", answer: "check", why: "Check my messages is the fixed phrase for looking at new messages.", accepted: ["read"] },
           { prompt: "I prefer to ___ to university because it is light exercise.", answer: "walk", why: "Walk to university means going there on foot, which is the exercise she describes." },
           { prompt: "In lectures, I ___ valuable information about different subjects.", answer: "highlight", why: "Students highlight important information in their notes or books." },
           { prompt: "After classes, I ___ in social events and meetings.", answer: "participate", accepted: ["take part"], why: "Participate in means take part in an activity." },
-          { prompt: "After a quick shower, I ___ casual clothes.", answer: "put on", why: "Put on is the verb for dressing in clothes." }
+          { prompt: "After a quick shower, I ___ casual clothes.", answer: "put on", why: "Put on is the verb for dressing in clothes." },
+          { prompt: "At university, I ___ lectures and listen carefully to my professors.", answer: "attend", accepted: ["go to"], why: "Attend lectures means to be present at them." },
+          { prompt: "While I eat breakfast, I ___ goals for the day.", answer: "set", why: "Set goals means decide what you want to achieve." },
+          { prompt: "When I get home, I ___ on the sofa for an hour.", answer: "relax", why: "Relax means rest and stop working." },
+          { prompt: "After my break, I ___ at my desk for two hours.", answer: "study", why: "Study is what students do to learn and prepare for the future." }
+        ]
+      },
+      {
+        type: "match", title: "Reading 1 · Match the word to its meaning", source: "Unit 2 · Vocabulary c · p.42",
+        pairs: [
+          { left: "lie-in", answer: "extra time in bed in the morning" },
+          { left: "lecture", answer: "a talk given to students at university" },
+          { left: "professor", answer: "a teacher at a university" },
+          { left: "housework", answer: "cleaning and tidying at home" },
+          { left: "alarm", answer: "a sound that wakes you up at a set time" },
+          { left: "jogging", answer: "running slowly for exercise" }
+        ],
+        choices: ["extra time in bed in the morning","a talk given to students at university","a teacher at a university","cleaning and tidying at home","a sound that wakes you up at a set time","running slowly for exercise","a long holiday from school","a job in a gym"],
+        why: "Each word has a simple meaning that fits the writer's day."
+      },
+      {
+        type: "quiz", title: "Reading 1 · Words in context", source: "Unit 2 · Vocabulary c · p.42", instruction: "Choose the best meaning of each phrase as the writer uses it.",
+        items: [
+          { prompt: "In the text, 'casual' clothes are clothes that are...", options: ["smart clothes for a formal event or party","clothes worn only for sports and exercise","relaxed and comfortable, not formal","clothes that every student must wear"], answer: "relaxed and comfortable, not formal", why: "Casual is the opposite of formal, and she describes the clothes as comfortable." },
+          { prompt: "In the text, a 'balanced' breakfast is a breakfast with...", options: ["a good mix of healthy foods","a very big meal made of sweet food only","a cold meal that is ready in a minute","a small snack with a drink and no fruit"], answer: "a good mix of healthy foods", why: "Balanced food gives the body energy and what it needs; she says it helps her concentrate." },
+          { prompt: "In the text, to 'concentrate' means to...", options: ["walk to a different place","talk to your friends for a while","write messages to your family and friends","give your full attention to something"], answer: "give your full attention to something", why: "A good breakfast helps her give her full attention to her lessons." },
+          { prompt: "In the text, 'valuable' information is information that is...", options: ["very old and not useful to anyone","useful and important","difficult to read and too long to learn","easy to forget after one day"], answer: "useful and important", why: "Students highlight the parts they want to remember, so valuable means useful and important." },
+          { prompt: "In the text, 'light exercise' is exercise that is...", options: ["hard exercise that makes you very tired","exercise that you do only at night time","exercise that you do only at a gym","gentle exercise that is not very tiring"], answer: "gentle exercise that is not very tiring", why: "A twenty-minute walk is easy exercise, not hard training." },
+          { prompt: "In the text, 'manage my time' means...", options: ["buy a new watch before the lectures","organise how I use my hours","wake up much earlier than other people","stay at university for longer each day"], answer: "organise how I use my hours", why: "While she eats she thinks about how to plan and use her day." },
+          { prompt: "In the text, 'participate in social events' means...", options: ["take part in social events","organise every social event alone","stay away from social events","watch social events on the internet"], answer: "take part in social events", why: "Participate in means take part in." },
+          { prompt: "In the text, 'run errands' means...", options: ["go jogging every morning before breakfast","study in the library until the evening","do small jobs outside the home, such as shopping","cook meals for the whole family at home"], answer: "do small jobs outside the home, such as shopping", why: "Errands are short trips to do small tasks, which is why comfortable clothes are useful." }
+        ]
+      },
+      {
+        type: "quiz", title: "Reading 1 · True, false or not mentioned", source: "Unit 2 · Vocabulary c · p.42", instruction: "Read the writer's text again. Is each statement true, false, or not mentioned in the text?",
+        items: [
+          { prompt: "The writer walks to university.", options: ["True","False","Not mentioned"], answer: "True", why: "She says she walks to university, and it takes about twenty minutes." },
+          { prompt: "The writer jogs to university every morning.", options: ["True","False","Not mentioned"], answer: "False", why: "She would like to jog, but she is often too busy; she walks instead." },
+          { prompt: "The writer lives alone in a small flat.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "The text says nothing about where or with whom she lives." },
+          { prompt: "The writer studies at home for three hours.", options: ["True","False","Not mentioned"], answer: "False", why: "She studies for two hours, not three." },
+          { prompt: "The writer replies to her messages before she leaves home.", options: ["True","False","Not mentioned"], answer: "True", why: "Before leaving home she checks her messages and replies to them." },
+          { prompt: "The writer has lunch in the university canteen.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "Lunch is never mentioned in the text." },
+          { prompt: "The writer's favourite professor teaches history.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "The text does not name any subject or favourite professor." },
+          { prompt: "The writer relaxes at home before she studies.", options: ["True","False","Not mentioned"], answer: "True", why: "She relaxes on the sofa for an hour and then studies." },
+          { prompt: "The writer goes to bed late at night.", options: ["True","False","Not mentioned"], answer: "False", why: "She sets her alarm and goes to bed early." }
+        ]
+      },
+      {
+        type: "quiz", title: "Reading 1 · Before and after", source: "Unit 2 · Vocabulary c · p.42", instruction: "Think about the order of the writer's day. Choose what she does at each point.",
+        items: [
+          { prompt: "What does the writer do after a quick shower?", options: ["She walks to university in the morning.","She sets her alarm for the next day.","She attends a lecture at university.","She puts on casual clothes."], answer: "She puts on casual clothes.", why: "The text says that after a quick shower she puts on casual, comfortable clothes." },
+          { prompt: "What does the writer do just before she leaves home?", options: ["She checks and replies to her messages.","She studies at her desk for two hours.","She relaxes on the sofa for an hour.","She does some housework in the kitchen."], answer: "She checks and replies to her messages.", why: "She says that before she leaves home she checks her messages and replies." },
+          { prompt: "What does the writer do after classes?", options: ["She studies at her desk for two hours.","She goes to social events and meetings.","She goes to bed early without dinner.","She makes a balanced breakfast for everyone."], answer: "She goes to social events and meetings.", why: "After classes she participates in social events and meetings." },
+          { prompt: "What does the writer do first when she gets home?", options: ["She sets her alarm.","She studies for two hours.","She changes her clothes.","She goes for a long run."], answer: "She changes her clothes.", why: "When she gets home she changes her clothes, then relaxes and does housework." },
+          { prompt: "What does the writer do right after the hour on the sofa and the housework?", options: ["She walks to university again.","She studies for two hours.","She goes to a lecture at university.","She eats a balanced breakfast."], answer: "She studies for two hours.", why: "The word 'then' shows that two hours of study follow the relaxing and housework." },
+          { prompt: "What does the writer do at night, just before she goes to bed?", options: ["She attends a lecture.","She sets her alarm.","She checks her messages at the gym.","She puts on casual clothes."], answer: "She sets her alarm.", why: "At night she sets her alarm and goes to bed early." },
+          { prompt: "What does the writer do at university before the social events?", options: ["She goes jogging with her friends.","She walks home across the city.","She attends lectures at university.","She does some housework at home."], answer: "She attends lectures at university.", why: "At university she attends lectures first; the social events come after classes." },
+          { prompt: "Which activity is the last one in the writer's day?", options: ["She goes to bed early.","She studies for two hours.","She walks to university.","She eats a balanced breakfast."], answer: "She goes to bed early.", why: "The text ends with her setting her alarm and going to bed early." }
         ]
       },
       {
@@ -32,16 +92,23 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "When does James's family usually go out to do something fun?", options: ["On Wednesday evenings","On Fridays after school","On Saturdays","On Sundays"], answer: 2, why: "James's father plans a family outing on Saturdays; Sundays are calm days at home." },
           { prompt: "Which time is closest to the length of James's walk from home to school?", options: ["Thirty minutes","Twenty minutes","Ten minutes","Five minutes"], answer: 2, why: "James says school is only a ten-minute walk away." },
           { prompt: "What does James do on Wednesday evenings?", options: ["He has guitar lessons.","He plays basketball with friends.","He goes on a family outing.","He cooks with his family."], answer: 0, why: "James has guitar lessons on Wednesday evenings; basketball is on Fridays." },
-          { prompt: "Why is maths James's favourite subject?", options: ["Because the lessons start early","Because his father is a doctor","Because his friends sit next to him","Because he enjoys solving problems"], answer: 3, why: "James says maths is his favourite subject because he enjoys solving problems." }
+          { prompt: "Why is maths James's favourite subject?", options: ["Because the lessons start early","Because his father is a doctor","Because his friends sit next to him","Because he enjoys solving problems"], answer: 3, why: "James says maths is his favourite subject because he enjoys solving problems." },
+          { prompt: "When does James take the bus to school?", options: ["When he is late for class","Only when the weather is bad","When he goes to guitar lessons","When he has a lot of homework"], answer: 1, why: "James walks to school and takes the bus only in bad weather." },
+          { prompt: "What does James mean by 'School is not the end of my day'?", options: ["He studies at school until the evening.","He goes to school on weekends too.","He wants to leave school early.","He does other activities after school."], answer: 3, why: "After the school day he has guitar lessons, basketball and other evening plans." },
+          { prompt: "How are James's Saturdays different from his Sundays?", options: ["Saturdays are for a family outing, but Sundays are peaceful.","Saturdays are peaceful, but Sundays are for a family outing.","Saturdays are for basketball, and Sundays are for guitar lessons.","The family stays at home on both days and does nothing special."], answer: 0, why: "Dad plans an outing on Saturdays, whereas Sundays are for cooking and resting." }
         ]
       },
       {
-        type: "quiz", title: "Reading 2 · Time and activity", source: "Unit 2 · Language Awareness c · p.44", instruction: "Read James's text again. Choose the activity that matches each time.",
+        type: "quiz", title: "Reading 2 · Time and activity", source: "Unit 2 · Language Awareness c · p.44", instruction: "Read James's text again. Choose the activity that matches each time, day or situation.",
         items: [
           { prompt: "What does James do at 7.30 a.m. on a school day?", options: ["He leaves the house.","Lessons begin at school.","The family has dinner.","He goes to bed."], answer: "He leaves the house.", why: "He says he leaves the house at half past seven." },
           { prompt: "What happens at 8 a.m. on a school day?", options: ["The family has dinner.","Lessons begin at school.","He goes to bed.","He leaves the house."], answer: "Lessons begin at school.", why: "James says classes begin at eight." },
           { prompt: "What does James's family do at 7 p.m.?", options: ["He goes to bed.","He leaves the house.","Lessons begin at school.","The family has dinner."], answer: "The family has dinner.", why: "The family has dinner at seven o'clock." },
-          { prompt: "What does James do at 10.30 p.m. when he has little homework?", options: ["He leaves the house.","He goes to bed.","The family has dinner.","Lessons begin at school."], answer: "He goes to bed.", why: "After a film or a book, he goes to bed at half past ten." }
+          { prompt: "What does James do at 10.30 p.m. when he has little homework?", options: ["He leaves the house.","He goes to bed.","The family has dinner.","Lessons begin at school."], answer: "He goes to bed.", why: "After a film or a book, he goes to bed at half past ten." },
+          { prompt: "What does James do every Friday?", options: ["He goes to guitar lessons in the evening.","He plans a family outing for the weekend.","He cooks and rests with his family at home.","He plays basketball with friends."], answer: "He plays basketball with friends.", why: "James plays basketball with his friends at the park every Friday." },
+          { prompt: "What does the family do on Sundays?", options: ["James goes to guitar lessons and then plays basketball.","The family eats dinner at the park with friends.","The family cooks, rests and prepares for the week.","Everyone goes on a big outing together."], answer: "The family cooks, rests and prepares for the week.", why: "Sundays are peaceful: the family cooks, rests and gets ready for the next week." },
+          { prompt: "What does James do in the lunch break?", options: ["He sits and talks with his friends.","He plays basketball with his team at the park.","He goes home to eat dinner with his family.","He walks back to his house and watches a film."], answer: "He sits and talks with his friends.", why: "At lunch he sits with his friends and they talk about hobbies and weekend plans." },
+          { prompt: "What does James do in the evening if his homework is light?", options: ["He plays basketball with his friends at the park.","He goes to a guitar lesson with his teacher.","He watches a film or opens a book.","He cooks dinner for the whole family."], answer: "He watches a film or opens a book.", why: "When homework is light, he either watches a film or reads a book." }
         ]
       },
       {
@@ -52,7 +119,50 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "James's school is close to his home.", options: ["Yes, we can infer it","No, we cannot infer it"], answer: "Yes, we can infer it", why: "A ten-minute walk to school means the school is not far away." },
           { prompt: "James hardly ever talks to his friends during the school day.", options: ["Yes, we can infer it","No, we cannot infer it"], answer: "No, we cannot infer it", why: "He sits with his friends at lunch and chats with them." },
           { prompt: "James practises the guitar at home every day.", options: ["Yes, we can infer it","No, we cannot infer it"], answer: "No, we cannot infer it", why: "The text mentions only guitar lessons on Wednesday evenings, not daily practice." },
-          { prompt: "James's family values time together even though everyone is busy.", options: ["Yes, we can infer it","No, we cannot infer it"], answer: "Yes, we can infer it", why: "Dad plans a family outing on Saturdays, and on Sundays the family cooks and rests together, so family time matters to them." }
+          { prompt: "James's family values time together even though everyone is busy.", options: ["Yes, we can infer it","No, we cannot infer it"], answer: "Yes, we can infer it", why: "Dad plans a family outing on Saturdays, and on Sundays the family cooks and rests together, so family time matters to them." },
+          { prompt: "James is usually on time for school.", options: ["Yes, we can infer it","No, we cannot infer it"], answer: "Yes, we can infer it", why: "He says classes begin at eight and he is never late." },
+          { prompt: "James takes part in both music and sport outside school.", options: ["Yes, we can infer it","No, we cannot infer it"], answer: "Yes, we can infer it", why: "He has guitar lessons for music and plays basketball for sport." },
+          { prompt: "James watches a film every evening after dinner.", options: ["Yes, we can infer it","No, we cannot infer it"], answer: "No, we cannot infer it", why: "He watches a film or reads a book, and only when his homework is light." }
+        ]
+      },
+      {
+        type: "quiz", title: "Reading 2 · Reference words", source: "Unit 2 · Language Awareness b · p.44", instruction: "Reference words such as it, we or us point back to a person or thing in the text. Choose what each one refers to.",
+        items: [
+          { prompt: "'I walk to school because it takes only ten minutes.' What does 'it' refer to?", options: ["The school day","The bus ride","The walk to school","The maths lesson"], answer: "The walk to school", why: "The ten minutes is the time of the walk, not of the school day or the lesson." },
+          { prompt: "'Dad ... misses breakfast with us.' Who does 'us' refer to?", options: ["James and the rest of his family","James and his school friends","Dad and his patients","James and his teachers"], answer: "James and the rest of his family", why: "Breakfast is at home, so 'us' means James and the family members who eat it." },
+          { prompt: "'Dad hates spending Saturdays at home, so he plans a family outing and makes sure it is fun.' What does 'it' refer to?", options: ["Spending Saturdays at home","The family outing","Dad's work","Sunday"], answer: "The family outing", why: "Dad makes sure the outing he plans is fun." },
+          { prompt: "'In the lunch break I sit with my friends and we talk about our hobbies.' Who does 'we' refer to?", options: ["James and his parents","James and his teacher","Dad and Mum","James and his friends"], answer: "James and his friends", why: "James sits with his friends at lunch, so 'we' is James and his friends." },
+          { prompt: "'Sundays are more peaceful. We cook, rest and prepare for the next week.' Who does 'We' refer to?", options: ["James and his friends","James and his family","James and his teachers","All the students at school"], answer: "James and his family", why: "Sunday is a family day at home, so 'we' means James and his family." },
+          { prompt: "'Mum insists on a proper breakfast, so we usually eat eggs, toast or fruit with cereal.' Who does 'we' refer to?", options: ["James and his family at home","James and his classmates","Mum and Dad only","James and his basketball team"], answer: "James and his family at home", why: "The breakfast is at home with Mum, and Dad has already left, so 'we' means James and his family at home." },
+          { prompt: "'Dad is a doctor and leaves for work very early, which means he misses breakfast with us.' Who is 'he'?", options: ["James","Mum","Dad","A friend of James"], answer: "Dad", why: "The sentence is about Dad, who leaves early and so misses breakfast." },
+          { prompt: "'Dad is a doctor and leaves for work very early, which means he misses breakfast with us.' What does 'which' refer to?", options: ["Mum insisting on a proper breakfast","James walking to school","The family eating eggs and toast","Dad leaving for work very early"], answer: "Dad leaving for work very early", why: "Because he leaves for work early, he misses breakfast." }
+        ]
+      },
+      {
+        type: "quiz", title: "Reading 2 · True, false or not mentioned", source: "Unit 2 · Language Awareness b · p.44", instruction: "Read James's text again. Is each statement true, false, or not mentioned in the text?",
+        items: [
+          { prompt: "James's mother wants the family to eat a proper breakfast.", options: ["True","False","Not mentioned"], answer: "True", why: "Mum insists on a proper breakfast." },
+          { prompt: "James walks to school for twenty minutes.", options: ["True","False","Not mentioned"], answer: "False", why: "The walk takes only ten minutes." },
+          { prompt: "James has a younger sister.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "The text does not talk about brothers or sisters." },
+          { prompt: "James plays basketball on Saturdays.", options: ["True","False","Not mentioned"], answer: "False", why: "He plays basketball on Fridays; Saturdays are for a family outing." },
+          { prompt: "James goes to bed at half past ten.", options: ["True","False","Not mentioned"], answer: "True", why: "He heads to bed at half past ten." },
+          { prompt: "James's guitar teacher comes from Boston.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "The text says nothing about the guitar teacher." },
+          { prompt: "James's father organises a trip for the family on Saturdays.", options: ["True","False","Not mentioned"], answer: "True", why: "Dad plans a family outing on Saturdays." },
+          { prompt: "James eats lunch alone at school.", options: ["True","False","Not mentioned"], answer: "False", why: "In the lunch break he sits with his friends." },
+          { prompt: "James has maths homework every day.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "The text says maths is his favourite subject but says nothing about daily maths homework." }
+        ]
+      },
+      {
+        type: "quiz", title: "Reading 2 · Words in context", source: "Unit 2 · Language Awareness b · p.44", instruction: "Choose the best meaning of each word or phrase as James uses it.",
+        items: [
+          { prompt: "'Mum insists on a proper breakfast.' Here 'insists on' means...", options: ["quietly forgets all about it later","asks very politely if it is possible","says firmly that it must happen","tries hard to avoid doing it"], answer: "says firmly that it must happen", why: "If Mum insists on something, she strongly asks for it." },
+          { prompt: "'A proper breakfast' is a breakfast that is...", options: ["a real, full meal","a small, quick snack","a cold and sweet drink","a meal eaten late in the day"], answer: "a real, full meal", why: "Eggs, toast or fruit with cereal make a full, real breakfast." },
+          { prompt: "'Dad misses breakfast with us.' Here 'misses' means...", options: ["feels sad about what he eats","pays money for the food","cooks the breakfast for the family","is not there for"], answer: "is not there for", why: "Dad has left for work, so he is not there for breakfast." },
+          { prompt: "A family 'outing' is...", options: ["a long school lesson at home","a short trip for fun","a heavy meal with the family","an argument between relatives"], answer: "a short trip for fun", why: "An outing is a day trip or visit that the family enjoys together." },
+          { prompt: "'Sundays are more peaceful.' Here 'peaceful' means...", options: ["calm and quiet","very noisy and busy","full of difficult homework","crowded with many people"], answer: "calm and quiet", why: "On Sundays the family cooks and rests, so the day is calm." },
+          { prompt: "'If homework is light...' Here 'light' means...", options: ["very difficult and long","already finished at school","not very much","written only on paper"], answer: "not very much", why: "Light homework is a small amount of homework." },
+          { prompt: "'I head to bed at half past ten.' Here 'head to bed' means...", options: ["make the bed carefully","read a book in bed","change the bed sheets","go to bed"], answer: "go to bed", why: "To head somewhere means to go there." },
+          { prompt: "'Classes begin at eight, and I am never late.' This means James...", options: ["often arrives after the lesson has started","is always on time","always leaves school early","arrives at school at seven"], answer: "is always on time", why: "Never late means he arrives on time every day." }
         ]
       },
       {
@@ -63,7 +173,10 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "Which topic is NOT mentioned in the text?", options: ["Breakfast foods","School clubs","Holiday destinations","Helping at home"], answer: 2, why: "The text covers breakfast, clubs and chores, but it never talks about holiday destinations." },
           { prompt: "According to the last sentence, how is Lilja's day different from Akio's?", options: ["It has more creativity, time outdoors and family time.","It begins earlier and ends later.","It has no homework at all.","It is full of study and rules."], answer: 0, why: "The final sentence describes Lilja's day as more creative, outdoors and family-centred, while Akio's is full of study and rules." },
           { prompt: "How does Lilja travel to school?", options: ["By train","By bus","On foot","By bicycle"], answer: 3, why: "The text says she cycles to school, while Akio takes the train." },
-          { prompt: "What does Akio do in the robotics club?", options: ["He helps build and code robots.","He practises judo moves.","He prepares for entrance exams.","He draws with calligraphy brushes."], answer: 0, why: "The text says he helps build and code robots in the robotics club." }
+          { prompt: "What does Akio do in the robotics club?", options: ["He helps build and code robots.","He practises judo moves.","He prepares for entrance exams.","He draws with calligraphy brushes."], answer: 0, why: "The text says he helps build and code robots in the robotics club." },
+          { prompt: "In the text, what does 'discipline' mean?", options: ["Studying only in the evening","Following rules and behaving well","Having a lot of free time at school","Being good at physical activities"], answer: 1, why: "Schools that expect discipline want students to follow rules and behave well." },
+          { prompt: "What do students in Japan do before they go to their clubs?", options: ["They take a train to the cram school.","They clean their classrooms.","They cook lunch for the class.","They practise judo in the hall."], answer: 1, why: "When lessons finish, the students clean their classrooms and then go to clubs." },
+          { prompt: "What does the text say about school clubs in Finland?", options: ["Every Finnish school has the same clubs for all students.","Clubs are not allowed in Finnish schools at all.","Students must join a club before they can finish school.","Some schools have clubs, but not every school does."], answer: 3, why: "The text says not every school has clubs, but some offer music, art or sports." }
         ]
       },
       {
@@ -71,7 +184,53 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         items: [
           { prompt: "Which sentence supports the idea that Akio studies outside normal school hours?", options: ["He makes his bed, puts on his uniform and eats a typical Japanese breakfast with rice, miso soup and grilled fish, together with his family.","After the clubs end, he goes to extra lessons at a cram school so he is ready for the exams to get into university.","After packing a lunch box, he takes the train to school.","Akio likes maths and physics because they teach him to solve problems."], answer: "After the clubs end, he goes to extra lessons at a cram school so he is ready for the exams to get into university.", why: "A cram school is extra study after the normal school day." },
           { prompt: "Which sentence supports the idea that Lilja enjoys being outdoors?", options: ["She showers, puts on casual clothes and has bread with cheese or yoghurt.","In Finland the lessons stress teamwork and creative thinking.","At home she helps with chores, does an hour of homework and plays the violin.","At break time Lilja goes outdoors to talk with friends and get some fresh air."], answer: "At break time Lilja goes outdoors to talk with friends and get some fresh air.", why: "Going outside into the fresh air at break time shows she likes being outdoors." },
-          { prompt: "Which sentence supports the idea that Lilja is more interested in artistic activities?", options: ["Lilja joins a photography club to take pictures of nature.","Akio belongs to the robotics club and helps build and code robots.","She showers, puts on casual clothes and has bread with cheese or yoghurt.","Her family often watches nature documentaries together."], answer: "Lilja joins a photography club to take pictures of nature.", why: "Joining a photography club is an artistic choice, unlike building robots or having breakfast." }
+          { prompt: "Which sentence supports the idea that Lilja is more interested in artistic activities?", options: ["Lilja joins a photography club to take pictures of nature.","Akio belongs to the robotics club and helps build and code robots.","She showers, puts on casual clothes and has bread with cheese or yoghurt.","Her family often watches nature documentaries together."], answer: "Lilja joins a photography club to take pictures of nature.", why: "Joining a photography club is an artistic choice, unlike building robots or having breakfast." },
+          { prompt: "Which sentence supports the idea that schools in Japan are strict?", options: ["Akio likes maths and physics because they teach him to solve problems.","She cycles to school.","Japanese schools expect discipline and high standards.","Akio lives in Japan and gets up at six."], answer: "Japanese schools expect discipline and high standards.", why: "Expecting discipline and high standards describes a strict school culture." },
+          { prompt: "Which sentence shows that Japanese students help look after their school?", options: ["He makes his bed, puts on his uniform and eats a typical Japanese breakfast with rice, miso soup and grilled fish, together with his family.","After the clubs end, he goes to extra lessons at a cram school so he is ready for the exams to get into university.","When lessons finish, the students clean their classrooms and then go to clubs, for example judo, calligraphy or robotics.","Akio belongs to the robotics club and helps build and code robots."], answer: "When lessons finish, the students clean their classrooms and then go to clubs, for example judo, calligraphy or robotics.", why: "Cleaning their own classrooms is a way of looking after the school." },
+          { prompt: "Which sentence supports the idea that Finnish lessons encourage students to work together and think in new ways?", options: ["In Finland the lessons stress teamwork and creative thinking.","At break time Lilja goes outdoors to talk with friends and get some fresh air.","Lilja lives in Finland and wakes up at seven.","She cycles to school."], answer: "In Finland the lessons stress teamwork and creative thinking.", why: "Teamwork and creative thinking mean working together and having new ideas." },
+          { prompt: "Which sentence supports the idea that Lilja's family enjoys doing things together?", options: ["Lilja joins a photography club to take pictures of nature.","Her family often watches nature documentaries together.","At home she helps with chores, does an hour of homework and plays the violin.","Not every school has clubs, but some offer music, art or sports."], answer: "Her family often watches nature documentaries together.", why: "The word together shows that the whole family shares this activity." },
+          { prompt: "Which sentence supports the idea that Finnish schools do not all offer the same after-school activities?", options: ["Akio belongs to the robotics club and helps build and code robots.","Lilja joins a photography club to take pictures of nature.","In Finland the lessons stress teamwork and creative thinking.","Not every school has clubs, but some offer music, art or sports."], answer: "Not every school has clubs, but some offer music, art or sports.", why: "Not every school has clubs, so activities differ from school to school." }
+        ]
+      },
+      {
+        type: "quiz", title: "Reading 3 · Who does what?", source: "Unit 2 · Reading a–c · p.46", instruction: "Read the text again. Choose Akio, Lilja, or both of them.",
+        items: [
+          { prompt: "Who gets up at six?", options: ["Lilja","Akio","Both of them"], answer: "Akio", why: "Akio gets up at six; Lilja wakes up at seven." },
+          { prompt: "Who has bread with cheese or yoghurt for breakfast?", options: ["Akio","Both of them","Lilja"], answer: "Lilja", why: "Lilja has bread with cheese or yoghurt; Akio eats rice, miso soup and fish." },
+          { prompt: "Who is a member of a school club?", options: ["Both of them","Akio","Lilja"], answer: "Both of them", why: "Akio is in the robotics club and Lilja joins a photography club." },
+          { prompt: "Who plays the violin?", options: ["Lilja","Both of them","Akio"], answer: "Lilja", why: "Lilja plays the violin at home." },
+          { prompt: "Who does homework after school?", options: ["Akio","Lilja","Both of them"], answer: "Both of them", why: "Akio does his homework and Lilja does an hour of homework." },
+          { prompt: "Who packs a lunch box before school?", options: ["Both of them","Lilja","Akio"], answer: "Akio", why: "Akio packs a lunch box before he takes the train." },
+          { prompt: "Who goes outdoors at break time to get some fresh air?", options: ["Akio","Lilja","Both of them"], answer: "Lilja", why: "At break time Lilja goes outdoors to talk with friends." },
+          { prompt: "Who goes to extra lessons at a cram school?", options: ["Akio","Both of them","Lilja"], answer: "Akio", why: "Only Akio attends a cram school for his university exams." },
+          { prompt: "Who goes to school in casual clothes?", options: ["Akio","Lilja","Both of them"], answer: "Lilja", why: "Lilja puts on casual clothes, while Akio puts on his uniform." }
+        ]
+      },
+      {
+        type: "quiz", title: "Reading 3 · True, false or not mentioned", source: "Unit 2 · Reading a–c · p.46", instruction: "Read the text again. Is each statement true, false, or not mentioned in the text?",
+        items: [
+          { prompt: "Akio eats breakfast together with his family.", options: ["True","False","Not mentioned"], answer: "True", why: "He has a typical Japanese breakfast together with his family." },
+          { prompt: "Lilja takes the train to school.", options: ["True","False","Not mentioned"], answer: "False", why: "Lilja cycles to school; Akio takes the train." },
+          { prompt: "Akio has a younger brother.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "The text says nothing about Akio's brothers or sisters." },
+          { prompt: "Lilja takes pictures of nature in a school club.", options: ["True","False","Not mentioned"], answer: "True", why: "She joins a photography club to take pictures of nature." },
+          { prompt: "Akio goes straight home after his club activities.", options: ["True","False","Not mentioned"], answer: "False", why: "After the clubs he goes to extra lessons at a cram school." },
+          { prompt: "Lilja's favourite school subject is art.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "Lilja's favourite subject is never named." },
+          { prompt: "Students in Japan clean their own classrooms.", options: ["True","False","Not mentioned"], answer: "True", why: "The text says the students clean their classrooms when lessons finish." },
+          { prompt: "Every school in Finland has a club for its students.", options: ["True","False","Not mentioned"], answer: "False", why: "The text says not every school has clubs." },
+          { prompt: "Akio's robotics club meets on Tuesdays.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "The text gives no day or time for the robotics club." }
+        ]
+      },
+      {
+        type: "quiz", title: "Reading 3 · Words in context", source: "Unit 2 · Reading a–c · p.46", instruction: "Choose the best meaning of each word or phrase as it is used in the text.",
+        items: [
+          { prompt: "'Japanese schools expect discipline and high standards.' Here 'high standards' means...", options: ["very modern school buildings","long holidays in the summer","strong expectations of students","a lot of money for school clubs"], answer: "strong expectations of students", why: "High standards are very strong expectations of quality and behaviour." },
+          { prompt: "'A typical Japanese breakfast' is a breakfast that is...", options: ["normal and usual in Japan","very rare and special on holidays","eaten only on Sundays and festivals","cooked by the school itself"], answer: "normal and usual in Japan", why: "Typical means normal and usual for a place or group." },
+          { prompt: "A 'cram school' is a place where students...", options: ["learn to prepare Japanese food at school","play judo after class","learn how to ride bicycles safely","go for extra lessons before exams"], answer: "go for extra lessons before exams", why: "The text says Akio goes there so he is ready for the university exams." },
+          { prompt: "'The lessons stress teamwork.' Here 'stress' means...", options: ["make people nervous or worried","give special importance to","forget about completely","make much shorter than before"], answer: "give special importance to", why: "If lessons stress something, they treat it as very important." },
+          { prompt: "'Creative thinking' is thinking that...", options: ["follows the same rule every time","only repeats facts from a book","comes up with new ideas","happens only when you hurry"], answer: "comes up with new ideas", why: "Creative thinking is about having new, original ideas." },
+          { prompt: "'She helps with chores.' Here 'chores' are...", options: ["small jobs around the house","school tests on difficult subjects","exciting hobbies with friends","long journeys by train"], answer: "small jobs around the house", why: "Chores are regular small jobs at home, such as cleaning or washing dishes." },
+          { prompt: "'Get some fresh air.' This means...", options: ["buy a bottle of cold water","open the classroom window to study","wear a warm coat outside","spend time outside in clean air"], answer: "spend time outside in clean air", why: "Lilja goes outdoors at break time, so fresh air means clean air outside." },
+          { prompt: "'Akio's day is full of study and rules, whereas Lilja's has more creativity.' Here 'whereas' shows...", options: ["a reason for something","a contrast","a result of something","an example of something"], answer: "a contrast", why: "Whereas joins two different things and shows how they are not the same." }
         ]
       },
       {
@@ -82,7 +241,10 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "How can a student who finds grammar hard use the platform?", options: ["By choosing videos and quizzes about grammar","By asking a classmate to write the answers","By waiting for the teacher to choose the exercises","By skipping grammar and studying other subjects"], answer: 0, why: "The text gives this exact example of a student picking grammar videos and quizzes." },
           { prompt: "What is the main goal of the project?", options: ["To make every school in Türkiye buy new interactive whiteboards","To replace classroom teachers with online lessons for everyone","To teach students how to use computers as quickly as possible","To improve education and give every student an equal chance"], answer: 3, why: "The text says the main aim is better quality of education and a fair chance for every student." },
           { prompt: "Why do many schools use interactive whiteboards and online platforms?", options: ["To give students fewer exercises","To make lessons more interesting","To avoid planning lessons","To test students more often"], answer: 1, why: "The text says these tools make learning more interesting." },
-          { prompt: "What can teachers find on the platforms besides new methods?", options: ["Free tickets to training courses abroad","Lists of the best schools in the country","Extra materials and ways to follow progress","Answers to all of the student exams"], answer: 2, why: "Teachers can find extra materials and follow how their students are doing on the platforms." }
+          { prompt: "What can teachers find on the platforms besides new methods?", options: ["Free tickets to training courses abroad","Lists of the best schools in the country","Extra materials and ways to follow progress","Answers to all of the student exams"], answer: 2, why: "Teachers can find extra materials and follow how their students are doing on the platforms." },
+          { prompt: "In the text, what are a learner's 'weak points'?", options: ["The topics a learner finds difficult","The parts of a video that are boring","The mistakes teachers make in class","The days when a student is absent"], answer: 0, why: "Weak points are the areas where a learner is not strong yet, such as grammar for some students." },
+          { prompt: "How can learners work on the online platforms?", options: ["Only at the same speed as the whole class","At a speed that suits them","Only when a teacher is online","Only during lessons at school"], answer: 1, why: "The text says learners move at a speed that suits them." },
+          { prompt: "What is the main purpose of the text?", options: ["To persuade students to stop using printed books at school","To explain step by step how to use an interactive whiteboard","To give the history of schools in Türkiye over the years","To describe a project that helps learners and teachers"], answer: 3, why: "The writer describes the Digital Transformation in Education project and who it helps." }
         ]
       },
       {
@@ -90,7 +252,13 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         items: [
           { prompt: "What kind of whiteboards do many schools use?", answer: "interactive", accepted: ["interactive whiteboards","interactive whiteboard","an interactive whiteboard"], why: "The text says many schools use interactive whiteboards and online platforms." },
           { prompt: "What is the name of the special project in Türkiye?", answer: "Digital Transformation in Education", why: "This is the project name given in the text.", accepted: ["the Digital Transformation in Education project"] },
-          { prompt: "Who does the project aim to support?", answer: "students and teachers", accepted: ["teachers and students","both students and teachers","both teachers and students","learners and teachers","teachers and learners"], why: "The project offers new ways to learn and teach, so it supports students and teachers." }
+          { prompt: "Who does the project aim to support?", answer: "students and teachers", accepted: ["teachers and students","both students and teachers","both teachers and students","learners and teachers","teachers and learners"], why: "The project offers new ways to learn and teach, so it supports students and teachers." },
+          { prompt: "Who prepared the materials on the online platforms?", answer: "experts", accepted: ["the experts"], why: "The text says the platforms hold materials prepared by experts." },
+          { prompt: "What kind of lessons do learners watch on the platforms?", answer: "video lessons", accepted: ["videos","video","online videos"], why: "Learners watch video lessons and then practise." },
+          { prompt: "Besides watching video lessons, what do learners do on the platforms?", answer: "practice tasks", accepted: ["do practice tasks","practice exercises","tasks","quizzes","do quizzes"], why: "Learners watch video lessons and do practice tasks." },
+          { prompt: "Which school subject does the text give as an example of a weak point?", answer: "grammar", why: "A student who struggles with grammar can choose grammar videos and quizzes." },
+          { prompt: "What new things can teachers learn about through the project?", answer: "methods and techniques", accepted: ["new methods and techniques","new methods","new techniques","methods","techniques"], why: "Teachers can learn new methods and techniques." },
+          { prompt: "What does Türkiye hope the project will prepare young people for?", answer: "the future", accepted: ["future","for the future"], why: "Türkiye hopes the project will prepare young people for the future." }
         ]
       },
       {
@@ -107,12 +275,70 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         ]
       },
       {
+        type: "quiz", title: "Reading 4 · True, false or not mentioned", source: "Unit 2 · Roots and Routes b · p.48", instruction: "Read the text again. Is each statement true, false, or not mentioned in the text?",
+        items: [
+          { prompt: "Many schools around the world use online platforms.", options: ["True","False","Not mentioned"], answer: "True", why: "The text says many schools all over the world use interactive whiteboards and online platforms." },
+          { prompt: "The online platforms hold materials written by students.", options: ["True","False","Not mentioned"], answer: "False", why: "The materials are prepared by experts." },
+          { prompt: "The Digital Transformation project started in 2020.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "The text gives no year for the project." },
+          { prompt: "Learners can choose how fast they work.", options: ["True","False","Not mentioned"], answer: "True", why: "Learners move at a speed that suits them." },
+          { prompt: "The project is only for students.", options: ["True","False","Not mentioned"], answer: "False", why: "The text says the project is not only for students; it also helps teachers." },
+          { prompt: "Students need to pay for the video lessons.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "The text says nothing about the price of the lessons." },
+          { prompt: "Teachers can find extra materials on the platforms.", options: ["True","False","Not mentioned"], answer: "True", why: "The text says teachers can find extra materials on the platforms." },
+          { prompt: "All students must watch the same videos at the same time.", options: ["True","False","Not mentioned"], answer: "False", why: "Learners pick videos and tasks that suit them and move at their own speed." },
+          { prompt: "Every teacher in Türkiye has a laptop.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "The text does not mention laptops or how many teachers have equipment." }
+        ]
+      },
+      {
+        type: "quiz", title: "Reading 4 · Words in context", source: "Unit 2 · Roots and Routes a · p.48", instruction: "Choose the best meaning of each word or phrase as it is used in the text.",
+        items: [
+          { prompt: "'Interactive whiteboards' are boards that...", options: ["only show fixed pictures to the class","let users take part and respond","are used only by the head teacher","are made of paper and card"], answer: "let users take part and respond", why: "Interactive means users can take part, for example by touching the board or answering questions." },
+          { prompt: "'Online platforms' are...", options: ["large rooms where students eat lunch","stages used for school concerts and plays","buses used for long school trips","websites with learning materials"], answer: "websites with learning materials", why: "The text says the platforms hold video lessons and practice tasks." },
+          { prompt: "'It is easier to spot their weak points.' Here 'spot' means...", options: ["see or notice","clean with care","hide from view","repair a problem"], answer: "see or notice", why: "To spot something is to see or notice it." },
+          { prompt: "'A student who struggles with grammar...' Here 'struggles with' means...", options: ["enjoys it a lot","teaches it well","finds it difficult","has just finished it"], answer: "finds it difficult", why: "Struggle means have difficulty with something." },
+          { prompt: "'New methods and techniques' are...", options: ["new school buildings","new uniforms for teachers","new test results","new ways of doing things"], answer: "new ways of doing things", why: "Methods and techniques are particular ways of teaching or doing a task." },
+          { prompt: "Teachers become 'more confident with digital tools'. Here 'confident' means...", options: ["afraid of using the new tools","sure they can use them well","bored with all the new tools","too tired to use any of them"], answer: "sure they can use them well", why: "Confident means feeling sure about your own ability." },
+          { prompt: "'The quality of education' means...", options: ["how good education is","how long a lesson takes","how many schools there are","how expensive schools are"], answer: "how good education is", why: "Quality tells us how good something is." },
+          { prompt: "'A fair chance to succeed' is a chance that is...", options: ["very expensive","given only to the best students","equal for everyone","given only once a year"], answer: "equal for everyone", why: "Fair means equal and right for all people." }
+        ]
+      },
+      {
         type: "reading", title: "B1 Reading · Extra hard", passageTitle: "A revision club that works",
         passage: "When Westbrook School opened a revision club, some students expected longer study hours to produce better results immediately. The club's tutor, Mr Reed, suggested a different approach. Each student chose one subject to review and wrote down a small goal before starting. Hana usually read her notes aloud because hearing the information helped her remember it. Deniz preferred practice questions; he marked answers he could not explain and brought them to the next meeting. The club met twice a week, but students who missed a session did not lose their place. A shared folder listed the tasks and the reason for each one. After six weeks, Hana's scores rose only slightly. Still, she felt less anxious before tests because she knew which topics needed attention. Mr Reed said that the club's purpose was not to promise quick success, but to help students notice which study habits actually worked for them.",
         questions: [
           { prompt: "Why does the club ask each student to set a small goal?", options: ["To make each study session focused and manageable.","To ensure everyone studies the same subject.","To replace practice questions with longer notes.","To help the tutor compare students' scores."], answer: 0, why: "Choosing one subject and a small goal keeps a session focused rather than overwhelming." },
           { prompt: "What does the shared folder allow absent students to do?", options: ["Skip the next meeting without falling behind.","See the tasks and understand why they were assigned.","Change the tutor's revision plan.","Compare their results with Hana's."], answer: 1, why: "The folder lists both tasks and the reason for each one." },
-          { prompt: "Which statement best describes the club's idea of progress?", options: ["Progress means getting a much higher score after one week.","Progress includes understanding which personal study habits are useful.","Progress depends on studying for more hours than classmates.","Progress is possible only when a tutor chooses every task."], answer: 1, why: "The ending says the club helps students notice which habits work for them." }
+          { prompt: "Which statement best describes the club's idea of progress?", options: ["Progress means getting a much higher score after one week.","Progress includes understanding which personal study habits are useful.","Progress depends on studying for more hours than classmates.","Progress is possible only when a tutor chooses every task."], answer: 1, why: "The ending says the club helps students notice which habits work for them." },
+          { prompt: "What did Deniz do with the answers he could not explain?", options: ["He deleted them from the shared folder at home.","He asked Hana to correct them for him after class.","He took them to the next meeting.","He ignored them until the day of the test."], answer: 2, why: "Deniz marked those answers and brought them to the next meeting." },
+          { prompt: "In the text, 'anxious' means...", options: ["proud of the results","bored with the revision","sure about the answers","worried or nervous"], answer: 3, why: "Hana felt less worried before tests because she knew which topics needed attention." },
+          { prompt: "Why did Hana feel less anxious although her scores rose only slightly?", options: ["The tutor gave her extra marks for effort in class.","She stopped going to the club after the first month.","She knew which topics needed her attention.","She studied longer hours at home every evening."], answer: 2, why: "Knowing which topics needed attention made her feel more in control." },
+          { prompt: "Why does the writer begin by saying that some students expected longer study hours to produce immediate results?", options: ["To contrast that idea with the club's different approach","To show that Mr Reed strongly disliked every kind of study time","To explain why Hana's scores rose a great deal","To prove that revision clubs never help students at all"], answer: 0, why: "The writer first states an expectation, then shows that the club took a different approach." }
+        ]
+      },
+      {
+        type: "quiz", title: "B1 Reading · True, false or not mentioned", source: "Unit 2 · Extra reading practice", instruction: "Read the text about the revision club again. Is each statement true, false, or not mentioned in the text?",
+        items: [
+          { prompt: "Each student chose one subject to review.", options: ["True","False","Not mentioned"], answer: "True", why: "Each student chose one subject and wrote down a small goal." },
+          { prompt: "The revision club met five times a week.", options: ["True","False","Not mentioned"], answer: "False", why: "The club met twice a week." },
+          { prompt: "Mr Reed teaches maths at Westbrook School.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "We are told that Mr Reed is the club's tutor, but not which subject he teaches." },
+          { prompt: "Students who missed a session lost their place in the club.", options: ["True","False","Not mentioned"], answer: "False", why: "The text says students who missed a session did not lose their place." },
+          { prompt: "Hana usually read her notes aloud.", options: ["True","False","Not mentioned"], answer: "True", why: "Hearing the information helped her remember it." },
+          { prompt: "Deniz felt nervous before every test.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "Only Hana's feelings before tests are described." },
+          { prompt: "Hana's scores rose a great deal after six weeks.", options: ["True","False","Not mentioned"], answer: "False", why: "Her scores rose only slightly." },
+          { prompt: "The shared folder listed the tasks and the reason for each one.", options: ["True","False","Not mentioned"], answer: "True", why: "The folder showed both the tasks and why they were set." },
+          { prompt: "The club meetings took place in the school library.", options: ["True","False","Not mentioned"], answer: "Not mentioned", why: "The text does not say where the club met." }
+        ]
+      },
+      {
+        type: "quiz", title: "B1 Reading · Who does what?", source: "Unit 2 · Extra reading practice", instruction: "Read the text about the revision club again. Choose the person or group each sentence describes.",
+        items: [
+          { prompt: "Who usually read notes aloud?", options: ["Hana","Deniz","Mr Reed","Every student in the club"], answer: "Hana", why: "Hana read her notes aloud because hearing them helped her remember." },
+          { prompt: "Who preferred practice questions?", options: ["Hana","Mr Reed","Deniz","Some other students"], answer: "Deniz", why: "Deniz preferred practice questions." },
+          { prompt: "Who suggested a different approach to revision?", options: ["Deniz","Hana","Some other students","Mr Reed"], answer: "Mr Reed", why: "The tutor, Mr Reed, suggested a different approach." },
+          { prompt: "Who marked the answers he could not explain?", options: ["Mr Reed","Deniz","Hana","Every student in the club"], answer: "Deniz", why: "Deniz marked answers he could not explain and brought them to the next meeting." },
+          { prompt: "Who felt less anxious before tests?", options: ["Hana","Deniz","Mr Reed","Some other students"], answer: "Hana", why: "Hana felt less anxious because she knew which topics needed attention." },
+          { prompt: "Who said that the club's purpose was not to promise quick success?", options: ["Some other students","Hana","Deniz","Mr Reed"], answer: "Mr Reed", why: "Mr Reed explained the purpose of the club at the end of the text." },
+          { prompt: "Who kept their place in the club after missing a session?", options: ["Only Mr Reed","Any student who missed a session","Only Deniz","Only Hana"], answer: "Any student who missed a session", why: "Students who missed a session did not lose their place." },
+          { prompt: "Who expected longer study hours to give better results at once?", options: ["Deniz","Hana","Some students","Mr Reed"], answer: "Some students", why: "The text says some students expected longer study hours to produce better results immediately." }
         ]
       }
     ]
