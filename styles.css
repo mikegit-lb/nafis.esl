@@ -420,8 +420,8 @@ a { color: inherit; }
 }
 
 .mistake-wrong::before, .mistake-right::before { font-weight: 800; margin-right: 6px; }
-.mistake-wrong::before { content: "\2717"; color: var(--orange); }
-.mistake-right::before { content: "\2713"; color: var(--blue); }
+.mistake-wrong::before { content: "\2717" / ""; color: var(--orange); }
+.mistake-right::before { content: "\2713" / ""; color: var(--blue); }
 
 .mistake-why { margin-top: 3px; color: var(--ink-soft); font-size: 13px; }
 

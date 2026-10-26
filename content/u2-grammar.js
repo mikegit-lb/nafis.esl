@@ -174,7 +174,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "Make a yes/no question: “They take notes in every lesson.”", answer: "Do they take notes in every lesson?", why: "Start with do for a plural subject and keep the base verb." },
           { prompt: "Make this sentence negative: “We have a break at ten o'clock.”", answer: "We do not have a break at ten o'clock.", why: "Use do not + base verb with we." },
           { prompt: "Ask a How often question about this sentence: “Hana revises twice a week.”", answer: "How often does Hana revise?", why: "Use How often + does + subject + base verb to ask about frequency." },
-          { prompt: "The revision club promises instant results. Rewrite this sentence in the negative.", answer: "The revision club doesn't promise instant results.", accepted: ["The revision club does not promise instant results."], why: "Use doesn't + base verb with the singular subject the revision club." },
+          { prompt: "The revision club promises instant results. Rewrite this sentence in the negative.", answer: "The revision club doesn't promise instant results.", why: "Use doesn't + base verb with the singular subject the revision club." },
           { prompt: "Make a yes/no question: “Ceren studies with her cousin.”", answer: "Does Ceren study with her cousin?", why: "Start with does for a singular subject and use the base verb study." },
           { prompt: "Ask a What time question about this sentence: “The shop opens at nine.”", answer: "What time does the shop open?", why: "Use What time + does + subject + base verb." },
           { prompt: "Make this sentence negative: “Ali and Deniz play basketball on weekdays.”", answer: "Ali and Deniz do not play basketball on weekdays.", why: "Ali and Deniz is plural, so use do not + base verb." }
@@ -321,7 +321,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       },
       {
         type: "quiz", title: "Quiz N · Complete the mini-dialogues", source: "Unit 2 · Grammar practice · short conversations",
-        instruction: "Write the missing word or words so that each dialogue is correct. Use full forms (do not, is not) or short forms.",
+        instruction: "Write the missing word or words so that each dialogue is correct. Use full forms (do not, does not) or short forms.",
         items: [
           { prompt: "A: What time ___ you get up on Saturdays? B: I get up at nine.", answer: "do", why: "A question with you needs do + base verb." },
           { prompt: "A: Does your brother walk to school? B: No, he ___. He takes the bus.", answer: "does not", why: "A negative short answer to a does question is No, he does not (doesn't)." },

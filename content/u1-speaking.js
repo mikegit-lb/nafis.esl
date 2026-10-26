@@ -172,7 +172,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "What do you like most about Chile? Give at least two reasons.",
-            model: "I like the mountains most. First, they are beautiful, and second, I can ski there in winter.",
+            model: "I like the mountains most. First, they are beautiful, and second, people can ski there in winter.",
             frames: ["I like ... most.", "First, ... Second, ..."]
           },
           {
@@ -661,7 +661,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "Can you live without your phone for a whole day? Why, or why not?",
-            model: "No, I think I cannot. I use my phone to talk to my friends and to check my homework.",
+            model: "No, I don't think I can. I use my phone to talk to my friends and to check my homework.",
             frames: ["Yes, I can, because ...", "No, I cannot, because I use my phone to ..."]
           },
           {
