@@ -57,12 +57,12 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         type: "quiz", title: "Quiz A · Be: countries and nationalities", source: "Unit 1 · Language Awareness · p.31 Remember to be",
         instruction: "Choose the correct form of be or the correct nationality word.",
         items: [
-          { prompt: "Mehmet ___ from Türkiye, and his capital city is Ankara.", options: ["am", "is", "are", "be"], answer: "is", why: "Mehmet is a singular he-subject, so use is." },
+          { prompt: "Mehmet ___ from Türkiye, and he speaks Turkish.", options: ["am", "is", "are", "be"], answer: "is", why: "Mehmet is a singular he-subject, so use is." },
           { prompt: "Alina and Odett ___ from different countries.", options: ["is", "am", "are", "be"], answer: "are", why: "Alina and Odett is a plural subject, so use are." },
           { prompt: "I ___ Polish, but my friend Ivan is Bulgarian.", options: ["are", "am", "is", "be"], answer: "am", why: "Use am only with the subject I." },
           { prompt: "___ Ingrid from Norway?", options: ["Are", "Am", "Do", "Is"], answer: "Is", why: "A be question puts is before the singular subject Ingrid." },
-          { prompt: "Min-su lives in Seoul, the capital of South Korea. In class he says: “I am ___.”", options: ["Korea", "Koreans", "Korean", "a Korea"], answer: "Korean", why: "After is we use the nationality word Korean, not the country name." },
-          { prompt: "We ___ not from Hungary; we are from Bulgaria.", options: ["is", "am", "do", "are"], answer: "are", why: "Use are with we, and add not to make the sentence negative." },
+          { prompt: "Min-su lives in Seoul, the capital of South Korea. In class he says: “I am ___.”", options: ["Korea", "Koreans", "Korean", "a Korea"], answer: "Korean", why: "After am we use the nationality word Korean, not the country name." },
+          { prompt: "We ___ not from Hungary; we come from Bulgaria.", options: ["is", "am", "do", "are"], answer: "are", why: "Use are with we, and add not to make the sentence negative." },
           { prompt: "Are you Norwegian? Choose the correct short answer.", options: ["No, I amn't.", "No, I not.", "No, I am not.", "No, I isn't."], answer: "No, I am not.", why: "A short negative answer to an Are you question is No, I am not." },
           { prompt: "What ___ the capital of Bulgaria?", options: ["are", "is", "am", "do"], answer: "is", why: "The capital is singular, so the question uses is." }
         ]
@@ -88,8 +88,8 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "My name is Odett. I ___ (to be) from Hungary, but I study in Oslo.", answer: "am", why: "Use am with the subject I." },
           { prompt: "In summer, you ___ (visit) beautiful fjords by boat.", answer: "can visit", why: "Can + base verb shows an opportunity that the place gives you." },
           { prompt: "You ___ (eat) fresh fish in small restaurants near the harbour.", answer: "can eat", why: "Can + base verb shows what visitors have the chance to do." },
-          { prompt: "But you ___ (not take) photos inside some old churches, so look for signs.", answer: "can't take", why: "Can't + base verb shows that something is not possible here." },
-          { prompt: "The winter ___ (to be) very cold in the north, so bring warm clothes.", answer: "is", why: "The winter is singular, so use is." },
+          { prompt: "But you ___ (not take) photos inside some old churches, so look for signs.", answer: "can't take", why: "Can't + base verb shows something is not allowed here." },
+          { prompt: "Oslo ___ (to be) the capital of Norway, so many tourists visit it.", answer: "is", why: "Oslo is a singular subject, so use is." },
           { prompt: "My classmates ___ (to be) friendly, so I am never alone.", answer: "are", why: "My classmates is a plural subject, so use are." }
         ]
       },
@@ -100,7 +100,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "Make a question: “Ingrid can speak three languages.”", answer: "Can Ingrid speak three languages?", why: "In a can question, can goes before the subject." },
           { prompt: "Make the sentence negative with can't: “Tourists can enter the old tower at night.”", answer: "Tourists can't enter the old tower at night.", why: "Put n't after can and keep the base verb enter." },
           { prompt: "Make a question with Are: “Your new classmates are from Poland.”", answer: "Are your new classmates from Poland?", why: "In a be question, are goes before the subject." },
-          { prompt: "Make the sentence negative: “Mehmet is Bulgarian.”", answer: "Mehmet isn't Bulgarian.", why: "Add not after is to make the sentence negative." }
+          { prompt: "Make the sentence negative: “Mehmet is Bulgarian.”", answer: "Mehmet isn't Bulgarian.", accepted: ["Mehmet's not Bulgarian."], why: "Add not after is to make the sentence negative." }
         ]
       },
       {
@@ -114,7 +114,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         ]
       },
       { type: "build", title: "Build a can question", prompt: "Build a question about languages with can.", instruction: "Tap the words in the correct order to ask if your friend speaks Polish.", tokens: ["speak", "your", "Polish?", "Can", "friend"], answer: ["Can", "your", "friend", "speak", "Polish?"], why: "A can question starts with Can, then the subject your friend, then the base verb speak." },
-      { type: "build", title: "Build a be question", prompt: "Build a question about nationality with be.", instruction: "Tap the words in the correct order to ask where the students come from.", tokens: ["are", "Where", "from?", "the", "students"], answer: ["Where", "are", "the", "students", "from?"], why: "A wh- question puts the question word first, then are, then the subject." },
+      { type: "build", title: "Build a question about where students are from", prompt: "Build a question about nationality with be.", instruction: "Tap the words in the correct order to ask where the students come from.", tokens: ["are", "Where", "from?", "the", "students"], answer: ["Where", "are", "the", "students", "from?"], why: "A wh- question puts the question word first, then are, then the subject." },
       {
         type: "match", title: "Which meaning of can?",
         pairs: [
