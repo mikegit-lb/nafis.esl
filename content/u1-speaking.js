@@ -4,7 +4,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
     pronunciation: {
       sounds: [
         { label: "smart: the long ar sound, as in car", words: ["smart", "start", "arm", "park", "hard", "farm", "garden"] },
-        { label: "around: the short, weak a sound at the start of a word", words: ["around", "about", "again", "away", "banana", "sofa"] },
+        { label: "around: the short, weak a sound (/ə/), as in about, again, banana, sofa", words: ["around", "about", "again", "away", "banana", "sofa"] },
         { label: "way: the a sound that says its own name", words: ["way", "day", "play", "train", "name", "late"] },
         { label: "control: the hard c sound, like k", words: ["control", "cat", "class", "culture", "camera", "country"] },
         { label: "exercise: the soft c sound, like s", words: ["exercise", "city", "cinema", "centre", "face", "nice"] }
@@ -30,13 +30,13 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "Where can tourists go for a hike around a lake?",
-            model: "Tourists can go for a hike around a lake in Norway. It is a beautiful country with many lakes and mountains.",
-            frames: ["Tourists can go for a hike in ...", "It is a country with ..."]
+            model: "I think tourists can go for a hike around a lake in Norway. It is a beautiful country with many lakes and mountains.",
+            frames: ["I think tourists can go for a hike in ...", "It is a country with ..."]
           },
           {
             q: "Which country is famous for its thermal baths?",
-            model: "Hungary is famous for its thermal baths. Odett is Hungarian, and the capital city, Budapest, has many old baths.",
-            frames: ["... is famous for its thermal baths.", "The capital city is ..."]
+            model: "I think Hungary is famous for its thermal baths. Odett is Hungarian, and the capital city, Budapest, has many old baths.",
+            frames: ["I think ... is famous for its thermal baths.", "The capital city is ..."]
           },
           {
             q: "What can tourists do in Ivan's country?",
@@ -65,12 +65,12 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         type: "speak",
         title: "Azerbaijan and the Turkic states",
         source: "Unit 1 · Language Awareness c–d · p.30",
-        instruction: "Think about A Warm Country. Ask and answer in pairs, then say each answer in your own words.",
+        instruction: "The text A Warm Country is about Azerbaijan, a Turkic state between the Caucasus Mountains and the Caspian Sea. Its capital, Baku, has old UNESCO sites and modern skyscrapers, and its food reflects the Silk Road. Ask and answer in pairs, then say each answer in your own words.",
         questions: [
           {
             q: "Where is the Republic of Azerbaijan?",
-            model: "The Republic of Azerbaijan is at the crossroads of Western Asia and Eastern Europe. It is between the Caucasus Mountains and the Caspian Sea.",
-            frames: ["It is at the crossroads of ...", "It is between ... and ..."]
+            model: "The Republic of Azerbaijan is in the place where Western Asia meets Eastern Europe. It is between the Caucasus Mountains and the Caspian Sea.",
+            frames: ["It is in the place where ... meets ...", "It is between ... and ..."]
           },
           {
             q: "Why should people visit the Turkic states?",
@@ -84,7 +84,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "What is the importance of the Silk Road?",
-            model: "The Silk Road is important because it was a trading and cultural exchange route. Its history is still part of the food of Azerbaijan, so visitors can taste it today.",
+            model: "The Silk Road is important because it was a trading and cultural exchange route. Its history is still part of the food of Azerbaijan, so visitors can taste that history today.",
             frames: ["The Silk Road is important because ...", "Visitors can taste ..."]
           }
         ],
@@ -147,7 +147,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "Where are the Chileans usually from?",
-            model: "Many Chileans are from families with Spanish and local roots. Because of this, the culture of Chile is diverse.",
+            model: "Many Chileans are from families with European and indigenous roots, mostly Mapuche. Because of this, the culture of Chile is diverse.",
             frames: ["Many Chileans are from ...", "The culture is diverse because ..."]
           },
           {
@@ -167,7 +167,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         type: "speak",
         title: "Online life and safety",
         source: "Unit 1 · Roots and Routes d–e · p.34",
-        instruction: "Think about the text Getting Ready for a Safer Digital World. Talk in pairs, then share your ideas with the class.",
+        instruction: "The text Getting Ready for a Safer Digital World explains that the Internet makes daily tasks easy, but sharing personal information online brings risks such as cyberattacks and data theft. Türkiye trains cybersecurity experts in vocational schools in technoparks. Talk in pairs, then share your ideas with the class.",
         questions: [
           {
             q: "Why is the Internet important in modern life?",
@@ -239,8 +239,8 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "Present one other country from this unit, for example Hungary or Norway.",
-            model: "Good morning! This is Hungary. People there are Hungarian, and they can speak Hungarian. The capital is Budapest. Tourists can relax in thermal baths and walk beside the river. It is a beautiful country. Thank you, and goodbye!",
-            frames: ["Good morning! This is ...", "People there are ... and they can speak ...", "The capital is ...", "Tourists can ...", "Thank you, and goodbye!"]
+            model: "Good morning! My name is Odett, and I am Hungarian. I am from Hungary, and I can speak Hungarian and English. The capital is Budapest. Tourists can visit the Parliament building and relax in the thermal baths. They can also walk beside the river Danube. Thank you, and goodbye!",
+            frames: ["Good morning! My name is ...", "I am ... and I can speak ...", "The capital is ...", "Tourists can visit ... and ...", "Thank you, and goodbye!"]
           },
           {
             q: "Your partner interviews you for the video: What can tourists do in Türkiye?",
@@ -287,34 +287,35 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       },
       {
         type: "roleplay",
-        title: "Role-play: Japan meets Mexico",
+        title: "Role-play: Poland meets South Korea",
         source: "Unit 1 · Pronunciation e–f · p.27",
-        scenario: "Hina and Salma meet at a school fair. Swap the countries and cities, and keep the same questions as in the textbook dialogue.",
+        scenario: "Alina from Poland and Min-su from South Korea meet at a school fair. Use your role card to introduce yourself, then ask about your partner's languages, capital city and tourist activities.",
         cardA: {
-          role: "Hina from Japan",
+          role: "Alina from Poland",
           rows: [
-            ["Country / nationality", "Japan / Japanese"],
-            ["Languages", "Japanese, French and English"],
-            ["Capital", "Tokyo"],
-            ["Tourists can", "Explore the Tokyo National Museum and take a trip to Mount Fuji"]
+            ["Country / nationality", "Poland / Polish"],
+            ["Languages", "Polish and English"],
+            ["Capital", "Warsaw"],
+            ["Tourists can", "Walk through the Old Town and visit Wilanow Palace"]
           ]
         },
         cardB: {
-          role: "Salma from Mexico",
+          role: "Min-su from South Korea",
           rows: [
-            ["Country / nationality", "Mexico / Mexican"],
-            ["Languages", "Spanish and English"],
-            ["Capital", "Mexico City"],
-            ["Tourists can", "Visit the National Palace and bike around the Reforma Avenue"]
+            ["Country / nationality", "South Korea / Korean"],
+            ["Languages", "Korean and English"],
+            ["Capital", "Seoul"],
+            ["Tourists can", "Visit Gyeongbokgung Palace and go up Namsan Tower"]
           ]
         },
         model: [
-          { speaker: "A", text: "Hi there! I am Hina from Japan." },
-          { speaker: "B", text: "Nice to meet you, Hina! I am Salma, and I am from Mexico. What is your nationality, and what languages can you speak?" },
-          { speaker: "A", text: "Nice to meet you too! I am Japanese, and I can speak Japanese, French and English." },
-          { speaker: "B", text: "I am Mexican, and I can speak Spanish and English. What is the capital of Japan?" },
-          { speaker: "A", text: "It is Tokyo. Tourists can explore the Tokyo National Museum and take a trip to Mount Fuji. What about Mexico?" },
-          { speaker: "B", text: "The capital of Mexico is Mexico City. Tourists can visit the National Palace and bike around the Reforma Avenue." }
+          { speaker: "A", text: "Hello! My name is Alina, and I am from Poland." },
+          { speaker: "B", text: "Hi, Alina! I am Min-su. I am from South Korea. What is your nationality, and which languages can you speak?" },
+          { speaker: "A", text: "I am Polish, and I can speak Polish and English. And you?" },
+          { speaker: "B", text: "I am Korean, and I can speak Korean and English. What is the capital of Poland, and what can tourists do there?" },
+          { speaker: "A", text: "The capital is Warsaw. Tourists can walk through the Old Town and visit Wilanow Palace. What about South Korea?" },
+          { speaker: "B", text: "The capital of South Korea is Seoul. Tourists can visit Gyeongbokgung Palace and go up Namsan Tower." },
+          { speaker: "A", text: "Great! I would like to visit Seoul one day." }
         ],
         checklist: ["a greeting", "nationality with I am", "languages with I can speak", "the capital city", "tourist activities with can"]
       },
@@ -327,7 +328,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           role: "Mehmet or Mine from Türkiye",
           rows: [
             ["Country / nationality", "Türkiye / Turkish"],
-            ["Languages", "Turkish and English"],
+            ["Languages", "Turkish and German"],
             ["Capital", "Ankara"],
             ["A tourist attraction", "Hagia Sophia"],
             ["Activity", "Take a boat trip on the Bosphorus"]
@@ -346,10 +347,12 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         model: [
           { speaker: "A", text: "Hello! I am Mehmet. I am from Türkiye." },
           { speaker: "B", text: "Hi, Mehmet! I am Odett, and I am from Hungary. What languages can you speak?" },
-          { speaker: "A", text: "I am Turkish, and I can speak Turkish and English. What is the capital of Hungary?" },
-          { speaker: "B", text: "It is Budapest. Tourists can relax in the thermal baths and walk beside the river Danube. What can tourists do in Türkiye?" },
-          { speaker: "A", text: "The capital of Türkiye is Ankara, but tourists can also visit Hagia Sophia and take a boat trip on the Bosphorus." },
-          { speaker: "B", text: "That sounds wonderful! I can visit Türkiye next summer." }
+          { speaker: "A", text: "I am Turkish, and I can speak Turkish and German. What is your nationality, and what languages can you speak?" },
+          { speaker: "B", text: "I am Hungarian, and I can speak Hungarian and English. What is the capital of Türkiye, and what can tourists do there?" },
+          { speaker: "A", text: "The capital is Ankara. Tourists can visit Hagia Sophia and take a boat trip on the Bosphorus. What about Hungary?" },
+          { speaker: "B", text: "The capital of Hungary is Budapest. Tourists can relax in the thermal baths and walk beside the river Danube." },
+          { speaker: "A", text: "That sounds wonderful!" },
+          { speaker: "B", text: "Thank you! I would like to visit Türkiye next summer." }
         ],
         checklist: ["a greeting", "my country", "my languages", "the capital city", "two things tourists can do"]
       }
