@@ -1,13 +1,16 @@
 window.unitContent = window.unitContent || [];
 window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
   lesson: {
-    summary: "Use the simple present for habits and routines: things you do again and again, such as daily and study routines. Frequency adverbs and time expressions say how often or when.",
+    summary: "Use the simple present for habits and routines: things you do again and again, such as daily and study routines. Frequency adverbs and time expressions say how often or when, and sequencers (first, then, after that, finally) put the steps of a routine in order.",
     examples: [
       "I wake up at seven on weekdays.",
       "She studies after school.",
       "Do you walk to school?",
       "My brother never takes the bus.",
-      "We have a quiz twice a week."
+      "We have a quiz twice a week.",
+      "After I get dressed, I have breakfast.",
+      "How often do you play basketball? Three times a week.",
+      "Ali loves playing chess, but he hates getting up early."
     ],
     patterns: [
       {
@@ -39,6 +42,41 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         label: "Time expressions",
         formula: "at 7.30 · at weekends · on weekdays · on Fridays · in the morning · twice a week",
         note: "Use at for clock times, on for days, in for parts of the day. Twice a week usually goes at the end. Exception: we say at weekends (not on weekends)."
+      },
+      {
+        label: "Sequencers and linkers",
+        formula: "First, / Then / After that, / Finally, · before / after + noun or -ing · After + subject + verb, + subject + verb",
+        note: "First, I wash my face. Then I get dressed. After that, I have breakfast. Finally, I leave home. After I get dressed, I have breakfast. Before leaving home, I check my bag."
+      },
+      {
+        label: "How often + frequency phrases",
+        formula: "How often + do / does + subject + base verb? · once / twice / three times a week · every day · on weekdays",
+        note: "How often do you have PE? We have PE twice a week. Count with once, twice, then three times, four times (not three time). Say a week, not in a week."
+      },
+      {
+        label: "Have / has and other irregular verbs",
+        formula: "have becomes has · do becomes does · go becomes goes · try becomes tries · fly becomes flies",
+        note: "She has breakfast at seven. He does his homework and goes to bed at ten. Remember the -ies spelling: study becomes studies, try becomes tries. After a vowel, just add s: play becomes plays, buy becomes buys."
+      },
+      {
+        label: "Short answers with do / does",
+        formula: "Do + I / you / we / they ...? Yes, + subject + do. / No, + subject + don't. · Does + he / she / it ...? Yes, + subject + does. / No, + subject + doesn't.",
+        note: "Do you walk to school? Yes, I do. Does she walk to school? No, she doesn't. Use the same auxiliary as in the question, and do not repeat the main verb."
+      },
+      {
+        label: "Wh-questions in the simple present",
+        formula: "What time / Where / Who / Why / When / How often + do / does + subject + base verb?",
+        note: "What time do you get up? Where does he eat lunch? Why do they walk? Word order stays the same: wh-word, do or does, subject, base verb. After does, the main verb never takes -s: What does your father do?"
+      },
+      {
+        label: "Be or do?",
+        formula: "be (am / is / are) + adjective, noun or place · do / does for actions and negatives or questions with action verbs",
+        note: "He is tired, but he does his homework. I am usually late (be), but I usually walk to school (action verb). Do not put am / is / are before an action verb in a routine: I go to school, not I am go to school."
+      },
+      {
+        label: "Like, love and hate + -ing",
+        formula: "like / love / hate (and enjoy) + verb-ing",
+        note: "Ali loves playing chess, but he hates getting up early. Does she like swimming? Spelling: make becomes making, run becomes running, sit becomes sitting."
       }
     ],
     context: [
@@ -49,15 +87,37 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       { speaker: "A", text: "No, he doesn't. He walks with his friends." },
       { speaker: "B", text: "Do you study after school?" },
       { speaker: "A", text: "Yes, I do. I study in the library twice a week." },
-      { speaker: "B", text: "I don't study at weekends, but I always play basketball on Saturdays." }
+      { speaker: "B", text: "I don't study at weekends, but I always play basketball on Saturdays." },
+      { speaker: "A", text: "What do you do after school on weekdays?" },
+      { speaker: "B", text: "First, I have a snack. After that, I do my homework. Finally, I help my mother with dinner." },
+      { speaker: "A", text: "How often do you play basketball?" },
+      { speaker: "B", text: "Three times a week: on Mondays, Wednesdays and Saturdays. I love playing with my friends." },
+      { speaker: "A", text: "Does your sister play too?" },
+      { speaker: "B", text: "No, she doesn't. She hates running, but she likes swimming." },
+      { speaker: "A", text: "Where does she swim?" },
+      { speaker: "B", text: "At the sports centre. She goes there on Tuesdays and has a lesson." },
+      { speaker: "A", text: "Is she tired afterwards?" },
+      { speaker: "B", text: "Yes, she is. She does her homework first, then she goes to bed early." },
+      { speaker: "A", text: "Why does she go to bed so early on Tuesdays?" },
+      { speaker: "B", text: "Because she gets up at five on Wednesdays. Her first training starts at six." }
+    ],
+    mistakes: [
+      { wrong: "She go to school at eight.", right: "She goes to school at eight.", why: "With he, she, it the verb takes -s or -es, and go becomes goes." },
+      { wrong: "He don't like fish.", right: "He doesn't like fish.", why: "Use doesn't, not don't, with he, she and it." },
+      { wrong: "Does he goes to the gym on Fridays?", right: "Does he go to the gym on Fridays?", why: "After does the main verb keeps the base form; the -s is already in does." },
+      { wrong: "Every day I am go to school by bus.", right: "Every day I go to school by bus.", why: "Do not use am, is or are before a simple present action verb; use the verb alone." },
+      { wrong: "I usually am late for the first lesson.", right: "I am usually late for the first lesson.", why: "An adverb of frequency comes after the verb be but before other verbs." },
+      { wrong: "What time you wake up?", right: "What time do you wake up?", why: "A simple present question needs do or does after the question words; Turkish does not use this auxiliary, so it is easy to forget." },
+      { wrong: "She have breakfast at seven.", right: "She has breakfast at seven.", why: "Have changes to has with he, she and it." },
+      { wrong: "We play basketball in Fridays.", right: "We play basketball on Fridays.", why: "Use on with days of the week, not in." },
+      { wrong: "I go swimming twice in a week.", right: "I go swimming twice a week.", why: "We say once, twice or three times a week, with a and without in." },
+      { wrong: "He studys at the library at night.", right: "He studies at the library at night.", why: "Consonant + y changes to -ies in the he / she / it form." },
+      { wrong: "After to eat, I wash my hands.", right: "After eating, I wash my hands.", why: "After and before are followed by a noun or the -ing form, not to + verb." },
+      { wrong: "I like swim in the sea.", right: "I like swimming in the sea.", why: "In this lesson, like, love and hate are followed by the -ing form." }
     ]
   },
   grammar: {
     activities: [
-      { type: "choice", title: "Choose the accurate routine", prompt: "In the school notice, the club ___ twice a week, and students ___ one small goal before each session.", options: ["meets / choose", "meet / chooses", "is meeting / choose", "meets / chooses"], answer: "meets / choose", why: "The club is singular, so it meets; the plural subject students takes choose." },
-      { type: "complete", title: "Use the correct verb form", prompt: "Although Hana's first lesson begins at 8:30, she ___ (arrive) at school by 8:00.", answer: "arrives", why: "Use the simple present for a regular routine; Hana takes the third-person -s form." },
-      { type: "transform", title: "Make the sentence negative", prompt: "The revision club promises instant results. Rewrite this sentence in the negative.", answer: "The revision club doesn't promise instant results.", accepted: ["The revision club does not promise instant results."], why: "Use doesn't + base verb with the singular subject the revision club." },
-      { type: "fix", title: "Edit the student's question", prompt: "Why does Deniz marks the answers he cannot explain?", answer: "Why does Deniz mark the answers he cannot explain?", why: "After does, use the base verb mark." },
       {
         type: "quiz", title: "Quiz A · Verb forms after he, she, it and do / does", source: "Unit 2 · Language Awareness f · p.45",
         instruction: "Choose the correct word or phrase to complete each sentence.",
@@ -69,7 +129,8 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "___ your cousin live in Istanbul?", options: ["Does", "Do", "Is", "Are"], answer: "Does", why: "Use does with a singular subject (your cousin) to make a simple present question." },
           { prompt: "___ you and your friends have lunch together at school?", options: ["Is", "Are", "Does", "Do"], answer: "Do", why: "Use do with plural subjects such as you and your friends." },
           { prompt: "Lily ___ a film with her family on Sundays.", options: ["watchs", "watches", "watchies", "watching"], answer: "watches", why: "Verbs ending in -ch add -es with he, she, it." },
-          { prompt: "Tom ___ to the park on Friday afternoons.", options: ["gos", "go", "goes", "going"], answer: "goes", why: "Go ends in -o, so the he / she / it form is goes." }
+          { prompt: "Tom ___ to the park on Friday afternoons.", options: ["gos", "go", "goes", "going"], answer: "goes", why: "Go ends in -o, so the he / she / it form is goes." },
+          { prompt: "In the school notice, the club ___ twice a week, and students ___ one small goal before each session.", options: ["meets / choose", "meet / chooses", "is meeting / choose", "meets / chooses"], answer: "meets / choose", why: "The club is singular, so it meets; the plural subject students takes choose." }
         ]
       },
       {
@@ -81,7 +142,10 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "They ___ breakfast together before school.", options: ["have usually", "usually has", "are usually have", "usually have"], answer: "usually have", why: "Put usually before the main verb have; they takes the base form." },
           { prompt: "Our first lesson starts ___ eight o'clock.", options: ["at", "on", "in", "to"], answer: "at", why: "Use at with clock times." },
           { prompt: "I do not go out with my friends ___ weekdays.", options: ["at", "on", "in", "to"], answer: "on", why: "Use on with days and groups of days such as weekdays." },
-          { prompt: "Hana goes to the climbing club twice ___.", options: ["the week", "weeks", "a week", "one week"], answer: "a week", why: "We say twice a week for how often something happens." }
+          { prompt: "Hana goes to the climbing club twice ___.", options: ["the week", "weeks", "a week", "one week"], answer: "a week", why: "We say twice a week for how often something happens." },
+          { prompt: "My grandmother ___ tired in the evening.", options: ["is always", "always is", "does always", "always does"], answer: "is always", why: "An adverb of frequency comes after be, so is always." },
+          { prompt: "I do my homework ___ the evening.", options: ["on", "at", "by", "in"], answer: "in", why: "Use in with parts of the day such as the morning, the afternoon and the evening." },
+          { prompt: "They ___ to the cinema on Saturdays.", options: ["go sometimes", "are sometimes go", "sometimes go", "sometimes goes"], answer: "sometimes go", why: "Put sometimes before the main verb go; they takes the base form." }
         ]
       },
       {
@@ -93,7 +157,11 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "We ___ (not / go) to school on Sundays.", answer: "do not go", why: "Use do not + base verb with we." },
           { prompt: "Our teacher ___ (check) our homework every Monday.", answer: "checks", why: "Our teacher is singular, and check ends in -ck, so it only needs -s." },
           { prompt: "Ayşe ___ (study) in the library after school.", answer: "studies", why: "Consonant + y changes to -ies in the he / she / it form." },
-          { prompt: "My parents ___ (work) in a hospital.", answer: "work", why: "The subject my parents is plural, so the verb keeps the base form." }
+          { prompt: "My parents ___ (work) in a hospital.", answer: "work", why: "The subject my parents is plural, so the verb keeps the base form." },
+          { prompt: "Although Hana's first lesson begins at 8:30, she ___ (arrive) at school by 8:00.", answer: "arrives", why: "Use the simple present for a regular routine; Hana takes the third-person -s form." },
+          { prompt: "Our neighbours ___ (not / have) a car, so they take the bus.", answer: "do not have", why: "Our neighbours is plural, so use do not + base verb." },
+          { prompt: "My little brother ___ (cry) when he is tired.", answer: "cries", why: "Consonant + y changes to -ies: cry becomes cries." },
+          { prompt: "Mr Kaya ___ (teach) us maths on Tuesdays.", answer: "teaches", why: "Verbs ending in -ch add -es with he, she, it." }
         ]
       },
       {
@@ -105,7 +173,11 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "Ask a Where question about this sentence: “Mert eats lunch in the canteen.”", answer: "Where does Mert eat lunch?", why: "Use Where + does + subject + base verb." },
           { prompt: "Make a yes/no question: “They take notes in every lesson.”", answer: "Do they take notes in every lesson?", why: "Start with do for a plural subject and keep the base verb." },
           { prompt: "Make this sentence negative: “We have a break at ten o'clock.”", answer: "We do not have a break at ten o'clock.", why: "Use do not + base verb with we." },
-          { prompt: "Ask a How often question about this sentence: “Hana revises twice a week.”", answer: "How often does Hana revise?", why: "Use How often + does + subject + base verb to ask about frequency." }
+          { prompt: "Ask a How often question about this sentence: “Hana revises twice a week.”", answer: "How often does Hana revise?", why: "Use How often + does + subject + base verb to ask about frequency." },
+          { prompt: "The revision club promises instant results. Rewrite this sentence in the negative.", answer: "The revision club doesn't promise instant results.", accepted: ["The revision club does not promise instant results."], why: "Use doesn't + base verb with the singular subject the revision club." },
+          { prompt: "Make a yes/no question: “Ceren studies with her cousin.”", answer: "Does Ceren study with her cousin?", why: "Start with does for a singular subject and use the base verb study." },
+          { prompt: "Ask a What time question about this sentence: “The shop opens at nine.”", answer: "What time does the shop open?", why: "Use What time + does + subject + base verb." },
+          { prompt: "Make this sentence negative: “Ali and Deniz play basketball on weekdays.”", answer: "Ali and Deniz do not play basketball on weekdays.", why: "Ali and Deniz is plural, so use do not + base verb." }
         ]
       },
       {
@@ -117,7 +189,181 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "Elif do not bring her lunch to school.", answer: "Elif does not bring her lunch to school.", why: "Use does not with a singular subject (Elif)." },
           { prompt: "Selin usually forget her bus card.", answer: "Selin usually forgets her bus card.", why: "Selin is singular, so the main verb needs -s." },
           { prompt: "Does your friend plays football after school?", answer: "Does your friend play football after school?", why: "After does, use the base verb play." },
-          { prompt: "What time you leave home in the morning?", answer: "What time do you leave home in the morning?", why: "A simple present question needs do / does after the question words." }
+          { prompt: "What time you leave home in the morning?", answer: "What time do you leave home in the morning?", why: "A simple present question needs do / does after the question words." },
+          { prompt: "Why does Deniz marks the answers he cannot explain?", answer: "Why does Deniz mark the answers he cannot explain?", why: "After does, use the base verb mark." },
+          { prompt: "My friends and I does our homework together.", answer: "My friends and I do our homework together.", why: "My friends and I is plural (we), so use do, not does." },
+          { prompt: "Hana never is late for the first lesson.", answer: "Hana is never late for the first lesson.", why: "An adverb of frequency comes after the verb be." }
+        ]
+      },
+      {
+        type: "quiz", title: "Quiz F · Sequencers and linkers", source: "Unit 2 · Grammar practice · routines in order",
+        instruction: "Choose the word or phrase that links the steps of the routine correctly.",
+        items: [
+          { prompt: "___ I wake up. Then I wash my face and get dressed.", options: ["Finally,", "After that,", "Before,", "First,"], answer: "First,", why: "First, starts the routine; it comes before then and after that." },
+          { prompt: "I have breakfast. ___ I brush my teeth.", options: ["First,", "After that,", "Before,", "Because,"], answer: "After that,", why: "After that, introduces the next step in the order." },
+          { prompt: "___ I leave home, I check my bag.", options: ["Then", "Finally", "Before", "First"], answer: "Before", why: "Before + subject + verb says that the second action comes first in time." },
+          { prompt: "I do my homework ___ dinner.", options: ["then", "after", "first", "finally"], answer: "after", why: "After + noun says that dinner comes first and homework follows." },
+          { prompt: "___ eating dinner, we watch a film together.", options: ["Then", "First", "Finally", "After"], answer: "After", why: "After + the -ing form (eating) joins two actions in time order." },
+          { prompt: "Before ___ to school, Emre checks the weather.", options: ["go", "goes", "going", "to go"], answer: "going", why: "After before we use a noun or the -ing form: before going." },
+          { prompt: "After ___, she makes her bed.", options: ["getting up", "get up", "gets up", "to get up"], answer: "getting up", why: "After + -ing: after getting up." },
+          { prompt: "At the end of the day, Lily relaxes. ___ she goes to sleep.", options: ["Finally,", "First,", "Before,", "Twice,"], answer: "Finally,", why: "Finally, introduces the last step of a routine." },
+          { prompt: "We study first. ___ we play basketball in the park.", options: ["Because", "Before", "During", "Then"], answer: "Then", why: "Then introduces the next action after the first step." }
+        ]
+      },
+      {
+        type: "quiz", title: "Quiz G · How often questions and answers", source: "Unit 2 · Grammar practice · frequency",
+        instruction: "Choose the correct word or answer.",
+        items: [
+          { prompt: "___ do you have English lessons? – Three times a week.", options: ["How often", "How many", "How long", "How much"], answer: "How often", why: "Use How often to ask about frequency." },
+          { prompt: "How often does Selin go swimming? – ___", options: ["For two hours.", "With her cousin.", "At the pool.", "Twice a week."], answer: "Twice a week.", why: "Twice a week tells us the frequency; the other answers say how long, who with and where." },
+          { prompt: "How often do you clean your room? – ___", options: ["At half past nine.", "In my bedroom.", "Every Saturday.", "Because it is untidy."], answer: "Every Saturday.", why: "Every Saturday is a frequency answer; the others give time, place and reason." },
+          { prompt: "We have a maths test ___ a month.", options: ["once", "one", "first", "single"], answer: "once", why: "Once means one time; once a month is the usual phrase." },
+          { prompt: "He visits his grandparents ___ Sunday.", options: ["all", "per the", "each of", "every"], answer: "every", why: "Every Sunday means on each Sunday." },
+          { prompt: "Which question asks about frequency?", options: ["How long do you read?", "How often do you read?", "How old are you?", "How far do you live?"], answer: "How often do you read?", why: "How often asks how many times someone does something." },
+          { prompt: "Choose the correct sentence about football.", options: ["I play football three time a week.", "I play football a three times week.", "I play football three times a week.", "I play football three times week."], answer: "I play football three times a week.", why: "After three, times is plural, and we say a week." },
+          { prompt: "How often does your brother take the bus? – He ___ takes it. He walks every day.", options: ["always", "never", "usually", "often"], answer: "never", why: "He walks every day, so he never takes the bus." },
+          { prompt: "Mert studies English on Monday and Thursday every week. He studies English ___.", options: ["once a week", "three times a week", "twice a week", "every day"], answer: "twice a week", why: "Two days in each week means twice a week." },
+          { prompt: "How often ___ your sister practise the piano?", options: ["does", "do", "is", "are"], answer: "does", why: "Use does with a singular subject (your sister) and keep the base verb practise." }
+        ]
+      },
+      {
+        type: "quiz", title: "Quiz H · Have / has and irregular third person", source: "Unit 2 · Grammar practice · he, she, it",
+        instruction: "Write the correct simple present form of the verb in brackets.",
+        items: [
+          { prompt: "My sister ___ (have) a shower every morning.", answer: "has", why: "Have changes to has with he, she, it." },
+          { prompt: "Ali ___ (go) to the gym after school.", answer: "goes", why: "Go ends in -o, so add -es." },
+          { prompt: "Our teacher ___ (do) the register at the start of each lesson.", answer: "does", why: "Do becomes does with a singular subject." },
+          { prompt: "They ___ (have) lunch at one o'clock.", answer: "have", why: "With they the verb keeps the base form have." },
+          { prompt: "My cousin ___ (try) to run every morning.", answer: "tries", why: "Consonant + y changes to -ies: try becomes tries." },
+          { prompt: "Yusuf ___ (fly) to Izmir twice a month.", answer: "flies", why: "Consonant + y changes to -ies: fly becomes flies." },
+          { prompt: "My mother ___ (finish) work at five.", answer: "finishes", why: "Verbs ending in -sh add -es." },
+          { prompt: "My father ___ (buy) bread every morning.", answer: "buys", why: "Vowel + y only adds s: buy becomes buys." },
+          { prompt: "We ___ (do) our homework together after school.", answer: "do", why: "With we the verb keeps the base form do." },
+          { prompt: "Ceren ___ (pass) the bakery on her way to school.", answer: "passes", why: "Verbs ending in -ss add -es." }
+        ]
+      },
+      {
+        type: "quiz", title: "Quiz I · Short answers with do and does", source: "Unit 2 · Grammar practice · Yes, I do",
+        instruction: "Choose the correct short answer.",
+        items: [
+          { prompt: "Do you walk to school? – Yes, ___.", options: ["I does", "I do", "I am", "I walk"], answer: "I do", why: "Answer with the same auxiliary as the question: Yes, I do." },
+          { prompt: "Does Ali play chess? – No, ___.", options: ["he don't", "he isn't", "he doesn't", "he not"], answer: "he doesn't", why: "A negative short answer with he uses doesn't." },
+          { prompt: "Do your parents work in the city? – Yes, ___.", options: ["they does", "they work", "they are", "they do"], answer: "they do", why: "The question uses do, so the short answer is Yes, they do." },
+          { prompt: "Does Lily like early mornings? – No, ___.", options: ["she isn't", "she doesn't", "she don't", "she not does"], answer: "she doesn't", why: "Use she doesn't for a negative short answer with she." },
+          { prompt: "Do we have PE on Fridays? – Yes, ___.", options: ["we does", "we have", "we are", "we do"], answer: "we do", why: "Repeat the auxiliary do: Yes, we do." },
+          { prompt: "Is Deniz tired today? – No, ___.", options: ["he doesn't", "he don't", "he isn't", "he not"], answer: "he isn't", why: "The question uses is (be), so the short answer uses isn't, not doesn't." },
+          { prompt: "Do you and your friends eat in the canteen? – No, ___.", options: ["we aren't", "we don't", "we doesn't", "we not"], answer: "we don't", why: "The question uses do, so the negative short answer is No, we don't." },
+          { prompt: "Does the bus stop near your school? – Yes, ___.", options: ["it does", "it do", "it is", "it stops"], answer: "it does", why: "Use does with it: Yes, it does." },
+          { prompt: "Are you often late? – Yes, ___.", options: ["I do", "I are", "I late", "I am"], answer: "I am", why: "The question uses are (be), so the short answer is Yes, I am." }
+        ]
+      },
+      {
+        type: "quiz", title: "Quiz J · Wh-questions: auxiliary and word order", source: "Unit 2 · Grammar practice · What time, Where, Who, Why",
+        instruction: "Choose the correct auxiliary or the correct question.",
+        items: [
+          { prompt: "What time ___ the film start?", options: ["is", "do", "does", "starts"], answer: "does", why: "Use does with a singular subject (the film) and keep the base verb start." },
+          { prompt: "Where ___ your cousins live?", options: ["does", "do", "are", "is"], answer: "do", why: "Your cousins is plural, so use do." },
+          { prompt: "Who ___ you sit next to in English class?", options: ["are", "is", "does", "do"], answer: "do", why: "With you, use do: Who do you sit next to?" },
+          { prompt: "Why ___ Selin take the bus on Mondays?", options: ["do", "is", "has", "does"], answer: "does", why: "Selin is singular, so the question uses does." },
+          { prompt: "Choose the correct question about a clock time.", options: ["What time you get up?", "What time get you up?", "What time do you get up?", "What time you do get up?"], answer: "What time do you get up?", why: "The order is wh-words + do + subject + base verb." },
+          { prompt: "Choose the correct question about a place.", options: ["Where does Hasan have lunch?", "Where Hasan does have lunch?", "Where does Hasan has lunch?", "Where has Hasan lunch?"], answer: "Where does Hasan have lunch?", why: "After does the main verb is the base form have, and the subject comes before it." },
+          { prompt: "What ___ your father do on Sundays?", options: ["is", "does", "are", "do"], answer: "does", why: "Your father is singular, so use does; the main verb do stays in the base form." },
+          { prompt: "Which question about a reason is correct?", options: ["Why do you studies in the library?", "Why you study in the library?", "Why do you study in the library?", "Why does you study in the library?"], answer: "Why do you study in the library?", why: "Use do with you and the base verb study." },
+          { prompt: "When ___ they have their English club?", options: ["do", "does", "are", "has"], answer: "do", why: "They is plural, so use do + base verb have." }
+        ]
+      },
+      {
+        type: "quiz", title: "Quiz K · Be or do?", source: "Unit 2 · Grammar practice · He is tired / He does homework",
+        instruction: "Choose am, is, are, do or does, or the correct sentence.",
+        items: [
+          { prompt: "Ayşe ___ tired after school.", options: ["does", "do", "is", "has"], answer: "is", why: "Tired is an adjective, so use the verb be: Ayşe is tired." },
+          { prompt: "Ayşe ___ her homework after school.", options: ["is", "does", "are", "do"], answer: "does", why: "Do her homework is an action, so use does with Ayşe." },
+          { prompt: "I ___ usually late for the first lesson.", options: ["do", "am", "is", "have"], answer: "am", why: "Late is an adjective, so use am with I." },
+          { prompt: "I usually ___ to school.", options: ["am walk", "do walk", "is walk", "walk"], answer: "walk", why: "Walk is an action verb, so use it alone in the simple present." },
+          { prompt: "My parents ___ at work in the daytime.", options: ["are", "do", "does", "have"], answer: "are", why: "At work is a place, so use are with my parents." },
+          { prompt: "My parents ___ the shopping on Saturdays.", options: ["are", "do", "is", "does"], answer: "do", why: "Do the shopping is an action, so use do with my parents." },
+          { prompt: "Choose the correct question about feeling hungry.", options: ["Do you hungry?", "Does you hungry?", "Are you hungry?", "Are you hunger?"], answer: "Are you hungry?", why: "Hungry is an adjective, so the question begins with are." },
+          { prompt: "He ___ not like fish.", options: ["does", "is", "do", "has"], answer: "does", why: "Like is an action verb, so the negative uses does not." },
+          { prompt: "She ___ not in the library today.", options: ["is", "does", "do", "has"], answer: "is", why: "In the library is a place, so the negative uses is not." },
+          { prompt: "Choose the correct sentence with an adverb.", options: ["He never is late.", "He does never late.", "He is never late.", "He never be late."], answer: "He is never late.", why: "With be, the adverb of frequency goes after the verb." }
+        ]
+      },
+      {
+        type: "quiz", title: "Quiz L · Like, love and hate + -ing", source: "Unit 2 · Grammar practice · preferences",
+        instruction: "Write the -ing form of the verb in brackets.",
+        items: [
+          { prompt: "My sister loves ___ (swim) in the sea.", answer: "swimming", why: "Swim doubles the m before -ing: swimming." },
+          { prompt: "Ali hates ___ (get) up early.", answer: "getting", why: "Get doubles the t before -ing: getting." },
+          { prompt: "Do you like ___ (read) before bed?", answer: "reading", why: "Add -ing to read." },
+          { prompt: "They love ___ (play) basketball on Fridays.", answer: "playing", why: "Add -ing to play; the y stays." },
+          { prompt: "I hate ___ (run) in hot weather.", answer: "running", why: "Run doubles the n before -ing: running." },
+          { prompt: "My father likes ___ (cook) on Sundays.", answer: "cooking", why: "Add -ing to cook." },
+          { prompt: "Zeynep loves ___ (study) languages.", answer: "studying", why: "Add -ing to study; the y stays." },
+          { prompt: "Emre hates ___ (make) his bed.", answer: "making", why: "Drop the silent e and add -ing: making." },
+          { prompt: "Does your brother like ___ (sit) near the window?", answer: "sitting", why: "Sit doubles the t before -ing: sitting." }
+        ]
+      },
+      {
+        type: "quiz", title: "Quiz M · Spot and fix the mistake", source: "Unit 2 · Grammar practice · common mistakes",
+        instruction: "Each sentence has one mistake. Write the whole sentence correctly.",
+        items: [
+          { prompt: "She go to school at eight.", answer: "She goes to school at eight.", why: "With she the verb needs -es: goes." },
+          { prompt: "He don't like fish.", answer: "He does not like fish.", why: "Use does not (doesn't) with he, she and it." },
+          { prompt: "Does he goes to the gym on Fridays?", answer: "Does he go to the gym on Fridays?", why: "After does, use the base verb go." },
+          { prompt: "Every day I am go to school by bus.", answer: "Every day I go to school by bus.", why: "Do not use am before a simple present action verb." },
+          { prompt: "I usually am late for the first lesson.", answer: "I am usually late for the first lesson.", why: "The adverb of frequency goes after am." },
+          { prompt: "What time you wake up?", answer: "What time do you wake up?", why: "The question needs do after What time." },
+          { prompt: "She have breakfast at seven.", answer: "She has breakfast at seven.", why: "Have changes to has with she." },
+          { prompt: "We play basketball at Fridays.", answer: "We play basketball on Fridays.", why: "Use on with days of the week." },
+          { prompt: "My father watchs the news after dinner.", answer: "My father watches the news after dinner.", why: "Verbs ending in -ch add -es." },
+          { prompt: "I wake up in 6.30 on weekdays.", answer: "I wake up at 6.30 on weekdays.", why: "Use at with clock times." }
+        ]
+      },
+      {
+        type: "quiz", title: "Quiz N · Complete the mini-dialogues", source: "Unit 2 · Grammar practice · short conversations",
+        instruction: "Write the missing word or words so that each dialogue is correct. Use full forms (do not, is not) or short forms.",
+        items: [
+          { prompt: "A: What time ___ you get up on Saturdays? B: I get up at nine.", answer: "do", why: "A question with you needs do + base verb." },
+          { prompt: "A: Does your brother walk to school? B: No, he ___. He takes the bus.", answer: "does not", why: "A negative short answer to a does question is No, he does not (doesn't)." },
+          { prompt: "A: How often does Ayşe play tennis? B: She plays on Monday and Thursday, so she plays ___ a week.", answer: "twice", why: "Two days in each week means twice a week." },
+          { prompt: "A: Where ___ your parents work? B: They work in a bank.", answer: "do", why: "Your parents is plural, so the question uses do." },
+          { prompt: "A: ___ Mert like football? B: Yes, he does.", answer: "Does", why: "The short answer uses does, so the question begins with Does." },
+          { prompt: "A: What do you do after school? B: First, I have a snack. ___ I do my homework.", answer: "Then", accepted: ["After that", "Next"], why: "Then, after that and next all link the second step of the routine." },
+          { prompt: "A: Is your sister at home? B: No, she ___. She is at the library.", answer: "is not", why: "The question uses is (be), so the negative short answer is No, she is not (isn't)." },
+          { prompt: "A: ___ do you go to bed? B: At half past ten.", answer: "What time", accepted: ["When"], why: "The answer is a clock time, so the question is What time (or When)." },
+          { prompt: "A: Do you and your friends study together? B: Yes, we ___.", answer: "do", why: "Repeat the auxiliary from the question: Yes, we do." }
+        ]
+      },
+      {
+        type: "quiz", title: "Quiz O · From affirmative to negative to question", source: "Unit 2 · Grammar practice · sentence transformation",
+        instruction: "Change each sentence as the instruction says. Write the whole new sentence.",
+        items: [
+          { prompt: "Make this sentence negative: “Deniz plays the guitar.”", answer: "Deniz does not play the guitar.", why: "Use does not + base verb with the singular subject Deniz." },
+          { prompt: "Make this sentence a yes/no question: “Deniz plays the guitar.”", answer: "Does Deniz play the guitar?", why: "Start with does and use the base verb play." },
+          { prompt: "Make this sentence negative: “They walk to the park.”", answer: "They do not walk to the park.", why: "Use do not + base verb with they." },
+          { prompt: "Make this sentence a yes/no question: “They walk to the park.”", answer: "Do they walk to the park?", why: "Start with do and use the base verb walk." },
+          { prompt: "Make this sentence negative: “My mother works on Saturdays.”", answer: "My mother does not work on Saturdays.", why: "Use does not + base verb; the -s moves to does." },
+          { prompt: "Ask a Where question about this sentence: “Selin studies in the library.”", answer: "Where does Selin study?", why: "Use Where + does + subject + base verb." },
+          { prompt: "Make this sentence a yes/no question: “Your cousins live in Izmir.”", answer: "Do your cousins live in Izmir?", why: "Your cousins is plural, so start with do." },
+          { prompt: "Make this sentence negative: “I get up early at weekends.”", answer: "I do not get up early at weekends.", why: "Use do not + base verb with I." },
+          { prompt: "Ask a How often question about this sentence: “Ali goes to the cinema twice a month.”", answer: "How often does Ali go to the cinema?", why: "Use How often + does + subject + base verb; goes becomes go." },
+          { prompt: "Make this sentence negative: “Ali is late today.”", answer: "Ali is not late today.", why: "With be, just add not after is; do not use does." }
+        ]
+      },
+      {
+        type: "quiz", title: "Quiz P · Fill in the verbs: Emre's day", source: "Unit 2 · Grammar practice · a daily routine",
+        instruction: "Emre's day is described below. Write the correct simple present form of the verb in brackets.",
+        items: [
+          { prompt: "Emre ___ (get) up at half past six on weekdays.", answer: "gets", why: "Emre is singular, so add -s." },
+          { prompt: "First, he ___ (wash) his face and then he gets dressed.", answer: "washes", why: "Verbs ending in -sh add -es." },
+          { prompt: "After that, he ___ (have) breakfast with his sister.", answer: "has", why: "Have changes to has with he." },
+          { prompt: "His sister Pelin ___ (not / eat) eggs, so she has cheese and bread.", answer: "does not eat", why: "Use does not + base verb with the singular subject Pelin." },
+          { prompt: "They ___ (walk) to school together because it is near their house.", answer: "walk", why: "With they the verb keeps the base form." },
+          { prompt: "At school, Emre ___ (study) maths, science and English.", answer: "studies", why: "Consonant + y changes to -ies." },
+          { prompt: "He ___ (not / like) PE lessons, but he loves playing basketball at weekends.", answer: "does not like", why: "Use does not + base verb with he." },
+          { prompt: "In the afternoon, Emre ___ (do) his homework at the library.", answer: "does", why: "Do becomes does with a singular subject." },
+          { prompt: "His mother ___ (finish) work at five and cooks dinner.", answer: "finishes", why: "Verbs ending in -sh add -es." },
+          { prompt: "Emre and his sister ___ (watch) a film on Fridays.", answer: "watch", why: "Emre and his sister is plural (they), so the verb keeps the base form." }
         ]
       },
       {
@@ -135,12 +381,70 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         why: "Put do after How often and keep the base verb take."
       },
       {
+        type: "build", title: "Build a question: walking to school",
+        instruction: "Ask why Selin walks to school. Tap the words in the correct order.",
+        tokens: ["walk", "school?", "Why", "Selin", "to", "does"],
+        answer: ["Why", "does", "Selin", "walk", "to", "school?"],
+        why: "The order is Why + does + subject + base verb, so walk has no -s."
+      },
+      {
+        type: "build", title: "Build a negative: breakfast at home",
+        instruction: "Say that your brother does not eat breakfast at home. Tap the words in the correct order.",
+        tokens: ["eat", "My", "does", "brother", "breakfast", "not", "at", "home."],
+        answer: ["My", "brother", "does", "not", "eat", "breakfast", "at", "home."],
+        why: "Use does not + base verb with the singular subject my brother."
+      },
+      {
+        type: "build", title: "Build a question: the quiz teacher",
+        instruction: "Ask how often your teacher gives a quiz. Tap the words in the correct order.",
+        tokens: ["a", "How", "does", "teacher", "give", "often", "quiz?", "your"],
+        answer: ["How", "often", "does", "your", "teacher", "give", "a", "quiz?"],
+        why: "Put does after How often, then the subject, then the base verb give."
+      },
+      {
+        type: "build", title: "Build a negative: Sundays",
+        instruction: "Say that you do not have school on Sundays. Tap the words in the correct order.",
+        tokens: ["have", "We", "school", "not", "on", "Sundays.", "do"],
+        answer: ["We", "do", "not", "have", "school", "on", "Sundays."],
+        why: "Use do not + base verb with we, and on with days."
+      },
+      {
+        type: "sequence", title: "Order the words: a morning routine",
+        instruction: "Tap the words in the correct order to say that you have breakfast after you get dressed.",
+        tokens: ["breakfast.", "After", "dressed,", "I", "get", "I", "have"],
+        answer: ["After", "I", "get", "dressed,", "I", "have", "breakfast."],
+        why: "After + subject + verb comes first, then a comma and the second clause."
+      },
+      {
+        type: "sequence", title: "Order the words: a frequency sentence",
+        instruction: "Tap the words in the correct order to say that she never takes the bus.",
+        tokens: ["takes", "She", "the", "never", "bus."],
+        answer: ["She", "never", "takes", "the", "bus."],
+        why: "The adverb never goes before the main verb takes."
+      },
+      {
+        type: "reading", title: "Read and answer · Pelin's week", passageTitle: "Pelin and her brother",
+        passage: "Pelin is fifteen, and she lives in Izmir with her parents and her brother Kerem. On weekdays she gets up at half past six. First, she washes her face and gets dressed. After that, she has breakfast with Kerem. Before leaving home, she always checks her bag. She walks to school because it is near their house. Pelin loves playing volleyball, so she goes to the club three times a week, on Monday, Wednesday and Friday. Kerem does not like sport, but he enjoys reading. He is often at the library after school. In the evening, the family has dinner at seven. Pelin does her homework first, and then she watches a series for half an hour. She is usually tired at ten o'clock, so she goes to bed early.",
+        questions: [
+          { prompt: "How often does Pelin go to the volleyball club?", options: ["Twice a week", "Three times a week", "Every day", "Once a week"], answer: 1, why: "The text says she goes to the club on Monday, Wednesday and Friday, which is three times a week." },
+          { prompt: "What does Pelin do right after she gets dressed?", options: ["She goes to the club.", "She walks to school.", "She has breakfast with Kerem.", "She checks her bag."], answer: 2, why: "The text says After that, she has breakfast with Kerem." },
+          { prompt: "Why does Pelin walk to school?", options: ["She does not like buses.", "Kerem takes her.", "She is late every day.", "Their house is near the school."], answer: 3, why: "The text says she walks because school is near their house." },
+          { prompt: "Which sentence about Kerem is true?", options: ["He enjoys reading.", "He plays volleyball.", "He walks to the club.", "He has dinner at nine."], answer: 0, why: "The text says Kerem does not like sport, but he enjoys reading." },
+          { prompt: "In “She is usually tired,” where does the adverb usually go?", options: ["After the verb be", "Before the verb be", "At the end of the sentence", "After the word tired"], answer: 0, why: "An adverb of frequency comes after the verb be: is usually tired." },
+          { prompt: "When does Pelin's family have dinner?", options: ["At six", "At eight", "At seven", "At ten"], answer: 2, why: "The text says the family has dinner at seven." }
+        ]
+      },
+      {
         type: "match", title: "What does each sentence talk about?",
         pairs: [
           { left: "My sister bites her nails when she is nervous.", answer: "habit (something a person does again and again)" },
           { left: "Our school day starts at eight o'clock every morning.", answer: "routine (a regular daily schedule)" },
           { left: "Last Saturday, we went to a concert in Ankara.", answer: "one-time event (finished, happened once)" },
-          { left: "Next week, we are going to visit a science museum.", answer: "future plan (will happen later)" }
+          { left: "Next week, we are going to visit a science museum.", answer: "future plan (will happen later)" },
+          { left: "Deniz always taps his pen when he thinks.", answer: "habit (something a person does again and again)" },
+          { left: "The library opens at nine o'clock on weekdays.", answer: "routine (a regular daily schedule)" },
+          { left: "Yesterday, Deniz forgot his bus card at home.", answer: "one-time event (finished, happened once)" },
+          { left: "Tomorrow, I am going to visit my cousin in Izmir.", answer: "future plan (will happen later)" }
         ],
         choices: [
           "habit (something a person does again and again)",
@@ -149,6 +453,29 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           "future plan (will happen later)"
         ],
         why: "The simple present is used for habits and routines, while a finished single event uses the past and a future plan uses going to."
+      },
+      {
+        type: "match", title: "Match the question with its answer",
+        pairs: [
+          { left: "What time do you get up?", answer: "At half past six." },
+          { left: "How often do you have PE?", answer: "Twice a week." },
+          { left: "Does your sister walk to school?", answer: "No, she doesn't." },
+          { left: "Do your parents work in a hospital?", answer: "Yes, they do." },
+          { left: "Where does Hana eat lunch?", answer: "In the canteen." },
+          { left: "Why does Deniz study in the library?", answer: "Because it is quiet." },
+          { left: "Who does Ali walk to school with?", answer: "With his friends." }
+        ],
+        choices: [
+          "At half past six.",
+          "Twice a week.",
+          "No, she doesn't.",
+          "Yes, they do.",
+          "In the canteen.",
+          "Because it is quiet.",
+          "With his friends.",
+          "Yes, he does."
+        ],
+        why: "The question word and the auxiliary tell you what kind of answer is needed: a time, a frequency, a short answer, a place, a reason or a person."
       }
     ]
   }
