@@ -1,34 +1,6 @@
 window.unitExercises = [
-  [
-    {
-      type: "reading", title: "B1 Reading · Extra hard", passageTitle: "The exchange-day map",
-      passage: "On the first Monday of a partner-school exchange, 9B expected to follow the timetable printed in the welcome pack. The plan changed when the visiting students arrived late, so teacher Ms Arslan asked small groups to guide them around the building. Ece volunteered, although she had never led a tour in English before. She could explain where the library and science rooms were, but she was unsure how to describe the new sports hall. Instead of pretending, she asked a classmate who knew the building well to help. The visitors later said that this made the tour easier to follow. At lunch, Ece discovered that two guests could speak Turkish, so they compared school routines in both languages. By the end of the day, she understood that being a good guide did not mean knowing every answer; it meant helping people find one.",
-      questions: [
-        { prompt: "Why did Ms Arslan ask students to guide the visitors?", options: ["The printed timetable had been cancelled permanently.", "The visitors arrived late, so the original plan had to change.", "The guests could not understand any English.", "Ece had already worked as a professional guide."], answer: 1, why: "The passage says the late arrival changed the plan, so students guided small groups." },
-        { prompt: "What can be inferred about Ece when she asks a classmate for help?", options: ["She would rather avoid speaking to visitors.", "She recognises when another person can help her give accurate information.", "She thinks the sports hall should be removed from the tour.", "She expects visitors to know the school already."], answer: 1, why: "Ece is unsure about one building and seeks help instead of pretending to know." },
-        { prompt: "What does the final sentence suggest about being a good guide?", options: ["A guide should memorise every detail before meeting visitors.", "A guide should speak only the visitors' first language.", "A guide can be helpful by finding reliable answers, even without knowing everything.", "A guide should let visitors explore the school without support."], answer: 2, why: "The conclusion contrasts knowing every answer with helping visitors find one." }
-      ]
-    },
-    { type: "choice", title: "Choose the forms that fit", prompt: "During exchange day, Ece says: “My classmates ___ from Ankara, and two of them ___ explain the school map in English.”", options: ["are / can", "is / can", "are / cans", "am / can"], answer: "are / can", why: "Use are with the plural subject my classmates, and can + base verb explain." },
-    { type: "complete", title: "Complete the real question", prompt: "___ your exchange partner from the same city as you?", answer: "Is", why: "Use is with the singular subject your exchange partner." },
-    { type: "transform", title: "Turn the statement into a question", prompt: "Ask whether the visitors can use the school map: “The visitors can use the school map.”", answer: "Can the visitors use the school map?", why: "For a can question, put can before the subject." },
-    { type: "fix", title: "Edit the message", prompt: "Both of our student guides can speaks Turkish and English.", answer: "Both of our student guides can speak Turkish and English.", why: "After can, use the base verb speak." }
-  ],
-  [
-    {
-      type: "reading", title: "B1 Reading · Extra hard", passageTitle: "A revision club that works",
-      passage: "When Westbrook School opened a revision club, some students expected longer study hours to produce better results immediately. The club's tutor, Mr Reed, suggested a different approach. Each student chose one subject to review and wrote down a small goal before starting. Hana usually read her notes aloud because hearing the information helped her remember it. Deniz preferred practice questions; he marked answers he could not explain and brought them to the next meeting. The club met twice a week, but students who missed a session did not lose their place. A shared folder listed the tasks and the reason for each one. After six weeks, Hana's scores rose only slightly. Still, she felt less anxious before tests because she knew which topics needed attention. Mr Reed said that the club's purpose was not to promise quick success, but to help students notice which study habits actually worked for them.",
-      questions: [
-        { prompt: "Why does the club ask each student to set a small goal?", options: ["To make each study session focused and manageable.", "To ensure everyone studies the same subject.", "To replace practice questions with longer notes.", "To help the tutor compare students' scores."], answer: 0, why: "Choosing one subject and a small goal keeps a session focused rather than overwhelming." },
-        { prompt: "What does the shared folder allow absent students to do?", options: ["Skip the next meeting without falling behind.", "See the tasks and understand why they were assigned.", "Change the tutor's revision plan.", "Compare their results with Hana's."], answer: 1, why: "The folder lists both tasks and the reason for each one." },
-        { prompt: "Which statement best describes the club's idea of progress?", options: ["Progress means getting a much higher score after one week.", "Progress includes understanding which personal study habits are useful.", "Progress depends on studying for more hours than classmates.", "Progress is possible only when a tutor chooses every task."], answer: 1, why: "The ending says the club helps students notice which habits work for them." }
-      ]
-    },
-    { type: "choice", title: "Choose the accurate routine", prompt: "In the school notice, the club ___ twice a week, and students ___ one small goal before each session.", options: ["meets / choose", "meet / chooses", "is meeting / choose", "meets / chooses"], answer: "meets / choose", why: "The club is singular, so it meets; the plural subject students takes choose." },
-    { type: "complete", title: "Use the correct verb form", prompt: "Although Hana's first lesson begins at 8:30, she ___ (arrive) at school by 8:00.", answer: "arrives", why: "Use the simple present for a regular routine; Hana takes the third-person -s form." },
-    { type: "transform", title: "Make the sentence negative", prompt: "The revision club promises instant results. Rewrite this sentence in the negative.", answer: "The revision club doesn't promise instant results.", accepted: ["The revision club does not promise instant results."], why: "Use doesn't + base verb with the singular subject the revision club." },
-    { type: "fix", title: "Edit the student's question", prompt: "Why does Deniz marks the answers he cannot explain?", answer: "Why does Deniz mark the answers he cannot explain?", why: "After does, use the base verb mark." }
-  ],
+  [],
+  [],
   [
     {
       type: "reading", title: "B1 Reading · Extra hard", passageTitle: "The part of the climb no one sees",

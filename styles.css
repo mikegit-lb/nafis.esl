@@ -672,6 +672,7 @@ a { color: inherit; }
 .exercise-input:focus, .match-select:focus { outline: 3px solid #b6d4fa; outline-offset: 1px; border-color: var(--blue); }
 .word-bank { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
 .build-token, .chosen-word { padding: 6px 11px; }
+.quiz-chip { padding: 4px 10px; border: 1px solid #c3d3e5; border-radius: 999px; background: #f1f7ff; color: var(--blue-deep); font-size: 13px; font-weight: 700; }
 .exercise-card[data-exercise-type="sequence"] .build-token,
 .exercise-card[data-exercise-type="sequence"] .chosen-word { flex: 1 1 100%; text-align: left; line-height: 1.45; }
 .build-token.is-used { opacity: .42; }
@@ -687,6 +688,31 @@ a { color: inherit; }
 .match-row.is-correct { border-color: #a3d3b7; background: #f6fcf8; }
 .match-row.is-wrong { border-color: #e5b6b3; background: #fff9f8; }
 .match-row.is-wrong .match-answer { color: #9a2525; }
+
+.speak-item { margin-bottom: 10px; padding: 11px 12px; border: 1px solid #dbe5f0; border-radius: 7px; }
+.speak-q { margin: 0 0 6px; color: var(--ink); font-size: 15px; font-weight: 700; line-height: 1.5; }
+.speak-frames-title { margin: 0 0 2px; color: #64768c; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.speak-frames { margin: 0 0 8px; padding-left: 20px; color: var(--ink-soft); font-size: 14px; line-height: 1.5; }
+.speak-toggle { min-height: 38px; margin: 0 8px 8px 0; padding: 6px 12px; border: 1px solid #c3d3e5; border-radius: 6px; background: white; color: var(--blue-deep); font: inherit; font-size: 13px; font-weight: 650; cursor: pointer; }
+.speak-toggle:hover, .speak-toggle[aria-pressed="true"], .speak-toggle[aria-expanded="true"] { border-color: var(--blue); background: #f1f7ff; }
+.speak-toggle:focus-visible, .speak-check input:focus-visible { outline: 3px solid #74b6ff; outline-offset: 2px; }
+.speak-model, .roleplay-model { margin: 0 0 8px; padding: 9px 12px; border-left: 4px solid var(--blue); border-radius: 0 6px 6px 0; background: #f1f7ff; color: var(--ink); font-size: 14px; line-height: 1.55; }
+.roleplay-model { padding-left: 30px; }
+.roleplay-model li.is-mine { font-weight: 700; }
+.roleplay-you { color: #17683e; font-size: 12px; }
+.speak-check { display: flex; align-items: center; gap: 8px; min-height: 36px; color: var(--ink); font-size: 14px; cursor: pointer; }
+.speak-check input { width: 18px; height: 18px; flex: 0 0 auto; }
+.speak-checklist { min-width: 0; margin: 12px 0 0; padding: 8px 12px; border: 1px solid #dbe5f0; border-radius: 7px; }
+.speak-checklist legend { padding: 0 4px; color: var(--ink); font-size: 14px; font-weight: 700; }
+.roleplay-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 12px; }
+.roleplay-card { min-width: 0; padding: 10px 12px; border: 1px solid #dbe5f0; border-radius: 7px; }
+.roleplay-card.is-mine { border-color: var(--blue); background: #f1f7ff; }
+.roleplay-card h4 { margin: 0 0 6px; font-size: 15px; }
+.roleplay-card dl { margin: 0; font-size: 14px; line-height: 1.5; }
+.roleplay-card dt { color: #64768c; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.roleplay-card dd { margin: 0 0 6px; overflow-wrap: anywhere; }
+.roleplay-choose { display: flex; flex-wrap: wrap; align-items: center; gap: 0 8px; margin-bottom: 4px; font-size: 14px; font-weight: 700; }
+.roleplay-choose span { margin-right: 4px; }
 
 .exercise-actions { display: flex; align-items: center; gap: 13px; margin-top: 12px; }
 .exercise-check { flex: 0 0 auto; min-height: 38px; padding: 7px 14px; border-color: var(--blue); background: var(--blue); color: white; font-size: 14px; font-weight: 700; }
@@ -803,6 +829,7 @@ a { color: inherit; }
   .reading-passage { padding: 12px; }
   .reading-passage p { font-size: 14px; line-height: 1.65; }
   .reading-options { grid-template-columns: 1fr; }
+  .roleplay-cards { grid-template-columns: 1fr; }
   .match-row { grid-template-columns: 1fr; gap: 6px; }
   .match-answer { grid-column: 1; }
   .exercise-actions { align-items: flex-start; flex-direction: column; gap: 8px; }
@@ -830,3 +857,52 @@ a { color: inherit; }
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Unit section tabs */
+.section-tabs {
+  display: flex;
+  gap: 4px;
+  margin: 0 0 18px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--line);
+  -webkit-overflow-scrolling: touch;
+}
+.section-tab {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--ink-soft);
+  font: 700 15px/1 var(--sans);
+  cursor: pointer;
+}
+.section-tab:hover { color: var(--blue-deep); }
+.section-tab[aria-selected="true"] { border-bottom-color: var(--orange); background: var(--orange-pale); color: var(--ink); }
+.section-tab:focus-visible { outline: 3px solid #74b6ff; outline-offset: -3px; }
+
+/* Overview, vocabulary and speaking views */
+.topic-chips, .word-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+.word-chips { margin-top: 0; }
+.topic-chips .quiz-chip { padding: 6px 12px; font-size: 14px; }
+.overview-grid, .vocab-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); margin-left: 0; margin-right: 0; }
+.view-list { margin: 0; padding-left: 20px; line-height: 1.55; }
+.view-list li + li { margin-top: 4px; }
+.sounds-line { margin: 16px 0 0; color: var(--ink-soft); line-height: 1.5; }
+.sounds-line strong { color: var(--ink); }
+.vocab-list { margin: 0; }
+.vocab-item + .vocab-item { margin-top: 11px; padding-top: 10px; border-top: 1px solid #e7edf5; }
+.vocab-item dt { color: var(--blue-deep); font-weight: 800; }
+.vocab-item dd { margin: 2px 0 0; overflow-wrap: anywhere; }
+.vocab-example { color: var(--ink-soft); font-style: italic; font-size: 14px; }
+.sound-group + .sound-group { margin-top: 12px; }
+.sound-label { margin: 0 0 6px; color: #64768c; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.read-aloud { margin: 14px 0 0; padding-left: 22px; line-height: 1.5; }
+.read-aloud li { margin-bottom: 8px; padding-left: 4px; overflow-wrap: anywhere; }
+.read-aloud li span { margin-right: 8px; }
+.listen-btn { min-height: 34px; padding: 4px 11px; border: 1px solid #c3d3e5; border-radius: 6px; background: white; color: var(--blue-deep); font: inherit; font-size: 13px; font-weight: 650; cursor: pointer; }
+.listen-btn:hover, .listen-chip:hover { border-color: var(--blue); background: #f1f7ff; }
+.listen-chip { min-height: 34px; font-family: inherit; cursor: pointer; }
+.listen-btn:focus-visible, .listen-chip:focus-visible { outline: 3px solid #74b6ff; outline-offset: 2px; }
+.sound-group + .sound-label { margin-top: 16px; }
