@@ -67,7 +67,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { term: "Kazakhstan", meaning: "a large Turkic country; nationality: Kazakh; language: Kazakh; capital: Astana", example: "Tomiris is Kazakh, and she is from Kazakhstan." },
           { term: "Kyrgyzstan", meaning: "a Turkic country with many mountains; nationality: Kyrgyz; language: Kyrgyz; capital: Bishkek", example: "Tourists can go shopping at a bazaar in Kyrgyzstan." },
           { term: "Thailand", meaning: "a country in Asia; nationality: Thai; language: Thai; capital: Bangkok", example: "Bangkok is the capital of Thailand, and it is a lively city." },
-          { term: "South Africa", meaning: "a country in Africa; nationality: South African; languages: Zulu, Afrikaans, English and more; capital: Pretoria (the executive capital)", example: "People can visit the national botanical gardens in Pretoria." },
+          { term: "South Africa", meaning: "a country in Africa; nationality: South African; languages: Zulu, Afrikaans, English and more; capital: Pretoria (one of three capitals)", example: "People can visit the national botanical gardens in Pretoria." },
           { term: "Ukraine", meaning: "a country in Europe; nationality: Ukrainian; language: Ukrainian; capital: Kyiv", example: "Ukraine is a country with a rich history and culture." },
           { term: "Canada", meaning: "a large country in North America; nationality: Canadian; languages: English and French; capital: Ottawa", example: "Many Canadians can speak English and French." }
         ]
@@ -75,8 +75,8 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       {
         title: "Tourist attractions",
         items: [
-          { term: "castle", meaning: "a large old building with strong walls, where kings or soldiers lived", example: "The castle is on a hill, and visitors can see the whole town from the top." },
-          { term: "palace", meaning: "a very big, beautiful house where a king, queen or president lives or lived", example: "The palace is famous for its golden towers." },
+          { term: "castle", meaning: "a large old building with strong walls on a hill, built to protect people from attack", example: "The castle is on a hill, and visitors can see the whole town from the top." },
+          { term: "palace", meaning: "a very big, beautiful house where a royal family or a president lives or lived", example: "The palace is famous for its golden towers." },
           { term: "art museum", meaning: "a building where people can look at paintings and sculptures", example: "You can see modern paintings in the art museum." },
           { term: "tower", meaning: "a tall, narrow building or part of a building", example: "The tower is so high that tourists can see the river from it." },
           { term: "ancient ruin", meaning: "the broken remains of a very old building or city", example: "The ancient ruin is more than two thousand years old." },
@@ -111,10 +111,10 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         instruction: "Complete each sentence with a word or phrase from the bank. One item is extra.",
         wordBank: ["castle", "palace", "art museum", "tower", "ancient ruin", "historical site", "tourist attraction"],
         items: [
-          { prompt: "Soldiers lived behind the thick stone walls of the ___ on the hill.", answer: "castle", why: "A castle is a large old building with strong walls where soldiers or kings lived." },
-          { prompt: "The royal family lived in a grand ___ with golden rooms in the middle of the capital.", answer: "palace", why: "A palace is a very big, beautiful home for a royal family." },
+          { prompt: "The whole village was protected by the thick stone walls and wide gate of the ___ on the hill.", answer: "castle", why: "A castle has strong walls and a gate that protect the people inside." },
+          { prompt: "The president of the country lives and works in a grand ___ with golden rooms in the capital.", answer: "palace", why: "A palace is a very big, beautiful home for a president or a royal family." },
           { prompt: "We can see famous paintings and sculptures in the ___ in the city centre.", answer: "art museum", why: "An art museum is where people look at paintings and sculptures." },
-          { prompt: "Only broken walls and arches remain of a city built thousands of years ago. Experts call what is left a(n) ___.", answer: "ancient ruin", why: "An ancient ruin is the broken remains of a very old building or city." },
+          { prompt: "Only broken walls and arches remain of a city built thousands of years ago. Experts call these broken remains of a very old city a(n) ___.", answer: "ancient ruin", why: "An ancient ruin is the broken remains of a very old building or city." },
           { prompt: "Nisa is a ___ because important events of the Parthian Empire happened there.", answer: "historical site", why: "A historical site is a place connected with important events in the past." },
           { prompt: "The beach is full of visitors all summer, so it is a very popular ___.", answer: "tourist attraction", why: "A tourist attraction is a place that many visitors want to see." }
         ]
