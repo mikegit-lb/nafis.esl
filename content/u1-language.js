@@ -54,9 +54,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { term: "Türkiye", meaning: "a country; nationality: Turkish; language: Turkish; capital: Ankara", example: "Mehmet is Turkish, and Ankara is the capital of Türkiye." },
           { term: "Poland", meaning: "a country; nationality: Polish; language: Polish; capital: Warsaw", example: "Alina is from Poland, and she can speak Polish." },
           { term: "Hungary", meaning: "a country; nationality: Hungarian; language: Hungarian; capital: Budapest", example: "Budapest is the capital of Hungary." },
-          { term: "Bulgaria", meaning: "a country; nationality: Bulgarian; language: Bulgarian; capital: Sofia", example: "Ivan is Bulgarian, and his capital city is Sofia." },
+          { term: "Bulgaria", meaning: "a country; nationality: Bulgarian; language: Bulgarian; capital: Sofia", example: "Ivan is Bulgarian, and Sofia is the capital of his country." },
           { term: "Norway", meaning: "a country; nationality: Norwegian; language: Norwegian; capital: Oslo", example: "Tourists can take a fjord cruise in Norway." },
-          { term: "South Korea", meaning: "a country; nationality: Korean; language: Korean; capital: Seoul", example: "Min-su is from South Korea, and Seoul is his capital city." },
+          { term: "South Korea", meaning: "a country; nationality: Korean; language: Korean; capital: Seoul", example: "Min-su is from South Korea, and Seoul is the capital of his country." },
           { term: "Japan", meaning: "a country in Asia; nationality and language: Japanese; capital: Tokyo", example: "Hina is Japanese, and she can speak Japanese, French and English." },
           { term: "Mexico", meaning: "a country in North America; nationality: Mexican; language: Spanish; capital: Mexico City", example: "Salma is Mexican, and she can speak Spanish and English." },
           { term: "Chile", meaning: "a long country in South America; nationality: Chilean; language: Spanish; capital: Santiago", example: "Santiago is the capital of Chile." },
@@ -67,7 +67,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { term: "Kazakhstan", meaning: "a large Turkic country; nationality: Kazakh; language: Kazakh; capital: Astana", example: "Tomiris is Kazakh, and she is from Kazakhstan." },
           { term: "Kyrgyzstan", meaning: "a Turkic country with many mountains; nationality: Kyrgyz; language: Kyrgyz; capital: Bishkek", example: "Tourists can go shopping at a bazaar in Kyrgyzstan." },
           { term: "Thailand", meaning: "a country in Asia; nationality: Thai; language: Thai; capital: Bangkok", example: "Bangkok is the capital of Thailand, and it is a lively city." },
-          { term: "South Africa", meaning: "a country in Africa; nationality: South African; languages: Zulu, Afrikaans, English and more; capital: Pretoria", example: "People can visit the national botanical gardens in Pretoria." },
+          { term: "South Africa", meaning: "a country in Africa; nationality: South African; languages: Zulu, Afrikaans, English and more; capital: Pretoria (the executive capital)", example: "People can visit the national botanical gardens in Pretoria." },
           { term: "Ukraine", meaning: "a country in Europe; nationality: Ukrainian; language: Ukrainian; capital: Kyiv", example: "Ukraine is a country with a rich history and culture." },
           { term: "Canada", meaning: "a large country in North America; nationality: Canadian; languages: English and French; capital: Ottawa", example: "Many Canadians can speak English and French." }
         ]
@@ -112,17 +112,17 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         wordBank: ["castle", "palace", "art museum", "tower", "ancient ruin", "historical site", "tourist attraction"],
         items: [
           { prompt: "Soldiers lived behind the thick stone walls of the ___ on the hill.", answer: "castle", why: "A castle is a large old building with strong walls where soldiers or kings lived." },
-          { prompt: "The king's family lived in a grand ___ with golden rooms.", answer: "palace", why: "A palace is a very big, beautiful home for a royal family." },
+          { prompt: "The royal family lived in a grand ___ with golden rooms in the middle of the capital.", answer: "palace", why: "A palace is a very big, beautiful home for a royal family." },
           { prompt: "We can see famous paintings and sculptures in the ___ in the city centre.", answer: "art museum", why: "An art museum is where people look at paintings and sculptures." },
-          { prompt: "Those broken stone arches are an ___ from a city that is thousands of years old.", answer: "ancient ruin", why: "An ancient ruin is the broken remains of a very old building or city." },
-          { prompt: "Nisa is an important ___ because it tells us about the Parthian Empire.", answer: "historical site", why: "A historical site is a place connected with important events in the past." },
+          { prompt: "Only broken walls and arches remain of a city built thousands of years ago. Experts call what is left a(n) ___.", answer: "ancient ruin", why: "An ancient ruin is the broken remains of a very old building or city." },
+          { prompt: "Nisa is a ___ because important events of the Parthian Empire happened there.", answer: "historical site", why: "A historical site is a place connected with important events in the past." },
           { prompt: "The beach is full of visitors all summer, so it is a very popular ___.", answer: "tourist attraction", why: "A tourist attraction is a place that many visitors want to see." }
         ]
       },
       {
         type: "quiz",
         title: "From country to nationality",
-        source: "Unit 1 · Listening/Watching b and Pronunciation e · pp.26–27",
+        source: "Unit 1 · Listening/Watching b · p.26",
         instruction: "Write the nationality of each person.",
         items: [
           { prompt: "Mehmet is from Türkiye. He is ___.", answer: "Turkish", why: "The nationality of a person from Türkiye is Turkish." },
@@ -137,14 +137,14 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       },
       {
         type: "match",
-        title: "Who speaks what and lives where?",
+        title: "Who speaks what, and what is the capital?",
         source: "Unit 1 · Listening/Watching b · p.26",
         pairs: [
-          { left: "Mehmet's capital city", answer: "Ankara" },
+          { left: "The capital of Mehmet's country", answer: "Ankara" },
           { left: "Alina's language", answer: "Polish" },
-          { left: "Odett's capital city", answer: "Budapest" },
+          { left: "The capital of Odett's country", answer: "Budapest" },
           { left: "Ivan's language", answer: "Bulgarian" },
-          { left: "Ingrid's capital city", answer: "Oslo" },
+          { left: "The capital of Ingrid's country", answer: "Oslo" },
           { left: "Min-su's language", answer: "Korean" }
         ],
         choices: ["Ankara", "Polish", "Budapest", "Bulgarian", "Oslo", "Korean", "Warsaw", "Seoul"],
@@ -156,12 +156,12 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         source: "Unit 1 · Vocabulary f · p.29",
         instruction: "Choose the group that each word or phrase belongs to.",
         items: [
-          { prompt: "Which group does Chile belong to?", options: ["Countries", "Nationalities / Languages", "Tourist attractions and activities"], answer: "Countries", why: "Chile is the name of a country." },
-          { prompt: "Which group does Ukrainian belong to?", options: ["Countries", "Nationalities / Languages", "Tourist attractions and activities"], answer: "Nationalities / Languages", why: "Ukrainian is the nationality and language of Ukraine." },
-          { prompt: "Which group does sightseeing belong to?", options: ["Countries", "Nationalities / Languages", "Tourist attractions and activities"], answer: "Tourist attractions and activities", why: "Sightseeing is something tourists do." },
-          { prompt: "Which group does Azerbaijan belong to?", options: ["Countries", "Nationalities / Languages", "Tourist attractions and activities"], answer: "Countries", why: "Azerbaijan is the name of a country." },
-          { prompt: "Which group does Turkmen belong to?", options: ["Countries", "Nationalities / Languages", "Tourist attractions and activities"], answer: "Nationalities / Languages", why: "Turkmen is the nationality and language of Turkmenistan." },
-          { prompt: "Which group does art museum belong to?", options: ["Countries", "Nationalities / Languages", "Tourist attractions and activities"], answer: "Tourist attractions and activities", why: "An art museum is a place tourists can visit." }
+          { prompt: "Which group does Chile belong to?", options: ["Nationalities / Languages", "Countries", "Tourist attractions and activities"], answer: "Countries", why: "Chile is the name of a country." },
+          { prompt: "Which group does Thai belong to?", options: ["Countries", "Tourist attractions and activities", "Nationalities / Languages"], answer: "Nationalities / Languages", why: "Thai is the nationality of a person from Thailand and the language they speak." },
+          { prompt: "Which group does hiking belong to?", options: ["Tourist attractions and activities", "Countries", "Nationalities / Languages"], answer: "Tourist attractions and activities", why: "Hiking is an activity that tourists can do." },
+          { prompt: "Which group does Azerbaijan belong to?", options: ["Nationalities / Languages", "Tourist attractions and activities", "Countries"], answer: "Countries", why: "Azerbaijan is the name of a country." },
+          { prompt: "Which group does Kyrgyz belong to?", options: ["Countries", "Nationalities / Languages", "Tourist attractions and activities"], answer: "Nationalities / Languages", why: "Kyrgyz is the nationality and language of Kyrgyzstan." },
+          { prompt: "Which group does bazaar belong to?", options: ["Tourist attractions and activities", "Nationalities / Languages", "Countries"], answer: "Tourist attractions and activities", why: "A bazaar is a place where tourists can shop." }
         ]
       }
     ]
