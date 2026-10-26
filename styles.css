@@ -672,6 +672,7 @@ a { color: inherit; }
 .exercise-input:focus, .match-select:focus { outline: 3px solid #b6d4fa; outline-offset: 1px; border-color: var(--blue); }
 .word-bank { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
 .build-token, .chosen-word { padding: 6px 11px; }
+.quiz-chip { padding: 4px 10px; border: 1px solid #c3d3e5; border-radius: 999px; background: #f1f7ff; color: var(--blue-deep); font-size: 13px; font-weight: 700; }
 .exercise-card[data-exercise-type="sequence"] .build-token,
 .exercise-card[data-exercise-type="sequence"] .chosen-word { flex: 1 1 100%; text-align: left; line-height: 1.45; }
 .build-token.is-used { opacity: .42; }
