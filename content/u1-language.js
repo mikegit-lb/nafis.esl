@@ -15,9 +15,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
     socialLanguage: [
       "Hello! My name is Selin, and I'm from Türkiye.",
       "Pleased to meet you, Selin!",
-      "Which country are you from, and which languages do you speak?",
+      "Where are you from, and which languages can you speak?",
       "I'm Italian. I can speak Italian and a little English.",
-      "Which city is the capital of Italy?",
+      "What's the capital of Italy?",
       "Visitors can walk through the old town and take a boat trip."
     ],
     pronunciation: ["smart", "around", "way", "control", "exercise"],
@@ -104,7 +104,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       {
         title: "Activities",
         items: [
-          { term: "sightseeing", meaning: "visiting famous places in a town or country", example: "Sightseeing in Istanbul takes two days if you want to see all the famous places." },
+          { term: "sightseeing", meaning: "visiting famous places in a town or country", example: "You need two days for sightseeing in Istanbul." },
           { term: "hiking", meaning: "walking for a long time in nature", example: "Hiking is a great activity, and you can do it in the hills near our town." },
           { term: "trekking", meaning: "a long, difficult walk, often in the mountains", example: "Trekking can be tiring, but the views are beautiful." },
           { term: "take a day trip", meaning: "go somewhere for one day and come back the same day", example: "From Izmir, tourists can take a day trip to Ephesus." },
@@ -129,7 +129,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { term: "I come from…", meaning: "another way to say where you are from", example: "I come from Türkiye, and I can speak Turkish." },
           { term: "Where are you from?", meaning: "asks about someone's country or town", example: "Where are you from? Are you from Greece?" },
           { term: "What's your nationality?", meaning: "asks which country a person belongs to", example: "What's your nationality? I am Egyptian." },
-          { term: "What languages can you speak?", meaning: "asks which languages a person can use", example: "What languages can you speak? I can speak Turkish and English." },
+          { term: "Which languages can you speak?", meaning: "asks which languages a person can use", example: "Which languages can you speak? I can speak Turkish and English." },
           { term: "I can speak…", meaning: "tells people which languages you can use", example: "I can speak Turkish, English and a little German." },
           { term: "What's the capital of…?", meaning: "asks for the main city of a country", example: "What's the capital of Brazil? It is Brasília." }
         ]
@@ -163,7 +163,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "Carlos is from Mexico. He is ___.", answer: "Mexican", why: "The nationality of a person from Mexico is Mexican." },
           { prompt: "Emma is from Canada. She is ___.", answer: "Canadian", why: "The nationality of a person from Canada is Canadian." },
           { prompt: "Somchai is from Thailand. He is ___.", answer: "Thai", why: "The nationality of a person from Thailand is Thai." },
-          { prompt: "Aigerim is from Kazakhstan. She is ___.", answer: "Kazakh", why: "The nationality of a person from Kazakhstan is Kazakh." },
+          { prompt: "Aigerim is from Kazakhstan. She is ___.", answer: "Kazakh", accepted: ["Kazakhstani"], why: "The nationality of a person from Kazakhstan is Kazakh." },
           { prompt: "Thabo is from South Africa. He is ___.", answer: "South African", why: "A person from South Africa is South African." },
           { prompt: "Dmitri is from Russia. He is ___.", answer: "Russian", why: "The nationality of a person from Russia is Russian." },
           { prompt: "Valentina is from Chile. She is ___.", answer: "Chilean", why: "The nationality of a person from Chile is Chilean." },
@@ -177,14 +177,14 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         title: "Who speaks what, and what is the capital?",
         source: "Unit 1 · Listening/Watching b · p.26",
         pairs: [
-          { left: "The capital of Giulia's country", answer: "Rome" },
-          { left: "Jonas's language", answer: "German" },
-          { left: "The capital of Omar's country", answer: "Cairo" },
-          { left: "Lucas's language", answer: "Portuguese" },
-          { left: "The capital of Li Wei's country", answer: "Beijing" },
-          { left: "Nino's language", answer: "Georgian" },
-          { left: "The capital of Camille's country", answer: "Paris" },
-          { left: "The capital of Nino's country", answer: "Tbilisi" }
+          { left: "Giulia is Italian. The capital of her country:", answer: "Rome" },
+          { left: "Jonas is German. The language he speaks:", answer: "German" },
+          { left: "Omar is Egyptian. The capital of his country:", answer: "Cairo" },
+          { left: "Lucas is Brazilian. The language he speaks:", answer: "Portuguese" },
+          { left: "Li Wei is Chinese. The capital of his country:", answer: "Beijing" },
+          { left: "Nino is from Georgia. The language she speaks:", answer: "Georgian" },
+          { left: "Camille is French. The capital of her country:", answer: "Paris" },
+          { left: "Nino is from Georgia. The capital of her country:", answer: "Tbilisi" }
         ],
         choices: ["Rome", "German", "Cairo", "Portuguese", "Beijing", "Georgian", "Paris", "Tbilisi", "Athens"],
         why: "Giulia is from Italy, Jonas from Germany, Omar from Egypt, Lucas from Brazil, Li Wei from China, Nino from Georgia and Camille from France."

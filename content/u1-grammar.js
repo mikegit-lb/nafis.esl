@@ -37,7 +37,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       {
         label: "Can · opportunity",
         formula: "Tourists / You / Visitors + can + base verb",
-        note: "A place gives you the chance to do something: Tourists can climb the Galata Tower."
+        note: "A place gives you the chance to do something: Tourists can visit the Galata Tower."
       },
       {
         label: "Can · questions and short answers",
@@ -105,7 +105,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       { speaker: "B", text: "Yes, I am. My name is Ingrid. I come from Norway." },
       { speaker: "A", text: "Welcome, Ingrid! I am Ms Arslan, your English teacher. Where are you from in Norway?" },
       { speaker: "B", text: "I am from Oslo, but I live in Ankara now. My parents work here." },
-      { speaker: "A", text: "Which languages do you speak, Ingrid?" },
+      { speaker: "A", text: "Which languages can you speak, Ingrid?" },
       { speaker: "B", text: "I can speak Norwegian and English. I can't speak Turkish yet." },
       { speaker: "A", text: "Don't worry, your classmates can help you. Can you open the window, please? It is hot." },
       { speaker: "B", text: "Of course. Can I ask a question too? Is the library open after school?" },
@@ -152,7 +152,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "Ingrid can ___ Norwegian and English.", options: ["speaks", "to speak", "speak", "speaking"], answer: "speak", why: "After can, use the base form of the verb." },
           { prompt: "___ Ivan speak Bulgarian and Turkish?", options: ["Does can", "Can", "Is can", "Can to"], answer: "Can", why: "In a question, can comes before the subject and no other helping verb is needed." },
           { prompt: "Which sentence is correct?", options: ["Odett cans play the piano.", "Odett can plays the piano.", "Odett can play the piano.", "Odett can to play the piano."], answer: "Odett can play the piano.", why: "Can has no -s and is followed by the base verb play." },
-          { prompt: "In “You can see the whole valley from the castle wall,” can shows ___.", options: ["ability", "possibility", "obligation", "opportunity"], answer: "opportunity", why: "The place gives visitors the chance to see the valley, which is opportunity." },
+          { prompt: "In “You can walk along the castle wall and take photos,” can shows ___.", options: ["ability", "possibility", "obligation", "opportunity"], answer: "opportunity", why: "The place gives visitors the chance to walk on the wall and take photos, which is opportunity." },
           { prompt: "In “The museum shop can be crowded in summer,” can shows ___.", options: ["possibility", "ability", "opportunity", "obligation"], answer: "possibility", why: "The shop is sometimes crowded, so can describes what may happen." },
           { prompt: "In “Mehmet can solve difficult maths problems in his head,” can shows ___.", options: ["opportunity", "possibility", "obligation", "ability"], answer: "ability", why: "Mehmet knows how to do this, which is ability." },
           { prompt: "Ingrid ___ speak Turkish yet, so she uses simple gestures.", options: ["doesn't can", "can't", "isn't can", "can't to"], answer: "can't", why: "To make can negative, use can't + base verb." },
@@ -197,7 +197,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         instruction: "Each sentence has one grammar mistake. Write the correct sentence.",
         items: [
           { prompt: "Ivan can speaks Bulgarian and Turkish.", answer: "Ivan can speak Bulgarian and Turkish.", why: "After can, use the base verb speak, without -s." },
-          { prompt: "Min-su can to climb the Galata Tower.", answer: "Min-su can climb the Galata Tower.", why: "Do not put to between can and the base verb." },
+          { prompt: "Min-su can to visit the Galata Tower.", answer: "Min-su can visit the Galata Tower.", why: "Do not put to between can and the base verb." },
           { prompt: "Are you can speak Polish?", answer: "Can you speak Polish?", why: "Do not use are with can; start the question with Can." },
           { prompt: "My friends from Chile is very friendly.", answer: "My friends from Chile are very friendly.", why: "The subject my friends is plural, so use are." },
           { prompt: "Both of our student guides can speaks Turkish and English.", answer: "Both of our student guides can speak Turkish and English.", why: "After can, use the base verb speak." },
@@ -376,7 +376,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { left: "Is Oslo the capital of Norway?", answer: "Yes, it is." },
           { left: "Can Ingrid speak Turkish well?", answer: "No, she can't." },
           { left: "Is Min-su Korean?", answer: "Yes, he is." },
-          { left: "Can tourists climb the Galata Tower?", answer: "Yes, they can." },
+          { left: "Can tourists visit the Galata Tower?", answer: "Yes, they can." },
           { left: "Ingrid, are you from Oslo?", answer: "Yes, I am." }
         ],
         choices: ["Yes, it is.", "Yes, he is.", "Yes, they can.", "No, she can't.", "No, they aren't.", "Yes, I am.", "No, he isn't."],
