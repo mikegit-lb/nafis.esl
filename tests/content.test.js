@@ -90,7 +90,7 @@ function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
     const qs = speak.reduce(function (c, a) { return c + list(a.questions).length; }, 0);
     assert.ok(speak.length >= 4, label + " speaking needs >=4 speak cards, has " + speak.length);
     assert.ok(qs >= 70, label + " speak cards need >=70 questions in total, have " + qs);
-    const personal = speak.reduce(function (c, a) { return c + list(a.questions).filter(function (q) { return q && /you(r)?/i.test(q.q); }).length; }, 0);
+    const personal = speak.reduce(function (c, a) { return c + list(a.questions).filter(function (q) { return q && /\byou(r)?\b/i.test(q.q); }).length; }, 0);
     assert.ok(personal >= 40, label + " speak cards need >=40 personal questions (containing you/your), have " + personal);
     const rp = tasks.filter(function (a) { return a.type === "roleplay"; }).length;
     assert.ok(rp >= 4, label + " speaking needs >=4 roleplay cards, has " + rp);
