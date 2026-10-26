@@ -73,11 +73,11 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         title: "How often and when",
         items: [
           { term: "always", meaning: "every time, 100 percent", example: "I always brush my teeth after breakfast." },
-          { term: "usually", meaning: "most of the time", example: "We usually have lunch at 12.30." },
-          { term: "often", meaning: "many times", example: "My cousin often studies at the library." },
-          { term: "sometimes", meaning: "on some days, but not all", example: "Sometimes I walk to school." },
-          { term: "occasionally", meaning: "not often, only a few times", example: "They occasionally go to the park after school." },
-          { term: "rarely", meaning: "almost never", example: "Deniz rarely watches TV on school nights." },
+          { term: "usually", meaning: "most of the time, about 80 percent", example: "We usually have lunch at 12.30." },
+          { term: "often", meaning: "many times, about 70 percent", example: "My cousin often studies at the library." },
+          { term: "sometimes", meaning: "on some days, but not all, about 40 percent", example: "Sometimes I walk to school." },
+          { term: "occasionally", meaning: "not often, only a few times, about 20 percent", example: "They occasionally go to the park after school." },
+          { term: "rarely", meaning: "almost never, about 10 percent of the time (seldom has the same meaning)", example: "Deniz rarely watches TV on school nights." },
           { term: "never", meaning: "at no time, 0 percent", example: "I never miss the school bus." },
           { term: "every day", meaning: "on each day of the week", example: "I check my messages every day." },
           { term: "at weekends", meaning: "on Saturday and Sunday", example: "At weekends, I go swimming." },
@@ -90,12 +90,13 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       {
         title: "Study life",
         items: [
-          { term: "revise for a test", meaning: "to read your notes again so that you remember them before an exam", example: "Students revise for a test in the library after school." },
+          { term: "revise for a test", meaning: "to study the topics again so that you remember them in a test", example: "Students revise for a test in the library after school." },
           { term: "do research", meaning: "to look for information about a topic", example: "We do research on the internet for our science project." },
           { term: "hand in homework", meaning: "to give your finished work to the teacher", example: "We hand in our homework on Monday mornings." },
-          { term: "review your notes", meaning: "to read your notes again carefully", example: "Ece reviews her notes before she goes to bed." },
+          { term: "review your notes", meaning: "to read through what you wrote in lessons and check that it is complete and correct", example: "Ece reviews her notes after each lesson and adds anything she forgot." },
+          { term: "carefully / carelessly", meaning: "with attention, or without attention", example: "Mina checks her answers carefully, but Tom writes carelessly and makes mistakes." },
           { term: "join a club", meaning: "to become a member of a group that meets for an activity", example: "Emre joins the chess club every autumn." },
-          { term: "do sports", meaning: "to take part in physical activities", example: "I do sports on Tuesdays and Fridays." },
+          { term: "play sports", meaning: "to take part in physical activities", example: "I play sports on Tuesdays and Fridays." },
           { term: "check your timetable", meaning: "to look at the list of your lessons and their times", example: "He checks his timetable every Sunday evening." }
         ]
       },
@@ -105,7 +106,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { term: "tidy your room", meaning: "to put your things in order in your bedroom", example: "My brother tidies his room on Saturdays." },
           { term: "have a snack", meaning: "to eat a small amount of food between meals", example: "I have a snack at ten o'clock." },
           { term: "set an alarm", meaning: "to make your clock or phone ring at a certain time", example: "She sets an alarm on her phone before she goes to bed." },
-          { term: "stay up late", meaning: "to go to bed later than usual", example: "They stay up late at the weekend." },
+          { term: "stay up late", meaning: "to go to bed late, or stay awake late at night", example: "They stay up late at the weekend." },
           { term: "fall asleep", meaning: "to begin to sleep", example: "I fall asleep quickly after a long day." },
           { term: "miss the bus", meaning: "to arrive too late to catch the bus", example: "When he misses the bus, he walks to school." },
           { term: "be on time", meaning: "to arrive at the right time, not late", example: "Our teacher is always on time." }
@@ -118,10 +119,10 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { term: "three times a week", meaning: "three times in seven days", example: "Selin goes swimming three times a week." },
           { term: "every other day", meaning: "one day yes, the next day no", example: "My uncle runs every other day." },
           { term: "from Monday to Friday", meaning: "on all the school days of the week", example: "The library opens from Monday to Friday." },
-          { term: "at the weekend", meaning: "on Saturday and Sunday", example: "We visit our grandparents at the weekend." },
           { term: "in the evening", meaning: "during the last part of the day, after the afternoon", example: "I do my homework in the evening." },
           { term: "at noon", meaning: "at twelve o'clock in the middle of the day", example: "The school canteen opens at noon." },
           { term: "at midnight", meaning: "at twelve o'clock at night", example: "The streets are very quiet at midnight." },
+          { term: "quarter past", meaning: "fifteen minutes after the hour", example: "Our maths lesson starts at quarter past nine." },
           { term: "half past", meaning: "thirty minutes after the hour", example: "School starts at half past eight." },
           { term: "quarter to", meaning: "fifteen minutes before the hour", example: "At quarter to nine, the first lesson begins." }
         ]
@@ -133,7 +134,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { term: "I call it a day!", meaning: "I stop working because I have done enough", example: "After three hours of study, I call it a day." },
           { term: "Hit the books!", meaning: "start studying hard", example: "Exams start next week, so I hit the books every evening." },
           { term: "I learn by heart!", meaning: "I memorise something so well that I can say it without looking", example: "I learn new poems by heart." },
-          { term: "Work hard, play later!", meaning: "finish your duties first, then have fun", example: "My mother says, Work hard, play later, so I finish my homework first." }
+          { term: "Work hard, play later!", meaning: "finish your duties first, then have fun", example: "My mother says, \"Work hard, play later,\" so I finish my homework first." }
         ]
       }
     ],
@@ -218,9 +219,9 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "A person in a hurry does things quickly."
           },
           {
-            prompt: "Sally likes order, so she plans her day ___.",
+            prompt: "Sally writes her homework in clear, tidy handwriting. She writes ___.",
             answer: "neatly",
-            why: "To plan neatly is to plan in a clear, tidy way."
+            why: "Neatly means in a clear, tidy way."
           },
           {
             prompt: "In the evening, thoughts about the day repeat ___ in her mind without any effort.",
@@ -243,7 +244,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "In heavy traffic a bus cannot go fast, so it moves slowly."
           },
           {
-            prompt: "Sally goes to the gym ___, every Tuesday and Thursday.",
+            prompt: "Sally goes to the gym every Tuesday and Thursday, so she goes ___.",
             answer: "regularly",
             why: "Doing something at the same times each week is doing it regularly."
           }
@@ -262,9 +263,9 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { left: "slowly (opposite)", answer: "quickly" },
           { left: "late (opposite)", answer: "early" },
           { left: "tidy (same meaning)", answer: "neat" },
-          { left: "sometimes (same meaning)", answer: "occasionally" }
+          { left: "rarely (same meaning)", answer: "seldom" }
         ],
-        choices: ["start", "return home", "never", "fall asleep", "generally", "quickly", "end", "twice a week", "early", "neat", "occasionally", "at midnight"],
+        choices: ["start", "return home", "never", "fall asleep", "generally", "quickly", "end", "twice a week", "early", "neat", "seldom", "at midnight"],
         why: "Synonyms have almost the same meaning, and antonyms have opposite meanings."
       },
       {
@@ -336,7 +337,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           },
           {
             prompt: "Students ___ in their homework on Monday mornings.",
-            options: ["give", "make", "hand", "do"],
+            options: ["go", "make", "hand", "do"],
             answer: "hand",
             why: "Hand in means to give your work to the teacher."
           },
@@ -355,10 +356,10 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         pairs: [
           { left: "You get up at 5.30 a.m. to catch an early train.", answer: "Bright and early!" },
           { left: "You have studied for three hours and you feel tired.", answer: "I call it a day!" },
-          { left: "Your teacher tells you that the test is tomorrow, so you must study hard.", answer: "Hit the books!" },
+          { left: "Your test is tomorrow, so you open your books and start.", answer: "Hit the books!" },
           { left: "You can say a whole poem without looking at the page.", answer: "I learn by heart!" },
           { left: "Mum says you can play games, but only after the housework.", answer: "Work hard, play later!" },
-          { left: "Your friend leaves home at 6 a.m. every day, long before the sun comes up.", answer: "Bright and early!" },
+          { left: "Your friend arrives at school at 7 a.m., an hour before anyone else.", answer: "Bright and early!" },
           { left: "You finish your work for the day and close your laptop.", answer: "I call it a day!" },
           { left: "You say the new English words so many times that you remember them.", answer: "I learn by heart!" }
         ],
@@ -367,19 +368,19 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       },
       {
         type: "quiz",
-        title: "What comes next in the day?",
+        title: "What happens when? · Daily routine",
         source: "Unit 2 · Vocabulary · daily routine",
         instruction: "Choose the answer that fits the time of day.",
         items: [
           {
             prompt: "Mert is dressed and his bag is ready. It is half past seven. What does he do next?",
-            options: ["He goes to bed.", "He wakes up.", "He leaves home.", "He has dinner."],
+            options: ["He watches TV.", "He does the dishes.", "He leaves home.", "He has dinner."],
             answer: "He leaves home.",
             why: "A student who is dressed and ready at half past seven leaves home for school."
           },
           {
             prompt: "Ela finishes her last lesson at 3.30 p.m. What does she do next?",
-            options: ["She has breakfast.", "She leaves school.", "She wakes up.", "She goes to bed."],
+            options: ["She has breakfast.", "She leaves school.", "She starts the first lesson.", "She sets her alarm."],
             answer: "She leaves school.",
             why: "After the last lesson of the day, students leave school."
           },
@@ -390,7 +391,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "In the afternoon, after a snack, students usually start their homework."
           },
           {
-            prompt: "Dinner is over at eight and it is nearly bedtime. What does Defne do?",
+            prompt: "It is ten o'clock at night and Defne is ready for bed. What does she do?",
             options: ["She starts the first lesson.", "She has lunch.", "She brushes her teeth.", "She leaves for school."],
             answer: "She brushes her teeth.",
             why: "Brushing your teeth is a normal thing to do before bed."
@@ -453,13 +454,13 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           },
           {
             prompt: "What time is noon?",
-            options: ["twelve o'clock at night", "twelve o'clock in the middle of the day", "six o'clock in the morning", "one o'clock at night"],
-            answer: "twelve o'clock in the middle of the day",
+            options: ["twelve o'clock at night", "twelve o'clock in the day", "six o'clock in the morning", "one o'clock at night"],
+            answer: "twelve o'clock in the day",
             why: "Noon is twelve o'clock in the middle of the day."
           },
           {
             prompt: "What time is midnight?",
-            options: ["twelve o'clock in the middle of the day", "six o'clock in the evening", "twelve o'clock at night", "ten o'clock in the morning"],
+            options: ["twelve o'clock in the afternoon", "six o'clock in the evening", "twelve o'clock at night", "ten o'clock in the morning"],
             answer: "twelve o'clock at night",
             why: "Midnight is twelve o'clock at night, when one day ends and the next one begins."
           },
@@ -467,10 +468,10 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             prompt: "My uncle runs every other day. How often does he run?",
             options: ["every day", "one day yes, the next day no", "once a month", "only at weekends"],
             answer: "one day yes, the next day no",
-            why: "Every other day means with one day between, for example Monday, Wednesday and Friday."
+            why: "Every other day means one day with the activity, one day without."
           },
           {
-            prompt: "Pelin goes swimming on Monday, Wednesday and Friday. How often does she swim?",
+            prompt: "Pelin goes swimming on Tuesday, Thursday and Saturday. How often does she swim?",
             options: ["three times a week", "once a week", "twice a week", "every day"],
             answer: "three times a week",
             why: "Three days in a week means three times a week."
@@ -488,7 +489,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         title: "A student's day · Word bank",
         source: "Unit 2 · Vocabulary · daily routine",
         instruction: "Complete the story about Ayla with a word or phrase from the word bank. Use each one once. Three are extras.",
-        wordBank: ["wakes up", "makes", "has", "leaves", "attends", "returns", "revises", "falls asleep", "does", "plays", "washes"],
+        wordBank: ["wakes up", "makes", "washes", "leaves", "attends", "returns", "revises", "falls asleep", "does", "plays", "watches"],
         items: [
           {
             prompt: "Ayla ___ at 6.30 a.m. on school days, when her alarm rings.",
@@ -501,9 +502,9 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "The fixed phrase is make the bed."
           },
           {
-            prompt: "She ___ breakfast with her family at seven.",
-            answer: "has",
-            why: "We have breakfast."
+            prompt: "Next she ___ her face with cold water to feel fresh.",
+            answer: "washes",
+            why: "You wash your face with water."
           },
           {
             prompt: "At 7.30 she ___ home and walks to the bus stop.",
@@ -511,7 +512,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "She goes out of her house, so she leaves home."
           },
           {
-            prompt: "At school she ___ classes from 8.30 to 3.30.",
+            prompt: "She never misses school: she ___ every class from 8.30 to 3.30.",
             answer: "attends",
             why: "To attend classes means to be present at lessons."
           },
@@ -546,7 +547,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           {
             prompt: "Type the opposite of leave home.",
             answer: "return home",
-            accepted: ["go back home", "come home", "get home", "arrive home", "go home"],
+            accepted: ["go back home", "come home", "get home", "arrive home", "go home", "come back home", "get back home", "come back", "return"],
             why: "You leave home in the morning and return home later."
           },
           {
@@ -562,15 +563,15 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "Weekdays are Monday to Friday, and the weekend is Saturday and Sunday."
           },
           {
-            prompt: "Type the opposite of carefully.",
+            prompt: "Type the opposite of carefully (hint: care + less + ly).",
             answer: "carelessly",
-            accepted: ["not carefully"],
+            accepted: ["careless", "not carefully"],
             why: "Carefully means with attention, and carelessly means without attention."
           },
           {
             prompt: "Type the opposite of rarely.",
             answer: "often",
-            accepted: ["frequently"],
+            accepted: ["frequently", "usually", "regularly", "a lot"],
             why: "Rarely means almost never, and often means many times."
           },
           {
@@ -580,9 +581,9 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             why: "A tidy room is in order, and a messy room is not."
           },
           {
-            prompt: "Type the opposite of get up.",
+            prompt: "Type the opposite of get up in the morning.",
             answer: "go to bed",
-            accepted: ["go to sleep", "fall asleep"],
+            accepted: ["go to sleep", "fall asleep", "sleep"],
             why: "You get up in the morning and go to bed at night."
           }
         ]
@@ -591,7 +592,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         type: "quiz",
         title: "Which adverb of frequency?",
         source: "Unit 2 · Vocabulary · how often",
-        instruction: "Choose the adverb that matches the percentage.",
+        instruction: "Choose the best adverb of frequency.",
         items: [
           {
             prompt: "Ali brushes his teeth every single day, 100 percent of the time. He ___ brushes his teeth.",
