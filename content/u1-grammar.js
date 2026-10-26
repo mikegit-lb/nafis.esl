@@ -62,11 +62,11 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       {
         label: "Subject pronouns and possessive adjectives",
         formula: "I / you / he / she / it / we / they → my / your / his / her / its / our / their",
-        note: "Alina is from Poland. She speaks Polish and her capital is Warsaw. We love our country. They like their school. A possessive adjective comes before a noun: my country, your language, his friends."
+        note: "Alina is from Poland. She speaks Polish and her home city is Warsaw. We love our country. They like their school. A possessive adjective comes before a noun: my country, your language, his friends."
       },
       {
         label: "A / an and singular or plural be",
-        formula: "I / he / she / it + am / is + a / an + noun · we / you / they + are + plural noun",
+        formula: "I / he / she / it + am / is + a / an + noun · we / they (and you for more than one person) + are + plural noun",
         note: "I am a student. She is an engineer. Ivan is a Bulgarian student. They are students (no a before a plural noun). Use an before a vowel sound: an Italian student."
       },
       {
@@ -121,7 +121,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       { wrong: "They is from Hungary.", right: "They are from Hungary.", why: "Use are with they, we and you, and with plural subjects." },
       { wrong: "Where you are from?", right: "Where are you from?", why: "In a question, be goes before the subject: Where are you from?" },
       { wrong: "My name are Ali.", right: "My name is Ali.", why: "My name is one thing, so use the singular verb is." },
-      { wrong: "We are student.", right: "We are students.", why: "After we, you and they, the noun is plural and has no a." },
+      { wrong: "We are student.", right: "We are students.", why: "After we and they, the noun is plural and has no a." },
       { wrong: "Yes, I'm.", right: "Yes, I am.", why: "Do not shorten the verb in a Yes short answer. Say Yes, I am." },
       { wrong: "I am Turkey.", right: "I am Turkish.", why: "Use the nationality word Turkish to say what you are. Turkey or Türkiye is the country." }
     ]
@@ -138,7 +138,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "___ Ingrid from Norway?", options: ["Are", "Am", "Do", "Is"], answer: "Is", why: "A be question puts is before the singular subject Ingrid." },
           { prompt: "Min-su lives in Seoul, the capital of South Korea. In class he says: “I am ___.”", options: ["Korea", "Koreans", "Korean", "a Korea"], answer: "Korean", why: "After am we use the nationality word Korean, not the country name." },
           { prompt: "We ___ not from Hungary; we come from Bulgaria.", options: ["is", "am", "do", "are"], answer: "are", why: "Use are with we, and add not to make the sentence negative." },
-          { prompt: "Are you Norwegian? Choose the correct short answer.", options: ["No, I amn't.", "No, I not.", "No, I am not.", "No, I isn't."], answer: "No, I am not.", why: "A short negative answer to an Are you question is No, I am not." },
+          { prompt: "Are you Norwegian? Choose the correct short answer.", options: ["No, I amn't.", "No, I not.", "No, I am not.", "No, I isn't."], answer: "No, I am not.", why: "A short negative answer to an Are you question is No, I am not (or No, I'm not)." },
           { prompt: "What ___ the capital of Bulgaria?", options: ["are", "is", "am", "do"], answer: "is", why: "The capital is singular, so the question uses is." },
           { prompt: "Hello, everyone! I ___ Odett, and this is my friend Ivan.", options: ["am", "is", "are", "be"], answer: "am", why: "Use am with the subject I when you say your name." },
           { prompt: "My brother and I ___ students at the same school.", options: ["is", "am", "be", "are"], answer: "are", why: "My brother and I means two people, so the subject is plural and takes are." }
@@ -173,7 +173,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "___ your exchange partner from the same city as you?", answer: "Is", why: "Use is with the singular subject your exchange partner." },
           { prompt: "Ingrid is from Norway, so she ___ (to be) Norwegian.", answer: "is", why: "Ingrid is a singular she-subject, so use is." },
           { prompt: "Children under six ___ (not enter) the museum cinema without an adult, so ask at the desk.", answer: "can't enter", why: "Can't + base verb states a rule about what is not allowed." },
-          { prompt: "We ___ (to be) tired after the long hike, but we are happy.", answer: "are", why: "Use are with we." }
+          { prompt: "We ___ (to be) tired after the long hike, but we feel happy.", answer: "are", why: "Use are with we." }
         ]
       },
       {
@@ -204,7 +204,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "Does Ingrid can speak Turkish?", answer: "Can Ingrid speak Turkish?", why: "Can is the helping verb in the question, so do not add does." },
           { prompt: "Tourists can visiting the old castle.", answer: "Tourists can visit the old castle.", why: "After can, use the base verb visit, not the -ing form." },
           { prompt: "Mehmet and I is good friends.", answer: "Mehmet and I are good friends.", why: "Mehmet and I is a plural subject, so use are." },
-          { prompt: "Is Alina and Odett from Hungary?", answer: "Are Alina and Odett from Hungary?", why: "Alina and Odett is a plural subject, so the question starts with Are." },
+          { prompt: "Is Alina and Odett in the same class?", answer: "Are Alina and Odett in the same class?", why: "Alina and Odett is a plural subject, so the question starts with Are." },
           { prompt: "Visitors can't takes photos inside the museum.", answer: "Visitors can't take photos inside the museum.", why: "After can't, use the base verb take, without -s." }
         ]
       },
@@ -231,23 +231,23 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "___ can help me with my English homework? — Alina can help you.", options: ["What", "How", "Where", "Who"], answer: "Who", why: "The answer is a person, so ask with Who." },
           { prompt: "___ can I buy a ticket for the museum? — You can buy it at the desk by the door.", options: ["Where", "Why", "What", "Who"], answer: "Where", why: "The answer is a place, so ask with Where." },
           { prompt: "___ can you do in the evening in Warsaw? — You can walk along the river.", options: ["Where", "Who", "When", "What"], answer: "What", why: "The verb do needs What; the answer says an activity." },
-          { prompt: "___ can't Ingrid speak Turkish? — Because she is new in Türkiye and is still learning.", options: ["When", "Why", "Who", "Where"], answer: "Why", why: "The answer gives a reason, so ask with Why." },
+          { prompt: "___ can't Ingrid speak Turkish? — She is new in Türkiye and is still learning.", options: ["When", "Why", "Who", "Where"], answer: "Why", why: "The answer gives a reason, so ask with Why." },
           { prompt: "___ can we see the Northern Lights in Norway? — You can see them in winter.", options: ["Why", "Who", "When", "What"], answer: "When", why: "The answer names a season, so ask with When." },
           { prompt: "___ can I get to the Old Town? — You can go by bus.", options: ["How", "Who", "What", "Why"], answer: "How", why: "The answer says the way to travel, so ask with How." }
         ]
       },
       {
         type: "quiz", title: "Quiz H · Short answers", source: "Unit 1 · Language Awareness · Yes / No short answers",
-        instruction: "Choose the correct short answer. Use what you know about the students.",
+        instruction: "Choose the correct short answer. For the last two, write the answer.",
         items: [
           { prompt: "Is Ivan from Bulgaria? Choose the correct short answer.", options: ["Yes, he can.", "Yes, he is.", "Yes, I am.", "Yes, it is."], answer: "Yes, he is.", why: "Ivan is from Bulgaria, and a short answer repeats the verb be with the pronoun he." },
           { prompt: "Alina is Polish and Odett is Hungarian. Are they from Hungary? Choose the correct short answer.", options: ["No, they don't.", "No, we aren't.", "No, there aren't.", "No, they aren't."], answer: "No, they aren't.", why: "Only Odett is Hungarian, so the answer is no, and the verb is aren't with they." },
-          { prompt: "Ingrid speaks Norwegian. Can Ingrid speak Norwegian? Choose the correct short answer.", options: ["Yes, she does.", "Yes, she can.", "Yes, she is.", "Yes, can she."], answer: "Yes, she can.", why: "A short answer to a can question repeats can with the pronoun she." },
-          { prompt: "The teacher asks you, a Grade 9 student: “Are you in Grade 9?” Choose the correct short answer.", options: ["Yes, I do.", "Yes, I can.", "Yes, I am.", "Yes, I be."], answer: "Yes, I am.", why: "A short answer to an Are you question is Yes, I am." },
-          { prompt: "A sign in the museum says: No photos. Can tourists take photos in the museum? Choose the correct short answer.", options: ["No, they aren't.", "No, they don't.", "No, they can't.", "No, they can not to."], answer: "No, they can't.", why: "The sign is a rule, so the answer is No, they can't." },
+          { prompt: "Ingrid is from Norway. Can she speak Norwegian? Choose the correct short answer.", options: ["Yes, she does.", "Yes, she can.", "Yes, she is.", "Yes, can she."], answer: "Yes, she can.", why: "A short answer to a can question repeats can with the pronoun she." },
+          { prompt: "The teacher asks you, a Grade 9 student: “Are you in Grade 9?” Choose the correct short answer.", options: ["Yes, I do.", "Yes, I can.", "Yes, I am.", "Yes, I'm."], answer: "Yes, I am.", why: "A short Yes answer to an Are you question is Yes, I am; do not shorten it to Yes, I'm." },
+          { prompt: "A sign in the hall says: No food. Can visitors eat in the hall? Choose the correct short answer.", options: ["No, they aren't.", "No, they don't.", "No, they can't.", "No, they can not to."], answer: "No, they can't.", why: "The sign is a rule, so the answer is No, they can't." },
           { prompt: "Min-su is Korean. Is Min-su Norwegian? Choose the correct short answer.", options: ["No, he doesn't.", "No, he can't.", "No, it isn't.", "No, he isn't."], answer: "No, he isn't.", why: "Min-su is not Norwegian, and the pronoun for Min-su is he." },
           { prompt: "Is Baku the capital of Azerbaijan? Write the short answer.", answer: "Yes, it is.", why: "Baku is the capital, and the pronoun for a city is it." },
-          { prompt: "Ingrid can speak Norwegian but not Turkish. Can Ingrid speak Turkish? Write the short answer.", answer: "No, she can't.", why: "Ingrid can't speak Turkish yet, so use No, she can't." }
+          { prompt: "Ingrid is new in Türkiye. Can she speak Turkish yet? Write the short answer.", answer: "No, she can't.", why: "Ingrid can't speak Turkish yet, so use No, she can't." }
         ]
       },
       {
@@ -285,10 +285,10 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "You want to open the window. Which request is correct?", options: ["Can I to open the window, please?", "Am I can open the window, please?", "Can I open the window, please?", "Do I can open the window, please?"], answer: "Can I open the window, please?", why: "Ask for permission with Can I + base verb." },
           { prompt: "A sign in the museum says: No photos. What does it mean?", options: ["You can take photos here.", "You can't take photos here.", "You can photos here.", "You can't taking photos here."], answer: "You can't take photos here.", why: "A no sign is a rule, so use can't + base verb." },
           { prompt: "You do not understand a word. Which polite question is correct?", options: ["Can you repeating that, please?", "Are you can repeat that, please?", "Can you repeat that, please?", "You can repeat that, please?"], answer: "Can you repeat that, please?", why: "Ask someone to do something with Can you + base verb." },
-          { prompt: "Can I leave early today? — Yes, you can. The teacher gives you ___.", options: ["permission", "an obligation", "a mistake", "a language"], answer: "permission", why: "Yes, you can means that you are allowed to leave, which is permission." },
+          { prompt: "Can I leave early today? — Yes, you can. The teacher gives you ___.", options: ["permission", "an obligation", "a rule", "an invitation"], answer: "permission", why: "Yes, you can means that you are allowed to leave, which is permission." },
           { prompt: "Your friend asks: Can you help me with this exercise? Choose the best answer.", options: ["Yes, I help.", "Sure, I can.", "Yes, I does.", "No, I don't."], answer: "Sure, I can.", why: "A short answer to a can request repeats can: Sure, I can." },
           { prompt: "You want to sit next to Alina. Complete the polite question: ___ I sit here, please?", answer: "Can", accepted: ["May", "Could"], why: "Ask for permission with Can I + base verb." },
-          { prompt: "A sign at the zoo says do not feed the animals. Complete the rule: Visitors ___ feed the animals.", answer: "can't", why: "A rule that says something is not allowed uses can't + base verb." },
+          { prompt: "A sign at the zoo says do not feed the animals. Complete the rule with the negative form of can: Visitors ___ feed the animals.", answer: "can't", accepted: ["mustn't", "must not", "may not"], why: "A rule that says something is not allowed uses can't + base verb." },
           { prompt: "Ask politely with Can: you / help me with my homework", answer: "Can you help me with my homework?", accepted: ["Can you help me with my homework, please?", "Can you please help me with my homework?"], why: "A polite request is Can you + base verb." }
         ]
       },
@@ -299,11 +299,11 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "She from Poland.", answer: "She is from Poland.", accepted: ["She's from Poland."], why: "Every sentence needs a verb, so use is after she." },
           { prompt: "Are you can swim?", answer: "Can you swim?", why: "Do not use are with can; start the question with Can." },
           { prompt: "I can to swim.", answer: "I can swim.", why: "Do not put to between can and the base verb." },
-          { prompt: "They is from Hungary.", answer: "They are from Hungary.", why: "Use are with they." },
+          { prompt: "They is from Hungary.", answer: "They are from Hungary.", accepted: ["They're from Hungary."], why: "Use are with they." },
           { prompt: "Where you are from?", answer: "Where are you from?", why: "In a question, be goes before the subject you." },
           { prompt: "He don't can swim.", answer: "He can't swim.", why: "Make can negative with can't; do not add don't." },
           { prompt: "My name are Ali.", answer: "My name is Ali.", accepted: ["My name's Ali."], why: "My name is a singular subject, so use is." },
-          { prompt: "What your nationality is?", answer: "What is your nationality?", accepted: ["What nationality are you?"], why: "In a question, be goes before the subject, right after the question word." }
+          { prompt: "What your nationality is?", answer: "What is your nationality?", accepted: ["What's your nationality?", "What nationality are you?"], why: "In a question, be goes before the subject, right after the question word." }
         ]
       },
       {
@@ -314,9 +314,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "A: Is Odett in your class? B: Yes, ___ is. She sits next to me.", options: ["he", "it", "she", "they"], answer: "she", why: "Odett is a girl, so the short answer uses she." },
           { prompt: "A: Can you speak Polish, Mehmet? B: No, I ___, but I can say Hello.", options: ["can't", "don't", "am not", "isn't"], answer: "can't", why: "A short negative answer to a can question is No, I can't." },
           { prompt: "A: What ___ do in Oslo? B: You can visit the Viking Ship Museum.", options: ["do tourists can", "are tourists", "can tourists", "tourists can"], answer: "can tourists", why: "In a wh- question with can, the order is question word, can, subject, base verb." },
-          { prompt: "A: Are the museums open on Mondays? B: No, they ___. They are closed on Mondays.", options: ["don't", "can't", "isn't", "aren't"], answer: "aren't", why: "Museums is plural, so the short answer to an Are question is No, they aren't." },
+          { prompt: "A: Are the museums open on Mondays? B: No, they ___. Please come on Tuesday.", options: ["don't", "can't", "isn't", "aren't"], answer: "aren't", why: "Museums is plural, so the short answer to an Are question is No, they aren't." },
           { prompt: "A: Who is your teacher? B: ___ name is Ms Arslan.", options: ["She", "Her", "He", "His"], answer: "Her", why: "Ms is a woman, and her is the possessive adjective before the noun name." },
-          { prompt: "A: Can I use your dictionary, please? B: Yes, you ___.", answer: "can", why: "A short Yes answer to a can question repeats can." },
+          { prompt: "A: Can I use your dictionary, please? B: Yes, you ___.", answer: "can", accepted: ["may"], why: "A short Yes answer to a can question repeats can." },
           { prompt: "A: Are you and Ivan in the same class? B: Yes, ___ are.", answer: "we", why: "The speaker and Ivan are two people, so the short answer uses we." }
         ]
       },
@@ -329,8 +329,8 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { prompt: "Make it negative: “Ingrid can speak Turkish.”", answer: "Ingrid can't speak Turkish.", why: "To make can negative, use can't + base verb." },
           { prompt: "Make it a question: “Mehmet can speak German.”", answer: "Can Mehmet speak German?", why: "In a can question, can goes before the subject." },
           { prompt: "Make it negative: “Min-su and Ingrid are from the same country.”", answer: "Min-su and Ingrid aren't from the same country.", why: "Add n't to are to make the plural sentence negative." },
-          { prompt: "Ask a Where question about the place: “Alina is from Warsaw.”", answer: "Where is Alina from?", why: "The question word comes first, then is, then the subject, and from stays at the end." },
-          { prompt: "Ask a What question about the languages: “Ivan can speak Bulgarian and Turkish.”", answer: "What languages can Ivan speak?", accepted: ["Which languages can Ivan speak?"], why: "The order is question word, can, subject, base verb." },
+          { prompt: "Ask a Where question about the place: “Alina is from Warsaw.”", answer: "Where is Alina from?", accepted: ["Where's Alina from?"], why: "The question word comes first, then is, then the subject, and from stays at the end." },
+          { prompt: "Ask a What question about the languages: “Ivan can speak Bulgarian and Turkish.”", answer: "What languages can Ivan speak?", accepted: ["Which languages can Ivan speak?", "What language can Ivan speak?", "Which language can Ivan speak?"], why: "The order is question word, can, subject, base verb." },
           { prompt: "Make it a yes / no question: “They are tourists from Norway.”", answer: "Are they tourists from Norway?", why: "In a be question, are goes before the subject they." }
         ]
       },
@@ -338,11 +338,11 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         type: "reading", title: "Read and answer · A new student", passageTitle: "Ingrid, the new student",
         passage: "Ingrid is a new student in our class. She is from Oslo, the capital of Norway, and she is Norwegian. Her parents are teachers, and they are in Ankara for two years. Ingrid can speak Norwegian and English, but she can't speak Turkish yet. She can swim very well and she can play the guitar. Our school is near the park, so students can walk there in five minutes. Students can't use the school garden without a teacher.",
         questions: [
-          { prompt: "Where is Ingrid from?", options: ["Ankara", "Oslo", "Warsaw", "Seoul"], answer: 1, why: "The text says she is from Oslo, the capital of Norway." },
+          { prompt: "Where is Ingrid from?", options: ["Oslo", "Ankara", "Warsaw", "Seoul"], answer: 0, why: "The text says she is from Oslo, the capital of Norway." },
           { prompt: "What is Ingrid's nationality?", options: ["Turkish", "English", "Norwegian", "Polish"], answer: 2, why: "The text says she is Norwegian." },
           { prompt: "Which language can't Ingrid speak yet?", options: ["Norwegian", "English", "Polish", "Turkish"], answer: 3, why: "The text says she can't speak Turkish yet." },
-          { prompt: "What can Ingrid do?", options: ["She can speak Turkish well.", "She can swim and play the guitar.", "She can drive a car.", "She can walk to Norway."], answer: 1, why: "The text says she can swim very well and play the guitar." },
-          { prompt: "What is the rule about the school garden?", options: ["Students can use it at any time.", "Only parents can use it.", "Students can't use it without a teacher.", "Nobody can walk near it."], answer: 2, why: "The last sentence says students can't use the garden without a teacher." },
+          { prompt: "What can Ingrid do?", options: ["She can speak Turkish and English very well.", "She can swim and play the guitar.", "She can drive a car to school.", "She can walk from Oslo to Ankara."], answer: 1, why: "The text says she can swim very well and play the guitar." },
+          { prompt: "What is the rule about the school garden?", options: ["Students can use it at any time of the day.", "Only the parents of students can use it.", "Students need a teacher with them.", "Nobody can walk anywhere near the garden."], answer: 2, why: "The last sentence says students can't use the garden without a teacher." },
           { prompt: "In “She can swim very well,” can shows ___.", options: ["a rule", "ability", "possibility", "permission"], answer: 1, why: "Ingrid knows how to swim, which is ability." },
           { prompt: "In “Her parents are teachers,” who does Her refer to?", options: ["Ingrid", "The teacher", "Oslo", "The class"], answer: 0, why: "Her is the possessive adjective for Ingrid, the girl in the first sentence." }
         ]
@@ -351,11 +351,11 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       { type: "build", title: "Build a question about where students are from", instruction: "Tap the words in the correct order to ask where the students come from.", tokens: ["are", "Where", "from?", "the", "students"], answer: ["Where", "are", "the", "students", "from?"], why: "A wh- question puts the question word first, then are, then the subject." },
       { type: "build", title: "Build a question about languages", instruction: "Tap the words in the correct order to ask which languages your partner speaks.", tokens: ["can", "What", "you", "speak?", "languages"], answer: ["What", "languages", "can", "you", "speak?"], why: "A wh- question with can goes: question word, can, subject, base verb." },
       { type: "build", title: "Build a question about your teacher", instruction: "Tap the words in the correct order to ask who the English teacher is.", tokens: ["Who", "teacher?", "is", "your", "English"], answer: ["Who", "is", "your", "English", "teacher?"], why: "Put the question word Who first, then is, then the subject your English teacher." },
-      { type: "build", title: "Build a question about tourists", instruction: "Tap the words in the correct order to ask where visitors can go in Ankara.", tokens: ["Where", "in", "Ankara?", "can", "tourists", "go"], answer: ["Where", "can", "tourists", "go", "in", "Ankara?"], why: "The order is Where, can, the subject tourists, the base verb go, and then the place." },
+      { type: "build", title: "Build a question about tourists", instruction: "Tap the words in the correct order to ask what visitors can do in Ankara.", tokens: ["in", "Ankara?", "What", "can", "tourists", "do"], answer: ["What", "can", "tourists", "do", "in", "Ankara?"], why: "The order is What, can, the subject tourists, the base verb do, and then the place." },
       { type: "build", title: "Build a rule with can't", instruction: "Tap the words in the correct order to say that photos are not allowed in the museum.", tokens: ["take", "can't", "You", "photos", "here."], answer: ["You", "can't", "take", "photos", "here."], why: "A rule with can't goes: subject, can't, base verb, then the rest." },
       { type: "build", title: "Build a polite request", instruction: "Tap the words in the correct order to politely ask a classmate to help you.", tokens: ["help", "Can", "please?", "you", "me,"], answer: ["Can", "you", "help", "me,", "please?"], why: "A request starts with Can you, then the base verb, then the object, and please at the end." },
       { type: "build", title: "Build a negative sentence with be", instruction: "Tap the words in the correct order to say that Ingrid is not Turkish.", tokens: ["is", "not", "Ingrid", "Turkish."], answer: ["Ingrid", "is", "not", "Turkish."], why: "A negative be sentence goes: subject, is, not, then the nationality." },
-      { type: "sequence", title: "Order the words: a short description", instruction: "Tap the words in the correct order to say where Mehmet is from.", tokens: ["from", "is", "Mehmet", "Ankara."], answer: ["Mehmet", "is", "from", "Ankara."], why: "A statement with be goes: subject, is, from, then the place." },
+      { type: "sequence", title: "Put the conversation in order", instruction: "Tap the lines in the correct order to make a conversation between two new classmates.", tokens: ["Yes, I am. My name is Alina.", "Great! Welcome to our class.", "Hi! My name is Mehmet. Are you the new student?", "No, I can't, but I can speak Polish and English.", "Nice to meet you, Alina. Can you speak Turkish?"], answer: ["Hi! My name is Mehmet. Are you the new student?", "Yes, I am. My name is Alina.", "Nice to meet you, Alina. Can you speak Turkish?", "No, I can't, but I can speak Polish and English.", "Great! Welcome to our class."], why: "The greeting and question come first, each answer follows its question, and the welcome closes the conversation." },
       {
         type: "match", title: "Which meaning of can?",
         pairs: [
@@ -379,7 +379,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { left: "Can tourists visit the Maiden Tower?", answer: "Yes, they can." },
           { left: "Ingrid, are you from Oslo?", answer: "Yes, I am." }
         ],
-        choices: ["Yes, it is.", "Yes, he is.", "Yes, they can.", "No, she can't.", "No, they aren't.", "Yes, I am."],
+        choices: ["Yes, it is.", "Yes, he is.", "Yes, they can.", "No, she can't.", "No, they aren't.", "Yes, I am.", "No, he isn't."],
         why: "A short answer repeats the verb of the question and uses the pronoun that fits the subject."
       }
     ]
