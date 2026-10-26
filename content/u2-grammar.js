@@ -41,7 +41,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       {
         label: "Time expressions",
         formula: "at 7.30 · at weekends · on weekdays · on Fridays · in the morning · twice a week",
-        note: "Use at for clock times, on for days, in for parts of the day. Twice a week usually goes at the end. Exception: we say at weekends (not on weekends)."
+        note: "Use at for clock times, on for days, in for parts of the day. Twice a week usually goes at the end. In British English we say at weekends. (American English: on weekends.)"
       },
       {
         label: "Sequencers and linkers",
@@ -76,7 +76,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       {
         label: "Like, love and hate + -ing",
         formula: "like / love / hate (and enjoy) + verb-ing",
-        note: "Ali loves playing chess, but he hates getting up early. Does she like swimming? Spelling: make becomes making, run becomes running, sit becomes sitting."
+        note: "Ali loves playing chess, but he hates getting up early. Does she like swimming? I like to swim is also correct, but in this unit use -ing. Spelling: make becomes making, run becomes running, sit becomes sitting."
       }
     ],
     context: [
@@ -130,7 +130,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "___ you and your friends have lunch together at school?", options: ["Is", "Are", "Does", "Do"], answer: "Do", why: "Use do with plural subjects such as you and your friends." },
           { prompt: "Lily ___ a film with her family on Sundays.", options: ["watchs", "watches", "watchies", "watching"], answer: "watches", why: "Verbs ending in -ch add -es with he, she, it." },
           { prompt: "Tom ___ to the park on Friday afternoons.", options: ["gos", "go", "goes", "going"], answer: "goes", why: "Go ends in -o, so the he / she / it form is goes." },
-          { prompt: "In the school notice, the club ___ twice a week, and students ___ one small goal before each session.", options: ["meets / choose", "meet / chooses", "is meeting / choose", "meets / chooses"], answer: "meets / choose", why: "The club is singular, so it meets; the plural subject students takes choose." }
+          { prompt: "In the school notice, the club ___ twice a week, and students ___ one small goal before each session.", options: ["meets / choose", "meet / chooses", "meet / choose", "meets / chooses"], answer: "meets / choose", why: "The club is singular, so it meets; the plural subject students takes choose." }
         ]
       },
       {
@@ -279,7 +279,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "Ayşe ___ tired after school.", options: ["does", "do", "is", "has"], answer: "is", why: "Tired is an adjective, so use the verb be: Ayşe is tired." },
           { prompt: "Ayşe ___ her homework after school.", options: ["is", "does", "are", "do"], answer: "does", why: "Do her homework is an action, so use does with Ayşe." },
           { prompt: "I ___ usually late for the first lesson.", options: ["do", "am", "is", "have"], answer: "am", why: "Late is an adjective, so use am with I." },
-          { prompt: "I usually ___ to school.", options: ["am walk", "do walk", "is walk", "walk"], answer: "walk", why: "Walk is an action verb, so use it alone in the simple present." },
+          { prompt: "I usually ___ to school.", options: ["am walk", "walking", "is walk", "walk"], answer: "walk", why: "Walk is an action verb, so use it alone in the simple present." },
           { prompt: "My parents ___ at work in the daytime.", options: ["are", "do", "does", "have"], answer: "are", why: "At work is a place, so use are with my parents." },
           { prompt: "My parents ___ the shopping on Saturdays.", options: ["are", "do", "is", "does"], answer: "do", why: "Do the shopping is an action, so use do with my parents." },
           { prompt: "Choose the correct question about feeling hungry.", options: ["Do you hungry?", "Does you hungry?", "Are you hungry?", "Are you hunger?"], answer: "Are you hungry?", why: "Hungry is an adjective, so the question begins with are." },
@@ -307,13 +307,13 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         type: "quiz", title: "Quiz M · Spot and fix the mistake", source: "Unit 2 · Grammar practice · common mistakes",
         instruction: "Each sentence has one mistake. Write the whole sentence correctly.",
         items: [
-          { prompt: "She go to school at eight.", answer: "She goes to school at eight.", why: "With she the verb needs -es: goes." },
-          { prompt: "He don't like fish.", answer: "He does not like fish.", why: "Use does not (doesn't) with he, she and it." },
-          { prompt: "Does he goes to the gym on Fridays?", answer: "Does he go to the gym on Fridays?", why: "After does, use the base verb go." },
-          { prompt: "Every day I am go to school by bus.", answer: "Every day I go to school by bus.", why: "Do not use am before a simple present action verb." },
-          { prompt: "I usually am late for the first lesson.", answer: "I am usually late for the first lesson.", why: "The adverb of frequency goes after am." },
-          { prompt: "What time you wake up?", answer: "What time do you wake up?", why: "The question needs do after What time." },
-          { prompt: "She have breakfast at seven.", answer: "She has breakfast at seven.", why: "Have changes to has with she." },
+          { prompt: "My brother go to school at eight.", answer: "My brother goes to school at eight.", why: "With she the verb needs -es: goes." },
+          { prompt: "She don't like tea.", answer: "She does not like tea.", why: "Use does not (doesn't) with he, she and it." },
+          { prompt: "Does your sister goes to the gym on Saturdays?", answer: "Does your sister go to the gym on Saturdays?", why: "After does, use the base verb go." },
+          { prompt: "Every morning we are go to school by bus.", answer: "Every morning we go to school by bus.", why: "Do not use am before a simple present action verb." },
+          { prompt: "My cousin usually is late for lunch.", answer: "My cousin is usually late for lunch.", why: "The adverb of frequency goes after am." },
+          { prompt: "Where you eat lunch at school?", answer: "Where do you eat lunch at school?", why: "The question needs do after Where." },
+          { prompt: "My sister have breakfast at seven.", answer: "My sister has breakfast at seven.", why: "Have changes to has with my sister (she)." },
           { prompt: "We play basketball at Fridays.", answer: "We play basketball on Fridays.", why: "Use on with days of the week." },
           { prompt: "My father watchs the news after dinner.", answer: "My father watches the news after dinner.", why: "Verbs ending in -ch add -es." },
           { prompt: "I wake up in 6.30 on weekdays.", answer: "I wake up at 6.30 on weekdays.", why: "Use at with clock times." }
@@ -328,7 +328,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "A: How often does Ayşe play tennis? B: She plays on Monday and Thursday, so she plays ___ a week.", answer: "twice", why: "Two days in each week means twice a week." },
           { prompt: "A: Where ___ your parents work? B: They work in a bank.", answer: "do", why: "Your parents is plural, so the question uses do." },
           { prompt: "A: ___ Mert like football? B: Yes, he does.", answer: "Does", why: "The short answer uses does, so the question begins with Does." },
-          { prompt: "A: What do you do after school? B: First, I have a snack. ___ I do my homework.", answer: "Then", accepted: ["After that", "Next"], why: "Then, after that and next all link the second step of the routine." },
+          { prompt: "A: What do you do after school? B: First, I have a snack. ___ I do my homework. Finally, I help my mother.", answer: "Then", accepted: ["After that", "After that,", "Next", "Next,", "Afterwards", "Afterwards,", "And then", "Later", "Later,", "Then,"], why: "Between First and Finally we need a middle linker such as Then, After that or Next." },
           { prompt: "A: Is your sister at home? B: No, she ___. She is at the library.", answer: "is not", why: "The question uses is (be), so the negative short answer is No, she is not (isn't)." },
           { prompt: "A: ___ do you go to bed? B: At half past ten.", answer: "What time", accepted: ["When"], why: "The answer is a clock time, so the question is What time (or When)." },
           { prompt: "A: Do you and your friends study together? B: Yes, we ___.", answer: "do", why: "Repeat the auxiliary from the question: Yes, we do." }
@@ -347,7 +347,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "Make this sentence a yes/no question: “Your cousins live in Izmir.”", answer: "Do your cousins live in Izmir?", why: "Your cousins is plural, so start with do." },
           { prompt: "Make this sentence negative: “I get up early at weekends.”", answer: "I do not get up early at weekends.", why: "Use do not + base verb with I." },
           { prompt: "Ask a How often question about this sentence: “Ali goes to the cinema twice a month.”", answer: "How often does Ali go to the cinema?", why: "Use How often + does + subject + base verb; goes becomes go." },
-          { prompt: "Make this sentence negative: “Ali is late today.”", answer: "Ali is not late today.", why: "With be, just add not after is; do not use does." }
+          { prompt: "Make this sentence negative: “Ali is late today.”", answer: "Ali is not late today.", accepted: ["Ali's not late today."], why: "With be, just add not after is; do not use does." }
         ]
       },
       {
@@ -357,7 +357,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { prompt: "Emre ___ (get) up at half past six on weekdays.", answer: "gets", why: "Emre is singular, so add -s." },
           { prompt: "First, he ___ (wash) his face and then he gets dressed.", answer: "washes", why: "Verbs ending in -sh add -es." },
           { prompt: "After that, he ___ (have) breakfast with his sister.", answer: "has", why: "Have changes to has with he." },
-          { prompt: "His sister Pelin ___ (not / eat) eggs, so she has cheese and bread.", answer: "does not eat", why: "Use does not + base verb with the singular subject Pelin." },
+          { prompt: "His sister Dilara ___ (not / eat) eggs, so she has cheese and bread.", answer: "does not eat", why: "Use does not + base verb with the singular subject Nehir." },
           { prompt: "They ___ (walk) to school together because it is near their house.", answer: "walk", why: "With they the verb keeps the base form." },
           { prompt: "At school, Emre ___ (study) maths, science and English.", answer: "studies", why: "Consonant + y changes to -ies." },
           { prompt: "He ___ (not / like) PE lessons, but he loves playing basketball at weekends.", answer: "does not like", why: "Use does not + base verb with he." },
@@ -409,46 +409,46 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         why: "Use do not + base verb with we, and on with days."
       },
       {
-        type: "sequence", title: "Order the words: a morning routine",
-        instruction: "Tap the words in the correct order to say that you have breakfast after you get dressed.",
-        tokens: ["breakfast.", "After", "dressed,", "I", "get", "I", "have"],
-        answer: ["After", "I", "get", "dressed,", "I", "have", "breakfast."],
-        why: "After + subject + verb comes first, then a comma and the second clause."
+        type: "sequence", title: "Order the sentences: a morning routine",
+        instruction: "Tap the sentences in the correct order: First, Then, After that, Finally.",
+        tokens: ["After that, I have breakfast.", "Finally, I leave home.", "First, I wake up.", "Then I get dressed."],
+        answer: ["First, I wake up.", "Then I get dressed.", "After that, I have breakfast.", "Finally, I leave home."],
+        why: "The linkers show the order: First, then Then, After that and Finally."
       },
       {
         type: "sequence", title: "Order the words: a frequency sentence",
-        instruction: "Tap the words in the correct order to say that she never takes the bus.",
-        tokens: ["takes", "She", "the", "never", "bus."],
-        answer: ["She", "never", "takes", "the", "bus."],
+        instruction: "Tap the words in the correct order to say that your sister never takes the bus to school.",
+        tokens: ["takes", "My", "the", "never", "sister", "bus", "to", "school."],
+        answer: ["My", "sister", "never", "takes", "the", "bus", "to", "school."],
         why: "The adverb never goes before the main verb takes."
       },
       {
-        type: "reading", title: "Read and answer · Pelin's week", passageTitle: "Pelin and her brother",
-        passage: "Pelin is fifteen, and she lives in Izmir with her parents and her brother Kerem. On weekdays she gets up at half past six. First, she washes her face and gets dressed. After that, she has breakfast with Kerem. Before leaving home, she always checks her bag. She walks to school because it is near their house. Pelin loves playing volleyball, so she goes to the club three times a week, on Monday, Wednesday and Friday. Kerem does not like sport, but he enjoys reading. He is often at the library after school. In the evening, the family has dinner at seven. Pelin does her homework first, and then she watches a series for half an hour. She is usually tired at ten o'clock, so she goes to bed early.",
+        type: "reading", title: "Read and answer · Nehir's week", passageTitle: "Nehir and her brother",
+        passage: "Nehir is fifteen, and she lives in Izmir with her parents and her brother Kerem. On weekdays she gets up at half past six. First, she washes her face and gets dressed. After that, she has breakfast with Kerem. Before leaving home, she always checks her bag. She walks to school because it is near their house. Nehir loves playing volleyball, so she goes to the club three times a week, on Monday, Wednesday and Friday. Kerem does not like sport, but he enjoys reading. He is often at the library after school. In the evening, the family has dinner at seven. Nehir does her homework first, and then she watches a series for half an hour. She is usually tired at ten o'clock, so she goes to bed early.",
         questions: [
-          { prompt: "How often does Pelin go to the volleyball club?", options: ["Twice a week", "Three times a week", "Every day", "Once a week"], answer: 1, why: "The text says she goes to the club on Monday, Wednesday and Friday, which is three times a week." },
-          { prompt: "What does Pelin do right after she gets dressed?", options: ["She goes to the club.", "She walks to school.", "She has breakfast with Kerem.", "She checks her bag."], answer: 2, why: "The text says After that, she has breakfast with Kerem." },
-          { prompt: "Why does Pelin walk to school?", options: ["She does not like buses.", "Kerem takes her.", "She is late every day.", "Their house is near the school."], answer: 3, why: "The text says she walks because school is near their house." },
-          { prompt: "Which sentence about Kerem is true?", options: ["He enjoys reading.", "He plays volleyball.", "He walks to the club.", "He has dinner at nine."], answer: 0, why: "The text says Kerem does not like sport, but he enjoys reading." },
-          { prompt: "In “She is usually tired,” where does the adverb usually go?", options: ["After the verb be", "Before the verb be", "At the end of the sentence", "After the word tired"], answer: 0, why: "An adverb of frequency comes after the verb be: is usually tired." },
-          { prompt: "When does Pelin's family have dinner?", options: ["At six", "At eight", "At seven", "At ten"], answer: 2, why: "The text says the family has dinner at seven." }
+          { prompt: "How often does Nehir go to the volleyball club?", options: ["Twice a week", "Three times a week", "Every day", "Once a week"], answer: 1, why: "The text says she goes to the club on Monday, Wednesday and Friday, which is three times a week." },
+          { prompt: "What does Nehir do right after she gets dressed?", options: ["She goes to the club.", "She walks to school.", "She has breakfast.", "She checks her bag."], answer: 2, why: "The text says After that, she has breakfast with Kerem." },
+          { prompt: "Why does Nehir walk to school?", options: ["She does not like buses.", "Kerem takes her.", "She is late every day.", "It is near their house."], answer: 3, why: "The text says she walks because school is near their house." },
+          { prompt: "Which sentence about Kerem is true?", options: ["He enjoys reading books.", "He plays volleyball.", "He walks to the club with Nehir.", "He has dinner at nine."], answer: 0, why: "The text says Kerem does not like sport, but he enjoys reading." },
+          { prompt: "When is Nehir usually tired?", options: ["At six", "At seven", "At ten o'clock", "At midnight"], answer: 2, why: "The text says she is usually tired at ten o'clock." },
+          { prompt: "When does Nehir's family have dinner?", options: ["At six", "At eight", "At seven", "At ten"], answer: 2, why: "The text says the family has dinner at seven." }
         ]
       },
       {
         type: "match", title: "What does each sentence talk about?",
         pairs: [
           { left: "My sister bites her nails when she is nervous.", answer: "habit (something a person does again and again)" },
-          { left: "Our school day starts at eight o'clock every morning.", answer: "routine (a regular daily schedule)" },
+          { left: "Our school day starts at eight o'clock every morning.", answer: "routine (a fixed timetable or schedule)" },
           { left: "Last Saturday, we went to a concert in Ankara.", answer: "one-time event (finished, happened once)" },
           { left: "Next week, we are going to visit a science museum.", answer: "future plan (will happen later)" },
           { left: "Deniz always taps his pen when he thinks.", answer: "habit (something a person does again and again)" },
-          { left: "The library opens at nine o'clock on weekdays.", answer: "routine (a regular daily schedule)" },
+          { left: "The library opens at nine o'clock on weekdays.", answer: "routine (a fixed timetable or schedule)" },
           { left: "Yesterday, Deniz forgot his bus card at home.", answer: "one-time event (finished, happened once)" },
           { left: "Tomorrow, I am going to visit my cousin in Izmir.", answer: "future plan (will happen later)" }
         ],
         choices: [
           "habit (something a person does again and again)",
-          "routine (a regular daily schedule)",
+          "routine (a fixed timetable or schedule)",
           "one-time event (finished, happened once)",
           "future plan (will happen later)"
         ],
