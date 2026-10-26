@@ -19,6 +19,8 @@ function loadContent() { return runFiles(FILES); }
 const total = function (acts) { return acts.reduce(function (n, a) { return n + Core.countQuestions(a); }, 0); };
 const list = function (v) { return Array.isArray(v) ? v : []; };
 const filled = function (v) { return Array.isArray(v) && v.length > 0; };
+const str = function (v) { return typeof v === "string" && v.trim() !== ""; };
+const strList = function (v) { return v === undefined || (Array.isArray(v) && v.every(str)); };
 const words = function (s) { return String(s).split(/\s+/).filter(Boolean).length; };
 
 // Every activity of a unit as [sectionName, activities] (speaking keeps its cards in "tasks").
@@ -36,7 +38,7 @@ function scoredItems(a) {
   return [a];
 }
 function prompts(a) {
-  if (a.type === "speak") return list(a.questions).map(function (q) { return q.q; });
+  if (a.type === "speak") return list(a.questions).map(function (q) { return q && q.q; });
   if (a.type === "roleplay") return [a.scenario];
   return scoredItems(a).map(function (i) { return i.prompt; });
 }
@@ -132,10 +134,18 @@ test("schema", function () {
           });
           if (a.type === "speak") {
             if (!filled(a.questions)) bad(where + " needs a non-empty questions array");
-            list(a.questions).forEach(function (q, qi) { if (!q || !q.q || !q.model) bad(where + " question #" + (qi + 1) + " needs non-empty q and model"); });
+            if (!str(a.source)) bad(where + " needs a non-empty source");
+            if (!str(a.instruction)) bad(where + " needs a non-empty instruction");
+            if (!strList(a.checklist)) bad(where + " checklist must be an array of non-empty strings");
+            list(a.questions).forEach(function (q, qi) {
+              if (!q || !q.q || !q.model) bad(where + " question #" + (qi + 1) + " needs non-empty q and model");
+              else if (!strList(q.frames)) bad(where + " question #" + (qi + 1) + " frames must be an array of non-empty strings");
+            });
           }
           if (a.type === "roleplay") {
             if (!a.scenario) bad(where + " needs a scenario");
+            if (!str(a.source)) bad(where + " needs a non-empty source");
+            if (!strList(a.checklist)) bad(where + " checklist must be an array of non-empty strings");
             ["cardA", "cardB"].forEach(function (c) {
               const card = a[c];
               if (!card || !card.role) bad(where + " " + c + " needs a role");
