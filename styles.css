@@ -747,6 +747,10 @@ a { color: inherit; }
 .roleplay-card dd { margin: 0 0 6px; overflow-wrap: anywhere; }
 .roleplay-choose { display: flex; flex-wrap: wrap; align-items: center; gap: 0 8px; margin-bottom: 4px; font-size: 14px; font-weight: 700; }
 .roleplay-choose span { margin-right: 4px; }
+.roleplay-partner { margin: 8px 0; }
+.roleplay-partner [hidden] { display: none; }
+.roleplay-status { min-height: 1.4em; margin: 0 0 8px; font-size: 14px; color: var(--ink); }
+.roleplay-model li.is-playing { background: #dcebff; border-radius: 4px; }
 
 .exercise-actions { display: flex; align-items: center; gap: 13px; margin-top: 12px; }
 .exercise-check { flex: 0 0 auto; min-height: 38px; padding: 7px 14px; border-color: var(--blue); background: var(--blue); color: white; font-size: 14px; font-weight: 700; }

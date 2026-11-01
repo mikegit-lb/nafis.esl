@@ -13,6 +13,22 @@ function speedToggle() {
     : "";
 }
 
+// Kept so the browser cannot garbage-collect a speaking utterance (Chrome then never fires onend).
+let current = null;
+// Bumped whenever a partner session must end; sessions compare it to their own copy and do nothing when stale.
+let sessionToken = 0;
+
+// cancel() fires `error` on the interrupted utterance, so detach its callbacks first: an interrupted line never calls back.
+function silenceSpeech() {
+  if (current) current.onend = current.onerror = null;
+  window.speechSynthesis.cancel();
+}
+
+function endSpeechSession() {
+  sessionToken += 1;
+  if (canSpeak()) silenceSpeech();
+}
+
 function speakText(text, options) {
   if (!canSpeak()) return;
   const utterance = new SpeechSynthesisUtterance(text);
@@ -21,7 +37,8 @@ function speakText(text, options) {
   utterance.lang = "en-GB";
   utterance.rate = progress.get("slow", false) === true ? 0.7 : 1;
   if (options && options.onend) utterance.onend = utterance.onerror = options.onend;
-  window.speechSynthesis.cancel();
+  silenceSpeech();
+  current = utterance;
   window.speechSynthesis.speak(utterance);
 }
 
@@ -113,7 +130,7 @@ function startRecording(root) {
 }
 
 function stopAllActivity() {
-  if (canSpeak()) window.speechSynthesis.cancel();
+  endSpeechSession();
   endRecording(false);
   blobUrls.splice(0).forEach(function (url) { URL.revokeObjectURL(url); });
 }

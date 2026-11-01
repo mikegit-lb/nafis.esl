@@ -142,12 +142,66 @@ window.ExerciseTypes.speak = {
   }
 };
 
+// Partner session: the app speaks the other role's lines, the learner speaks their own.
+// A session is current only while its token equals sessionToken (speech.js); anything older does nothing.
+let partner = null;
+
+function partnerStatus(card, text, next, live) {
+  card.querySelector(".roleplay-status").textContent = text;
+  card.querySelector("[data-roleplay-next]").hidden = !next;
+  card.querySelector("[data-roleplay-stop]").hidden = !live;
+}
+
+function partnerClear(card) {
+  card.querySelectorAll(".roleplay-model li.is-playing").forEach(function (li) { li.classList.remove("is-playing"); });
+}
+
+function partnerEnd(card) {
+  endSpeechSession();
+  partner = null;
+  if (!card.querySelector("[data-roleplay-play]")) return;
+  partnerClear(card);
+  partnerStatus(card, "", false, false);
+}
+
+function partnerStep(session, index) {
+  const card = session.card;
+  if (session.token !== sessionToken || !card.isConnected) return;
+  clearTimeout(session.timer);
+  session.index = index;
+  partnerClear(card);
+  if (index >= session.ex.model.length) {
+    partnerStatus(card, "Role-play finished. Well done!", false, false);
+    partner = null;
+    return;
+  }
+  const line = session.ex.model[index];
+  if (line.speaker === session.mine) {
+    partnerStatus(card, "Your turn (" + session.mine + "): use your card. Press Next line when you have spoken.", true, true);
+    return;
+  }
+  partnerStatus(card, "Listen to " + line.speaker + "…", false, true);
+  card.querySelectorAll(".roleplay-model li")[index].classList.add("is-playing");
+  const advance = function () { partnerStep(session, index + 1); };
+  // shortcut: a platform with no voices never fires `end`, so move on after a generous guess; tune if real lines get cut off.
+  session.timer = setTimeout(advance, (400 + 90 * line.text.length) / (progress.get("slow", false) === true ? 0.7 : 1));
+  speakText(line.text, { onend: advance });
+}
+
 window.ExerciseTypes.roleplay = {
   unscored: true,
   practiceTotal: function () { return 1; },
   practisedCount: function (ex) { return progress.get(doneKey(ex.scenario), false) === true ? 1 : 0; },
 
   render: function (ex, key) {
+    const partnerControls = function () {
+      return canSpeak()
+        ? '<div class="roleplay-partner"><button class="speak-toggle" type="button" data-roleplay-play>Practise with the app</button>' +
+          '<button class="speak-toggle" type="button" data-roleplay-next hidden>Next line</button>' +
+          '<button class="speak-toggle" type="button" data-roleplay-stop hidden>Stop</button>' +
+          '<p class="roleplay-status" aria-live="polite"></p></div>'
+        : "";
+    };
     const card = function (letter, c) {
       return '<div class="roleplay-card" data-roleplay-card="' + letter + '"><h4>Role ' + letter + ': ' + escapeHtml(c.role) + '</h4><dl>' +
         c.rows.map(function (row) { return '<dt>' + escapeHtml(row[0]) + '</dt><dd>' + escapeHtml(row[1]) + '</dd>'; }).join("") +
@@ -162,7 +216,7 @@ window.ExerciseTypes.roleplay = {
         '<button class="speak-toggle" type="button" data-roleplay-role="A" aria-pressed="false">I am A</button>' +
         '<button class="speak-toggle" type="button" data-roleplay-role="B" aria-pressed="false">I am B</button></div>' +
       '<button class="speak-toggle" type="button" data-speak-toggle aria-expanded="false" aria-controls="roleplay-' + key + '-model">Show model dialogue</button>' +
-      '<ol class="roleplay-model" id="roleplay-' + key + '-model" hidden>' + lines + '</ol>' + recorderControls() +
+      '<ol class="roleplay-model" id="roleplay-' + key + '-model" hidden>' + lines + '</ol>' + partnerControls() + recorderControls() +
       '<label class="speak-check" for="roleplay-' + key + '-done"><input type="checkbox" id="roleplay-' + key + '-done" data-roleplay-done' + (progress.get(doneKey(ex.scenario), false) === true ? ' checked' : '') + '> Done: I practised this role-play</label>' +
       speakChecklist(ex, key);
   },
@@ -171,6 +225,7 @@ window.ExerciseTypes.roleplay = {
     const role = event.target.closest("[data-roleplay-role]");
     if (role) {
       const mine = role.dataset.roleplayRole;
+      partnerEnd(card);
       card.querySelectorAll("[data-roleplay-role]").forEach(function (b) { b.setAttribute("aria-pressed", String(b === role)); });
       card.querySelectorAll("[data-roleplay-card]").forEach(function (c) { c.classList.toggle("is-mine", c.dataset.roleplayCard === mine); });
       card.querySelectorAll("[data-speaker]").forEach(function (li) {
@@ -179,6 +234,27 @@ window.ExerciseTypes.roleplay = {
         if (tag) tag.remove();
         if (li.dataset.speaker === mine) li.insertAdjacentHTML("beforeend", ' <em class="roleplay-you">(you)</em>');
       });
+      return true;
+    }
+    if (event.target.closest("[data-roleplay-play]")) {
+      endSpeechSession();
+      const chosen = card.querySelector("[data-roleplay-role][aria-pressed='true']");
+      if (!chosen) {
+        partner = null;
+        partnerClear(card);
+        partnerStatus(card, "Choose your role first.", false, false);
+        return true;
+      }
+      partner = { card: card, ex: ex, mine: chosen.dataset.roleplayRole, token: sessionToken };
+      partnerStep(partner, 0);
+      return true;
+    }
+    if (event.target.closest("[data-roleplay-next]")) {
+      if (partner && partner.card === card) partnerStep(partner, partner.index + 1);
+      return true;
+    }
+    if (event.target.closest("[data-roleplay-stop]")) {
+      partnerEnd(card);
       return true;
     }
     const toggle = event.target.closest("[data-speak-toggle]");
