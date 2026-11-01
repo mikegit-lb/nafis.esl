@@ -490,7 +490,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { speaker: "A", text: "I like cycling more, but I sometimes play basketball. What do you do on Sundays?" },
           { speaker: "B", text: "I visit my cousins. I leave home at ten." },
           { speaker: "A", text: "We have a family lunch at one o'clock on Sundays, so I stay at home." },
-          { speaker: "B", text: "OK. So let us meet on Saturday at three. You can play with us, and then we can have a picnic." }
+          { speaker: "B", text: "OK. So let's meet on Saturday at three. You can play with us, and then we can have a picnic." }
         ],
         checklist: ["Talk about Saturday and Sunday with the simple present.", "Use adverbs of frequency such as usually and sometimes.", "Choose one activity and one time together."]
       },
@@ -552,7 +552,7 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           },
           {
             q: "Which place at home is good for studying, and why?",
-            model: "The kitchen table is a good place to study, because it's bright and my mother is near. I usually study there on weekdays, and my sister sometimes helps me with maths.",
+            model: "My desk in my bedroom is a good place to study, because it's quiet. I usually study there on weekdays, and my sister sometimes helps me with maths.",
             frames: ["... is a good place to study", "... because ...", "I usually ..."]
           },
           {

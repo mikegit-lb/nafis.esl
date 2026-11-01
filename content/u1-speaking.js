@@ -40,7 +40,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       ]
     },
     examTips: [
-      "Answer in a full sentence, then add one more detail: I'm from Izmir. It's a big city by the sea.",
+      "Answer in a full sentence, then add one more detail: I'm from Denizli. It's a city in the south-west of Türkiye.",
       "Do not stop after yes or no. Add a short reason or example.",
       "If you do not understand, say: Sorry, could you say that again? or Could you speak more slowly, please?",
       "If you forget a word, describe it: It's a place where tourists can take photos.",
@@ -1028,7 +1028,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "Why is a park a good place for students?",
-            model: "A park is a good place for students, because they can relax there after school. My school is next to a park, so we can play football at break.",
+            model: "A park is a good place for students, because they can relax there after school. My school is next to a park, so we can walk there after school.",
             frames: ["A park is a good place because ...", "Students can ...", "My school is next to ..."]
           },
           {
