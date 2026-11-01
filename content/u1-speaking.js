@@ -14,8 +14,38 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         "Can we play a game on the way to the station today?",
         "The nice cinema in the city centre is a great place to meet.",
         "About a week ago, Maria ate a banana on the sofa around noon."
+      ],
+      extras: [
+        { title: "Word stress", note: "Say the strong syllable louder and longer. O is a strong syllable and o is a weak one.", kind: "words", groups: [
+          { label: "Countries with the stress on the first syllable (Oo, Ooo)", words: ["Poland", "Norway", "Egypt", "Italy", "Germany", "Hungary", "Canada", "Mexico"] },
+          { label: "Countries with the stress on the second syllable (oO, oOoo)", words: ["Japan", "Brazil", "Peru", "Bulgaria"] },
+          { label: "Nationalities with the stress on the second syllable (oOo)", words: ["Italian", "Egyptian", "Korean", "Norwegian", "Hungarian", "Brazilian"] },
+          { label: "Tourist words with the stress on the first syllable (Oo)", words: ["castle", "palace", "tower", "tourist", "ancient", "sightseeing"] },
+          { label: "Tourist words with the stress on a later syllable (oO, oOo)", words: ["museum", "bazaar", "explore", "attraction", "historical"] }
+        ] },
+        { title: "Can and can't", note: "In the middle of a sentence can is weak, like /kən/. In a short answer it is strong, like /kæn/. Can't is always strong, like /kɑːnt/.", kind: "sentences", groups: [
+          { label: "Weak can in statements", sentences: ["I can speak English and a little German.", "She can swim, but she can't ski.", "Visitors can take photos in the park."] },
+          { label: "Strong can in short answers", sentences: ["Can you swim? Yes, I can.", "Can tourists visit the castle? Yes, they can."] },
+          { label: "Strong can't", sentences: ["I can't play the guitar.", "Tourists can't enter the tower at night.", "We can't go inside the mosque in shoes."] }
+        ] },
+        { title: "Sounds that are easy to mix up", note: "Listen to both words in each pair, then say them slowly.", kind: "pairs", groups: [
+          { label: "w and v", pairs: [["west", "vest"], ["wine", "vine"], ["wet", "vet"], ["worse", "verse"]] },
+          { label: "th /θ/ and s, t", pairs: [["think", "sink"], ["three", "tree"], ["thank", "tank"], ["thick", "sick"]] }
+        ] },
+        { title: "Question melody", note: "Let your voice go up at the end of a yes/no question and down at the end of a wh- question.", kind: "sentences", groups: [
+          { label: "Yes/no questions go up ↗", sentences: ["Can you swim?", "Are you from Türkiye?", "Is it a big city?", "Can tourists visit the castle?"] },
+          { label: "Wh- questions go down ↘", sentences: ["Where are you from?", "What languages can you speak?", "What can tourists do there?", "What is the capital of Italy?"] },
+          { label: "Lists: up, up, then down", sentences: ["You can see a castle, a museum and a bridge.", "I can speak Turkish, English and a little German."] }
+        ] }
       ]
     },
+    examTips: [
+      "Answer in a full sentence, then add one more detail: I'm from Izmir. It's a big city by the sea.",
+      "Do not stop after yes or no. Add a short reason or example.",
+      "If you do not understand, say: Sorry, could you say that again? or Could you speak more slowly, please?",
+      "If you forget a word, describe it: It's a place where tourists can take photos.",
+      "Speak at a steady speed and look at your partner. A clear answer is better than a fast one."
+    ],
     tasks: [
       {
         type: "speak",
@@ -969,6 +999,92 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           { speaker: "B", text: "You're welcome. Enjoy your day, Odett!" }
         ],
         checklist: ["Excuse me and a polite question", "What is worth seeing ...?", "You can ... / You cannot ...", "two ideas for tourists", "thanks and goodbye"]
+      },
+      {
+        type: "speak",
+        title: "Say more · Give a reason",
+        source: "Unit 1 · Speaking (exam practice)",
+        instruction: "Answer each question in two sentences: first an answer, then a reason with because. Use the frames to help you, then listen to the model answer.",
+        questions: [
+          {
+            q: "Which place in your town is good for tourists, and why?",
+            model: "Tourists can visit Pamukkale near my town, because the white terraces are beautiful. They can take photos there and walk around the ancient ruins at Hierapolis.",
+            frames: ["Tourists can visit ...", "... because ...", "They can ..."]
+          },
+          {
+            q: "Which language would you like to learn, and why?",
+            model: "I'd like to learn Japanese, because Japan is my favourite country. I can speak Turkish and English, and I can say a few words in German, but I can't speak Japanese yet.",
+            frames: ["I'd like to learn ...", "... because ...", "I can ..., but I can't ..."]
+          },
+          {
+            q: "Why is your school a good school?",
+            model: "My school is a good school because it's in the city centre, next to a park. The teachers are friendly, and students can play football and basketball at break.",
+            frames: ["My school is good because ...", "It's ... next to ...", "Students can ..."]
+          },
+          {
+            q: "Can you ski? Say why or why not.",
+            model: "No, I can't ski yet, because it's a new sport for me. But I can play football and basketball, and I'd like to learn to ski one day.",
+            frames: ["No, I can't ... because ...", "But I can ...", "I'd like to learn ..."]
+          },
+          {
+            q: "What is your favourite place at school, and why?",
+            model: "My favourite place is the library, because it's quiet and I can read my favourite books there. It's also a good place to do my homework.",
+            frames: ["My favourite place is ... because ...", "I can ... there.", "It's a good place to ..."]
+          },
+          {
+            q: "Which city in Türkiye would you like to visit, and why?",
+            model: "I'd like to visit Antalya, because it's by the sea. Tourists can take a boat trip, walk around the old town and take photos of the beautiful beaches.",
+            frames: ["I'd like to visit ... because ...", "Tourists can ...", "It's ..."]
+          },
+          {
+            q: "Which country is your favourite, and why?",
+            model: "My favourite country is Japan, because it's very interesting. Tourists can see ancient temples and modern cities there, and they can take beautiful photos.",
+            frames: ["My favourite country is ... because ...", "Tourists can see ...", "They can ..."]
+          },
+          {
+            q: "Who is a good friend in your class, and why?",
+            model: "Ahmet is a good friend, because he's funny and he's always kind to me. He can play the guitar, and he can teach me a song.",
+            frames: ["... is a good friend because ...", "He/She can ...", "He's/She's ..."]
+          }
+        ],
+        checklist: ["I gave an answer and a reason with because", "I used be or can/can't correctly", "I spoke in two clear sentences"]
+      },
+      {
+        type: "speak",
+        title: "Exam talk · One-minute talks",
+        source: "Unit 1 · Speaking (exam practice)",
+        instruction: "Plan for 30 seconds, then speak for one minute. Use the cue words in order, one after the other, and then listen to the model talk.",
+        questions: [
+          {
+            q: "Talk for one minute: introduce yourself and your town to a new exchange student.",
+            cues: ["your name, age and town", "the languages you can speak", "what visitors can see and do in your town", "one thing you like about it"],
+            seconds: 60,
+            model: "Hello, I'm Elif. I'm fifteen, and I live in Denizli, a city in the south-west of Türkiye. I can speak Turkish and English, and I can say a few words in German. Visitors can see Pamukkale, take photos of the white terraces and walk around the ancient ruins at Hierapolis. They can't wear shoes on the terraces, but they can walk there in bare feet. I like Denizli because the people are friendly. Welcome!",
+            frames: ["Hello, I'm ... I live in ...", "I can speak ...", "Visitors can ...", "I like ... because ..."]
+          },
+          {
+            q: "Talk for one minute: tell a visitor about your school and what you can do there.",
+            cues: ["the name and place of your school", "your favourite place there", "what you can do at school", "one thing you can't do"],
+            seconds: 60,
+            model: "Hello, I'm Elif, and I'm a student at Atatürk High School. It's in the city centre, next to a park. My favourite place at school is the library, because it's quiet. I can read there, and I can do my homework with my friend Zeynep. She's very good at maths! We can play football and basketball at break, but we can't use our phones in class. I like my school because the teachers and the students are friendly.",
+            frames: ["My school is ... It's next to ...", "My favourite place is ... because ...", "We can ...", "We can't ..."]
+          },
+          {
+            q: "Talk for one minute: tell a friend about a country you know and what tourists can do there.",
+            cues: ["the country and its capital", "the language people speak", "what tourists can see and do", "one thing tourists can't do"],
+            seconds: 60,
+            model: "My favourite country is Japan. The capital is Tokyo, and people speak Japanese there. I can't speak Japanese yet, but I'd like to learn it. Tourists can see ancient temples, visit big museums and take photos of Mount Fuji. They can ride fast trains, too. They can't wear shoes inside some temples, so it's a good idea to wear clean socks. I'd like to visit Japan one day because it's so interesting.",
+            frames: ["My favourite country is ... The capital is ...", "People speak ...", "Tourists can ...", "They can't ... but ..."]
+          },
+          {
+            q: "Talk for one minute: say what you can and can't do in your free time.",
+            cues: ["sports you can play", "something you can do for your family or friends", "something you can't do yet", "something you'd like to learn"],
+            seconds: 60,
+            model: "In my free time I can play football and basketball with my friends. I'm not a champion, but I'm quite good! I can also help my little brother with his homework, because he's only eleven. I can't ski yet, and I can't speak Japanese, but I'd like to learn both. Japan is my favourite country, and I'd like to visit it one day. What can you do in your free time?",
+            frames: ["I can play ... with ...", "I can also ...", "I can't ... yet.", "I'd like to learn ... because ..."]
+          }
+        ],
+        checklist: ["I covered all the cue words", "I used can and can't", "I spoke in full sentences", "I kept a steady speed"]
       }
     ]
   }

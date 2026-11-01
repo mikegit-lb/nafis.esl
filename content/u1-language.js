@@ -40,12 +40,12 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       {
         title: "Greetings and people",
         items: [
-          { term: "Szia", meaning: "a friendly hello in Hungarian", example: "Odett is from Hungary, so she can say Szia to a friend." },
-          { term: "안녕", meaning: "a friendly hello in Korean", example: "Min-su is Korean, and he can say 안녕 to his classmates." },
-          { term: "Здрасти", meaning: "a friendly hello in Bulgarian", example: "Ivan is Bulgarian, so he can say Здрасти at the school door." },
-          { term: "Hei", meaning: "a friendly hello in Norwegian", example: "Ingrid is from Norway, and she can say Hei to everyone." },
-          { term: "Merhaba", meaning: "hello in Turkish", example: "Mehmet is Turkish, so he can say Merhaba to a new student." },
-          { term: "Cześć", meaning: "hello (and goodbye) in Polish", example: "Alina is from Poland, and she can say Cześć to a friend." }
+          { term: "Szia", meaning: "a friendly hello in Hungarian", example: "Odett is from Hungary, so she can say Szia to a friend.", audio: false },
+          { term: "안녕", meaning: "a friendly hello in Korean", example: "Min-su is Korean, and he can say 안녕 to his classmates.", audio: false },
+          { term: "Здрасти", meaning: "a friendly hello in Bulgarian", example: "Ivan is Bulgarian, so he can say Здрасти at the school door.", audio: false },
+          { term: "Hei", meaning: "a friendly hello in Norwegian", example: "Ingrid is from Norway, and she can say Hei to everyone.", audio: false },
+          { term: "Merhaba", meaning: "hello in Turkish", example: "Mehmet is Turkish, so he can say Merhaba to a new student.", audio: false },
+          { term: "Cześć", meaning: "hello (and goodbye) in Polish", example: "Alina is from Poland, and she can say Cześć to a friend.", audio: false }
         ]
       },
       {
