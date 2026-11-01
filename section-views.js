@@ -51,10 +51,17 @@ window.SectionViews.vocabulary = function (unit, content) {
 const INTERVIEW_SECONDS = 30;
 let interview = null;
 
-function interviewStartHtml(again) {
-  return '<h3 class="panel-heading">Exam interview</h3><p>Six questions, ' + INTERVIEW_SECONDS + ' seconds to answer each.</p>' +
+// Same structure as viewPanel: heading, then the content inside .panel-body (which carries the inner padding).
+function interviewShell(body) {
+  return '<h3 class="panel-heading">Exam interview</h3><div class="panel-body">' + body + '</div>';
+}
+
+function interviewStartBody(again) {
+  return '<p>Six questions, ' + INTERVIEW_SECONDS + ' seconds to answer each.</p>' +
     '<button class="speak-toggle" type="button" data-interview-start>' + (again ? "Start again" : "Start interview") + '</button>';
 }
+
+function interviewStartHtml() { return interviewShell(interviewStartBody(false)); }
 
 function interviewLive(session) {
   return interview === session && session.panel.isConnected;
@@ -66,7 +73,7 @@ function interviewReset(panel) {
   stopTimed(panel);
   endSpeechSession();
   endRecording(false);
-  if (panel.isConnected) panel.innerHTML = interviewStartHtml(false);
+  if (panel.isConnected) panel.innerHTML = interviewStartHtml();
 }
 
 function interviewFinish(session) {
@@ -75,13 +82,13 @@ function interviewFinish(session) {
   releaseTimed(session.owner);
   endSpeechSession();
   endRecording(false);
-  panel.innerHTML = '<h3 class="panel-heading">Exam interview</h3><p class="interview-status" aria-live="polite">Interview finished. Well done!</p>' +
+  panel.innerHTML = interviewShell('<p class="interview-status" aria-live="polite">Interview finished. Well done!</p>' +
     '<ol class="interview-review">' + session.questions.map(function (item, i) {
       const id = "interview-model-" + i;
       return '<li><p class="interview-question">' + escapeHtml(item.q) + '</p>' +
         '<button class="speak-toggle" type="button" data-interview-toggle aria-expanded="false" aria-controls="' + id + '">Show model answer</button>' +
         '<div class="speak-model" id="' + id + '" hidden><p>' + escapeHtml(item.model) + '</p>' + listenButton(item.model, "model answer " + (i + 1)) + '</div></li>';
-    }).join("") + '</ol>' + interviewStartHtml(true);
+    }).join("") + '</ol>' + interviewStartBody(true));
 }
 
 function interviewStep(session, index) {
@@ -93,12 +100,12 @@ function interviewStep(session, index) {
   const panel = session.panel;
   const item = session.questions[index];
   const last = index === session.questions.length - 1;
-  panel.innerHTML = '<h3 class="panel-heading">Exam interview</h3><p class="interview-count">Question ' + (index + 1) + ' of ' + session.questions.length + '</p>' +
+  panel.innerHTML = interviewShell('<p class="interview-count">Question ' + (index + 1) + ' of ' + session.questions.length + '</p>' +
     '<p class="interview-question">' + escapeHtml(item.q) + '</p>' +
     '<p class="interview-status" aria-live="polite">' + (canSpeak() ? "Listen to the question…" : "") + '</p>' +
     '<p class="interview-clock">' + Core.formatClock(INTERVIEW_SECONDS) + '</p>' + recorderControls() +
     '<button class="speak-toggle" type="button" data-interview-next>' + (last ? "Finish interview" : "Next question") + '</button>' +
-    '<button class="speak-toggle" type="button" data-interview-stop>Stop</button>';
+    '<button class="speak-toggle" type="button" data-interview-stop>Stop</button>');
   let begun = false;
   // The answer clock starts when the question has been read (or at once without speech).
   const begin = function () {
@@ -161,7 +168,7 @@ window.SectionViews.speaking = function (unit, content) {
   // The interview needs a pool of at least four questions across the speak cards.
   const speakCards = tasks.filter(function (ex) { return ex.type === "speak"; });
   const interviewPanel = Core.pickInterview(speakCards, 6, "x").length >= 4
-    ? '<section class="lesson-panel interview" data-interview>' + interviewStartHtml(false) + '</section>'
+    ? '<section class="lesson-panel interview" data-interview>' + interviewStartHtml() + '</section>'
     : "";
   return '<div class="lesson-grid vocab-grid">' + viewPanel("pronunciation-title", "Pronunciation", speedToggle() + sounds + sentences) + '</div>' + privacy +
     interviewPanel + renderExercises(tasks, {
