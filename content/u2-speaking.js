@@ -13,8 +13,33 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         "Generally, I go to the gym and change my clothes there, and I have a lot of energy afterwards.",
         "My friend is ready early on weekdays, so we eat breakfast quickly and plan the day.",
         "Our happy cat has a black tail, and she is ready for her breakfast again."
+      ],
+      extras: [
+        { title: "The -s ending", note: "With he, she and it the verb ends in -s or -es. The ending sounds different after different sounds.", kind: "words", groups: [
+          { label: "-s says /s/ after p, t, k and f sounds", words: ["walks", "takes", "likes", "eats", "meets", "helps", "starts", "stops"] },
+          { label: "-s says /z/ after a vowel or a voiced sound", words: ["plays", "goes", "reads", "leaves", "learns", "studies", "does", "has"] },
+          { label: "-es says /ɪz/ after s, z, sh, ch and j sounds", words: ["washes", "watches", "finishes", "relaxes", "changes", "brushes", "teaches", "misses"] }
+        ] },
+        { title: "The th sounds", note: "Put your tongue gently between your teeth.", kind: "words", groups: [
+          { label: "th /ð/ is voiced, as in mother", words: ["the", "they", "then", "mother", "father", "brother", "together", "weather"] },
+          { label: "th /θ/ is voiceless, as in Thursday", words: ["Thursday", "three", "thirty", "month", "think", "birthday"] }
+        ] },
+        { title: "Numbers that sound alike", note: "In -teen numbers the strong syllable is at the end. In -ty numbers it is at the start.", kind: "pairs", groups: [
+          { label: "-teen and -ty", pairs: [["thirteen", "thirty"], ["fourteen", "forty"], ["fifteen", "fifty"], ["sixteen", "sixty"]] }
+        ] },
+        { title: "Times and routines aloud", note: "Say the important words a little louder and longer: the time, the adverb and the verb.", kind: "sentences", groups: [
+          { label: "Say the times clearly", sentences: ["I wake up at half past six.", "School starts at a quarter to eight.", "We have lunch at twelve thirty.", "He goes to bed at ten fifteen."] },
+          { label: "Stress the important words", sentences: ["She usually walks to school.", "I never forget my lunch box.", "Does he study in the evening?"] }
+        ] }
       ]
     },
+    examTips: [
+      "Use adverbs of frequency and times: I usually get up at half past six.",
+      "Remember the -s with he, she and it: She walks to school. He does his homework.",
+      "Link your ideas: First, … Then … After that … Finally …",
+      "Add a reason with because: I like Saturdays because I can relax.",
+      "If you forget a word, describe it, or say: Sorry, could you say that again?"
+    ],
     tasks: [
       {
         type: "speak",
@@ -488,6 +513,92 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           { speaker: "A", text: "We have dinner together every evening." }
         ],
         checklist: ["Use the -s ending with mother, father, sister and brother.", "The host asks at least three questions about the visitor's family.", "Use a time expression such as on Sundays or every evening."]
+      },
+      {
+        type: "speak",
+        title: "Say more · Give a reason",
+        source: "Unit 2 · Speaking (exam practice)",
+        instruction: "Answer each question in two sentences: first an answer, then a reason with because. Use the frames to help you, then listen to the model answer.",
+        questions: [
+          {
+            q: "Why do you get up so early on school days?",
+            model: "I get up at quarter to seven on school days, because I meet my friends at half past seven. I usually have breakfast with my mother and my little brother before I leave.",
+            frames: ["I get up at ... on school days", "... because ...", "I usually ..."]
+          },
+          {
+            q: "Which day of the week do you like best, and why?",
+            model: "I like Saturdays best, because I can get up late and relax. I usually get up at about nine, and then I play football with my friends in the park.",
+            frames: ["I like ... best", "... because ...", "I usually ..."]
+          },
+          {
+            q: "Which school subject is useful for your future, and why?",
+            model: "I think English is useful for my future, because I'd like to talk to people from other countries. I study it every week, and I often watch videos in English.",
+            frames: ["I think ... is useful", "... because ...", "I often ..."]
+          },
+          {
+            q: "Which hobby do you do every week, and why do you like it?",
+            model: "I play the guitar three times a week, because it helps me to relax after school. I usually practise in the evening, and my sister sometimes plays the piano with me.",
+            frames: ["I ... times a week", "... because ...", "I usually ..."]
+          },
+          {
+            q: "Which good habit helps you at school, and why?",
+            model: "I always do my homework before dinner, because I'm less tired then. I never leave it until the evening, and I rarely forget my books.",
+            frames: ["I always ...", "... because ...", "I rarely ..."]
+          },
+          {
+            q: "Who do you like spending your free time with, and why?",
+            model: "I like spending free time with my friend Mert, because he lives in the next street. We usually play football in the park, and sometimes we play computer games at his house.",
+            frames: ["I like spending free time with ...", "... because ...", "We usually ..."]
+          },
+          {
+            q: "Which place at home is good for studying, and why?",
+            model: "My desk in my room is a good place to study, because it's quiet and I keep my books there. I usually study for about two hours, and my sister sometimes helps me with maths.",
+            frames: ["... is a good place to study", "... because ...", "I usually ..."]
+          },
+          {
+            q: "Why do you like walking to school with your friends?",
+            model: "I walk to school with two friends, because it's more fun than going alone. We meet at the corner at half past seven, and we usually talk about football or music.",
+            frames: ["I walk to school with ...", "... because ...", "We usually ..."]
+          }
+        ],
+        checklist: ["I gave an answer and a reason with because", "I used the simple present with -s correctly", "I spoke in two clear sentences"]
+      },
+      {
+        type: "speak",
+        title: "Exam talk · One-minute talks",
+        source: "Unit 2 · Speaking (exam practice)",
+        instruction: "Plan for 30 seconds, then speak for one minute. Use the cue words in order, one after the other, and then listen to the model talk.",
+        questions: [
+          {
+            q: "Talk for one minute about your Saturday.",
+            cues: ["when you get up", "what you usually do in the morning", "what you do in the afternoon", "why you like Saturdays"],
+            seconds: 60,
+            model: "On Saturdays I get up at about nine because there's no school. I have a long breakfast with my family. Then I usually meet my friends, and we play football in the park. In the afternoon I play the guitar or draw. I never do homework in the morning, but I always do it on Sunday evening. I like Saturdays because I can relax.",
+            frames: ["On Saturdays I … at …", "Then I usually …", "In the afternoon I …", "I like … because …"]
+          },
+          {
+            q: "Talk for one minute about a friend or classmate and what he or she does.",
+            cues: ["who your friend is and where he or she lives", "what he or she does after school", "what he or she does at the weekend", "why you like him or her"],
+            seconds: 60,
+            model: "My best friend is Mert. He lives in the next street, so we meet at the corner at half past seven and walk to school together. He usually plays football after school, and he sometimes helps me with English. He never forgets his homework, and he's rarely late! On Saturdays he plays computer games or visits his grandmother. I like Mert because he's funny and kind.",
+            frames: ["My best friend is … He lives in …", "He usually …", "On Saturdays he …", "I like … because …"]
+          },
+          {
+            q: "Talk for one minute about your study habits.",
+            cues: ["when you do your homework", "how long and where you study", "what you do when a task is hard", "when you never study"],
+            seconds: 60,
+            model: "I usually do my homework after school, at about four o'clock. I study for about two hours on school days, and I always start with the difficult subject. I study at my desk in my room because it's quiet. When it's hard, my sister helps me with maths, or I ask Mrs Aksoy the next day. I never study on Saturday mornings, because I want to relax.",
+            frames: ["I usually do my homework …", "I study for … at …", "I study at … because …", "When it's hard, …"]
+          },
+          {
+            q: "Talk for one minute about what you do to stay healthy.",
+            cues: ["what you eat and drink", "how you stay active", "how much you sleep", "why staying healthy is important"],
+            seconds: 60,
+            model: "I try to stay healthy every day. I always have breakfast with my family, and I drink about four glasses of water a day. I play football with my friends on Saturdays, and I walk to school every day. I go to bed at about ten, so I get nearly nine hours of sleep. I rarely eat fast food, but I sometimes have sweets. Staying healthy is important because I feel better in class.",
+            frames: ["I always … and I drink …", "I play … and I walk …", "I go to bed at …, so …", "Staying healthy is important because …"]
+          }
+        ],
+        checklist: ["I covered all the cue words", "I used adverbs of frequency and time expressions", "I used the -s ending with he, she and it", "I kept a steady speed"]
       }
     ]
   }
