@@ -948,3 +948,13 @@ a { color: inherit; }
 .speak-model p { margin: 0 0 6px; }
 .speak-model .listen-btn { margin: 0; }
 .roleplay-model li .listen-btn { margin-left: 6px; }
+.recorder { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 8px; }
+.recorder button { min-height: 38px; padding: 6px 12px; border: 1px solid #c3d3e5; border-radius: 6px; background: white; color: var(--blue-deep); font: inherit; font-size: 13px; font-weight: 650; cursor: pointer; }
+.recorder button:hover { border-color: var(--blue); background: #f1f7ff; }
+.recorder button:focus-visible { outline: 3px solid #74b6ff; outline-offset: 2px; }
+.recorder [hidden] { display: none; }
+.rec-audio { max-width: 100%; }
+.rec-status { flex: 1 1 100%; min-height: 1.4em; margin: 0; font-size: 13px; color: #64768c; }
+.recorder.is-recording .rec-status { color: #a32020; font-weight: 700; }
+.recorder.is-recording .rec-status::before { content: "● "; }
+.rec-privacy { margin: 0 0 12px; color: #64768c; font-size: 13px; }

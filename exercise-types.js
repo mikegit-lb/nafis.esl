@@ -119,7 +119,7 @@ window.ExerciseTypes.speak = {
         '<p class="speak-q">' + (i + 1) + '. ' + escapeHtml(item.q) + '</p>' + listenButton(item.q, "question " + (i + 1)) + frames +
         '<button class="speak-toggle" type="button" data-speak-toggle aria-expanded="false" aria-controls="' + id + '-model">Show model answer</button>' +
         '<div class="speak-model" id="' + id + '-model" hidden><p>' + escapeHtml(item.model) + '</p>' + listenButton(item.model, "model answer " + (i + 1)) + '</div>' +
-        '<label class="speak-check" for="' + id + '-said"><input type="checkbox" id="' + id + '-said" data-speak-said' + (progress.get(saidKey(item.q), false) === true ? ' checked' : '') + '> I said it aloud</label>' +
+        '<label class="speak-check" for="' + id + '-said"><input type="checkbox" id="' + id + '-said" data-speak-said' + (progress.get(saidKey(item.q), false) === true ? ' checked' : '') + '> I said it aloud</label>' + recorderControls() +
       '</div>';
     }).join("");
     return (ex.instruction ? '<p class="exercise-prompt">' + escapeHtml(ex.instruction) + '</p>' : "") + items + speakChecklist(ex, key);
@@ -162,7 +162,7 @@ window.ExerciseTypes.roleplay = {
         '<button class="speak-toggle" type="button" data-roleplay-role="A" aria-pressed="false">I am A</button>' +
         '<button class="speak-toggle" type="button" data-roleplay-role="B" aria-pressed="false">I am B</button></div>' +
       '<button class="speak-toggle" type="button" data-speak-toggle aria-expanded="false" aria-controls="roleplay-' + key + '-model">Show model dialogue</button>' +
-      '<ol class="roleplay-model" id="roleplay-' + key + '-model" hidden>' + lines + '</ol>' +
+      '<ol class="roleplay-model" id="roleplay-' + key + '-model" hidden>' + lines + '</ol>' + recorderControls() +
       '<label class="speak-check" for="roleplay-' + key + '-done"><input type="checkbox" id="roleplay-' + key + '-done" data-roleplay-done' + (progress.get(doneKey(ex.scenario), false) === true ? ' checked' : '') + '> Done: I practised this role-play</label>' +
       speakChecklist(ex, key);
   },

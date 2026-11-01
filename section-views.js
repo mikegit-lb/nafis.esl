@@ -62,9 +62,10 @@ window.SectionViews.speaking = function (unit, content) {
         return '<li><span>' + escapeHtml(sentence) + '</span>' + listenButton(sentence) + '</li>';
       }).join("") + '</ol>'
     : "";
+  const privacy = recorderControls() !== "" ? '<p class="rec-privacy">Recordings stay on your device and are not saved.</p>' : "";
   const tasks = currentActivities();
   // currentActivities() is the list the card index lookups in app.js use, so it must be what we render.
-  return '<div class="lesson-grid vocab-grid">' + viewPanel("pronunciation-title", "Pronunciation", speedToggle() + sounds + sentences) + '</div>' +
+  return '<div class="lesson-grid vocab-grid">' + viewPanel("pronunciation-title", "Pronunciation", speedToggle() + sounds + sentences) + '</div>' + privacy +
     renderExercises(tasks, {
       heading: "Speaking practice",
       countText: tasks.length + (tasks.length === 1 ? " SPEAKING TASK" : " SPEAKING TASKS")
