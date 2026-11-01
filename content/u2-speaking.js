@@ -522,17 +522,17 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         questions: [
           {
             q: "Why do you get up so early on school days?",
-            model: "I get up at quarter to seven on school days, because I meet my friends at half past seven. I usually have breakfast with my mother and my little brother before I leave.",
+            model: "I get up at a quarter to seven on school days, because I meet my friends at half past seven. I usually have breakfast with my mother and my little brother before I leave.",
             frames: ["I get up at ... on school days", "... because ...", "I usually ..."]
           },
           {
             q: "Which day of the week do you like best, and why?",
-            model: "I like Saturdays best, because I can get up late and relax. I usually get up at about nine, and then I play football with my friends in the park.",
+            model: "I like Fridays best, because the last lesson ends at three and the weekend starts. I usually walk home with my friends, and we sometimes buy a snack.",
             frames: ["I like ... best", "... because ...", "I usually ..."]
           },
           {
             q: "Which school subject is useful for your future, and why?",
-            model: "I think English is useful for my future, because I'd like to talk to people from other countries. I study it every week, and I often watch videos in English.",
+            model: "I think English is useful for my future, because I want to talk to people from other countries. I study it every week, and I often watch videos in English.",
             frames: ["I think ... is useful", "... because ...", "I often ..."]
           },
           {
@@ -542,22 +542,22 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
           },
           {
             q: "Which good habit helps you at school, and why?",
-            model: "I always do my homework before dinner, because I'm less tired then. I never leave it until the evening, and I rarely forget my books.",
+            model: "I always pack my bag the night before, because then I'm never in a hurry in the morning. I never forget my books, and I rarely arrive late.",
             frames: ["I always ...", "... because ...", "I rarely ..."]
           },
           {
             q: "Who do you like spending your free time with, and why?",
-            model: "I like spending free time with my friend Mert, because he lives in the next street. We usually play football in the park, and sometimes we play computer games at his house.",
+            model: "I like spending free time with my friend Mert, because we both love music. We usually play football in the park, and sometimes we play computer games at his house.",
             frames: ["I like spending free time with ...", "... because ...", "We usually ..."]
           },
           {
             q: "Which place at home is good for studying, and why?",
-            model: "My desk in my room is a good place to study, because it's quiet and I keep my books there. I usually study for about two hours, and my sister sometimes helps me with maths.",
+            model: "The kitchen table is a good place to study, because it's bright and my mother is near. I usually study there on weekdays, and my sister sometimes helps me with maths.",
             frames: ["... is a good place to study", "... because ...", "I usually ..."]
           },
           {
             q: "Why do you like walking to school with your friends?",
-            model: "I walk to school with two friends, because it's more fun than going alone. We meet at the corner at half past seven, and we usually talk about football or music.",
+            model: "I walk to school with two friends, because it's more fun than going alone. We usually talk about football or music on the way, and we're rarely late.",
             frames: ["I walk to school with ...", "... because ...", "We usually ..."]
           }
         ],
@@ -587,14 +587,14 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
             q: "Talk for one minute about your study habits.",
             cues: ["when you do your homework", "how long and where you study", "what you do when a task is hard", "when you never study"],
             seconds: 60,
-            model: "I usually do my homework after school, at about four o'clock. I study for about two hours on school days, and I always start with the difficult subject. I study at my desk in my room because it's quiet. When it's hard, my sister helps me with maths, or I ask Mrs Aksoy the next day. I never study on Saturday mornings, because I want to relax.",
+            model: "I usually do my homework after school, at about five o'clock. I study for about two hours on school days, and I always start with the difficult subject. I study at my desk in my room because it's quiet. When it's hard, my sister helps me with maths, or I ask Mrs Aksoy the next day. I never study on Saturday mornings, because I want to relax.",
             frames: ["I usually do my homework …", "I study for … at …", "I study at … because …", "When it's hard, …"]
           },
           {
             q: "Talk for one minute about what you do to stay healthy.",
             cues: ["what you eat and drink", "how you stay active", "how much you sleep", "why staying healthy is important"],
             seconds: 60,
-            model: "I try to stay healthy every day. I always have breakfast with my family, and I drink about four glasses of water a day. I play football with my friends on Saturdays, and I walk to school every day. I go to bed at about ten, so I get nearly nine hours of sleep. I rarely eat fast food, but I sometimes have sweets. Staying healthy is important because I feel better in class.",
+            model: "I try to stay healthy every day. I always have breakfast with my family, and I drink about four glasses of water a day. I play football with my friends on Saturdays, and I walk to school every day. I go to bed at about half past ten, so I get about eight hours of sleep. I rarely eat fast food, but I sometimes have sweets. Staying healthy is important because I feel better in class.",
             frames: ["I always … and I drink …", "I play … and I walk …", "I go to bed at …, so …", "Staying healthy is important because …"]
           }
         ],
