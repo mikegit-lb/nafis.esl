@@ -50,26 +50,36 @@ function releaseStream(stream) {
   stream.getTracks().forEach(function (track) { track.stop(); });
 }
 
+function releaseRecording(rec) {
+  clearTimeout(rec.timer);
+  if (!rec.released) { rec.released = true; releaseStream(rec.stream); }
+}
+
+// Runs once per take, whether the learner stopped it or the recorder stopped by itself (unplugged, grant revoked).
+function finishRecording(rec) {
+  if (rec.done) return;
+  rec.done = true;
+  if (recording === rec) recording = null;
+  releaseRecording(rec);
+  if (!rec.keep || !rec.root.isConnected) return;
+  if (!rec.chunks.length) { recorderShow(rec.root, false, RECORD_ERROR); return; }
+  const audio = rec.root.querySelector(".rec-audio");
+  const url = URL.createObjectURL(new Blob(rec.chunks, { type: rec.recorder.mimeType || "audio/webm" }));
+  blobUrls.push(url);
+  audio.src = url;
+  audio.hidden = false;
+  recorderShow(rec.root, false, "Listen to your recording, then play the model answer and compare.");
+}
+
 // keep = show the take to the learner; otherwise the section is going away, so just discard it.
 function endRecording(keep) {
   recordToken += 1;
   const rec = recording;
   recording = null;
   if (!rec) return;
-  clearTimeout(rec.timer);
-  rec.recorder.ondataavailable = keep ? function (event) { if (event.data && event.data.size) rec.chunks.push(event.data); } : null;
-  rec.recorder.onstop = keep ? function () {
-    if (!rec.root.isConnected) return;
-    if (!rec.chunks.length) { recorderShow(rec.root, false, RECORD_ERROR); return; }
-    const audio = rec.root.querySelector(".rec-audio");
-    const url = URL.createObjectURL(new Blob(rec.chunks, { type: rec.recorder.mimeType || "audio/webm" }));
-    blobUrls.push(url);
-    audio.src = url;
-    audio.hidden = false;
-    recorderShow(rec.root, false, "Listen to your recording, then play the model answer and compare.");
-  } : null;
-  try { rec.recorder.stop(); } catch (error) { /* already inactive */ }
-  releaseStream(rec.stream);
+  rec.keep = keep;
+  try { rec.recorder.stop(); } catch (error) { finishRecording(rec); /* already inactive: no stop event will come */ }
+  releaseRecording(rec);
 }
 
 function startRecording(root) {
@@ -92,7 +102,10 @@ function startRecording(root) {
       releaseStream(stream);
       throw error;
     }
-    recording = { root: root, stream: stream, recorder: recorder, chunks: [], timer: setTimeout(function () { endRecording(true); }, RECORD_LIMIT_MS) };
+    const rec = { root: root, stream: stream, recorder: recorder, chunks: [], keep: true, timer: setTimeout(function () { endRecording(true); }, RECORD_LIMIT_MS) };
+    recorder.ondataavailable = function (event) { if (event.data && event.data.size) rec.chunks.push(event.data); };
+    recorder.onstop = function () { finishRecording(rec); };
+    recording = rec;
     recorderShow(root, true, "Recording… press Stop when you finish.");
   }).catch(function () {
     if (token === recordToken) recorderShow(root, false, RECORD_ERROR);
