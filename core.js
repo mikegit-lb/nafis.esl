@@ -91,14 +91,16 @@
 
   function leitnerUpdate(state, knew, today) {
     if (!knew) return { box: 1, due: today };
-    const box = Math.min((state ? state.box : 0) + 1, 5);
+    const box = Math.min((Number(state && state.box) || 0) + 1, 5);
     return { box: box, due: today + LEITNER_DAYS[box] };
   }
 
   function dueCards(ids, states, today, limit) {
-    const due = ids.filter(function (id) { return !states[id] || states[id].due <= today; });
-    const seen = due.filter(function (id) { return states[id]; }).sort(function (a, b) { return states[a].box - states[b].box; });
-    return seen.concat(due.filter(function (id) { return !states[id]; })).slice(0, limit);
+    // Corrupt saved state (non-object, NaN box or due) counts as never seen.
+    const ok = function (id) { return states[id] && typeof states[id] === "object" && isFinite(states[id].due); };
+    const due = ids.filter(function (id) { return !ok(id) || states[id].due <= today; });
+    const seen = due.filter(ok).sort(function (a, b) { return (Number(states[a].box) || 0) - (Number(states[b].box) || 0); });
+    return seen.concat(due.filter(function (id) { return !ok(id); })).slice(0, limit);
   }
 
   function pickInterview(cards, n, seed) {

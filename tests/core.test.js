@@ -112,6 +112,10 @@ test("leitnerUpdate and dueCards", () => {
   assert.deepEqual(Core.dueCards(["a", "b", "c", "d", "e"], states, 100, 2), ["c", "b"]);
   assert.deepEqual(Core.dueCards(["d"], states, 100, 5), []);
   assert.deepEqual(Core.dueCards([], {}, 100, 5), []);
+  // corrupt saved state is treated as unseen and never throws
+  assert.deepEqual(Core.leitnerUpdate({ box: "x" }, true, 100), { box: 1, due: 101 });
+  assert.deepEqual(Core.leitnerUpdate("junk", true, 100), { box: 1, due: 101 });
+  assert.deepEqual(Core.dueCards(["a", "b", "c"], { a: "junk", b: { box: NaN, due: NaN }, c: { box: 2, due: null } }, 100, 5), ["c", "a", "b"]);
 });
 
 test("pickInterview takes distinct questions across cards, skips talk items, is deterministic", () => {

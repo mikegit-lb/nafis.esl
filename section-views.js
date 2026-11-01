@@ -37,13 +37,16 @@ window.SectionViews.vocabulary = function (unit, content) {
   const groups = (v.groups || []).map(function (group, index) {
     return viewPanel("vocab-group-" + index, group.title,
       '<dl class="vocab-list">' + group.items.map(function (item) {
-        return '<div class="vocab-item"><dt>' + escapeHtml(item.term) + '</dt>' +
+        const listen = function (text) { return item.audio === false ? "" : listenButton(text); };
+        return '<div class="vocab-item"><dt>' + escapeHtml(item.term) + listen(item.term) + '</dt>' +
           '<dd>' + escapeHtml(item.meaning) + '</dd>' +
-          '<dd class="vocab-example">' + escapeHtml(item.example) + '</dd></div>';
+          '<dd class="vocab-example">' + escapeHtml(item.example) + listen(item.example) + '</dd></div>';
       }).join("") + '</dl>');
   }).join("");
   // currentActivities() is the list the card index lookups in app.js use, so it must be what we render.
-  return '<div class="lesson-grid vocab-grid">' + groups + '</div>' +
+  const all = [];
+  (v.groups || []).forEach(function (group) { all.push.apply(all, group.items); });
+  return speedToggle() + Flashcards.html(activeUnit, all) + '<div class="lesson-grid vocab-grid">' + groups + '</div>' +
     renderExercises(currentActivities(), { heading: "Vocabulary practice" });
 };
 
