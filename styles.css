@@ -941,3 +941,10 @@ a { color: inherit; }
 .listen-chip { min-height: 34px; font-family: inherit; cursor: pointer; }
 .listen-btn:focus-visible, .listen-chip:focus-visible { outline: 3px solid #74b6ff; outline-offset: 2px; }
 .sound-group + .sound-label { margin-top: 16px; }
+.speed-toggle { min-height: 38px; margin: 0 0 12px; padding: 6px 12px; border: 1px solid #c3d3e5; border-radius: 6px; background: white; color: var(--blue-deep); font: inherit; font-size: 13px; font-weight: 650; cursor: pointer; }
+.speed-toggle:hover, .speed-toggle[aria-pressed="true"] { border-color: var(--blue); background: #f1f7ff; }
+.speed-toggle:focus-visible { outline: 3px solid #74b6ff; outline-offset: 2px; }
+.speak-item > .listen-btn { margin: 0 0 8px; }
+.speak-model p { margin: 0 0 6px; }
+.speak-model .listen-btn { margin: 0; }
+.roleplay-model li .listen-btn { margin-left: 6px; }

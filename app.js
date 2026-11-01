@@ -279,6 +279,7 @@ const units = [
 const nav = document.getElementById("unit-nav");
 const lesson = document.getElementById("lesson");
 const themesToggle = document.getElementById("themes-toggle");
+const progress = Core.createStore((function () { try { return window.localStorage; } catch (e) { return null; } })());
 let activeUnit = 0;
 let activeSection = "grammar";
 
@@ -392,6 +393,7 @@ function renderSectionBody(unit, content) {
 }
 
 function renderLesson() {
+  stopAllActivity();
   const unit = units[activeUnit];
   const content = unitContentFor(activeUnit);
   const sections = Core.getSections(content);

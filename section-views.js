@@ -13,14 +13,6 @@ function viewPanel(id, title, body) {
   '</section>';
 }
 
-function canSpeak() { return "speechSynthesis" in window; }
-
-function listenButton(text, label) {
-  return canSpeak()
-    ? '<button class="listen-btn" type="button" data-listen="' + escapeHtml(text) + '" aria-label="Listen: ' + escapeHtml(label || text) + '">Listen</button>'
-    : "";
-}
-
 window.SectionViews.overview = function (unit, content) {
   const o = content.overview || {};
   const leadIn = o.leadIn || {};
@@ -72,19 +64,9 @@ window.SectionViews.speaking = function (unit, content) {
     : "";
   const tasks = currentActivities();
   // currentActivities() is the list the card index lookups in app.js use, so it must be what we render.
-  return '<div class="lesson-grid vocab-grid">' + viewPanel("pronunciation-title", "Pronunciation", sounds + sentences) + '</div>' +
+  return '<div class="lesson-grid vocab-grid">' + viewPanel("pronunciation-title", "Pronunciation", speedToggle() + sounds + sentences) + '</div>' +
     renderExercises(tasks, {
       heading: "Speaking practice",
       countText: tasks.length + (tasks.length === 1 ? " SPEAKING TASK" : " SPEAKING TASKS")
     });
 };
-
-// Delegated so it survives re-renders; speechSynthesis is absent in some browsers, in which case no button is rendered.
-document.addEventListener("click", function (event) {
-  const button = event.target.closest("[data-listen]");
-  if (!button || !canSpeak()) return;
-  const utterance = new SpeechSynthesisUtterance(button.dataset.listen);
-  utterance.lang = "en-GB";
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utterance);
-});

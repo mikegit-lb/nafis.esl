@@ -109,9 +109,9 @@ window.ExerciseTypes.speak = {
           }).join("") + '</ul>'
         : "";
       return '<div class="speak-item">' +
-        '<p class="speak-q">' + (i + 1) + '. ' + escapeHtml(item.q) + '</p>' + frames +
+        '<p class="speak-q">' + (i + 1) + '. ' + escapeHtml(item.q) + '</p>' + listenButton(item.q, "question " + (i + 1)) + frames +
         '<button class="speak-toggle" type="button" data-speak-toggle aria-expanded="false" aria-controls="' + id + '-model">Show model answer</button>' +
-        '<p class="speak-model" id="' + id + '-model" hidden>' + escapeHtml(item.model) + '</p>' +
+        '<div class="speak-model" id="' + id + '-model" hidden><p>' + escapeHtml(item.model) + '</p>' + listenButton(item.model, "model answer " + (i + 1)) + '</div>' +
         '<label class="speak-check" for="' + id + '-said"><input type="checkbox" id="' + id + '-said" data-speak-said> I said it aloud</label>' +
       '</div>';
     }).join("");
@@ -143,7 +143,7 @@ window.ExerciseTypes.roleplay = {
       '</dl></div>';
     };
     const lines = ex.model.map(function (line) {
-      return '<li data-speaker="' + escapeHtml(line.speaker) + '"><strong>' + escapeHtml(line.speaker) + ':</strong> ' + escapeHtml(line.text) + '</li>';
+      return '<li data-speaker="' + escapeHtml(line.speaker) + '"><strong>' + escapeHtml(line.speaker) + ':</strong> ' + escapeHtml(line.text) + ' ' + listenButton(line.text, line.speaker + " line") + '</li>';
     }).join("");
     return '<p class="exercise-prompt">' + escapeHtml(ex.scenario) + '</p>' +
       '<div class="roleplay-cards">' + card("A", ex.cardA) + card("B", ex.cardB) + '</div>' +
