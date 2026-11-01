@@ -153,26 +153,33 @@ function wordChip(word) {
     : '<span class="quiz-chip">' + escapeHtml(word) + '</span>';
 }
 
+// Content may be malformed: anything that is not an array counts as empty, and null entries are skipped.
+function listOf(value) {
+  return Array.isArray(value) ? value.filter(function (item) { return item !== null && item !== undefined; }) : [];
+}
+
 function soundGroupsHtml(groups) {
-  return (groups || []).map(function (sound) {
+  return listOf(groups).map(function (sound) {
     return '<div class="sound-group"><h4 class="sound-label">' + escapeHtml(sound.label) + '</h4>' +
-      '<ul class="word-chips">' + sound.words.map(function (word) {
+      '<ul class="word-chips">' + listOf(sound.words).map(function (word) {
         return '<li>' + wordChip(word) + '</li>';
       }).join("") + '</ul></div>';
   }).join("");
 }
 
 function pronExtraHtml(extra) {
-  const groups = (extra.groups || []).map(function (group) {
+  const groups = listOf(extra.groups).map(function (group) {
+    if (typeof group !== "object") return "";
     if (extra.kind === "words") return soundGroupsHtml([group]);
     const label = '<h4 class="sound-label">' + escapeHtml(group.label) + '</h4>';
     if (extra.kind === "sentences") {
-      return '<div class="sound-group">' + label + '<ol class="read-aloud">' + (group.sentences || []).map(function (sentence) {
+      return '<div class="sound-group">' + label + '<ol class="read-aloud">' + listOf(group.sentences).map(function (sentence) {
         return '<li><span>' + escapeHtml(sentence) + '</span>' + listenButton(sentence) + '</li>';
       }).join("") + '</ol></div>';
     }
     if (extra.kind === "pairs") {
-      return '<div class="sound-group">' + label + '<ul class="pair-list">' + (group.pairs || []).map(function (pair) {
+      return '<div class="sound-group">' + label + '<ul class="pair-list">' + listOf(group.pairs).map(function (pair) {
+        if (!Array.isArray(pair) || pair.length < 2) return "";
         return '<li>' + wordChip(pair[0]) + '<span aria-hidden="true">↔</span>' + wordChip(pair[1]) + '</li>';
       }).join("") + '</ul></div>';
     }
@@ -198,11 +205,13 @@ window.SectionViews.speaking = function (unit, content) {
   const interviewPanel = Core.pickInterview(speakCards, 6, "x").length >= 4
     ? '<section class="lesson-panel interview" data-interview>' + interviewStartHtml() + '</section>'
     : "";
-  const extras = (p.extras || []).map(function (extra, i) {
-    return viewPanel("pron-extra-" + i, extra.title, pronExtraHtml(extra));
+  const extras = (Array.isArray(p.extras) ? p.extras : []).map(function (extra, i) {
+    if (!extra || typeof extra !== "object") return "";
+    const body = pronExtraHtml(extra);
+    return body ? viewPanel("pron-extra-" + i, extra.title, body) : "";
   }).join("");
-  const examTips = (speaking.examTips || []).length
-    ? viewPanel("exam-tips-title", "Exam tips", '<ol class="view-list">' + speaking.examTips.map(function (tip) {
+  const examTips = listOf(speaking.examTips).length
+    ? viewPanel("exam-tips-title", "Exam tips", '<ol class="view-list">' + listOf(speaking.examTips).map(function (tip) {
         return '<li>' + escapeHtml(tip) + '</li>';
       }).join("") + '</ol>')
     : "";
