@@ -89,6 +89,10 @@ function setPractised(card, done, total) {
   card.querySelector(".exercise-question-count").textContent = done + "/" + total + " practised";
 }
 
+// Progress keys use the content text, so reordering cards keeps what the learner has done.
+function saidKey(q) { return "said|u" + (activeUnit + 1) + "|" + q; }
+function doneKey(scenario) { return "done|u" + (activeUnit + 1) + "|" + scenario; }
+
 function toggleReveal(button, target, showText, hideText) {
   const open = target.hidden;
   target.hidden = !open;
@@ -99,6 +103,9 @@ function toggleReveal(button, target, showText, hideText) {
 window.ExerciseTypes.speak = {
   unscored: true,
   practiceTotal: function (ex) { return ex.questions.length; },
+  practisedCount: function (ex) {
+    return ex.questions.filter(function (item) { return progress.get(saidKey(item.q), false) === true; }).length;
+  },
 
   render: function (ex, key) {
     const items = ex.questions.map(function (item, i) {
@@ -112,7 +119,7 @@ window.ExerciseTypes.speak = {
         '<p class="speak-q">' + (i + 1) + '. ' + escapeHtml(item.q) + '</p>' + listenButton(item.q, "question " + (i + 1)) + frames +
         '<button class="speak-toggle" type="button" data-speak-toggle aria-expanded="false" aria-controls="' + id + '-model">Show model answer</button>' +
         '<div class="speak-model" id="' + id + '-model" hidden><p>' + escapeHtml(item.model) + '</p>' + listenButton(item.model, "model answer " + (i + 1)) + '</div>' +
-        '<label class="speak-check" for="' + id + '-said"><input type="checkbox" id="' + id + '-said" data-speak-said> I said it aloud</label>' +
+        '<label class="speak-check" for="' + id + '-said"><input type="checkbox" id="' + id + '-said" data-speak-said' + (progress.get(saidKey(item.q), false) === true ? ' checked' : '') + '> I said it aloud</label>' +
       '</div>';
     }).join("");
     return (ex.instruction ? '<p class="exercise-prompt">' + escapeHtml(ex.instruction) + '</p>' : "") + items + speakChecklist(ex, key);
@@ -124,7 +131,10 @@ window.ExerciseTypes.speak = {
       toggleReveal(toggle, document.getElementById(toggle.getAttribute("aria-controls")), "Show model answer", "Hide model answer");
       return true;
     }
-    if (event.target.closest("[data-speak-said]")) {
+    const said = event.target.closest("[data-speak-said]");
+    if (said) {
+      const q = ex.questions[Array.prototype.indexOf.call(card.querySelectorAll("[data-speak-said]"), said)].q;
+      if (said.checked) progress.set(saidKey(q), true); else progress.remove(saidKey(q));
       setPractised(card, card.querySelectorAll("[data-speak-said]:checked").length, ex.questions.length);
       return true;
     }
@@ -135,6 +145,7 @@ window.ExerciseTypes.speak = {
 window.ExerciseTypes.roleplay = {
   unscored: true,
   practiceTotal: function () { return 1; },
+  practisedCount: function (ex) { return progress.get(doneKey(ex.scenario), false) === true ? 1 : 0; },
 
   render: function (ex, key) {
     const card = function (letter, c) {
@@ -152,11 +163,11 @@ window.ExerciseTypes.roleplay = {
         '<button class="speak-toggle" type="button" data-roleplay-role="B" aria-pressed="false">I am B</button></div>' +
       '<button class="speak-toggle" type="button" data-speak-toggle aria-expanded="false" aria-controls="roleplay-' + key + '-model">Show model dialogue</button>' +
       '<ol class="roleplay-model" id="roleplay-' + key + '-model" hidden>' + lines + '</ol>' +
-      '<label class="speak-check" for="roleplay-' + key + '-done"><input type="checkbox" id="roleplay-' + key + '-done" data-roleplay-done> Done: I practised this role-play</label>' +
+      '<label class="speak-check" for="roleplay-' + key + '-done"><input type="checkbox" id="roleplay-' + key + '-done" data-roleplay-done' + (progress.get(doneKey(ex.scenario), false) === true ? ' checked' : '') + '> Done: I practised this role-play</label>' +
       speakChecklist(ex, key);
   },
 
-  onClick: function (event, card) {
+  onClick: function (event, card, ex) {
     const role = event.target.closest("[data-roleplay-role]");
     if (role) {
       const mine = role.dataset.roleplayRole;
@@ -176,7 +187,9 @@ window.ExerciseTypes.roleplay = {
       return true;
     }
     if (event.target.closest("[data-roleplay-done]")) {
-      setPractised(card, card.querySelector("[data-roleplay-done]").checked ? 1 : 0, 1);
+      const done = card.querySelector("[data-roleplay-done]").checked;
+      if (done) progress.set(doneKey(ex.scenario), true); else progress.remove(doneKey(ex.scenario));
+      setPractised(card, done ? 1 : 0, 1);
       return true;
     }
     return false;
