@@ -147,16 +147,44 @@ document.addEventListener("click", function (event) {
   if (toggle) toggleReveal(toggle, document.getElementById(toggle.getAttribute("aria-controls")), "Show model answer", "Hide model answer");
 });
 
-window.SectionViews.speaking = function (unit, content) {
-  const p = (content.speaking || {}).pronunciation || {};
-  const sounds = (p.sounds || []).map(function (sound) {
+function wordChip(word) {
+  return canSpeak()
+    ? '<button class="quiz-chip listen-chip" type="button" data-listen="' + escapeHtml(word) + '" aria-label="Listen: ' + escapeHtml(word) + '">' + escapeHtml(word) + '</button>'
+    : '<span class="quiz-chip">' + escapeHtml(word) + '</span>';
+}
+
+function soundGroupsHtml(groups) {
+  return (groups || []).map(function (sound) {
     return '<div class="sound-group"><h4 class="sound-label">' + escapeHtml(sound.label) + '</h4>' +
       '<ul class="word-chips">' + sound.words.map(function (word) {
-        return '<li>' + (canSpeak()
-          ? '<button class="quiz-chip listen-chip" type="button" data-listen="' + escapeHtml(word) + '" aria-label="Listen: ' + escapeHtml(word) + '">' + escapeHtml(word) + '</button>'
-          : '<span class="quiz-chip">' + escapeHtml(word) + '</span>') + '</li>';
+        return '<li>' + wordChip(word) + '</li>';
       }).join("") + '</ul></div>';
   }).join("");
+}
+
+function pronExtraHtml(extra) {
+  const groups = (extra.groups || []).map(function (group) {
+    if (extra.kind === "words") return soundGroupsHtml([group]);
+    const label = '<h4 class="sound-label">' + escapeHtml(group.label) + '</h4>';
+    if (extra.kind === "sentences") {
+      return '<div class="sound-group">' + label + '<ol class="read-aloud">' + (group.sentences || []).map(function (sentence) {
+        return '<li><span>' + escapeHtml(sentence) + '</span>' + listenButton(sentence) + '</li>';
+      }).join("") + '</ol></div>';
+    }
+    if (extra.kind === "pairs") {
+      return '<div class="sound-group">' + label + '<ul class="pair-list">' + (group.pairs || []).map(function (pair) {
+        return '<li>' + wordChip(pair[0]) + '<span aria-hidden="true">↔</span>' + wordChip(pair[1]) + '</li>';
+      }).join("") + '</ul></div>';
+    }
+    return "";
+  }).join("");
+  return (extra.note ? '<p class="pron-note">' + escapeHtml(extra.note) + '</p>' : "") + groups;
+}
+
+window.SectionViews.speaking = function (unit, content) {
+  const speaking = content.speaking || {};
+  const p = speaking.pronunciation || {};
+  const sounds = soundGroupsHtml(p.sounds);
   const sentences = (p.sentences || []).length
     ? '<h4 class="sound-label">Read aloud</h4><ol class="read-aloud">' + p.sentences.map(function (sentence) {
         return '<li><span>' + escapeHtml(sentence) + '</span>' + listenButton(sentence) + '</li>';
@@ -170,7 +198,15 @@ window.SectionViews.speaking = function (unit, content) {
   const interviewPanel = Core.pickInterview(speakCards, 6, "x").length >= 4
     ? '<section class="lesson-panel interview" data-interview>' + interviewStartHtml() + '</section>'
     : "";
-  return '<div class="lesson-grid vocab-grid">' + viewPanel("pronunciation-title", "Pronunciation", speedToggle() + sounds + sentences) + '</div>' + privacy +
+  const extras = (p.extras || []).map(function (extra, i) {
+    return viewPanel("pron-extra-" + i, extra.title, pronExtraHtml(extra));
+  }).join("");
+  const examTips = (speaking.examTips || []).length
+    ? viewPanel("exam-tips-title", "Exam tips", '<ol class="view-list">' + speaking.examTips.map(function (tip) {
+        return '<li>' + escapeHtml(tip) + '</li>';
+      }).join("") + '</ol>')
+    : "";
+  return '<div class="lesson-grid vocab-grid">' + viewPanel("pronunciation-title", "Pronunciation", speedToggle() + sounds + sentences) + extras + examTips + '</div>' + privacy +
     interviewPanel + renderExercises(tasks, {
       heading: "Speaking practice",
       countText: tasks.length + (tasks.length === 1 ? " SPEAKING TASK" : " SPEAKING TASKS")
