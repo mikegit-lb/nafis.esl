@@ -1,5 +1,5 @@
 // Text-to-speech helpers. `progress` (the shared store) is created in app.js and only used at call time.
-function canSpeak() { return "speechSynthesis" in window; }
+function canSpeak() { return "speechSynthesis" in window && "SpeechSynthesisUtterance" in window; }
 
 function listenButton(text, label) {
   return canSpeak()
@@ -57,10 +57,14 @@ function recorderControls() {
 
 function recorderShow(root, live, message) {
   if (!root.isConnected) return;
+  const had = root.contains(document.activeElement);
   root.classList.toggle("is-recording", live);
   root.querySelector("[data-rec-start]").hidden = live;
   root.querySelector("[data-rec-stop]").hidden = !live;
   root.querySelector(".rec-status").textContent = message;
+  // The focused button just became hidden: keep keyboard focus on the one that replaced it.
+  const next = root.querySelector(live ? "[data-rec-stop]" : "[data-rec-start]");
+  if (had && next) next.focus();
 }
 
 function releaseStream(stream) {

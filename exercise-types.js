@@ -105,7 +105,7 @@ const TALK_PLAN_SECONDS = 30;
 
 function talkBlock(item) {
   if (!item.cues || !item.cues.length) return "";
-  const seconds = item.seconds || 60;
+  const seconds = Number(item.seconds) || 60;
   return '<ul class="talk-cues">' + item.cues.map(function (cue) { return '<li>' + escapeHtml(cue) + '</li>'; }).join("") + '</ul>' +
     '<div class="talk" data-seconds="' + seconds + '"><span class="talk-phase" aria-live="polite">Ready</span> <span class="talk-clock">' + Core.formatClock(TALK_PLAN_SECONDS) + '</span>' +
     '<div class="talk-buttons"><button class="speak-toggle" type="button" data-talk-plan>Plan (' + TALK_PLAN_SECONDS + ' s)</button>' +
@@ -148,7 +148,7 @@ window.ExerciseTypes.speak = {
         '<p class="speak-q">' + (i + 1) + '. ' + escapeHtml(item.q) + '</p>' + listenButton(item.q, "question " + (i + 1)) + talkBlock(item) + frames +
         '<button class="speak-toggle" type="button" data-speak-toggle aria-expanded="false" aria-controls="' + id + '-model">Show model answer</button>' +
         '<div class="speak-model" id="' + id + '-model" hidden><p>' + escapeHtml(item.model) + '</p>' + listenButton(item.model, "model answer " + (i + 1)) + '</div>' +
-        '<label class="speak-check" for="' + id + '-said"><input type="checkbox" id="' + id + '-said" data-speak-said' + (progress.get(saidKey(item.q), false) === true ? ' checked' : '') + '> I said it aloud</label>' + recorderControls() +
+        '<label class="speak-check" for="' + id + '-said"><input type="checkbox" id="' + id + '-said" data-speak-said' + (progress.get(saidKey(item.q), false) === true ? ' checked' : '') + '> I said it aloud</label>' + (item.cues && item.cues.length ? "" : recorderControls()) +
       '</div>';
     }).join("");
     return (ex.instruction ? '<p class="exercise-prompt">' + escapeHtml(ex.instruction) + '</p>' : "") + items + speakChecklist(ex, key);
@@ -182,9 +182,15 @@ window.ExerciseTypes.speak = {
 let partner = null;
 
 function partnerStatus(card, text, next, live) {
-  card.querySelector(".roleplay-status").textContent = text;
-  card.querySelector("[data-roleplay-next]").hidden = !next;
+  const statusP = card.querySelector(".roleplay-status");
+  const nextBtn = card.querySelector("[data-roleplay-next]");
+  const active = document.activeElement;
+  const had = card.contains(active) && active.matches("[data-roleplay-next], [data-roleplay-stop], [data-roleplay-play]");
+  statusP.textContent = text;
+  nextBtn.hidden = !next;
   card.querySelector("[data-roleplay-stop]").hidden = !live;
+  // The focused button may have just been hidden: move focus to what the learner needs next.
+  if (had) (next ? nextBtn : text ? statusP : card.querySelector("[data-roleplay-play]")).focus();
 }
 
 function partnerClear(card) {
@@ -234,7 +240,7 @@ window.ExerciseTypes.roleplay = {
         ? '<div class="roleplay-partner"><button class="speak-toggle" type="button" data-roleplay-play>Practise with the app</button>' +
           '<button class="speak-toggle" type="button" data-roleplay-next hidden>Next line</button>' +
           '<button class="speak-toggle" type="button" data-roleplay-stop hidden>Stop</button>' +
-          '<p class="roleplay-status" aria-live="polite"></p></div>'
+          '<p class="roleplay-status" tabindex="-1" aria-live="polite"></p></div>'
         : "";
     };
     const card = function (letter, c) {
@@ -242,8 +248,8 @@ window.ExerciseTypes.roleplay = {
         c.rows.map(function (row) { return '<dt>' + escapeHtml(row[0]) + '</dt><dd>' + escapeHtml(row[1]) + '</dd>'; }).join("") +
       '</dl></div>';
     };
-    const lines = ex.model.map(function (line) {
-      return '<li data-speaker="' + escapeHtml(line.speaker) + '"><strong>' + escapeHtml(line.speaker) + ':</strong> ' + escapeHtml(line.text) + ' ' + listenButton(line.text, line.speaker + " line") + '</li>';
+    const lines = ex.model.map(function (line, i) {
+      return '<li data-speaker="' + escapeHtml(line.speaker) + '"><strong>' + escapeHtml(line.speaker) + ':</strong> ' + escapeHtml(line.text) + ' ' + listenButton(line.text, line.speaker + " line " + (i + 1)) + '</li>';
     }).join("");
     return '<p class="exercise-prompt">' + escapeHtml(ex.scenario) + '</p>' +
       '<div class="roleplay-cards">' + card("A", ex.cardA) + card("B", ex.cardB) + '</div>' +
@@ -267,11 +273,12 @@ window.ExerciseTypes.roleplay = {
         li.classList.toggle("is-mine", li.dataset.speaker === mine);
         const tag = li.querySelector(".roleplay-you");
         if (tag) tag.remove();
-        if (li.dataset.speaker === mine) li.insertAdjacentHTML("beforeend", ' <em class="roleplay-you">(you)</em>');
+        if (li.dataset.speaker === mine) li.querySelector("strong").insertAdjacentHTML("afterend", ' <em class="roleplay-you">(you)</em>');
       });
       return true;
     }
     if (event.target.closest("[data-roleplay-play]")) {
+      if (partner && partner.card !== card) partnerEnd(partner.card);
       endSpeechSession();
       const chosen = card.querySelector("[data-roleplay-role][aria-pressed='true']");
       if (!chosen) {

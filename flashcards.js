@@ -38,7 +38,7 @@
   }
 
   function endHtml(unit, session) {
-    return '<p>You knew ' + session.knew + ' of ' + session.queue.length + ' words.</p>' +
+    return '<p>You knew ' + session.knew + ' of ' + session.queue.length + (session.queue.length === 1 ? ' word.' : ' words.') + '</p>' +
       (dueItems(unit, 1).length ? '<button class="speak-toggle" type="button" data-fc-more>Review more</button>' : "");
   }
 
@@ -46,8 +46,7 @@
     const unit = root.getAttribute("data-unit");
     const session = root.fcSession;
     root.innerHTML = !session ? idleHtml(unit) : session.i >= session.queue.length ? endHtml(unit, session) : cardHtml(session);
-    const first = root.querySelector("button");
-    if (first && session) first.focus();
+    if (session) (root.querySelector("[data-fc-knew]") || root.querySelector("button") || root).focus();
   }
 
   function start(root) {
@@ -81,7 +80,7 @@
     html: function (unitIndex, items) {
       decks[unitIndex] = items || [];
       return viewPanel("vocab-review", "Word review",
-        '<div data-flashcards data-unit="' + escapeHtml(String(unitIndex)) + '">' + idleHtml(unitIndex) + '</div>');
+        '<div data-flashcards tabindex="-1" aria-live="polite" data-unit="' + escapeHtml(String(unitIndex)) + '">' + idleHtml(unitIndex) + '</div>');
     }
   };
 })();

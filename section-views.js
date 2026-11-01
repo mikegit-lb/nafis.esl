@@ -56,7 +56,7 @@ let interview = null;
 
 // Same structure as viewPanel: heading, then the content inside .panel-body (which carries the inner padding).
 function interviewShell(body) {
-  return '<h3 class="panel-heading">Exam interview</h3><div class="panel-body">' + body + '</div>';
+  return '<h3 class="panel-heading" id="interview-title">Exam interview</h3><div class="panel-body">' + body + '</div>';
 }
 
 function interviewStartBody(again) {
@@ -85,13 +85,14 @@ function interviewFinish(session) {
   releaseTimed(session.owner);
   endSpeechSession();
   endRecording(false);
-  panel.innerHTML = interviewShell('<p class="interview-status" aria-live="polite">Interview finished. Well done!</p>' +
+  panel.innerHTML = interviewShell('<p class="interview-status" tabindex="-1" aria-live="polite">Interview finished. Well done!</p>' +
     '<ol class="interview-review">' + session.questions.map(function (item, i) {
       const id = "interview-model-" + i;
       return '<li><p class="interview-question">' + escapeHtml(item.q) + '</p>' +
         '<button class="speak-toggle" type="button" data-interview-toggle aria-expanded="false" aria-controls="' + id + '">Show model answer</button>' +
         '<div class="speak-model" id="' + id + '" hidden><p>' + escapeHtml(item.model) + '</p>' + listenButton(item.model, "model answer " + (i + 1)) + '</div></li>';
     }).join("") + '</ol>' + interviewStartBody(true));
+  panel.querySelector(".interview-status").focus();
 }
 
 function interviewStep(session, index) {
@@ -104,11 +105,12 @@ function interviewStep(session, index) {
   const item = session.questions[index];
   const last = index === session.questions.length - 1;
   panel.innerHTML = interviewShell('<p class="interview-count">Question ' + (index + 1) + ' of ' + session.questions.length + '</p>' +
-    '<p class="interview-question">' + escapeHtml(item.q) + '</p>' +
+    '<p class="interview-question" tabindex="-1">' + escapeHtml(item.q) + '</p>' +
     '<p class="interview-status" aria-live="polite">' + (canSpeak() ? "Listen to the question…" : "") + '</p>' +
     '<p class="interview-clock">' + Core.formatClock(INTERVIEW_SECONDS) + '</p>' + recorderControls() +
     '<button class="speak-toggle" type="button" data-interview-next>' + (last ? "Finish interview" : "Next question") + '</button>' +
     '<button class="speak-toggle" type="button" data-interview-stop>Stop</button>');
+  panel.querySelector(".interview-question").focus();
   let begun = false;
   // The answer clock starts when the question has been read (or at once without speech).
   const begin = function () {
@@ -130,6 +132,7 @@ function interviewStart(panel) {
   const cards = currentActivities().filter(function (ex) { return ex.type === "speak"; });
   const questions = Core.pickInterview(cards, 6, String(Date.now()));
   if (!questions.length) return;
+  if (partner) partnerEnd(partner.card);
   endSpeechSession();
   const session = { panel: panel, questions: questions, index: 0, timer: null, owner: null };
   session.owner = claimTimed(panel, function () { if (interview === session) interviewReset(panel); });
@@ -141,7 +144,7 @@ document.addEventListener("click", function (event) {
   const panel = event.target.closest("[data-interview]");
   if (!panel) return;
   if (event.target.closest("[data-interview-start]")) { interviewStart(panel); return; }
-  if (event.target.closest("[data-interview-stop]")) { interviewReset(panel); return; }
+  if (event.target.closest("[data-interview-stop]")) { interviewReset(panel); panel.querySelector("[data-interview-start]").focus(); return; }
   if (event.target.closest("[data-interview-next]")) {
     if (interview && interview.panel === panel) interviewStep(interview, interview.index + 1);
     return;
@@ -206,7 +209,7 @@ window.SectionViews.speaking = function (unit, content) {
   // The interview needs a pool of at least four questions across the speak cards.
   const speakCards = tasks.filter(function (ex) { return ex.type === "speak"; });
   const interviewPanel = Core.pickInterview(speakCards, 6, "x").length >= 4
-    ? '<section class="lesson-panel interview" data-interview>' + interviewStartHtml() + '</section>'
+    ? '<section class="lesson-panel interview" data-interview aria-labelledby="interview-title">' + interviewStartHtml() + '</section>'
     : "";
   const extras = (Array.isArray(p.extras) ? p.extras : []).map(function (extra, i) {
     if (!extra || typeof extra !== "object") return "";
