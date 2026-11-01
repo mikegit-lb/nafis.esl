@@ -95,7 +95,8 @@ function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
     const rp = tasks.filter(function (a) { return a.type === "roleplay"; }).length;
     assert.ok(rp >= 4, label + " speaking needs >=4 roleplay cards, has " + rp);
     speak.forEach(function (a, i) {
-      assert.ok(list(a.questions).length >= 6, label + " speaking speak card #" + (i + 1) + " '" + a.title + "' needs >=6 questions, has " + list(a.questions).length);
+      const min = list(a.questions).every(function (q) { return q && q.cues; }) ? 4 : 6;
+      assert.ok(list(a.questions).length >= min, label + " speaking speak card #" + (i + 1) + " '" + a.title + "' needs >=" + min + " questions, has " + list(a.questions).length);
     });
     tasks.forEach(function (a) {
       assert.ok(a.source, label + " speaking card '" + a.title + "' is missing source");
@@ -103,6 +104,67 @@ function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
         assert.ok(q.q && q.model, label + " speaking card '" + a.title + "' has a question without q/model: " + JSON.stringify(q.q));
       });
     });
+  });
+
+  test("unit " + n + " speaking upgrades", function () {
+    const u = unitOf(n), sp = u.speaking || {}, p = sp.pronunciation || {}, extras = list(p.extras);
+    const speak = acts(u, "speaking").filter(function (a) { return a.type === "speak"; });
+    assert.ok(extras.length >= 4, label + " pronunciation.extras needs >=4, has " + extras.length);
+    extras.forEach(function (x, i) {
+      const where = label + " pronunciation.extras #" + (i + 1) + " '" + (x && x.title) + "'";
+      assert.ok(x && str(x.title), where + " needs a non-empty title");
+      assert.ok(x.note === undefined || str(x.note), where + " note must be a non-empty string");
+      assert.ok(["words", "sentences", "pairs"].indexOf(x.kind) >= 0, where + " kind must be words, sentences or pairs, has " + x.kind);
+      assert.ok(filled(x.groups), where + " needs a non-empty groups array");
+      list(x.groups).forEach(function (g, gi) {
+        const gw = where + " group #" + (gi + 1);
+        const items = list(g && g[x.kind]), min = x.kind === "sentences" ? 2 : 3;
+        assert.ok(g && str(g.label), gw + " needs a non-empty label");
+        assert.ok(items.length >= min, gw + " '" + (g && g.label) + "' " + x.kind + " needs >=" + min + " entries, has " + items.length);
+        items.forEach(function (e, ei) {
+          if (x.kind === "pairs") assert.ok(Array.isArray(e) && e.length === 2 && str(e[0]) && str(e[1]) && e[0] !== e[1], gw + " pair #" + (ei + 1) + " must be two different non-empty strings: " + JSON.stringify(e));
+          else assert.ok(str(e), gw + " " + x.kind + " entry #" + (ei + 1) + " must be a non-empty string");
+        });
+      });
+    });
+    const tips = list(sp.examTips);
+    assert.ok(tips.length >= 5, label + " speaking.examTips needs >=5, has " + tips.length);
+    tips.forEach(function (t, i) { assert.ok(str(t), label + " speaking.examTips #" + (i + 1) + " must be a non-empty string"); });
+    const more = speak.filter(function (a) { return /^Say more · /.test(a.title); });
+    assert.ok(more.length >= 1, label + " speaking needs >=1 'Say more · ' card, has " + more.length);
+    more.forEach(function (a) {
+      assert.ok(list(a.questions).length >= 8, label + " card '" + a.title + "' needs >=8 questions, has " + list(a.questions).length);
+      list(a.questions).forEach(function (q, i) {
+        assert.ok(q && /\bbecause\b/i.test(q.model), label + " card '" + a.title + "' question #" + (i + 1) + " model must contain 'because': " + JSON.stringify(q && q.model));
+      });
+    });
+    const talk = speak.filter(function (a) { return filled(a.questions) && a.questions.every(function (q) { return q && q.cues; }); });
+    assert.ok(talk.length >= 1, label + " speaking needs >=1 talk card (every question has cues), has " + talk.length);
+    talk.forEach(function (a) {
+      assert.ok(list(a.questions).length >= 4, label + " card '" + a.title + "' needs >=4 questions, has " + list(a.questions).length);
+      list(a.questions).forEach(function (q, i) {
+        const where = label + " card '" + a.title + "' question #" + (i + 1);
+        assert.ok(Array.isArray(q.cues) && q.cues.length >= 3 && q.cues.length <= 4 && q.cues.every(str), where + " cues must be 3-4 non-empty strings: " + JSON.stringify(q.cues));
+        assert.ok(Number.isInteger(q.seconds) && q.seconds >= 30 && q.seconds <= 90, where + " seconds must be an integer 30-90, has " + q.seconds);
+        const w = words(q.model);
+        assert.ok(w >= 45 && w <= 110, where + " model has " + w + " words (need 45-110)");
+      });
+    });
+  });
+
+  test("unit " + n + " spoken English", function () {
+    const FULL_NOT = /\b(?:do|does|did|is|are|was|were|has|have|would|could|should) not\b|\bcannot\b|\bwill not\b/i;
+    const FULL_BE = /\b(?:I am|you are|we are|they are|he is|she is|it is|there is|that is)\s+[A-Za-z0-9]/i;
+    const fails = [];
+    acts(unitOf(n), "speaking").forEach(function (a) {
+      const spoken = [];
+      if (a.type === "speak") list(a.questions).forEach(function (q, i) { spoken.push(["question #" + (i + 1), q && q.model]); });
+      if (a.type === "roleplay") list(a.model).forEach(function (l, i) { spoken.push(["line #" + (i + 1), l && l.text]); });
+      spoken.forEach(function (s) {
+        if (typeof s[1] === "string" && (FULL_NOT.test(s[1]) || FULL_BE.test(s[1]))) fails.push(label + " card '" + a.title + "' " + s[0] + ": " + s[1]);
+      });
+    });
+    assert.deepEqual(fails, [], "models must use contractions:\n  " + fails.join("\n  "));
   });
 
   test("unit " + n + " grammar", function () {
@@ -140,6 +202,21 @@ function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
     });
     checkSizes(label, "reading", acts(u, "reading"));
   });
+});
+
+test("vocabulary audio flags", function () {
+  const fails = [];
+  [1, 2].forEach(function (n) {
+    list((unitOf(n).vocabulary || {}).groups).forEach(function (g) {
+      list(g.items).forEach(function (it) {
+        // shortcut: language list is hand-kept; extend it when new foreign words are added.
+        if (/\bin (Hungarian|Korean|Bulgarian|Norwegian|Turkish|Polish)\b/.test(it.meaning) && it.audio !== false) {
+          fails.push("Unit " + n + " vocabulary group '" + g.title + "' item '" + it.term + "' is a foreign word and needs audio: false");
+        }
+      });
+    });
+  });
+  assert.deepEqual(fails, [], "vocabulary audio flags:\n  " + fails.join("\n  "));
 });
 
 test("schema", function () {
