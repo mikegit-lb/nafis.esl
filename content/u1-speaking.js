@@ -19,9 +19,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
         { title: "Word stress", note: "Say the strong syllable louder and longer. O is a strong syllable and o is a weak one.", kind: "words", groups: [
           { label: "Countries with the stress on the first syllable (Oo, Ooo)", words: ["Poland", "Norway", "Egypt", "Italy", "Germany", "Hungary", "Canada", "Mexico"] },
           { label: "Countries with the stress on the second syllable (oO, oOoo)", words: ["Japan", "Brazil", "Peru", "Bulgaria"] },
-          { label: "Nationalities with the stress on the second syllable (oOo)", words: ["Italian", "Egyptian", "Korean", "Norwegian", "Hungarian", "Brazilian"] },
-          { label: "Tourist words with the stress on the first syllable (Oo)", words: ["castle", "palace", "tower", "tourist", "ancient", "sightseeing"] },
-          { label: "Tourist words with the stress on a later syllable (oO, oOo)", words: ["museum", "bazaar", "explore", "attraction", "historical"] }
+          { label: "Nationalities with the stress on the second syllable (oOo, oOoo)", words: ["Italian", "Egyptian", "Korean", "Norwegian", "Hungarian", "Brazilian"] },
+          { label: "Tourist words with the stress on the first syllable (Oo, Ooo)", words: ["castle", "palace", "tower", "tourist", "ancient", "sightseeing"] },
+          { label: "Tourist words with the stress on a later syllable (oO, oOo, oOoo)", words: ["museum", "bazaar", "explore", "attraction", "historical"] }
         ] },
         { title: "Can and can't", note: "In the middle of a sentence can is weak, like /kən/. In a short answer it is strong, like /kæn/. Can't is always strong, like /kɑːnt/.", kind: "sentences", groups: [
           { label: "Weak can in statements", sentences: ["I can speak English and a little German.", "She can swim, but she can't ski.", "Visitors can take photos in the park."] },
@@ -1012,9 +1012,9 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["Tourists can visit ...", "... because ...", "They can ..."]
           },
           {
-            q: "Which language would you like to learn, and why?",
-            model: "I'd like to learn Japanese, because Japan is my favourite country. I can speak Turkish and English, and I can say a few words in German, but I can't speak Japanese yet.",
-            frames: ["I'd like to learn ...", "... because ...", "I can ..., but I can't ..."]
+            q: "Which language is useful for tourists, and why?",
+            model: "English is a useful language for tourists, because many people speak it. I can speak English, and I can ask for help in a shop or a hotel.",
+            frames: ["... is useful because ...", "I can speak ...", "I can ask for ..."]
           },
           {
             q: "Why is your school a good school?",
@@ -1022,19 +1022,19 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             frames: ["My school is good because ...", "It's ... next to ...", "Students can ..."]
           },
           {
-            q: "Can you ski? Say why or why not.",
+            q: "Can you ski? Give a reason for your answer.",
             model: "No, I can't ski yet, because it's a new sport for me. But I can play football and basketball, and I'd like to learn to ski one day.",
             frames: ["No, I can't ... because ...", "But I can ...", "I'd like to learn ..."]
           },
           {
-            q: "What is your favourite place at school, and why?",
-            model: "My favourite place is the library, because it's quiet and I can read my favourite books there. It's also a good place to do my homework.",
-            frames: ["My favourite place is ... because ...", "I can ... there.", "It's a good place to ..."]
+            q: "Why is a park a good place for students?",
+            model: "A park is a good place for students, because they can relax there after school. My school is next to a park, so we can play football at break.",
+            frames: ["A park is a good place because ...", "Students can ...", "My school is next to ..."]
           },
           {
-            q: "Which city in Türkiye would you like to visit, and why?",
-            model: "I'd like to visit Antalya, because it's by the sea. Tourists can take a boat trip, walk around the old town and take photos of the beautiful beaches.",
-            frames: ["I'd like to visit ... because ...", "Tourists can ...", "It's ..."]
+            q: "Why is a museum a good place to visit?",
+            model: "A museum is a good place to visit, because visitors can learn about the past. They can see ancient objects there, and they can take photos of some of them.",
+            frames: ["A museum is a good place because ...", "Visitors can learn ...", "They can see ..."]
           },
           {
             q: "Which country is your favourite, and why?",
@@ -1067,20 +1067,20 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
             cues: ["the name and place of your school", "your favourite place there", "what you can do at school", "one thing you can't do"],
             seconds: 60,
             model: "Hello, I'm Elif, and I'm a student at Atatürk High School. It's in the city centre, next to a park. My favourite place at school is the library, because it's quiet. I can read there, and I can do my homework with my friend Zeynep. She's very good at maths! We can play football and basketball at break, but we can't use our phones in class. I like my school because the teachers and the students are friendly.",
-            frames: ["My school is ... It's next to ...", "My favourite place is ... because ...", "We can ...", "We can't ..."]
+            frames: ["I'm a student at ... It's in ..., next to ...", "My favourite place is ... because ...", "We can ...", "We can't ..."]
           },
           {
             q: "Talk for one minute: tell a friend about a country you know and what tourists can do there.",
             cues: ["the country and its capital", "the language people speak", "what tourists can see and do", "one thing tourists can't do"],
             seconds: 60,
             model: "My favourite country is Japan. The capital is Tokyo, and people speak Japanese there. I can't speak Japanese yet, but I'd like to learn it. Tourists can see ancient temples, visit big museums and take photos of Mount Fuji. They can ride fast trains, too. They can't wear shoes inside some temples, so it's a good idea to wear clean socks. I'd like to visit Japan one day because it's so interesting.",
-            frames: ["My favourite country is ... The capital is ...", "People speak ...", "Tourists can ...", "They can't ... but ..."]
+            frames: ["My favourite country is ... The capital is ...", "People speak ...", "Tourists can ...", "They can't ... so ..."]
           },
           {
             q: "Talk for one minute: say what you can and can't do in your free time.",
             cues: ["sports you can play", "something you can do for your family or friends", "something you can't do yet", "something you'd like to learn"],
             seconds: 60,
-            model: "In my free time I can play football and basketball with my friends. I'm not a champion, but I'm quite good! I can also help my little brother with his homework, because he's only eleven. I can't ski yet, and I can't speak Japanese, but I'd like to learn both. Japan is my favourite country, and I'd like to visit it one day. What can you do in your free time?",
+            model: "In my free time I can play football and basketball with my friends. I'm not a champion, but I'm quite good! I can also help my little brother with his homework, because he's only eleven. I can't ski yet, and I can't speak Japanese, but I'd like to learn both because they're interesting. Japan is my favourite country, and I'd like to visit it one day. What can you do in your free time?",
             frames: ["I can play ... with ...", "I can also ...", "I can't ... yet.", "I'd like to learn ... because ..."]
           }
         ],
