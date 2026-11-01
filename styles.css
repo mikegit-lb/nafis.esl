@@ -747,6 +747,10 @@ a { color: inherit; }
 .roleplay-card dd { margin: 0 0 6px; overflow-wrap: anywhere; }
 .roleplay-choose { display: flex; flex-wrap: wrap; align-items: center; gap: 0 8px; margin-bottom: 4px; font-size: 14px; font-weight: 700; }
 .roleplay-choose span { margin-right: 4px; }
+.roleplay-partner { margin: 8px 0; }
+.roleplay-partner [hidden] { display: none; }
+.roleplay-status { min-height: 1.4em; margin: 0 0 8px; font-size: 14px; color: var(--ink); }
+.roleplay-model li.is-playing { background: #dcebff; border-radius: 4px; }
 
 .exercise-actions { display: flex; align-items: center; gap: 13px; margin-top: 12px; }
 .exercise-check { flex: 0 0 auto; min-height: 38px; padding: 7px 14px; border-color: var(--blue); background: var(--blue); color: white; font-size: 14px; font-weight: 700; }
@@ -931,6 +935,10 @@ a { color: inherit; }
 .vocab-item dt { color: var(--blue-deep); font-weight: 800; }
 .vocab-item dd { margin: 2px 0 0; overflow-wrap: anywhere; }
 .vocab-example { color: var(--ink-soft); font-style: italic; font-size: 14px; }
+.vocab-item .listen-btn { margin-left: 8px; vertical-align: middle; }
+.fc-count { margin: 0 0 6px; color: var(--ink-soft); font-size: 13px; }
+.fc-meaning, .fc-term { margin: 0 0 8px; font-size: 20px; font-weight: 800; color: var(--blue-deep); overflow-wrap: anywhere; }
+.fc-answers { margin-top: 10px; }
 .sound-group + .sound-group { margin-top: 12px; }
 .sound-label { margin: 0 0 6px; color: #64768c; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
 .read-aloud { margin: 14px 0 0; padding-left: 22px; line-height: 1.5; }
@@ -941,3 +949,41 @@ a { color: inherit; }
 .listen-chip { min-height: 34px; font-family: inherit; cursor: pointer; }
 .listen-btn:focus-visible, .listen-chip:focus-visible { outline: 3px solid #74b6ff; outline-offset: 2px; }
 .sound-group + .sound-label { margin-top: 16px; }
+.sound-group .read-aloud { margin-top: 0; }
+.pron-note { margin: 0 0 12px; color: var(--ink-soft); line-height: 1.5; }
+.pair-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.pair-list li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.pair-list li > span[aria-hidden] { color: #64768c; }
+.speed-toggle { min-height: 38px; margin: 0 0 12px; padding: 6px 12px; border: 1px solid #c3d3e5; border-radius: 6px; background: white; color: var(--blue-deep); font: inherit; font-size: 13px; font-weight: 650; cursor: pointer; }
+.speed-toggle:hover, .speed-toggle[aria-pressed="true"] { border-color: var(--blue); background: #f1f7ff; }
+.speed-toggle:focus-visible { outline: 3px solid #74b6ff; outline-offset: 2px; }
+.speak-item > .listen-btn { margin: 0 0 8px; }
+.speak-model p { margin: 0 0 6px; }
+.speak-model .listen-btn { margin: 0; }
+.roleplay-model li .listen-btn { margin-left: 6px; }
+.recorder { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 8px; }
+.recorder button { min-height: 38px; padding: 6px 12px; border: 1px solid #c3d3e5; border-radius: 6px; background: white; color: var(--blue-deep); font: inherit; font-size: 13px; font-weight: 650; cursor: pointer; }
+.recorder button:hover { border-color: var(--blue); background: #f1f7ff; }
+.recorder button:focus-visible { outline: 3px solid #74b6ff; outline-offset: 2px; }
+.recorder [hidden] { display: none; }
+.rec-audio { max-width: 100%; }
+.rec-status { flex: 1 1 100%; min-height: 1.4em; margin: 0; font-size: 13px; color: #64768c; }
+.recorder.is-recording .rec-status { color: #a32020; font-weight: 700; }
+.recorder.is-recording .rec-status::before { content: "● "; }
+.rec-privacy { margin: 0 0 12px; color: #64768c; font-size: 13px; }
+
+.talk-cues { margin: 0 0 8px; padding-left: 20px; color: var(--ink-soft); font-size: 14px; line-height: 1.5; }
+.talk { margin: 0 0 8px; padding: 8px 12px; border: 1px solid #dbe5f0; border-radius: 7px; background: #f8fbff; }
+.talk-phase { font-size: 14px; font-weight: 700; color: var(--ink); }
+.talk-clock, .interview-clock { font-size: 22px; font-weight: 800; color: var(--blue-deep); font-variant-numeric: tabular-nums; }
+.talk-buttons { margin: 6px 0 0; }
+.talk [hidden], .interview [hidden] { display: none; }
+.interview { margin: 0 0 16px; }
+.interview .recorder { margin-bottom: 10px; }
+.interview-count { margin: 0 0 4px; color: #64768c; font-size: 13px; font-weight: 700; text-transform: uppercase; }
+.interview-question { margin: 0 0 8px; color: var(--ink); font-size: 18px; font-weight: 700; line-height: 1.45; overflow-wrap: anywhere; }
+.interview-status { min-height: 1.4em; margin: 0 0 4px; font-size: 14px; color: var(--ink); }
+.interview-clock { margin: 0 0 8px; }
+.interview-review { margin: 0 0 12px; padding-left: 22px; }
+.interview-review li { margin-bottom: 10px; }
+.interview-review .interview-question { font-size: 15px; }
