@@ -100,6 +100,10 @@ test("pickVoice prefers the exact language, then any English, else null", () => 
   assert.equal(Core.pickVoice([{ lang: "fr-FR", name: "F" }], "en-GB"), null);
   assert.equal(Core.pickVoice([], "en-GB"), null);
   assert.equal(Core.pickVoice(undefined, "en-GB"), null);
+  // network voices stop after ~15 s: prefer a local one within the same tier, never across tiers
+  assert.equal(Core.pickVoice([{ lang: "en-GB", name: "N", localService: false }, { lang: "en-GB", name: "L", localService: true }], "en-GB").name, "L");
+  assert.equal(Core.pickVoice([{ lang: "en-GB", name: "N", localService: false }], "en-GB").name, "N");
+  assert.equal(Core.pickVoice([{ lang: "en-US", name: "U", localService: true }, { lang: "en-GB", name: "N", localService: false }], "en-GB").name, "N");
 });
 
 test("leitnerUpdate and dueCards", () => {

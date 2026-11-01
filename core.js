@@ -83,8 +83,12 @@
     const list = voices || [];
     const norm = function (v) { return String(v.lang).toLowerCase().replace(/_/g, "-"); };
     const want = String(lang).toLowerCase().replace(/_/g, "-");
-    return list.filter(function (v) { return norm(v) === want; })[0] ||
-      list.filter(function (v) { return /^en($|-)/.test(norm(v)); })[0] || null;
+    // Chrome's network voices stop after about 15 s, so within a language tier a local voice wins.
+    const best = function (matches) {
+      return matches.filter(function (v) { return v.localService !== false; })[0] || matches[0] || null;
+    };
+    return best(list.filter(function (v) { return norm(v) === want; })) ||
+      best(list.filter(function (v) { return /^en($|-)/.test(norm(v)); }));
   }
 
   const LEITNER_DAYS = [0, 1, 2, 4, 7, 14];
