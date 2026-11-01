@@ -100,6 +100,35 @@ function toggleReveal(button, target, showText, hideText) {
   button.textContent = open ? hideText : showText;
 }
 
+// Timed talk: plan for 30 s, then talk for item.seconds. The timer is shared (speech.js), so only one talk or interview runs at a time.
+const TALK_PLAN_SECONDS = 30;
+
+function talkBlock(item) {
+  if (!item.cues || !item.cues.length) return "";
+  const seconds = item.seconds || 60;
+  return '<ul class="talk-cues">' + item.cues.map(function (cue) { return '<li>' + escapeHtml(cue) + '</li>'; }).join("") + '</ul>' +
+    '<div class="talk" data-seconds="' + seconds + '"><span class="talk-phase" aria-live="polite">Ready</span> <span class="talk-clock">' + Core.formatClock(TALK_PLAN_SECONDS) + '</span>' +
+    '<div class="talk-buttons"><button class="speak-toggle" type="button" data-talk-plan>Plan (' + TALK_PLAN_SECONDS + ' s)</button>' +
+    '<button class="speak-toggle" type="button" data-talk-go>Talk (' + seconds + ' s)</button>' +
+    '<button class="speak-toggle" type="button" data-talk-stop>Stop</button></div>' + recorderControls() + '</div>';
+}
+
+function talkShow(talk, phase, clock) {
+  if (!talk.isConnected) return;
+  talk.querySelector(".talk-phase").textContent = phase;
+  if (clock) talk.querySelector(".talk-clock").textContent = clock;
+}
+
+function talkIdle(talk) { talkShow(talk, "Ready", Core.formatClock(TALK_PLAN_SECONDS)); }
+
+function talkStart(talk, go) {
+  const owner = claimTimed(talk, function () { talkIdle(talk); });
+  talkShow(talk, go ? "Talk now" : "Plan your talk");
+  startTimed(owner, talk.querySelector(".talk-clock"), go ? Number(talk.dataset.seconds) : TALK_PLAN_SECONDS, function () {
+    talkShow(talk, go ? "Time is up." : "Plan finished. Press Talk when you are ready.");
+  });
+}
+
 window.ExerciseTypes.speak = {
   unscored: true,
   practiceTotal: function (ex) { return ex.questions.length; },
@@ -116,7 +145,7 @@ window.ExerciseTypes.speak = {
           }).join("") + '</ul>'
         : "";
       return '<div class="speak-item">' +
-        '<p class="speak-q">' + (i + 1) + '. ' + escapeHtml(item.q) + '</p>' + listenButton(item.q, "question " + (i + 1)) + frames +
+        '<p class="speak-q">' + (i + 1) + '. ' + escapeHtml(item.q) + '</p>' + listenButton(item.q, "question " + (i + 1)) + talkBlock(item) + frames +
         '<button class="speak-toggle" type="button" data-speak-toggle aria-expanded="false" aria-controls="' + id + '-model">Show model answer</button>' +
         '<div class="speak-model" id="' + id + '-model" hidden><p>' + escapeHtml(item.model) + '</p>' + listenButton(item.model, "model answer " + (i + 1)) + '</div>' +
         '<label class="speak-check" for="' + id + '-said"><input type="checkbox" id="' + id + '-said" data-speak-said' + (progress.get(saidKey(item.q), false) === true ? ' checked' : '') + '> I said it aloud</label>' + recorderControls() +
@@ -126,6 +155,12 @@ window.ExerciseTypes.speak = {
   },
 
   onClick: function (event, card, ex) {
+    const talkButton = event.target.closest("[data-talk-plan], [data-talk-go], [data-talk-stop]");
+    if (talkButton) {
+      const talk = talkButton.closest(".talk");
+      if (talkButton.hasAttribute("data-talk-stop")) stopTimed(talk); else talkStart(talk, talkButton.hasAttribute("data-talk-go"));
+      return true;
+    }
     const toggle = event.target.closest("[data-speak-toggle]");
     if (toggle) {
       toggleReveal(toggle, document.getElementById(toggle.getAttribute("aria-controls")), "Show model answer", "Hide model answer");

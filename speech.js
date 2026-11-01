@@ -129,7 +129,64 @@ function startRecording(root) {
   });
 }
 
+// Countdown: counts against an end timestamp (no drift); every live one is cancelled by stopAllActivity().
+const countdowns = [];
+
+function runCountdown(clockEl, seconds, onDone) {
+  const end = Date.now() + seconds * 1000;
+  let timer = null;
+  let over = false;
+  const cancel = function () {
+    over = true;
+    clearInterval(timer);
+    const at = countdowns.indexOf(cancel);
+    if (at !== -1) countdowns.splice(at, 1);
+  };
+  const tick = function () {
+    const left = Math.ceil((end - Date.now()) / 1000);
+    clockEl.textContent = Core.formatClock(left);
+    if (left <= 0) { cancel(); onDone(); }
+  };
+  countdowns.push(cancel);
+  tick();
+  if (!over) timer = setInterval(tick, 250);
+  return cancel;
+}
+
+// Only one talk or interview owns the timer at a time. Taking it over calls the old owner's reset, which puts its card back to idle.
+let timedOwner = null;
+
+function stopTimed(el) {
+  const owner = timedOwner;
+  if (!owner || (el && owner.el !== el)) return;
+  timedOwner = null;
+  owner.cancel();
+  owner.reset();
+}
+
+function claimTimed(el, reset) {
+  stopTimed();
+  timedOwner = { el: el, reset: reset, cancel: function () {} };
+  return timedOwner;
+}
+
+// Hands the timer back without calling reset (the owner finished by itself).
+function releaseTimed(owner) {
+  if (timedOwner !== owner) return;
+  timedOwner = null;
+  owner.cancel();
+}
+
+// Starts the owner's clock; a clock it ran before is cancelled first. Does nothing once another card has taken the timer.
+function startTimed(owner, clockEl, seconds, onDone) {
+  if (timedOwner !== owner) return;
+  owner.cancel();
+  owner.cancel = runCountdown(clockEl, seconds, onDone);
+}
+
 function stopAllActivity() {
+  stopTimed();
+  countdowns.slice().forEach(function (cancel) { cancel(); });
   endSpeechSession();
   endRecording(false);
   blobUrls.splice(0).forEach(function (url) { URL.revokeObjectURL(url); });
