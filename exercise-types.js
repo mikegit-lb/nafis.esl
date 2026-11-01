@@ -185,7 +185,7 @@ function partnerStatus(card, text, next, live) {
   const statusP = card.querySelector(".roleplay-status");
   const nextBtn = card.querySelector("[data-roleplay-next]");
   const active = document.activeElement;
-  const had = card.contains(active) && active.matches("[data-roleplay-next], [data-roleplay-stop], [data-roleplay-play]");
+  const had = card.contains(active) && active.matches("[data-roleplay-next], [data-roleplay-stop], [data-roleplay-play], .roleplay-status");
   statusP.textContent = text;
   nextBtn.hidden = !next;
   card.querySelector("[data-roleplay-stop]").hidden = !live;

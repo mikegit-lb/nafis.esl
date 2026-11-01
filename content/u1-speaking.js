@@ -1028,7 +1028,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
           },
           {
             q: "Why is a park a good place for students?",
-            model: "A park is a good place for students, because they can relax there after school. My school is next to a park, so we can walk there after school.",
+            model: "A park is a good place for students, because they can relax there after school. My school is next to a park, so we can walk there at break.",
             frames: ["A park is a good place because ...", "Students can ...", "My school is next to ..."]
           },
           {
