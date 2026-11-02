@@ -13,10 +13,16 @@ function viewPanel(id, title, body) {
   '</section>';
 }
 
+function sectionJumpBar(summaryText, linkLabel) {
+  return '<div class="section-jump-bar">' +
+    '<span class="section-jump-meta">' + escapeHtml(summaryText) + '</span>' +
+    '<a class="section-jump-link" href="#practice-title">' + escapeHtml(linkLabel || "Jump to practice ↓") + '</a>' +
+  '</div>';
+}
+
 window.SectionViews.overview = function (unit, content) {
   const o = content.overview || {};
   const leadIn = o.leadIn || {};
-  const sounds = (o.pronunciation || []).map(escapeHtml).join(" · ");
   return '<section class="focus-block" aria-labelledby="leadin-title">' +
       '<p class="focus-label">Lead-in</p>' +
       '<h3 id="leadin-title">' + escapeHtml(leadIn.prompt || unit.title) + '</h3>' +
@@ -28,8 +34,7 @@ window.SectionViews.overview = function (unit, content) {
       viewPanel("subthemes-title", "Sub-themes", viewList(o.subThemes, "view-list")) +
       viewPanel("functions-title", "Functions", viewList(o.functions, "view-list")) +
       viewPanel("social-title", "Social language", viewList(o.socialLanguage, "view-list")) +
-    '</div>' +
-    (sounds ? '<p class="sounds-line"><strong>Sounds to practise:</strong> ' + sounds + '</p>' : "");
+    '</div>';
 };
 
 window.SectionViews.vocabulary = function (unit, content) {
@@ -37,17 +42,19 @@ window.SectionViews.vocabulary = function (unit, content) {
   const groups = (v.groups || []).map(function (group, index) {
     return viewPanel("vocab-group-" + index, group.title,
       '<dl class="vocab-list">' + group.items.map(function (item) {
-        const listen = function (text) { return item.audio === false ? "" : listenButton(text); };
-        return '<div class="vocab-item"><dt>' + escapeHtml(item.term) + listen(item.term) + '</dt>' +
+        return '<div class="vocab-item"><dt>' + escapeHtml(item.term) + '</dt>' +
           '<dd>' + escapeHtml(item.meaning) + '</dd>' +
-          '<dd class="vocab-example">' + escapeHtml(item.example) + listen(item.example) + '</dd></div>';
+          '<dd class="vocab-example">' + escapeHtml(item.example) + '</dd></div>';
       }).join("") + '</dl>');
   }).join("");
   // currentActivities() is the list the card index lookups in app.js use, so it must be what we render.
   const all = [];
   (v.groups || []).forEach(function (group) { all.push.apply(all, group.items); });
-  return speedToggle() + Flashcards.html(activeUnit, all) + '<div class="lesson-grid vocab-grid">' + groups + '</div>' +
-    renderExercises(currentActivities(), { heading: "Vocabulary practice" });
+  const activities = currentActivities();
+  const questionTotal = activities.reduce(function (n, a) { return n + Core.countQuestions(a); }, 0);
+  return sectionJumpBar(all.length + " key terms · " + activities.length + " practice sets (" + questionTotal + " questions)", "Jump to vocabulary practice ↓") +
+    Flashcards.html(activeUnit, all) + '<div class="lesson-grid vocab-grid">' + groups + '</div>' +
+    renderExercises(activities, { heading: "Vocabulary practice" });
 };
 
 // Exam interview. A session counts only while it is `interview` and its panel is still on the page; every callback checks that.
@@ -90,7 +97,7 @@ function interviewFinish(session) {
       const id = "interview-model-" + i;
       return '<li><p class="interview-question">' + escapeHtml(item.q) + '</p>' +
         '<button class="speak-toggle" type="button" data-interview-toggle aria-expanded="false" aria-controls="' + id + '">Show model answer</button>' +
-        '<div class="speak-model" id="' + id + '" hidden><p>' + escapeHtml(item.model) + '</p>' + listenButton(item.model, "model answer " + (i + 1)) + '</div></li>';
+        '<div class="speak-model" id="' + id + '" hidden><p>' + escapeHtml(item.model) + '</p></div></li>';
     }).join("") + '</ol>' + interviewStartBody(true));
   panel.querySelector(".interview-status").focus();
 }
@@ -106,26 +113,14 @@ function interviewStep(session, index) {
   const last = index === session.questions.length - 1;
   panel.innerHTML = interviewShell('<p class="interview-count">Question ' + (index + 1) + ' of ' + session.questions.length + '</p>' +
     '<p class="interview-question" tabindex="-1">' + escapeHtml(item.q) + '</p>' +
-    '<p class="interview-status" aria-live="polite">' + (canSpeak() ? "Listen to the question…" : "") + '</p>' +
+    '<p class="interview-status" aria-live="polite">Answer aloud now.</p>' +
     '<p class="interview-clock">' + Core.formatClock(INTERVIEW_SECONDS) + '</p>' + recorderControls() +
     '<button class="speak-toggle" type="button" data-interview-next>' + (last ? "Finish interview" : "Next question") + '</button>' +
     '<button class="speak-toggle" type="button" data-interview-stop>Stop</button>');
   panel.querySelector(".interview-question").focus();
-  let begun = false;
-  // The answer clock starts when the question has been read (or at once without speech).
-  const begin = function () {
-    if (begun || !interviewLive(session) || session.index !== index) return;
-    begun = true;
-    clearTimeout(session.timer);
-    panel.querySelector(".interview-status").textContent = "Answer now.";
-    startTimed(session.owner, panel.querySelector(".interview-clock"), INTERVIEW_SECONDS, function () {
-      if (interviewLive(session) && session.index === index) panel.querySelector(".interview-status").textContent = "Time is up. Press " + (last ? "Finish interview." : "Next question.");
-    });
-  };
-  if (!canSpeak()) { begin(); return; }
-  // shortcut: a platform with no voices never fires `end`, so start the clock after a generous guess (same estimate as the role-play walk).
-  session.timer = setTimeout(begin, (400 + 90 * item.q.length) / (progress.get("slow", false) === true ? 0.7 : 1));
-  speakText(item.q, { onend: begin });
+  startTimed(session.owner, panel.querySelector(".interview-clock"), INTERVIEW_SECONDS, function () {
+    if (interviewLive(session) && session.index === index) panel.querySelector(".interview-status").textContent = "Time is up. Press " + (last ? "Finish interview." : "Next question.");
+  });
 }
 
 function interviewStart(panel) {
@@ -153,76 +148,30 @@ document.addEventListener("click", function (event) {
   if (toggle) toggleReveal(toggle, document.getElementById(toggle.getAttribute("aria-controls")), "Show model answer", "Hide model answer");
 });
 
-function wordChip(word) {
-  return canSpeak()
-    ? '<button class="quiz-chip listen-chip" type="button" data-listen="' + escapeHtml(word) + '" aria-label="Listen: ' + escapeHtml(word) + '">' + escapeHtml(word) + '</button>'
-    : '<span class="quiz-chip">' + escapeHtml(word) + '</span>';
-}
-
 // Content may be malformed: anything that is not an array counts as empty, and null entries are skipped.
 function listOf(value) {
   return Array.isArray(value) ? value.filter(function (item) { return item !== null && item !== undefined; }) : [];
 }
 
-function soundGroupsHtml(groups) {
-  return listOf(groups).map(function (sound) {
-    return '<div class="sound-group"><h4 class="sound-label">' + escapeHtml(sound.label) + '</h4>' +
-      '<ul class="word-chips">' + listOf(sound.words).map(function (word) {
-        return '<li>' + wordChip(word) + '</li>';
-      }).join("") + '</ul></div>';
-  }).join("");
-}
-
-function pronExtraHtml(extra) {
-  const groups = listOf(extra.groups).map(function (group) {
-    if (typeof group !== "object") return "";
-    if (extra.kind === "words") return soundGroupsHtml([group]);
-    const label = '<h4 class="sound-label">' + escapeHtml(group.label) + '</h4>';
-    if (extra.kind === "sentences") {
-      return '<div class="sound-group">' + label + '<ol class="read-aloud">' + listOf(group.sentences).map(function (sentence) {
-        return '<li><span>' + escapeHtml(sentence) + '</span>' + listenButton(sentence) + '</li>';
-      }).join("") + '</ol></div>';
-    }
-    if (extra.kind === "pairs") {
-      return '<div class="sound-group">' + label + '<ul class="pair-list">' + listOf(group.pairs).map(function (pair) {
-        if (!Array.isArray(pair) || pair.length < 2) return "";
-        return '<li>' + wordChip(pair[0]) + '<span aria-hidden="true">↔</span>' + wordChip(pair[1]) + '</li>';
-      }).join("") + '</ul></div>';
-    }
-    return "";
-  }).join("");
-  return (extra.note ? '<p class="pron-note">' + escapeHtml(extra.note) + '</p>' : "") + groups;
-}
-
 window.SectionViews.speaking = function (unit, content) {
   const speaking = content.speaking || {};
-  const p = speaking.pronunciation || {};
-  const sounds = soundGroupsHtml(p.sounds);
-  const sentences = (p.sentences || []).length
-    ? '<h4 class="sound-label">Read aloud</h4><ol class="read-aloud">' + p.sentences.map(function (sentence) {
-        return '<li><span>' + escapeHtml(sentence) + '</span>' + listenButton(sentence) + '</li>';
-      }).join("") + '</ol>'
-    : "";
   const privacy = recorderControls() !== "" ? '<p class="rec-privacy">Recordings stay on your device and are not saved.</p>' : "";
   const tasks = currentActivities();
   // currentActivities() is the list the card index lookups in app.js use, so it must be what we render.
   // The interview needs a pool of at least four questions across the speak cards.
   const speakCards = tasks.filter(function (ex) { return ex.type === "speak"; });
+  const questionTotal = speakCards.reduce(function (n, c) { return n + (c.questions ? c.questions.length : 0); }, 0);
   const interviewPanel = Core.pickInterview(speakCards, 6, "x").length >= 4
     ? '<section class="lesson-panel interview" data-interview aria-labelledby="interview-title">' + interviewStartHtml() + '</section>'
     : "";
-  const extras = (Array.isArray(p.extras) ? p.extras : []).map(function (extra, i) {
-    if (!extra || typeof extra !== "object") return "";
-    const body = pronExtraHtml(extra);
-    return body ? viewPanel("pron-extra-" + i, extra.title, body) : "";
-  }).join("");
   const examTips = listOf(speaking.examTips).length
     ? viewPanel("exam-tips-title", "Exam tips", '<ol class="view-list">' + listOf(speaking.examTips).map(function (tip) {
         return '<li>' + escapeHtml(tip) + '</li>';
       }).join("") + '</ol>')
     : "";
-  return '<div class="lesson-grid vocab-grid">' + viewPanel("pronunciation-title", "Pronunciation", speedToggle() + sounds + sentences) + extras + examTips + '</div>' + privacy +
-    interviewPanel + renderExercises(tasks, {
+  return sectionJumpBar(tasks.length + " speaking & role-play tasks · " + questionTotal + " personal prompts", "Jump to speaking tasks ↓") +
+    '<div class="lesson-grid speaking-top-grid">' + examTips + interviewPanel + '</div>' + privacy +
+    renderExercises(tasks, {
       heading: "Speaking practice",
       countText: tasks.length + (tasks.length === 1 ? " SPEAKING TASK" : " SPEAKING TASKS")
     });

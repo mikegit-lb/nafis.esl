@@ -10,14 +10,6 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
       "I learn by heart! = I memorise something so well that I can say it without looking",
       "Work hard, play later! = finish your duties first, then have fun"
     ],
-    pronunciation: [
-      "relax (focus on the letter a)",
-      "bed (focus on the letter e)",
-      "carefully (focus on the letter f)",
-      "get (focus on the letter g)",
-      "generally (focus on the first letter g)",
-      "home (focus on the letter h)"
-    ],
     leadIn: {
       prompt: "Look at a student's day from morning to evening. Say what is happening and note the words and phrases the pictures remind you of.",
       topics: [

@@ -56,14 +56,17 @@ function checkSizes(label, name, activities) {
 }
 function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
 
-[1, 2].forEach(function (n) {
+const UNITS = [1, 2, 3, 4, 5, 6, 7, 8];
+
+UNITS.forEach(function (n) {
   const label = "Unit " + n;
 
   test("unit " + n + " language", function () {
     const u = unitOf(n), o = u.overview || {}, v = u.vocabulary || {};
-    ["subThemes", "functions", "socialLanguage", "pronunciation"].forEach(function (k) {
+    ["subThemes", "functions", "socialLanguage"].forEach(function (k) {
       assert.ok(filled(o[k]), label + " overview." + k + " must be a non-empty array");
     });
+    assert.equal(o.pronunciation, undefined, label + " overview.pronunciation must be omitted");
     assert.ok(o.leadIn && filled(o.leadIn.topics), label + " overview.leadIn.topics must be non-empty");
     const groups = list(v.groups), items = [];
     groups.forEach(function (g) { list(g.items).forEach(function (i) { items.push([g.title, i]); }); });
@@ -82,16 +85,21 @@ function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
   });
 
   test("unit " + n + " speaking", function () {
-    const u = unitOf(n), p = (u.speaking && u.speaking.pronunciation) || {}, tasks = acts(u, "speaking");
-    assert.ok(list(p.sounds).length >= 3, label + " speaking needs >=3 pronunciation sounds");
-    list(p.sounds).forEach(function (s) { assert.ok(list(s.words).length >= 3, label + " sound '" + s.label + "' needs >=3 words"); });
-    assert.ok(list(p.sentences).length >= 3, label + " speaking needs >=3 pronunciation sentences");
+    const u = unitOf(n), tasks = acts(u, "speaking");
+    assert.equal((u.speaking || {}).pronunciation, undefined, label + " speaking.pronunciation must be omitted");
     const speak = tasks.filter(function (a) { return a.type === "speak"; });
     const qs = speak.reduce(function (c, a) { return c + list(a.questions).length; }, 0);
     assert.ok(speak.length >= 4, label + " speaking needs >=4 speak cards, has " + speak.length);
     assert.ok(qs >= 70, label + " speak cards need >=70 questions in total, have " + qs);
-    const personal = speak.reduce(function (c, a) { return c + list(a.questions).filter(function (q) { return q && /\byou(r)?\b/i.test(q.q); }).length; }, 0);
-    assert.ok(personal >= 40, label + " speak cards need >=40 personal questions (containing you/your), have " + personal);
+    const nonPersonal = [];
+    speak.forEach(function (a) {
+      list(a.questions).forEach(function (q, qi) {
+        if (!q || !/\byou(r|rs|rself)?\b/i.test(q.q)) {
+          nonPersonal.push(label + " '" + a.title + "' Q" + (qi + 1) + ": " + (q && q.q));
+        }
+      });
+    });
+    assert.deepEqual(nonPersonal, [], label + " all speaking questions must address the learner (you/your):\n  " + nonPersonal.join("\n  "));
     const rp = tasks.filter(function (a) { return a.type === "roleplay"; }).length;
     assert.ok(rp >= 4, label + " speaking needs >=4 roleplay cards, has " + rp);
     speak.forEach(function (a, i) {
@@ -100,6 +108,8 @@ function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
     });
     tasks.forEach(function (a) {
       assert.ok(a.source, label + " speaking card '" + a.title + "' is missing source");
+      assert.ok(!/Listening\/Watching|Pronunciation|\blisten to the model|\blisten for\b/i.test(a.source + " " + (a.instruction || "")),
+        label + " speaking card '" + a.title + "' must not reference Listening/Watching, Pronunciation, or listening to audio");
       list(a.questions).forEach(function (q) {
         assert.ok(q.q && q.model, label + " speaking card '" + a.title + "' has a question without q/model: " + JSON.stringify(q.q));
       });
@@ -107,26 +117,8 @@ function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
   });
 
   test("unit " + n + " speaking upgrades", function () {
-    const u = unitOf(n), sp = u.speaking || {}, p = sp.pronunciation || {}, extras = list(p.extras);
+    const u = unitOf(n), sp = u.speaking || {};
     const speak = acts(u, "speaking").filter(function (a) { return a.type === "speak"; });
-    assert.ok(extras.length >= 4, label + " pronunciation.extras needs >=4, has " + extras.length);
-    extras.forEach(function (x, i) {
-      const where = label + " pronunciation.extras #" + (i + 1) + " '" + (x && x.title) + "'";
-      assert.ok(x && str(x.title), where + " needs a non-empty title");
-      assert.ok(x.note === undefined || str(x.note), where + " note must be a non-empty string");
-      assert.ok(["words", "sentences", "pairs"].indexOf(x.kind) >= 0, where + " kind must be words, sentences or pairs, has " + x.kind);
-      assert.ok(filled(x.groups), where + " needs a non-empty groups array");
-      list(x.groups).forEach(function (g, gi) {
-        const gw = where + " group #" + (gi + 1);
-        const items = list(g && g[x.kind]), min = x.kind === "sentences" ? 2 : 3;
-        assert.ok(g && str(g.label), gw + " needs a non-empty label");
-        assert.ok(items.length >= min, gw + " '" + (g && g.label) + "' " + x.kind + " needs >=" + min + " entries, has " + items.length);
-        items.forEach(function (e, ei) {
-          if (x.kind === "pairs") assert.ok(Array.isArray(e) && e.length === 2 && str(e[0]) && str(e[1]) && e[0] !== e[1], gw + " pair #" + (ei + 1) + " must be two different non-empty strings: " + JSON.stringify(e));
-          else assert.ok(str(e), gw + " " + x.kind + " entry #" + (ei + 1) + " must be a non-empty string");
-        });
-      });
-    });
     const tips = list(sp.examTips);
     assert.ok(tips.length >= 5, label + " speaking.examTips needs >=5, has " + tips.length);
     tips.forEach(function (t, i) { assert.ok(str(t), label + " speaking.examTips #" + (i + 1) + " must be a non-empty string"); });
@@ -175,16 +167,19 @@ function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
     assert.ok(total(ga) >= 70, label + " grammar activities need >=70 scored questions, have " + total(ga));
     const count = function (t) { return ga.filter(function (a) { return a.type === t; }).length; };
     assert.ok(count("quiz") >= 8, label + " grammar needs >=8 quiz cards, has " + count("quiz"));
-    assert.ok(count("build") >= 5, label + " grammar needs >=5 build cards, has " + count("build"));
+    assert.ok(count("match") >= 2, label + " grammar needs >=2 match cards, has " + count("match"));
+    assert.ok(count("reading") >= 1, label + " grammar needs >=1 reading card, has " + count("reading"));
     checkSizes(label, "grammar", ga);
     sections(u).forEach(function (s) {
       list(s[1]).forEach(function (a, i) {
-        assert.ok(["choice", "complete", "transform", "fix"].indexOf(a.type) < 0,
-          label + " " + s[0] + " #" + (i + 1) + " '" + (a.title || a.prompt) + "' is a stand-alone " + a.type + " card; fold it into a quiz");
+        assert.ok(["choice", "complete", "transform", "fix", "build", "sequence"].indexOf(a.type) < 0,
+          label + " " + s[0] + " #" + (i + 1) + " '" + (a.title || a.prompt) + "' is a 1-question " + a.type + " card; only multi-question cards are allowed");
+        if (s[0] !== "speaking") {
+          assert.ok(Core.countQuestions(a) >= 6,
+            label + " " + s[0] + " #" + (i + 1) + " '" + a.title + "' must have >=6 questions, has " + Core.countQuestions(a));
+        }
       });
     });
-    const kinds = new Set(ga.map(function (a) { return a.type; }));
-    assert.ok(kinds.size >= 5, label + " grammar activities need >=5 distinct types, have " + kinds.size);
   });
 
   test("unit " + n + " reading", function () {
@@ -204,23 +199,17 @@ function unitOf(n) { return loadContent().unitContent[n - 1] || {}; }
   });
 });
 
-test("vocabulary audio flags", function () {
-  const fails = [];
-  [1, 2].forEach(function (n) {
-    list((unitOf(n).vocabulary || {}).groups).forEach(function (g) {
-      list(g.items).forEach(function (it) {
-        // shortcut: language list is hand-kept; extend it when new foreign words are added.
-        if (/\bin (Hungarian|Korean|Bulgarian|Norwegian|Turkish|Polish)\b/.test(it.meaning) && it.audio !== false) {
-          fails.push("Unit " + n + " vocabulary group '" + g.title + "' item '" + it.term + "' is a foreign word and needs audio: false");
-        }
-      });
+test("all 8 units present", function () {
+  assert.equal(FILES.length, 32, "expected 32 content files (4 per unit across 8 units), found " + FILES.length);
+  UNITS.forEach(function (n) {
+    ["language", "speaking", "grammar", "reading"].forEach(function (part) {
+      assert.ok(fs.existsSync(path.join(DIR, "u" + n + "-" + part + ".js")), "missing content/u" + n + "-" + part + ".js");
     });
   });
-  assert.deepEqual(fails, [], "vocabulary audio flags:\n  " + fails.join("\n  "));
 });
 
 test("schema", function () {
-  const fails = [], seen = [new Map(), new Map()];
+  const fails = [], seen = Array.from({ length: 8 }, function () { return new Map(); });
   FILES.forEach(function (f) {
     const bad = function (m) { fails.push(f + ": " + m); };
     runFiles([f]).unitContent.forEach(function (u, ui) {

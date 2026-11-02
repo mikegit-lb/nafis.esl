@@ -369,62 +369,6 @@ window.unitContent[1] = Object.assign(window.unitContent[1] || {}, {
         ]
       },
       {
-        type: "build", title: "Build a question: leaving home",
-        instruction: "Ask what time Derya leaves home. Tap the words to build it.",
-        tokens: ["leave", "Derya", "What", "home?", "does", "time"],
-        answer: ["What", "time", "does", "Derya", "leave", "home?"],
-        why: "A wh-question follows the order wh-words + does + subject + base verb."
-      },
-      {
-        type: "build", title: "Build a question: taking notes",
-        instruction: "Ask a classmate how often they take notes. Tap the words to build it.",
-        tokens: ["notes?", "How", "you", "do", "take", "often"],
-        answer: ["How", "often", "do", "you", "take", "notes?"],
-        why: "Put do after How often and keep the base verb take."
-      },
-      {
-        type: "build", title: "Build a question: walking to school",
-        instruction: "Ask why Selin walks to school. Tap the words to build it.",
-        tokens: ["walk", "school?", "Why", "Selin", "to", "does"],
-        answer: ["Why", "does", "Selin", "walk", "to", "school?"],
-        why: "The order is Why + does + subject + base verb, so walk has no -s."
-      },
-      {
-        type: "build", title: "Build a negative: breakfast at home",
-        instruction: "Say that your brother does not eat breakfast at home. Tap the words to build it.",
-        tokens: ["eat", "My", "does", "brother", "breakfast", "not", "at", "home."],
-        answer: ["My", "brother", "does", "not", "eat", "breakfast", "at", "home."],
-        why: "Use does not + base verb with the singular subject my brother."
-      },
-      {
-        type: "build", title: "Build a question: the quiz teacher",
-        instruction: "Ask how often your teacher gives a quiz. Tap the words to build it.",
-        tokens: ["a", "How", "does", "teacher", "give", "often", "quiz?", "your"],
-        answer: ["How", "often", "does", "your", "teacher", "give", "a", "quiz?"],
-        why: "Put does after How often, then the subject, then the base verb give."
-      },
-      {
-        type: "build", title: "Build a negative: Sundays",
-        instruction: "Say that you do not have school on Sundays. Tap the words to build it.",
-        tokens: ["have", "We", "school", "not", "on", "Sundays.", "do"],
-        answer: ["We", "do", "not", "have", "school", "on", "Sundays."],
-        why: "Use do not + base verb with we, and on with days."
-      },
-      {
-        type: "sequence", title: "Order the sentences: a morning routine",
-        instruction: "Tap the sentences in the correct order: First, Then, After that, Finally.",
-        tokens: ["After that, I have breakfast.", "Finally, I leave home.", "First, I wake up.", "Then I get dressed."],
-        answer: ["First, I wake up.", "Then I get dressed.", "After that, I have breakfast.", "Finally, I leave home."],
-        why: "The linkers show the order: First, then Then, After that and Finally."
-      },
-      {
-        type: "sequence", title: "Order the words: a frequency sentence",
-        instruction: "Say that your sister never takes the bus to school. Tap the words to build it.",
-        tokens: ["takes", "My", "the", "never", "sister", "bus", "to", "school."],
-        answer: ["My", "sister", "never", "takes", "the", "bus", "to", "school."],
-        why: "The adverb never goes before the main verb takes."
-      },
-      {
         type: "reading", title: "Read and answer · Nehir's week", passageTitle: "Nehir and her brother",
         passage: "Nehir is fifteen, and she lives in Izmir with her parents and her brother Kerem. On weekdays she gets up at half past six. First, she washes her face and gets dressed. After that, she has breakfast with Kerem. Before leaving home, she always checks her bag. She walks to school because it is near their house. Nehir loves playing volleyball, so she goes to the club three times a week, on Monday, Wednesday and Friday. Kerem does not like sport, but he enjoys reading. He is often at the library after school. In the evening, the family has dinner at seven. Nehir does her homework first, and then she watches a series for half an hour. She is usually tired at ten o'clock, so she goes to bed early.",
         questions: [

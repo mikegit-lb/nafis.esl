@@ -145,9 +145,9 @@ window.ExerciseTypes.speak = {
           }).join("") + '</ul>'
         : "";
       return '<div class="speak-item">' +
-        '<p class="speak-q">' + (i + 1) + '. ' + escapeHtml(item.q) + '</p>' + listenButton(item.q, "question " + (i + 1)) + talkBlock(item) + frames +
+        '<p class="speak-q">' + (i + 1) + '. ' + escapeHtml(item.q) + '</p>' + talkBlock(item) + frames +
         '<button class="speak-toggle" type="button" data-speak-toggle aria-expanded="false" aria-controls="' + id + '-model">Show model answer</button>' +
-        '<div class="speak-model" id="' + id + '-model" hidden><p>' + escapeHtml(item.model) + '</p>' + listenButton(item.model, "model answer " + (i + 1)) + '</div>' +
+        '<div class="speak-model" id="' + id + '-model" hidden><p>' + escapeHtml(item.model) + '</p></div>' +
         '<label class="speak-check" for="' + id + '-said"><input type="checkbox" id="' + id + '-said" data-speak-said' + (progress.get(saidKey(item.q), false) === true ? ' checked' : '') + '> I said it aloud</label>' + (item.cues && item.cues.length ? "" : recorderControls()) +
       '</div>';
     }).join("");
@@ -217,16 +217,12 @@ function partnerStep(session, index) {
     return;
   }
   const line = session.ex.model[index];
+  card.querySelectorAll(".roleplay-model li")[index].classList.add("is-playing");
   if (line.speaker === session.mine) {
-    partnerStatus(card, "Your turn (" + session.mine + "): use your card. Press Next line when you have spoken.", true, true);
+    partnerStatus(card, "Your turn (" + session.mine + "): use your role card to speak aloud, then press Next line.", true, true);
     return;
   }
-  partnerStatus(card, "Listen to " + line.speaker + "…", false, true);
-  card.querySelectorAll(".roleplay-model li")[index].classList.add("is-playing");
-  const advance = function () { partnerStep(session, index + 1); };
-  // shortcut: a platform with no voices never fires `end`, so move on after a generous guess; tune if real lines get cut off.
-  session.timer = setTimeout(advance, (400 + 90 * line.text.length) / (progress.get("slow", false) === true ? 0.7 : 1));
-  speakText(line.text, { onend: advance });
+  partnerStatus(card, "Partner (" + line.speaker + "): “" + line.text + "” — press Next line to continue.", true, true);
 }
 
 window.ExerciseTypes.roleplay = {
@@ -236,20 +232,18 @@ window.ExerciseTypes.roleplay = {
 
   render: function (ex, key) {
     const partnerControls = function () {
-      return canSpeak()
-        ? '<div class="roleplay-partner"><button class="speak-toggle" type="button" data-roleplay-play>Practise with the app</button>' +
-          '<button class="speak-toggle" type="button" data-roleplay-next hidden>Next line</button>' +
-          '<button class="speak-toggle" type="button" data-roleplay-stop hidden>Stop</button>' +
-          '<p class="roleplay-status" tabindex="-1" aria-live="polite"></p></div>'
-        : "";
+      return '<div class="roleplay-partner"><button class="speak-toggle" type="button" data-roleplay-play>Practise dialogue step by step</button>' +
+        '<button class="speak-toggle" type="button" data-roleplay-next hidden>Next line</button>' +
+        '<button class="speak-toggle" type="button" data-roleplay-stop hidden>Stop</button>' +
+        '<p class="roleplay-status" tabindex="-1" aria-live="polite"></p></div>';
     };
     const card = function (letter, c) {
       return '<div class="roleplay-card" data-roleplay-card="' + letter + '"><h4>Role ' + letter + ': ' + escapeHtml(c.role) + '</h4><dl>' +
         c.rows.map(function (row) { return '<dt>' + escapeHtml(row[0]) + '</dt><dd>' + escapeHtml(row[1]) + '</dd>'; }).join("") +
       '</dl></div>';
     };
-    const lines = ex.model.map(function (line, i) {
-      return '<li data-speaker="' + escapeHtml(line.speaker) + '"><strong>' + escapeHtml(line.speaker) + ':</strong> ' + escapeHtml(line.text) + ' ' + listenButton(line.text, line.speaker + " line " + (i + 1)) + '</li>';
+    const lines = ex.model.map(function (line) {
+      return '<li data-speaker="' + escapeHtml(line.speaker) + '"><strong>' + escapeHtml(line.speaker) + ':</strong> ' + escapeHtml(line.text) + '</li>';
     }).join("");
     return '<p class="exercise-prompt">' + escapeHtml(ex.scenario) + '</p>' +
       '<div class="roleplay-cards">' + card("A", ex.cardA) + card("B", ex.cardB) + '</div>' +

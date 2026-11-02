@@ -20,7 +20,6 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       "What's the capital of Italy?",
       "Visitors can walk through the old town and take a boat trip."
     ],
-    pronunciation: ["smart", "around", "way", "control", "exercise"],
     leadIn: {
       prompt: "Look at the pages and say what they are about. Which words and phrases do they remind you of?",
       topics: [
@@ -157,7 +156,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       {
         type: "quiz",
         title: "From country to nationality",
-        source: "Unit 1 · Listening/Watching b · p.26",
+        source: "Unit 1 · Vocabulary · Countries & nationalities",
         instruction: "Write the nationality of each person.",
         items: [
           { prompt: "Carlos is from Mexico. He is ___.", answer: "Mexican", why: "The nationality of a person from Mexico is Mexican." },
@@ -175,7 +174,7 @@ window.unitContent[0] = Object.assign(window.unitContent[0] || {}, {
       {
         type: "match",
         title: "Who speaks what, and what is the capital?",
-        source: "Unit 1 · Listening/Watching b · p.26",
+        source: "Unit 1 · Vocabulary · Languages & capitals",
         pairs: [
           { left: "Giulia is Italian. The capital of her country:", answer: "Rome" },
           { left: "Jonas is German. The language he speaks:", answer: "German" },
